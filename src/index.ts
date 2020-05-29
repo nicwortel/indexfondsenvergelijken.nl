@@ -83,6 +83,10 @@ function runSimulation(): void {
             brokerInfo.push('Basisfee: ' + numberFormatter.formatMoney(combination.broker.baseFee) + ' p.j.');
         }
 
+        if (combination.broker.minimumServiceFee) {
+            brokerInfo.push('Minimum servicekosten: ' + numberFormatter.formatMoney(combination.broker.minimumServiceFee) + ' per kwartaal');
+        }
+
         for (let tier of combination.broker.serviceFee.tiers) {
             let line = 'Servicekosten';
             if (tier.upperLimit) {
@@ -92,6 +96,10 @@ function runSimulation(): void {
             }
             line += ': ' + numberFormatter.formatPercentage(tier.fee);
             brokerInfo.push(line);
+        }
+
+        if (combination.broker.maximumServiceFee) {
+            brokerInfo.push('Maximum servicekosten: ' + numberFormatter.formatMoney(combination.broker.maximumServiceFee) + ' per kwartaal');
         }
 
         brokerInfo.push('Transactiekosten: ' + numberFormatter.formatPercentage(combination.broker.transactionFee));

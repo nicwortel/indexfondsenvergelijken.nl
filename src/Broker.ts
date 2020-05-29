@@ -8,7 +8,9 @@ export class Broker {
         public baseFee: Money,
         public serviceFee: TieredFee,
         public transactionFee: number,
-        public costOverview: string
+        public costOverview: string,
+        public minimumServiceFee?: Money,
+        public maximumServiceFee?: Money
     ) {
     }
 
@@ -18,7 +20,15 @@ export class Broker {
 
     public getQuarterlyCosts(averageInvestedCapital: Money): Money {
         const baseFee = this.baseFee.divide(4);
-        const serviceFee = this.serviceFee.calculateFee(averageInvestedCapital).divide(4);
+
+        let serviceFee = this.serviceFee.calculateFee(averageInvestedCapital).divide(4);
+
+        if (this.minimumServiceFee && serviceFee.isLesserThan(this.minimumServiceFee)) {
+            serviceFee = this.minimumServiceFee;
+        }
+        if (this.maximumServiceFee && serviceFee.isGreaterThan(this.maximumServiceFee)) {
+            serviceFee = this.maximumServiceFee;
+        }
 
         return baseFee.add(serviceFee);
     }
