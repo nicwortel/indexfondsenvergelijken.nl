@@ -46,11 +46,22 @@ export class Simulation {
     private runYear(): void {
         this.registerWealthTax();
 
-        for (let i = 0; i < 12; i++) {
+        for (let i = 0; i < 4; i++) {
+            this.runQuarter();
+        }
+    }
+
+    private runQuarter(): void {
+        const investedCapitalAtStart = this.value;
+
+        for (let i = 0; i < 3; i++) {
             this.runMonth();
         }
 
-        this.addBrokerServiceFees();
+        const investedCapitalAtEnd = this.value;
+        const averageInvestedCapital = investedCapitalAtStart.add(investedCapitalAtEnd).divide(2);
+
+        this.addQuarterlyBrokerServiceFees(averageInvestedCapital);
     }
 
     private runMonth(): void {
@@ -74,8 +85,8 @@ export class Simulation {
         this.totalWealthTax = this.totalWealthTax.add(this.wealthTax.getTaxAmount(this.value));
     }
 
-    private addBrokerServiceFees(): void {
-        this.totalServiceFees = this.totalServiceFees.add(this.broker.getYearlyCosts(this.value));
+    private addQuarterlyBrokerServiceFees(averageInvestedCapital: Money): void {
+        this.totalServiceFees = this.totalServiceFees.add(this.broker.getQuarterlyCosts(averageInvestedCapital));
     }
 
     private getMonthlyRate(yearlyRate: number): number {

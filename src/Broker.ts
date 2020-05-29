@@ -16,7 +16,10 @@ export class Broker {
         return investment.multiply(this.transactionFee.toString());
     }
 
-    public getYearlyCosts(equity: Money): Money {
-        return this.baseFee.add(this.serviceFee.calculateFee(equity));
+    public getQuarterlyCosts(averageInvestedCapital: Money): Money {
+        const baseFee = this.baseFee.divide(4);
+        const serviceFee = this.serviceFee.calculateFee(averageInvestedCapital).divide(4);
+
+        return baseFee.add(serviceFee);
     }
 }
