@@ -44,7 +44,8 @@
     {
         "name": "DEGIRO",
         "product": "basic",
-        "baseFee": 0
+        "baseFee": 0,
+        "costOverview": "https://www.degiro.nl/data/pdf/Tarievenoverzicht.pdf"
     },
     {
         "name": "Binck",
@@ -52,6 +53,7 @@
         "baseFee": 0,
         "serviceFee": [
             {"upperLimit": 300000, "fee": 0.0018 }
-        ]
+        ],
+        "costOverview": "https://www.binck.nl/fondsbeleggen#tarieven"
     }
 ]

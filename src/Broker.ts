@@ -7,7 +7,8 @@ export class Broker {
         public product: string,
         public baseFee: Money,
         public serviceFee: TieredFee,
-        public transactionFee: number
+        public transactionFee: number,
+        public costOverview: string
     ) {
     }
 

@@ -17,7 +17,8 @@ export class BrokerRepository {
                 data.product,
                 new Money(data.baseFee.toString(), 'EUR'),
                 serviceFee,
-                data.transactionFee ?? 0
+                data.transactionFee ?? 0,
+                data.costOverview
             );
         })
     }

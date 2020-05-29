@@ -38,6 +38,15 @@ const combinations = combinationData.map(function (combination) {
     return {broker, portfolio, automatedInvesting: combination.automatedInvesting};
 });
 
+function createExternalLink(url: string, label: string): string {
+    const element = document.createElement('a');
+    element.innerHTML = label;
+    element.setAttribute('href', url);
+    element.setAttribute('target', '_blank');
+
+    return element.outerHTML;
+}
+
 function runSimulation(): void {
     const initialInvestment = new Money(getInputValue('initial'), 'EUR');
     const monthlyInvestment = new Money(getInputValue('monthly'), 'EUR');
@@ -87,8 +96,12 @@ function runSimulation(): void {
 
         brokerInfo.push('Transactiekosten: ' + numberFormatter.formatPercentage(combination.broker.transactionFee));
 
+        let brokerInfoTooltip = '<span class="info" title="' + brokerInfo.join('\n') + '">';
+        if (combination.broker.costOverview) {
+            brokerInfoTooltip = createExternalLink(combination.broker.costOverview, brokerInfoTooltip);
+        }
 
-        row.insertCell().innerHTML = [combination.broker.name, combination.broker.product].join(' ').trim() + ' <span class="info" title="' + brokerInfo.join('\n') + '"></span>';
+        row.insertCell().innerHTML = [combination.broker.name, combination.broker.product].join(' ').trim() + ' ' + brokerInfoTooltip + '</span>';
 
         let portfolioInfo = [];
         for (let fund of combination.portfolio.assets.map((asset) => asset.fund)) {
