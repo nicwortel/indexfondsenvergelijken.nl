@@ -63,7 +63,7 @@ function runSimulation(): void {
     const tableBody = resultsTable.getElementsByTagName('tbody')[0];
     tableBody.innerHTML = '';
 
-    combinations.forEach(function (combination): void {
+    let results = combinations.map(function (combination) {
         const simulation = new Simulation(
             new WealthTax(),
             combination.broker,
@@ -74,6 +74,15 @@ function runSimulation(): void {
         );
 
         simulation.run(years);
+
+        return {combination, simulation};
+    });
+
+    results = results.sort((a, b) => b.simulation.getNetResult() - a.simulation.getNetResult());
+
+    results.forEach(function (result): void {
+        const combination = result.combination;
+        const simulation = result.simulation;
 
         const row = tableBody.insertRow();
 
