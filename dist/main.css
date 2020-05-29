@@ -1,0 +1,14 @@
+.help, .info {
+  display: inline-block;
+  width: 1rem;
+  height: 0.9rem;
+  background-repeat: no-repeat;
+  background-size: 0.9rem 0.9rem;
+}
+
+.help {
+  background-image: url('../node_modules/bootstrap-icons/icons/question-circle.svg');
+}
+.info {
+  background-image: url('../node_modules/bootstrap-icons/icons/info-circle.svg');
+}

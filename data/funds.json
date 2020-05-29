@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Vanguard FTSE All World ETF",
+        "symbol": "VWRL",
+        "isin": "IE00B3RBWM25",
+        "totalExpenseRatio": 0.0022,
+        "dividendLeakage": 0.003
+    },
+    {
+        "name": "Northern Trust World Custom Index Fund",
+        "symbol": "NT World",
+        "isin": "NL0011225305",
+        "totalExpenseRatio": 0.0015,
+        "dividendLeakage": 0
+    },
+    {
+        "name": "Northern Trust EM Custom ESG Eq Idx Fund",
+        "symbol": "NT EM",
+        "isin": "NL0011515424",
+        "totalExpenseRatio": 0.0025,
+        "dividendLeakage": 0
+    },
+    {
+        "name": "Meesman Indexfonds Aandelen Wereldwijd Totaal",
+        "symbol": "Meesman Wereldwijd Totaal",
+        "isin": "NL0013689110",
+        "totalExpenseRatio": 0.005,
+        "dividendLeakage": 0
+    }
+]

@@ -1,0 +1,57 @@
+[
+    {
+        "name": "ING",
+        "product": "Zelf op de beurs",
+        "baseFee": 20,
+        "serviceFee": [
+            {"upperLimit": 100000, "fee": 0.0024},
+            {"upperLimit": 500000, "fee": 0.0012},
+            {"upperLimit": 2500000, "fee": 0.0006}
+        ],
+        "transactionFee": 0,
+        "costOverview": "https://www.ing.nl/particulier/beleggen/beginnen-met-beleggen/tarieven/tarieven-zelf-op-de-beurs.html"
+    },
+    {
+        "name": "ABN Amro",
+        "product": "Zelf Beleggen Basis",
+        "baseFee": 0,
+        "serviceFee": [
+            {"upperLimit": 100000, "fee": 0.002},
+            {"upperLimit": 400000, "fee": 0.0012},
+            {"upperLimit": null, "fee": 0.0006}
+        ],
+        "transactionFee": 0,
+        "costOverview": "https://www.abnamro.nl/nl/prive/beleggen/beleggingsvormen/zelf-beleggen-basis/index.html"
+    },
+    {
+        "name": "Rabobank",
+        "product": "Zelf Beleggen",
+        "baseFee": 20,
+        "serviceFee": [
+            {"upperLimit": 100000, "fee": 0.0006},
+            {"upperLimit": null, "fee": 0.0003}
+        ],
+        "transactionFee": 0.001,
+        "costOverview": "https://www.rabobank.nl/particulieren/beleggen/rabo-zelf-beleggen/"
+    },
+    {
+        "name": "Meesman",
+        "product": "",
+        "baseFee": 0,
+        "transactionFee": 0.0025,
+        "costOverview": "https://www.meesman.nl/zo-werkt-het/kosten"
+    },
+    {
+        "name": "DEGIRO",
+        "product": "basic",
+        "baseFee": 0
+    },
+    {
+        "name": "Binck",
+        "product": "Fundcoach",
+        "baseFee": 0,
+        "serviceFee": [
+            {"upperLimit": 300000, "fee": 0.0018 }
+        ]
+    }
+]
