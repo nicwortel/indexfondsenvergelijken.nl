@@ -6,7 +6,7 @@
         "serviceFee": [
             {"upperLimit": 100000, "fee": 0.0024},
             {"upperLimit": 500000, "fee": 0.0012},
-            {"upperLimit": 2500000, "fee": 0.0006}
+            {"upperLimit": null, "fee": 0.0006}
         ],
         "transactionFee": 0,
         "costOverview": "https://www.ing.nl/particulier/beleggen/beginnen-met-beleggen/tarieven/tarieven-zelf-op-de-beurs.html"
