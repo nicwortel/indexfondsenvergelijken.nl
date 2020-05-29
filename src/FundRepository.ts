@@ -13,4 +13,8 @@ export class FundRepository {
             );
         })
     }
+
+    public getFund(symbol: string): Fund {
+        return this.getAll().find((fund: Fund) => fund.symbol === symbol);
+    }
 }

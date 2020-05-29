@@ -21,4 +21,8 @@ export class BrokerRepository {
             );
         })
     }
+
+    public getBroker(name: string): Broker {
+        return this.getAll().find((broker: Broker) => broker.name === name);
+    }
 }

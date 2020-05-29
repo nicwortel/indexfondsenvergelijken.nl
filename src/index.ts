@@ -1,20 +1,14 @@
-import {Broker} from "./Broker";
 import {BrokerRepository} from "./BrokerRepository";
-import {Fund} from "./Fund";
 import {FundRepository} from "./FundRepository";
 import {Money} from "bigint-money/dist";
 import {Simulation} from "./Simulation";
 import {WealthTax} from "./WealthTax";
+import {Portfolio} from "./Portfolio";
+import {NumberFormatter} from "./NumberFormatter";
 
-const moneyFormatter = new Intl.NumberFormat('nl-NL', {
-    style: 'currency',
-    currency: 'EUR'
-});
-
-const percentageFormatter = new Intl.NumberFormat('nl-NL', {
-    style: 'percent',
-    maximumFractionDigits: 2
-});
+const brokerRepository = new BrokerRepository();
+const fundRepository = new FundRepository();
+const numberFormatter = new NumberFormatter('nl-NL');
 
 const form: HTMLFormElement = <HTMLFormElement>document.getElementById('form');
 
@@ -24,21 +18,25 @@ function getInputValue(elementId: string): number {
     return parseInt(field.value);
 }
 
-const combinations = [
-    {broker: 'ING', fund: 'NT World', automatedInvesting: true},
-    {broker: 'ABN Amro', fund: 'NT World', automatedInvesting: true},
-    {broker: 'Rabobank', fund: 'NT World', automatedInvesting: true},
-    {broker: 'Meesman', fund: 'Meesman Wereldwijd Totaal', automatedInvesting: true},
-    {broker: 'DEGIRO', fund: 'VWRL', automatedInvesting: false},
-    {broker: 'Binck', fund: 'VWRL', automatedInvesting: true}
-];
+const combinationData = [
+    {broker: 'ING', portfolio: [{allocation: 88, fund: 'NT World'}, {allocation: 12, fund: 'NT EM'}], automatedInvesting: true},
+    {broker: 'ABN Amro', portfolio: [{allocation: 88, fund: 'NT World'}, {allocation: 12, fund: 'NT EM'}], automatedInvesting: true},
+    {broker: 'Rabobank', portfolio: [{allocation: 88, fund: 'NT World'}, {allocation: 12, fund: 'NT EM'}], automatedInvesting: true},
+    {broker: 'Meesman', portfolio: [{allocation: 100, fund: 'Meesman Wereldwijd Totaal'}], automatedInvesting: true},
+    {broker: 'DEGIRO', portfolio: [{allocation: 100, fund: 'VWRL'}], automatedInvesting: false},
+    {broker: 'Binck', portfolio: [{allocation: 100, fund: 'VWRL'}], automatedInvesting: true},
+]
 
-const brokers = new BrokerRepository().getAll();
-const funds = new FundRepository().getAll();
+const combinations = combinationData.map(function (combination) {
+    const broker = brokerRepository.getBroker(combination.broker);
+    const funds = combination.portfolio.map(function (portfolio) {
+        return {allocation: portfolio.allocation, fund: fundRepository.getFund(portfolio.fund)};
+    })
 
-function formatMoney(money: Money): string {
-    return moneyFormatter.format(parseFloat(money.toFixed(2)));
-}
+    const portfolio = new Portfolio(funds);
+
+    return {broker, portfolio, automatedInvesting: combination.automatedInvesting};
+});
 
 function runSimulation(): void {
     const initialInvestment = new Money(getInputValue('initial'), 'EUR');
@@ -47,7 +45,7 @@ function runSimulation(): void {
     const expectedYearlyReturn = getInputValue('return') / 100;
 
     const totalInvestment = initialInvestment.add(monthlyInvestment.multiply(12 * years));
-    document.getElementById('totalInvestment').innerText = formatMoney(totalInvestment);
+    document.getElementById('totalInvestment').innerText = numberFormatter.formatMoney(totalInvestment);
     for (let element of document.getElementsByClassName('years')) {
         element.innerHTML = years.toString();
     }
@@ -57,13 +55,10 @@ function runSimulation(): void {
     tableBody.innerHTML = '';
 
     combinations.forEach(function (combination): void {
-        const broker: Broker = brokers.find((broker: Broker) => broker.name === combination.broker);
-        const fund: Fund = funds.find((fund: Fund) => fund.symbol === combination.fund);
-
         const simulation = new Simulation(
             new WealthTax(),
-            broker,
-            fund,
+            combination.broker,
+            combination.portfolio,
             initialInvestment,
             monthlyInvestment,
             expectedYearlyReturn
@@ -75,40 +70,44 @@ function runSimulation(): void {
 
         let brokerInfo = [];
 
-        if (broker.baseFee.isGreaterThan(0)) {
-            brokerInfo.push('Basisfee: ' + formatMoney(broker.baseFee) + ' p.j.');
+        if (combination.broker.baseFee.isGreaterThan(0)) {
+            brokerInfo.push('Basisfee: ' + numberFormatter.formatMoney(combination.broker.baseFee) + ' p.j.');
         }
 
-        for (let tier of broker.serviceFee.tiers) {
+        for (let tier of combination.broker.serviceFee.tiers) {
             let line = 'Servicekosten';
             if (tier.upperLimit) {
-                line += ' t/m ' + moneyFormatter.format(tier.upperLimit);
+                line += ' t/m ' + numberFormatter.formatMoneyFromNumber(tier.upperLimit, 'EUR', 0);
             } else {
                 line += ' daarboven';
             }
-            line += ': ' + percentageFormatter.format(tier.fee);
+            line += ': ' + numberFormatter.formatPercentage(tier.fee);
             brokerInfo.push(line);
         }
 
-        brokerInfo.push('Transactiekosten: ' + percentageFormatter.format(broker.transactionFee));
+        brokerInfo.push('Transactiekosten: ' + numberFormatter.formatPercentage(combination.broker.transactionFee));
 
 
-        row.insertCell().innerHTML = [broker.name, broker.product].join(' ').trim() + ' <span class="info" title="' + brokerInfo.join('\n') + '"></span>';
+        row.insertCell().innerHTML = [combination.broker.name, combination.broker.product].join(' ').trim() + ' <span class="info" title="' + brokerInfo.join('\n') + '"></span>';
 
-        let fundCostInfo = 'Lopende kosten: ' + percentageFormatter.format(fund.totalExpenseRatio);
-        if (fund.dividendLeakage > 0) {
-            fundCostInfo += '\nDividendlek: ' + percentageFormatter.format(fund.dividendLeakage);
+        let portfolioInfo = [];
+        for (let fund of combination.portfolio.assets.map((asset) => asset.fund)) {
+            portfolioInfo.push('Lopende kosten ' + fund.symbol + ': ' + numberFormatter.formatPercentage(fund.totalExpenseRatio));
+
+            if (fund.dividendLeakage > 0) {
+                portfolioInfo.push('Dividendlek ' + fund.symbol + ': ' + numberFormatter.formatPercentage(fund.dividendLeakage));
+            }
         }
-        row.insertCell().innerHTML = fund.symbol + ' (' + fund.isin + ') <span class="info" title="' + fundCostInfo + '"></span>';
-
+        portfolioInfo.push('Portfoliokosten: ' + numberFormatter.formatPercentage(combination.portfolio.getTotalCosts(), 3));
+        row.insertCell().innerHTML = combination.portfolio.describe() + ' <span class="info" title="' + portfolioInfo.join('\n') + '"></span>';
 
         row.insertCell().innerText = combination.automatedInvesting ? 'ja' : 'nee';
-        row.insertCell().innerText = formatMoney(simulation.value);
-        row.insertCell().innerText = formatMoney(simulation.totalServiceFees);
-        row.insertCell().innerText = formatMoney(simulation.getTotalCosts());
-        row.insertCell().innerText = formatMoney(simulation.totalWealthTax);
-        row.insertCell().innerText = formatMoney(simulation.getNetProfit());
-        row.insertCell().innerText = percentageFormatter.format(simulation.getNetResult());
+        row.insertCell().innerText = numberFormatter.formatMoney(simulation.value);
+        row.insertCell().innerText = numberFormatter.formatMoney(simulation.totalServiceFees);
+        row.insertCell().innerText = numberFormatter.formatMoney(simulation.getTotalCosts());
+        row.insertCell().innerText = numberFormatter.formatMoney(simulation.totalWealthTax);
+        row.insertCell().innerText = numberFormatter.formatMoney(simulation.getNetProfit());
+        row.insertCell().innerText = numberFormatter.formatPercentage(simulation.getNetResult());
     });
 }
 

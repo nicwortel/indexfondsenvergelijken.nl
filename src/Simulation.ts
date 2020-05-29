@@ -1,7 +1,7 @@
 import {WealthTax} from "./WealthTax";
 import {Broker} from "./Broker";
-import {Fund} from "./Fund";
 import {Money} from "bigint-money/dist";
+import {Portfolio} from "./Portfolio";
 
 export class Simulation {
     public value: Money = new Money(0, 'EUR');
@@ -14,7 +14,7 @@ export class Simulation {
     constructor(
         private wealthTax: WealthTax,
         private broker: Broker,
-        private fund: Fund,
+        private portfolio: Portfolio,
         private initialInvestment: Money,
         private monthlyInvestment: Money,
         private expectedYearlyReturn: number
@@ -54,10 +54,10 @@ export class Simulation {
     }
 
     private runMonth(): void {
-        const growthRatio = 1 + this.getMonthlyRate(this.expectedYearlyReturn - this.fund.getTotalCosts());
+        const growthRatio = 1 + this.getMonthlyRate(this.expectedYearlyReturn - this.portfolio.getTotalCosts());
 
         this.value = this.value.multiply(growthRatio.toString());
-        this.totalFundCosts = this.totalFundCosts.add(this.value.multiply(this.getMonthlyRate(this.fund.getTotalCosts()).toString()))
+        this.totalFundCosts = this.totalFundCosts.add(this.value.multiply(this.getMonthlyRate(this.portfolio.getTotalCosts()).toString()))
 
         this.invest(this.monthlyInvestment);
     }
