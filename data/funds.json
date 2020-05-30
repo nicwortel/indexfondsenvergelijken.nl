@@ -42,5 +42,21 @@
         "totalExpenseRatio": 0.003,
         "entryFee": 0.0025,
         "dividendLeakage": 0
+    },
+    {
+        "name": "ACTIAM Verantwoord Index Aandelenfonds Wereld",
+        "symbol": "AVIAW",
+        "isin": "NL0011309349",
+        "totalExpenseRatio": 0.0008,
+        "entryFee": 0.0011,
+        "dividendLeakage": 0
+    },
+    {
+        "name": "ACTIAM Duurzaam Index Aandelenfonds Opkomende Landen",
+        "symbol": "AVIAO",
+        "isin": "NL0014332587",
+        "totalExpenseRatio": 0.0024,
+        "entryFee": 0.0015,
+        "dividendLeakage": 0
     }
 ]

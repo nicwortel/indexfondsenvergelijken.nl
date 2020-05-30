@@ -26,6 +26,7 @@ const combinationData = [
     {broker: 'DEGIRO', portfolio: [{allocation: 100, fund: 'VWRL'}], automatedInvesting: false},
     {broker: 'Binck', portfolio: [{allocation: 100, fund: 'VWRL'}], automatedInvesting: true},
     {broker: 'FitVermogen', portfolio: [{allocation: 88, fund: 'NN Enhanced'}, {allocation: 12, fund: 'NN Enhanced EM'}], automatedInvesting: true},
+    {broker: 'Binck', portfolio: [{allocation: 88, fund: 'AVIAW'}, {allocation: 12, fund: 'AVIAO'}], automatedInvesting: true}
 ]
 
 const combinations = combinationData.map(function (combination) {
