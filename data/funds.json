@@ -78,6 +78,7 @@
         "name": "BND Wereld Indexfonds - Hedged",
         "symbol": "BND Wereld Hedged",
         "isin": "NL0014120321",
+        "entryFee": 0.005,
         "totalExpenseRatio": 0.0059,
         "dividendLeakage": 0,
         "kiid": "https://www.brandnewday.nl/content/app/pdf/documentencentrum/EBI_en_FB/EBI-BND-WIF-Hedged.pdf",
@@ -87,7 +88,8 @@
         "name": "BND Emerging Markets Indexfonds",
         "symbol": "BND EM",
         "isin": "NL0014120289",
-        "totalExpenseRatio": 0.007,
+        "entryFee": 0.005,
+        "totalExpenseRatio": 0.0068,
         "dividendLeakage": 0,
         "kiid": "https://www.brandnewday.nl/content/app/pdf/documentencentrum/EBI_en_FB/EBI-BND-EM.pdf",
         "index": "MSCI Emerging Markets Index"
