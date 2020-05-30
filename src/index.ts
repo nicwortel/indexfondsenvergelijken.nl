@@ -138,13 +138,23 @@ function runSimulation(): void {
         row.insertCell().innerHTML = combination.portfolio.describe() + ' <span class="info" title="' + portfolioInfo.join('\n') + '"></span>';
 
         row.insertCell().innerText = combination.automatedInvesting ? 'ja' : 'nee';
-        row.insertCell().innerText = numberFormatter.formatMoney(simulation.value);
-        row.insertCell().innerText = numberFormatter.formatMoney(simulation.totalServiceFees);
-        row.insertCell().innerText = numberFormatter.formatMoney(simulation.getTotalCosts());
-        row.insertCell().innerText = numberFormatter.formatMoney(simulation.totalWealthTax);
-        row.insertCell().innerText = numberFormatter.formatMoney(simulation.getNetProfit());
-        row.insertCell().innerText = numberFormatter.formatPercentage(simulation.getNetResult());
+
+        insertMoneyTableCell(row, simulation.value);
+        insertMoneyTableCell(row, simulation.totalServiceFees);
+        insertMoneyTableCell(row, simulation.getTotalCosts());
+        insertMoneyTableCell(row, simulation.totalWealthTax);
+        insertMoneyTableCell(row, simulation.getNetProfit());
+
+        const netResultCell = row.insertCell();
+        netResultCell.innerText = numberFormatter.formatPercentage(simulation.getNetResult());
+        netResultCell.classList.add('text-right');
     });
+}
+
+function insertMoneyTableCell(row: HTMLTableRowElement, amount: Money): void {
+    const cell = row.insertCell();
+    cell.innerText = numberFormatter.formatMoney(amount);
+    cell.classList.add('text-right');
 }
 
 form.onchange = () => runSimulation();
