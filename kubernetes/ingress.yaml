@@ -16,7 +16,7 @@ spec:
         - www.indexfondsenvergelijken.nl
       secretName: indexfondsenvergelijken.nl
   rules:
-    - host: indexfondsenvergelijken.nl
+    - host: www.indexfondsenvergelijken.nl
       http:
         paths:
           - backend:
