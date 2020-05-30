@@ -1,4 +1,5 @@
 import {Fund} from "./Fund";
+import {Money} from "bigint-money/dist";
 
 export class Portfolio {
     constructor(public assets: { allocation: number, fund: Fund }[]) {
@@ -7,6 +8,13 @@ export class Portfolio {
         if (totalAllocation !== 100) {
             throw new Error('The total allocation of all assets should be 100%');
         }
+    }
+
+    public getEntryCosts(amount: Money): Money {
+        const costs = this.assets.map((asset) => (asset.allocation / 100) * asset.fund.entryFee);
+        const cost = costs.reduce((sum: number, current: number) => sum + current);
+
+        return amount.multiply(cost.toString());
     }
 
     public getTotalCosts(): number {

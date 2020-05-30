@@ -123,6 +123,10 @@ function runSimulation(): void {
 
         let portfolioInfo = [];
         for (let fund of combination.portfolio.assets.map((asset) => asset.fund)) {
+            if (fund.entryFee > 0) {
+                portfolioInfo.push('Instapkosten ' + fund.symbol + ': ' + numberFormatter.formatPercentage(fund.entryFee));
+            }
+
             portfolioInfo.push('Lopende kosten ' + fund.symbol + ': ' + numberFormatter.formatPercentage(fund.totalExpenseRatio));
 
             if (fund.dividendLeakage > 0) {

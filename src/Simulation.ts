@@ -77,8 +77,13 @@ export class Simulation {
         this.totalInvestment = this.totalInvestment.add(amount);
 
         const transactionCosts = this.broker.getTransactionCosts(amount);
-        this.value = this.value.add(amount.subtract(transactionCosts));
+        const investment = amount.subtract(transactionCosts);
+
+        const entryFee = this.portfolio.getEntryCosts(investment);
+
+        this.value = this.value.add(investment.subtract(entryFee));
         this.totalTransactionFees = this.totalTransactionFees.add(transactionCosts);
+        this.totalFundCosts = this.totalFundCosts.add(entryFee);
     }
 
     private registerWealthTax(): void {

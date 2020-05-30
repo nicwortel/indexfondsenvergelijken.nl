@@ -4,7 +4,8 @@ export class Fund {
         public symbol: string,
         public isin: string,
         public totalExpenseRatio: number,
-        public dividendLeakage: number
+        public dividendLeakage: number,
+        public entryFee: number
     ) {
     }
 

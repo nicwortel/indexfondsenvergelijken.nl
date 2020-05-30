@@ -9,7 +9,8 @@ export class FundRepository {
                 data.symbol,
                 data.isin,
                 data.totalExpenseRatio,
-                data.dividendLeakage
+                data.dividendLeakage,
+                data.entryFee ?? 0
             );
         })
     }
