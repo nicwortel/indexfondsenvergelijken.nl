@@ -23,7 +23,8 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: 'node_modules/bootstrap/dist/css/bootstrap.min.css', to: '' },
-                { from: 'node_modules/bootstrap-icons/icons/', to: 'icons/' },
+                { from: 'node_modules/bootstrap-icons/icons/question-circle.svg', to: 'icons/' },
+                { from: 'node_modules/bootstrap-icons/icons/info-circle.svg', to: 'icons/' },
             ],
         }),
     ],
