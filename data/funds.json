@@ -1,31 +1,38 @@
 [
     {
-        "name": "Vanguard FTSE All World ETF",
+        "name": "Vanguard FTSE All-World UCITS ETF",
         "symbol": "VWRL",
         "isin": "IE00B3RBWM25",
         "totalExpenseRatio": 0.0022,
-        "dividendLeakage": 0.003
+        "dividendLeakage": 0.003,
+        "kiid": "https://global.vanguard.com/portal/site/loadPDF?country=nl&docId=616",
+        "index": "FTSE All-World Index"
     },
     {
-        "name": "Northern Trust World Custom Index Fund",
+        "name": "Northern Trust World Custom ESG Equity Index UCITS FGR Feeder Fund",
         "symbol": "NT World",
         "isin": "NL0011225305",
         "totalExpenseRatio": 0.0015,
-        "dividendLeakage": 0
+        "dividendLeakage": 0,
+        "kiid": "https://www.northerntrust.com/documents/funds/intl/ntfgr/kiids-nl/ntfgr-world-custom-esg-equity-index-ucits-fund-class-a-kiid-nl.pdf",
+        "index": "MSCI World Custom ESG Index"
     },
     {
-        "name": "Northern Trust EM Custom ESG Eq Idx Fund",
+        "name": "Northern Trust Emerging Markets Custom ESG Equity Index UCITS FGR Fund",
         "symbol": "NT EM",
         "isin": "NL0011515424",
         "totalExpenseRatio": 0.0025,
-        "dividendLeakage": 0
+        "dividendLeakage": 0,
+        "kiid": "https://www.northerntrust.com/documents/funds/intl/ntfgr/kiids-nl/ntfgr-emerging-markets-custom-esg-equity-index-ucits-fund-class-a-kiid-nl.pdf",
+        "index": "MSCI Emerging Markets Custom ESG Index"
     },
     {
         "name": "Meesman Indexfonds Aandelen Wereldwijd Totaal",
         "symbol": "Meesman Wereldwijd Totaal",
         "isin": "NL0013689110",
         "totalExpenseRatio": 0.005,
-        "dividendLeakage": 0
+        "dividendLeakage": 0,
+        "kiid": "https://www.meesman.nl/l/library/download/urn:uuid:cbe0b46c-e25a-4bef-981a-b193a4e3efc0/ebi+miawt+2019.pdf?ext=.pdf"
     },
     {
         "name": "NN Enhanced Index Sustainable Equity Fund",
@@ -33,23 +40,29 @@
         "isin": "NL0012125736",
         "totalExpenseRatio": 0.0018,
         "entryFee": 0.0009,
-        "dividendLeakage": 0
+        "dividendLeakage": 0,
+        "kiid": "https://api.nnip.com/DocumentsApi/files/KIID_NL0012125736_NL_NL",
+        "index": "MSCI World Index"
     },
     {
-        "name": "NN Enhanced Index Sustainable Em Markets Eq Fund",
+        "name": "NN Enhanced Index Sustainable Emerging Markets Equity Fund",
         "symbol": "NN Enhanced EM",
         "isin": "NL0006311771",
         "totalExpenseRatio": 0.003,
         "entryFee": 0.0025,
-        "dividendLeakage": 0
+        "dividendLeakage": 0,
+        "kiid": "https://api.nnip.com/DocumentsApi/files/KIID_NL0006311771_NL_NL",
+        "index": "MSCI Emerging Markets Index"
     },
     {
-        "name": "ACTIAM Verantwoord Index Aandelenfonds Wereld",
+        "name": "ACTIAM Duurzaam Index Aandelenfonds Wereld",
         "symbol": "AVIAW",
         "isin": "NL0011309349",
         "totalExpenseRatio": 0.0008,
         "entryFee": 0.0011,
-        "dividendLeakage": 0
+        "dividendLeakage": 0,
+        "kiid": "https://www.actiam.com/49ae5a/siteassets/6_fondsen/actiam-retail/ebi/ebi_actiam_duurzaam_index_aandelenfonds_wereld.pdf",
+        "index": "MSCI World Index"
     },
     {
         "name": "ACTIAM Duurzaam Index Aandelenfonds Opkomende Landen",
@@ -57,20 +70,26 @@
         "isin": "NL0014332587",
         "totalExpenseRatio": 0.0024,
         "entryFee": 0.0015,
-        "dividendLeakage": 0
+        "dividendLeakage": 0,
+        "kiid": "https://www.actiam.com/49b032/siteassets/6_fondsen/actiam-retail/ebi/ebi-actiam-duurzaam-index-aandelenfonds-opkomende-landen.pdf",
+        "index": "MSCI Emerging Markets Index"
     },
     {
-        "name": "BND Wereld Indexfonds Hedged",
+        "name": "BND Wereld Indexfonds - Hedged",
         "symbol": "BND Wereld Hedged",
         "isin": "NL0014120321",
         "totalExpenseRatio": 0.0059,
-        "dividendLeakage": 0
+        "dividendLeakage": 0,
+        "kiid": "https://www.brandnewday.nl/content/app/pdf/documentencentrum/EBI_en_FB/EBI-BND-WIF-Hedged.pdf",
+        "index": "FTSE Developed Index"
     },
     {
         "name": "BND Emerging Markets Indexfonds",
         "symbol": "BND EM",
         "isin": "NL0014120289",
         "totalExpenseRatio": 0.007,
-        "dividendLeakage": 0
+        "dividendLeakage": 0,
+        "kiid": "https://www.brandnewday.nl/content/app/pdf/documentencentrum/EBI_en_FB/EBI-BND-EM.pdf",
+        "index": "MSCI Emerging Markets Index"
     }
 ]
