@@ -15,7 +15,7 @@ const form: HTMLFormElement = <HTMLFormElement>document.getElementById('form');
 function getInputValue(elementId: string): number {
     const field: HTMLInputElement = <HTMLInputElement>document.getElementById(elementId);
 
-    return parseInt(field.value);
+    return parseFloat(field.value);
 }
 
 const combinationData = [
