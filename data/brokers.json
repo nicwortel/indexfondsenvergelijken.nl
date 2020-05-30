@@ -57,5 +57,12 @@
             {"upperLimit": 300000, "fee": 0.0018 }
         ],
         "costOverview": "https://www.binck.nl/fondsbeleggen#tarieven"
+    },
+    {
+        "name": "FitVermogen",
+        "product": "",
+        "baseFee": 0,
+        "serviceFee": [],
+        "costOverview": "https://www.fitvermogen.nl/vragen"
     }
 ]

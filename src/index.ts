@@ -25,6 +25,7 @@ const combinationData = [
     {broker: 'Meesman', portfolio: [{allocation: 100, fund: 'Meesman Wereldwijd Totaal'}], automatedInvesting: true},
     {broker: 'DEGIRO', portfolio: [{allocation: 100, fund: 'VWRL'}], automatedInvesting: false},
     {broker: 'Binck', portfolio: [{allocation: 100, fund: 'VWRL'}], automatedInvesting: true},
+    {broker: 'FitVermogen', portfolio: [{allocation: 88, fund: 'NN Enhanced'}, {allocation: 12, fund: 'NN Enhanced EM'}], automatedInvesting: true},
 ]
 
 const combinations = combinationData.map(function (combination) {

@@ -26,5 +26,19 @@
         "isin": "NL0013689110",
         "totalExpenseRatio": 0.005,
         "dividendLeakage": 0
+    },
+    {
+        "name": "NN Enhanced Index Sustainable Equity Fund",
+        "symbol": "NN Enhanced",
+        "isin": "NL0012125736",
+        "totalExpenseRatio": 0.0018,
+        "dividendLeakage": 0
+    },
+    {
+        "name": "NN Enhanced Index Sustainable Em Markets Eq Fund",
+        "symbol": "NN Enhanced EM",
+        "isin": "NL0006311771",
+        "totalExpenseRatio": 0.003,
+        "dividendLeakage": 0
     }
 ]
