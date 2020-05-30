@@ -7,8 +7,8 @@
 }
 
 .help {
-  background-image: url('../node_modules/bootstrap-icons/icons/question-circle.svg');
+  background-image: url('icons/question-circle.svg');
 }
 .info {
-  background-image: url('../node_modules/bootstrap-icons/icons/info-circle.svg');
+  background-image: url('icons/info-circle.svg');
 }
