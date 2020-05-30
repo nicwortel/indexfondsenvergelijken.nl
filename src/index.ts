@@ -26,7 +26,8 @@ const combinationData = [
     {broker: 'DEGIRO', portfolio: [{allocation: 100, fund: 'VWRL'}], automatedInvesting: false},
     {broker: 'Binck', portfolio: [{allocation: 100, fund: 'VWRL'}], automatedInvesting: true},
     {broker: 'FitVermogen', portfolio: [{allocation: 88, fund: 'NN Enhanced'}, {allocation: 12, fund: 'NN Enhanced EM'}], automatedInvesting: true},
-    {broker: 'Binck', portfolio: [{allocation: 88, fund: 'AVIAW'}, {allocation: 12, fund: 'AVIAO'}], automatedInvesting: true}
+    {broker: 'Binck', portfolio: [{allocation: 88, fund: 'AVIAW'}, {allocation: 12, fund: 'AVIAO'}], automatedInvesting: true},
+    {broker: 'Brand New Day', portfolio: [{allocation: 88, fund: 'BND Wereld Hedged'}, {allocation: 12, fund: 'BND EM'}], automatedInvesting: true}
 ]
 
 const combinations = combinationData.map(function (combination) {
@@ -102,7 +103,7 @@ function runSimulation(): void {
             let line = 'Servicekosten';
             if (tier.upperLimit) {
                 line += ' t/m ' + numberFormatter.formatMoneyFromNumber(tier.upperLimit, 'EUR', 0);
-            } else {
+            } else if (combination.broker.serviceFee.tiers.length > 1) {
                 line += ' daarboven';
             }
             line += ': ' + numberFormatter.formatPercentage(tier.fee);

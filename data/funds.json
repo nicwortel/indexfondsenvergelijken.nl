@@ -58,5 +58,19 @@
         "totalExpenseRatio": 0.0024,
         "entryFee": 0.0015,
         "dividendLeakage": 0
+    },
+    {
+        "name": "BND Wereld Indexfonds Hedged",
+        "symbol": "BND Wereld Hedged",
+        "isin": "NL0014120321",
+        "totalExpenseRatio": 0.0059,
+        "dividendLeakage": 0
+    },
+    {
+        "name": "BND Emerging Markets Indexfonds",
+        "symbol": "BND EM",
+        "isin": "NL0014120289",
+        "totalExpenseRatio": 0.007,
+        "dividendLeakage": 0
     }
 ]

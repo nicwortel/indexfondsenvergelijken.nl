@@ -64,5 +64,15 @@
         "baseFee": 0,
         "serviceFee": [],
         "costOverview": "https://www.fitvermogen.nl/vragen"
+    },
+    {
+        "name": "Brand New Day",
+        "product": "Beleggingsrekening",
+        "baseFee": 0,
+        "serviceFee": [
+            {"upperLimit": null, "fee": 0.0059}
+        ],
+        "transactionFee": 0.005,
+        "costOverview": "https://new.brandnewday.nl/particulier/kosten-box3/"
     }
 ]
