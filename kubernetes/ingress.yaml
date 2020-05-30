@@ -1,0 +1,24 @@
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+
+metadata:
+  name: index-fund-comparison
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/tls-acme: "true"
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+
+spec:
+  tls:
+    - hosts:
+        - indexfondsenvergelijken.nl
+        - www.indexfondsenvergelijken.nl
+      secretName: indexfondsenvergelijken.nl
+  rules:
+    - host: indexfondsenvergelijken.nl
+      http:
+        paths:
+          - backend:
+              serviceName: index-fund-comparison
+              servicePort: 80
