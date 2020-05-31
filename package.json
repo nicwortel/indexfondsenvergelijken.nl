@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bootstrap": "^4.5.0",
+    "@types/jquery": "^3.3.38",
     "copy-webpack-plugin": "^6.0.1",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.3",
@@ -19,6 +21,7 @@
   "dependencies": {
     "bigint-money": "^1.1.1",
     "bootstrap": "^4.5.0",
-    "bootstrap-icons": "^1.0.0-alpha4"
+    "bootstrap-icons": "^1.0.0-alpha4",
+    "jquery": "^3.5.1"
   }
 }

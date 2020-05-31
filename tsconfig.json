@@ -6,6 +6,7 @@
         "target": "es6",
         "esModuleInterop": true,
         "jsx": "react",
-        "allowJs": true
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true
     }
 }

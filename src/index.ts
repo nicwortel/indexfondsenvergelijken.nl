@@ -1,7 +1,10 @@
 import {Money} from "bigint-money/dist";
+import 'bootstrap/js/src/popover';
+import $ from 'jquery';
 import combinationData from "../data/combinations.json";
 import {BrokerRepository} from "./BrokerRepository";
 import {Combination} from "./Combination";
+import {Fund} from "./Fund";
 import {FundRepository} from "./FundRepository";
 import {NumberFormatter} from "./NumberFormatter";
 import {Portfolio} from "./Portfolio";
@@ -113,20 +116,30 @@ function runSimulation(): void {
 
         row.insertCell().innerHTML = [combination.broker.name, combination.broker.product].join(' ').trim() + ' ' + brokerInfoTooltip + '</span>';
 
-        let portfolioInfo = [];
-        for (let fund of combination.portfolio.assets.map((asset) => asset.fund)) {
-            if (fund.entryFee > 0) {
-                portfolioInfo.push('Instapkosten ' + fund.symbol + ': ' + numberFormatter.formatPercentage(fund.entryFee));
+        let funds = combination.portfolio.assets.map(function (asset: { allocation: number, fund: Fund }): string {
+            let popoverContent = [];
+
+            if (asset.fund.index) {
+                popoverContent.push('Index: ' + asset.fund.index);
+            }
+            popoverContent.push('ISIN: ' + asset.fund.isin);
+            if (asset.fund.entryFee > 0) {
+                popoverContent.push('Instapkosten: ' + numberFormatter.formatPercentage(asset.fund.entryFee));
+            }
+            popoverContent.push('Lopende kosten: ' + numberFormatter.formatPercentage(asset.fund.totalExpenseRatio));
+            if (asset.fund.dividendLeakage > 0) {
+                popoverContent.push('Dividendlek: ' + numberFormatter.formatPercentage(asset.fund.dividendLeakage));
+                popoverContent.push('Totaal jaarlijkse kosten: ' + numberFormatter.formatPercentage(asset.fund.totalExpenseRatio + asset.fund.dividendLeakage));
+            }
+            if (asset.fund.kiid) {
+                popoverContent.push('<a href=' + asset.fund.kiid + ' target=_blank>Essentiële Beleggersinformatie</a>');
             }
 
-            portfolioInfo.push('Lopende kosten ' + fund.symbol + ': ' + numberFormatter.formatPercentage(fund.totalExpenseRatio));
+            return asset.allocation + '% <a title="' + asset.fund.name + '" data-toggle="popover" data-content="' + popoverContent.join('<br>') + '" tabindex="1">' + asset.fund.symbol + '</a>';
+        });
 
-            if (fund.dividendLeakage > 0) {
-                portfolioInfo.push('Dividendlek ' + fund.symbol + ': ' + numberFormatter.formatPercentage(fund.dividendLeakage));
-            }
-        }
-        portfolioInfo.push('Portfoliokosten: ' + numberFormatter.formatPercentage(combination.portfolio.getTotalCosts(), 3));
-        row.insertCell().innerHTML = combination.portfolio.describe() + ' <span class="info" title="' + portfolioInfo.join('\n') + '"></span>';
+        row.insertCell().innerHTML = funds.join(', ');
+        // row.insertCell().innerHTML = combination.portfolio.describe() + ' <span class="info" title="' + portfolioInfo.join('\n') + '"></span>';
 
         row.insertCell().innerText = combination.automatedInvesting ? 'ja' : 'nee';
 
@@ -139,6 +152,18 @@ function runSimulation(): void {
         const netResultCell = row.insertCell();
         netResultCell.innerText = numberFormatter.formatPercentage(simulation.getNetResult());
         netResultCell.classList.add('text-right');
+    });
+
+
+    $('[data-toggle="popover"]').popover({
+        placement: 'top',
+        html: true
+    });
+
+    $('body').on('click', function (e) {
+        if ($(e.target).data('toggle') !== 'popover' && $(e.target).parents('.popover').length === 0) {
+            $('[data-toggle="popover"]').popover('hide');
+        }
     });
 }
 

@@ -12,3 +12,12 @@
 .info {
   background-image: url('icons/info-circle.svg');
 }
+
+a[data-toggle="popover"] {
+  cursor: pointer;
+  border-bottom: 1px dotted;
+}
+
+.popover {
+  max-width: 450px;
+}
