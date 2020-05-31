@@ -1,10 +1,12 @@
-import {BrokerRepository} from "./BrokerRepository";
-import {FundRepository} from "./FundRepository";
 import {Money} from "bigint-money/dist";
+import combinationData from "../data/combinations.json";
+import {BrokerRepository} from "./BrokerRepository";
+import {Combination} from "./Combination";
+import {FundRepository} from "./FundRepository";
+import {NumberFormatter} from "./NumberFormatter";
+import {Portfolio} from "./Portfolio";
 import {Simulation} from "./Simulation";
 import {WealthTax} from "./WealthTax";
-import {Portfolio} from "./Portfolio";
-import {NumberFormatter} from "./NumberFormatter";
 
 const brokerRepository = new BrokerRepository();
 const fundRepository = new FundRepository();
@@ -18,20 +20,7 @@ function getInputValue(elementId: string): number {
     return parseFloat(field.value);
 }
 
-const combinationData = [
-    {broker: 'ING', portfolio: [{allocation: 88, fund: 'NT World'}, {allocation: 12, fund: 'NT EM'}], automatedInvesting: true},
-    {broker: 'ABN Amro', portfolio: [{allocation: 88, fund: 'NT World'}, {allocation: 12, fund: 'NT EM'}], automatedInvesting: true},
-    {broker: 'Rabobank', portfolio: [{allocation: 88, fund: 'NT World'}, {allocation: 12, fund: 'NT EM'}], automatedInvesting: true},
-    {broker: 'Meesman', portfolio: [{allocation: 100, fund: 'Meesman Wereldwijd Totaal'}], automatedInvesting: true},
-    {broker: 'DEGIRO', portfolio: [{allocation: 100, fund: 'VWRL'}], automatedInvesting: false},
-    {broker: 'DEGIRO', portfolio: [{allocation: 88, fund: 'IWDA'}, {allocation: 12, fund: 'IEMM'}], automatedInvesting: false},
-    {broker: 'Binck', portfolio: [{allocation: 100, fund: 'VWRL'}], automatedInvesting: true},
-    {broker: 'FitVermogen', portfolio: [{allocation: 88, fund: 'NN Enhanced'}, {allocation: 12, fund: 'NN Enhanced EM'}], automatedInvesting: true},
-    {broker: 'Binck', portfolio: [{allocation: 88, fund: 'AVIAW'}, {allocation: 12, fund: 'AVIAO'}], automatedInvesting: true},
-    {broker: 'Brand New Day', portfolio: [{allocation: 88, fund: 'BND Wereld Hedged'}, {allocation: 12, fund: 'BND EM'}], automatedInvesting: true}
-]
-
-const combinations = combinationData.map(function (combination) {
+const combinations: Combination[] = combinationData.map(function (combination: { broker: string, portfolio: { allocation: number, fund: string }[], automatedInvesting: boolean }): Combination {
     const broker = brokerRepository.getBroker(combination.broker);
     const funds = combination.portfolio.map(function (portfolio) {
         return {allocation: portfolio.allocation, fund: fundRepository.getFund(portfolio.fund)};
