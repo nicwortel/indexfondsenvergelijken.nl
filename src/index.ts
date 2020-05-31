@@ -24,6 +24,7 @@ const combinationData = [
     {broker: 'Rabobank', portfolio: [{allocation: 88, fund: 'NT World'}, {allocation: 12, fund: 'NT EM'}], automatedInvesting: true},
     {broker: 'Meesman', portfolio: [{allocation: 100, fund: 'Meesman Wereldwijd Totaal'}], automatedInvesting: true},
     {broker: 'DEGIRO', portfolio: [{allocation: 100, fund: 'VWRL'}], automatedInvesting: false},
+    {broker: 'DEGIRO', portfolio: [{allocation: 88, fund: 'IWDA'}, {allocation: 12, fund: 'IEMM'}], automatedInvesting: false},
     {broker: 'Binck', portfolio: [{allocation: 100, fund: 'VWRL'}], automatedInvesting: true},
     {broker: 'FitVermogen', portfolio: [{allocation: 88, fund: 'NN Enhanced'}, {allocation: 12, fund: 'NN Enhanced EM'}], automatedInvesting: true},
     {broker: 'Binck', portfolio: [{allocation: 88, fund: 'AVIAW'}, {allocation: 12, fund: 'AVIAO'}], automatedInvesting: true},

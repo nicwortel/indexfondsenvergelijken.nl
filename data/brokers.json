@@ -45,7 +45,7 @@
     },
     {
         "name": "DEGIRO",
-        "product": "basic",
+        "product": "Basic - Kernselectie",
         "baseFee": 0,
         "costOverview": "https://www.degiro.nl/data/pdf/Tarievenoverzicht.pdf"
     },

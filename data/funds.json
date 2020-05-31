@@ -93,5 +93,23 @@
         "dividendLeakage": 0,
         "kiid": "https://www.brandnewday.nl/content/app/pdf/documentencentrum/EBI_en_FB/EBI-BND-EM.pdf",
         "index": "MSCI Emerging Markets Index"
+    },
+    {
+        "name": "iShares Core MSCI World UCITS ETF",
+        "symbol": "IWDA",
+        "isin": "IE00B4L5Y983",
+        "totalExpenseRatio": 0.002,
+        "dividendLeakage": 0.003,
+        "kiid": "https://www.ishares.com/nl/particuliere-belegger/nl/literature/kiid/kiid-ishares-core-msci-world-ucits-etf-nl-ie00b4l5y983-nl.pdf",
+        "index": "MSCI World Index"
+    },
+    {
+        "name": "iShares MSCI EM UCITS ETF",
+        "symbol": "IEMM",
+        "isin": "IE00B0M63177",
+        "totalExpenseRatio": 0.0018,
+        "dividendLeakage": 0.003,
+        "kiid": "https://www.ishares.com/nl/particuliere-belegger/nl/literature/kiid/kiid-ishares-msci-emerging-markets-ucits-etf-dist-nl-ie00b0m63177-nl.pdf",
+        "index": "MSCI Emerging Markets Index"
     }
 ]
