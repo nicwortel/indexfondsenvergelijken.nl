@@ -44,12 +44,17 @@ function createExternalLink(url: string, label: string): string {
 }
 
 function runSimulation(): void {
-    const initialInvestment = new Money(getInputValue('initial'), 'EUR');
     const monthlyInvestment = new Money(getInputValue('monthly'), 'EUR');
+    let initialInvestment = monthlyInvestment;
+
+    const differentInitialInvestmentElement: HTMLInputElement = <HTMLInputElement>document.getElementById('differentInitialInvestment');
+    if (differentInitialInvestmentElement.checked) {
+        initialInvestment = new Money(getInputValue('initial'), 'EUR');
+    }
     const years = getInputValue('years');
     const expectedYearlyReturn = getInputValue('return') / 100;
 
-    const totalInvestment = initialInvestment.add(monthlyInvestment.multiply(12 * years));
+    const totalInvestment = initialInvestment.add(monthlyInvestment.multiply(12 * years - 1));
     document.getElementById('totalInvestment').innerText = numberFormatter.formatMoney(totalInvestment);
     for (let element of document.getElementsByClassName('years')) {
         element.innerHTML = years.toString();
@@ -173,5 +178,13 @@ function insertMoneyTableCell(row: HTMLTableRowElement, amount: Money): void {
     cell.classList.add('text-right');
 }
 
-form.onchange = () => runSimulation();
-window.onload = () => runSimulation();
+form.onchange = function () {
+    runSimulation();
+}
+
+window.onload = function () {
+    $('#differentInitialInvestment').on('change', function () {
+        $('#initial').prop('disabled', !$(this).prop('checked'));
+    });
+    runSimulation();
+};

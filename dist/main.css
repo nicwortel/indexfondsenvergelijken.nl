@@ -21,3 +21,7 @@ a[data-toggle="popover"] {
 .popover {
   max-width: 450px;
 }
+
+input:disabled {
+  color: gray;
+}

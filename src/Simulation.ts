@@ -11,6 +11,8 @@ export class Simulation {
     public totalServiceFees: Money = new Money(0, 'EUR');
     public totalWealthTax: Money = new Money(0, 'EUR');
 
+    private monthsPassed = 0;
+
     constructor(
         private wealthTax: WealthTax,
         private broker: Broker,
@@ -19,7 +21,6 @@ export class Simulation {
         private monthlyInvestment: Money,
         private expectedYearlyReturn: number
     ) {
-        this.invest(this.initialInvestment);
     }
 
     public run(years: number): void {
@@ -65,12 +66,14 @@ export class Simulation {
     }
 
     private runMonth(): void {
+        this.invest(this.monthsPassed === 0 ? this.initialInvestment : this.monthlyInvestment);
+
         const growthRatio = 1 + this.getMonthlyRate(this.expectedYearlyReturn - this.portfolio.getTotalCosts());
 
         this.value = this.value.multiply(growthRatio.toString());
         this.totalFundCosts = this.totalFundCosts.add(this.value.multiply(this.getMonthlyRate(this.portfolio.getTotalCosts()).toString()))
 
-        this.invest(this.monthlyInvestment);
+        this.monthsPassed++;
     }
 
     private invest(amount: Money): void {

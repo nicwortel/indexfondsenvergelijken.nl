@@ -17,23 +17,28 @@
             <form id="form">
                 <div class="form-row">
                     <div class="form-group col-sm-6 col-lg-3">
-                        <label for="initial">Eerste inleg</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">€</span>
-                            </div>
-                            <input type="number" class="form-control" id="initial" value="0">
-                        </div>
-                    </div>
-
-                    <div class="form-group col-sm-6 col-lg-3">
                         <label for="monthly">Maandelijkse inleg</label> <span class="help"
                         title="Deze berekening gaat ervan uit dat je elke maand aan het begin van de maand dit bedrag volledig inlegt. Doordat je bij ETF's alleen hele ETF's kunt aankopen kun je in de praktijk niet altijd het hele bedrag beleggen, maar daar houdt deze simulatie geen rekening mee."></span>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">€</span>
                             </div>
-                            <input type="number" class="form-control" id="monthly" value="500">
+                            <input type="number" class="form-control" id="monthly" value="500" min="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-6 col-lg-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="differentInitialInvestment"> <label
+                            class="pl-1" for="differentInitialInvestment">Leg de eerste maand een ander
+                            bedrag in:</label>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">€</span>
+                            </div>
+                            <input type="number" class="form-control" id="initial" value="500" min="1" disabled>
                         </div>
                     </div>
 
@@ -50,10 +55,11 @@
 
                     <div class="form-group col-sm-6 col-lg-3">
                         <label for="years">Aantal jaren</label> <input type="number" class="form-control" id="years"
-                        min="0"
+                        min="1"
                         max="100" value="20">
                     </div>
                 </div>
+
             </form>
 
             <h2>Verwachte resultaat</h2>
