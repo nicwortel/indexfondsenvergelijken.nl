@@ -143,8 +143,7 @@ function runSimulation(): void {
             return asset.allocation + '% <a title="' + asset.fund.name + '" data-toggle="popover" data-content="' + popoverContent.join('<br>') + '" tabindex="1">' + asset.fund.symbol + '</a>';
         });
 
-        row.insertCell().innerHTML = funds.join(', ');
-        // row.insertCell().innerHTML = combination.portfolio.describe() + ' <span class="info" title="' + portfolioInfo.join('\n') + '"></span>';
+        row.insertCell().innerHTML = funds.join(', ') + ' <span class="info" title="Totaal lopende kosten portefeuille: ' + numberFormatter.formatPercentage(combination.portfolio.getTotalCosts(), 3) + '"></span>';
 
         row.insertCell().innerText = combination.automatedInvesting ? 'ja' : 'nee';
 
@@ -158,7 +157,6 @@ function runSimulation(): void {
         netResultCell.innerText = numberFormatter.formatPercentage(simulation.getNetResult());
         netResultCell.classList.add('text-right');
     });
-
 
     $('[data-toggle="popover"]').popover({
         placement: 'top',
