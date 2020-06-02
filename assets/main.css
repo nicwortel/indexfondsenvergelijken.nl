@@ -25,3 +25,7 @@ a[data-toggle="popover"] {
 input:disabled {
   color: gray;
 }
+
+label[for] {
+  cursor: pointer;
+}
