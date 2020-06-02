@@ -108,6 +108,18 @@ function runSimulation(): void {
             brokerInfo.push(line);
         }
 
+        if (combination.broker.serviceFeeCalculation) {
+            let serviceFeeCalculation = 'Berekening servicekosten op basis van: ';
+            if (combination.broker.serviceFeeCalculation === 'averageEndOfMonth') {
+                serviceFeeCalculation += ' gemiddelde van belegd vermogen aan het eind van elke maand';
+            } else if (combination.broker.serviceFeeCalculation === 'endOfQuarter') {
+                serviceFeeCalculation += ' belegd vermogen aan het eind van het kwartaal';
+            } else if (combination.broker.serviceFeeCalculation === 'averageOfQuarter') {
+                serviceFeeCalculation += ' gemiddelde van het belegd vermogen aan het begin en eind van het kwartaal';
+            }
+            brokerInfo.push(serviceFeeCalculation);
+        }
+
         if (combination.broker.maximumServiceFee) {
             brokerInfo.push('Maximum servicekosten: ' + numberFormatter.formatMoney(combination.broker.maximumServiceFee) + ' per kwartaal');
         }

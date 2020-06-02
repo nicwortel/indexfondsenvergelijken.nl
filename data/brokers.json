@@ -8,6 +8,7 @@
             {"upperLimit": 500000, "fee": 0.0012},
             {"upperLimit": null, "fee": 0.0006}
         ],
+        "serviceFeeCalculation": "averageEndOfMonth",
         "transactionFee": 0,
         "costOverview": "https://www.ing.nl/particulier/beleggen/beginnen-met-beleggen/tarieven/tarieven-zelf-op-de-beurs.html"
     },
@@ -20,6 +21,7 @@
             {"upperLimit": 400000, "fee": 0.0012},
             {"upperLimit": null, "fee": 0.0006}
         ],
+        "serviceFeeCalculation": "endOfQuarter",
         "transactionFee": 0,
         "costOverview": "https://www.abnamro.nl/nl/prive/beleggen/beleggingsvormen/zelf-beleggen-basis/index.html"
     },
@@ -33,6 +35,7 @@
             {"upperLimit": 100000, "fee": 0.0024},
             {"upperLimit": null, "fee": 0.0012}
         ],
+        "serviceFeeCalculation": "averageOfQuarter",
         "transactionFee": 0.001,
         "costOverview": "https://www.rabobank.nl/images/tarieven-beleggen-bij-de-rabobank_29409753.pdf"
     },
@@ -56,6 +59,7 @@
         "serviceFee": [
             {"upperLimit": 300000, "fee": 0.0018 }
         ],
+        "serviceFeeCalculation": "averageEndOfMonth",
         "costOverview": "https://www.binck.nl/fondsbeleggen#tarieven"
     },
     {

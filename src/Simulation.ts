@@ -55,14 +55,20 @@ export class Simulation {
     private runQuarter(): void {
         const investedCapitalAtStart = this.value;
 
+        let combinedEndOfMonthValue = new Money(0, 'EUR');
         for (let i = 0; i < 3; i++) {
             this.runMonth();
+            combinedEndOfMonthValue = combinedEndOfMonthValue.add(this.value);
         }
 
-        const investedCapitalAtEnd = this.value;
-        const averageInvestedCapital = investedCapitalAtStart.add(investedCapitalAtEnd).divide(2);
-
-        this.addQuarterlyBrokerServiceFees(averageInvestedCapital);
+        if (this.broker.serviceFeeCalculation === 'averageEndOfMonth') {
+            this.addQuarterlyBrokerServiceFees(combinedEndOfMonthValue.divide(3));
+        } else if (this.broker.serviceFeeCalculation === 'averageOfQuarter') {
+            const averageInvestedCapital = investedCapitalAtStart.add(this.value).divide(2);
+            this.addQuarterlyBrokerServiceFees(averageInvestedCapital);
+        } else if (this.broker.serviceFeeCalculation === 'endOfQuarter') {
+            this.addQuarterlyBrokerServiceFees(this.value);
+        }
     }
 
     private runMonth(): void {

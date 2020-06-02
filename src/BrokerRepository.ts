@@ -17,6 +17,7 @@ export class BrokerRepository {
                 data.product,
                 new Money(data.baseFee.toString(), 'EUR'),
                 serviceFee,
+                data.serviceFeeCalculation,
                 data.transactionFee ?? 0,
                 data.costOverview,
                 data.minimumServiceFee ? new Money(data.minimumServiceFee, 'EUR') : null,
