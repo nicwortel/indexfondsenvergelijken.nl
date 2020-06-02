@@ -140,6 +140,7 @@ function runSimulation(): void {
                 popoverContent.push('Index: ' + asset.fund.index);
             }
             popoverContent.push('ISIN: ' + asset.fund.isin);
+            popoverContent.push('Aantal aandelen: ' + asset.fund.shares);
             if (asset.fund.entryFee > 0) {
                 popoverContent.push('Instapkosten: ' + numberFormatter.formatPercentage(asset.fund.entryFee));
             }
@@ -148,14 +149,24 @@ function runSimulation(): void {
                 popoverContent.push('Dividendlek: ' + numberFormatter.formatPercentage(asset.fund.dividendLeakage));
                 popoverContent.push('Totaal jaarlijkse kosten: ' + numberFormatter.formatPercentage(asset.fund.totalExpenseRatio + asset.fund.dividendLeakage));
             }
+            let links = [];
+            if (asset.fund.factsheet) {
+                links.push('<a href=' + asset.fund.factsheet + ' target=_blank>Factsheet</a>');
+            }
             if (asset.fund.kiid) {
-                popoverContent.push('<a href=' + asset.fund.kiid + ' target=_blank>Essentiële Beleggersinformatie</a>');
+                links.push('<a href=' + asset.fund.kiid + ' target=_blank>Essentiële Beleggersinformatie</a>');
+            }
+            if (links.length > 0) {
+                popoverContent.push(links.join(' | '));
             }
 
             return asset.allocation + '% <a title="' + asset.fund.name + '" data-toggle="popover" data-content="' + popoverContent.join('<br>') + '" tabindex="1">' + asset.fund.symbol + '</a>';
         });
 
         row.insertCell().innerHTML = funds.join(', ') + ' <span class="info" title="Totaal lopende kosten portefeuille: ' + numberFormatter.formatPercentage(combination.portfolio.getTotalCosts(), 3) + '"></span>';
+
+        const shares = combination.portfolio.assets.reduce((sum: number, current) => sum + current.fund.shares, 0);
+        row.insertCell().innerText = shares.toString();
 
         row.insertCell().innerText = combination.automatedInvesting ? 'ja' : 'nee';
 

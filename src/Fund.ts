@@ -7,7 +7,9 @@ export class Fund {
         public dividendLeakage: number,
         public entryFee: number,
         public index: string,
-        public kiid: string
+        public kiid: string,
+        public factsheet: string,
+        public shares: number
     ) {
     }
 
