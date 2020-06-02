@@ -160,8 +160,19 @@ function runSimulation(): void {
         row.insertCell().innerText = combination.automatedInvesting ? 'ja' : 'nee';
 
         insertMoneyTableCell(row, simulation.value);
-        insertMoneyTableCell(row, simulation.totalServiceFees);
-        insertMoneyTableCell(row, simulation.getTotalCosts());
+
+        const costsPopover = [
+            '<b>Kosten die van de waarde van je beleggingen zijn afgehaald:</b>',
+            'Fondskosten: ' + numberFormatter.formatMoney(simulation.totalFundCosts) + ' (TER, dividendlek en instapkosten)',
+            'Transactiekosten: ' + numberFormatter.formatMoney(simulation.totalTransactionFees),
+            '',
+            '<b>Kosten die apart in rekening zijn gebracht:</b>',
+            'Servicekosten: ' + numberFormatter.formatMoney(simulation.totalServiceFees),
+        ].join('<br/>');
+        const costsCell = row.insertCell();
+        costsCell.classList.add('text-right');
+        costsCell.innerHTML = '<a data-toggle="popover" data-content="' + costsPopover + '" tabindex=1>' + numberFormatter.formatMoney(simulation.getTotalCosts()) + '</a>';
+
         insertMoneyTableCell(row, simulation.totalWealthTax);
         insertMoneyTableCell(row, simulation.getNetProfit());
 
