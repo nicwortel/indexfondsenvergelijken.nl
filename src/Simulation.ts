@@ -19,7 +19,8 @@ export class Simulation {
         private portfolio: Portfolio,
         private initialInvestment: Money,
         private monthlyInvestment: Money,
-        private expectedYearlyReturn: number
+        private expectedYearlyReturn: number,
+        private subtractServiceFeesFromInvestments: boolean
     ) {
     }
 
@@ -34,6 +35,10 @@ export class Simulation {
     }
 
     public getNetProfit(): Money {
+        if (this.subtractServiceFeesFromInvestments) {
+            return this.value.subtract(this.totalInvestment);
+        }
+
         return this.value
             .subtract(this.totalInvestment)
             .subtract(this.totalServiceFees);
@@ -99,7 +104,13 @@ export class Simulation {
     }
 
     private addQuarterlyBrokerServiceFees(averageInvestedCapital: Money): void {
-        this.totalServiceFees = this.totalServiceFees.add(this.broker.getQuarterlyCosts(averageInvestedCapital));
+        const serviceFee = this.broker.getQuarterlyCosts(averageInvestedCapital);
+
+        if (this.subtractServiceFeesFromInvestments) {
+            this.value = this.value.subtract(serviceFee);
+        }
+
+        this.totalServiceFees = this.totalServiceFees.add(serviceFee);
     }
 
     private getMonthlyRate(yearlyRate: number): number {

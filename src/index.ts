@@ -64,6 +64,8 @@ function runSimulation(): void {
     const tableBody = resultsTable.getElementsByTagName('tbody')[0];
     tableBody.innerHTML = '';
 
+    const subtractServiceFeesFromInvestmentElement: HTMLInputElement = <HTMLInputElement> document.getElementById('subtractServiceFeesFromInvestment');
+
     let results = combinations.map(function (combination) {
         const simulation = new Simulation(
             new WealthTax(),
@@ -71,7 +73,8 @@ function runSimulation(): void {
             combination.portfolio,
             initialInvestment,
             monthlyInvestment,
-            expectedYearlyReturn
+            expectedYearlyReturn,
+            subtractServiceFeesFromInvestmentElement.checked
         );
 
         simulation.run(years);
