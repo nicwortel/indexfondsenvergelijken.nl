@@ -184,7 +184,6 @@ function runSimulation(): void {
         costsCell.classList.add('text-right');
         costsCell.innerHTML = '<a data-toggle="popover" data-content="' + costsPopover + '" tabindex=1>' + numberFormatter.formatMoney(simulation.getTotalCosts()) + '</a>';
 
-        insertMoneyTableCell(row, simulation.totalWealthTax);
         insertMoneyTableCell(row, simulation.getNetProfit());
 
         const netResultCell = row.insertCell();

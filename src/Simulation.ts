@@ -36,8 +36,7 @@ export class Simulation {
     public getNetProfit(): Money {
         return this.value
             .subtract(this.totalInvestment)
-            .subtract(this.totalServiceFees)
-            .subtract(this.totalWealthTax);
+            .subtract(this.totalServiceFees);
     }
 
     public getNetResult(): number {
