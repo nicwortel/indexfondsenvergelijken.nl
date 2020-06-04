@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
         - name: index-fund-comparison
-          image: docker.pkg.github.com/nicwortel/index-fund-comparison/web:latest
+          image: docker.pkg.github.com/nicwortel/indexfondsenvergelijken.nl/web:latest
       imagePullSecrets:
         - name: github-registry
