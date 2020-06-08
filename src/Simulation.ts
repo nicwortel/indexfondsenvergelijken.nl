@@ -1,7 +1,7 @@
-import {WealthTax} from "./WealthTax";
-import {Broker} from "./Broker";
 import {Money} from "bigint-money/dist";
+import {Broker} from "./Broker";
 import {Portfolio} from "./Portfolio";
+import {WealthTax} from "./WealthTax";
 
 export class Simulation {
     public value: Money = new Money(0, 'EUR');
