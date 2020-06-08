@@ -1,3 +1,4 @@
+import {Fee} from "./Pricing/Fee";
 import {TieredFee} from "./TieredFee";
 import {Money} from "bigint-money/dist";
 
@@ -8,7 +9,7 @@ export class Broker {
         public baseFee: Money,
         public serviceFee: TieredFee,
         public serviceFeeCalculation: string,
-        public transactionFee: number,
+        public transactionFee: Fee,
         public costOverview: string,
         public minimumServiceFee?: Money,
         public maximumServiceFee?: Money
@@ -16,7 +17,7 @@ export class Broker {
     }
 
     public getTransactionCosts(investment: Money): Money {
-        return investment.multiply(this.transactionFee.toString());
+        return this.transactionFee.calculateFor(investment);
     }
 
     public getQuarterlyCosts(averageInvestedCapital: Money): Money {

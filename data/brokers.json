@@ -36,14 +36,18 @@
             {"upperLimit": null, "fee": 0.0012}
         ],
         "serviceFeeCalculation": "averageOfQuarter",
-        "transactionFee": 0.001,
+        "transactionFee": {
+            "percentage": 0.1,
+            "minimum": 0.05,
+            "maximum": 150
+        },
         "costOverview": "https://www.rabobank.nl/images/tarieven-beleggen-bij-de-rabobank_29409753.pdf"
     },
     {
         "name": "Meesman",
         "product": "",
         "baseFee": 0,
-        "transactionFee": 0.0025,
+        "transactionFee": 0.25,
         "costOverview": "https://www.meesman.nl/zo-werkt-het/kosten"
     },
     {

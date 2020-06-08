@@ -1,5 +1,6 @@
 import {Broker} from "./Broker";
 import brokers from "../data/brokers.json";
+import {FeeFactory} from "./Pricing/FeeFactory";
 import {TieredFee} from "./TieredFee";
 import {Money} from "bigint-money/dist";
 
@@ -12,13 +13,17 @@ export class BrokerRepository {
 
             const serviceFee: TieredFee = new TieredFee(data.serviceFee);
 
+            const feeFactory = new FeeFactory();
+
+            const transactionFee = feeFactory.create(data.transactionFee);
+
             return new Broker(
                 data.name,
                 data.product,
                 new Money(data.baseFee.toString(), 'EUR'),
                 serviceFee,
                 data.serviceFeeCalculation,
-                data.transactionFee ?? 0,
+                transactionFee,
                 data.costOverview,
                 data.minimumServiceFee ? new Money(data.minimumServiceFee, 'EUR') : null,
                 data.maximumServiceFee ? new Money(data.maximumServiceFee, 'EUR') : null

@@ -127,7 +127,7 @@ function runSimulation(): void {
             brokerInfo.push('Maximum servicekosten: ' + numberFormatter.formatMoney(combination.broker.maximumServiceFee) + ' per kwartaal');
         }
 
-        brokerInfo.push('Transactiekosten: ' + numberFormatter.formatPercentage(combination.broker.transactionFee));
+        brokerInfo.push('Transactiekosten: ' + combination.broker.transactionFee.describe());
 
         let brokerInfoTooltip = '<span class="info" title="' + brokerInfo.join('\n') + '">';
         if (combination.broker.costOverview) {
