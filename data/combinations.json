@@ -52,6 +52,19 @@
         "automatedInvesting": true
     },
     {
+        "broker": "Lynx",
+        "portfolio": [
+            {
+                "allocation": 88,
+                "fund": "AVIAW"
+            },
+            {
+                "allocation": 12,
+                "fund": "EMIM"
+            }
+        ]
+    },
+    {
         "broker": "DEGIRO",
         "portfolio": [
             {

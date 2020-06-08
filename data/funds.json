@@ -134,5 +134,16 @@
         "factsheet": "https://www.ishares.com/nl/particuliere-belegger/nl/literature/fact-sheet/ieem-ishares-msci-em-ucits-etf-usd-(dist)-fund-fact-sheet-nl-nl.pdf",
         "index": "MSCI Emerging Markets Index",
         "shares": 1205
+    },
+    {
+        "name": "iShares Core MSCI EM IMI UCITS ETF",
+        "symbol": "EMIM",
+        "isin": "IE00BKM4GZ66",
+        "totalExpenseRatio": 0.0018,
+        "dividendLeakage": 0.003,
+        "kiid": "https://www.ishares.com/nl/particuliere-belegger/nl/literature/kiid/kiid-ishares-core-msci-em-imi-ucits-etf-usd-acc-nl-ie00bkm4gz66-nl.pdf",
+        "factsheet": "https://www.ishares.com/nl/particuliere-belegger/nl/literature/fact-sheet/eimi-ishares-core-msci-em-imi-ucits-etf-fund-fact-sheet-nl-nl.pdf",
+        "index": "MSCI Emerging Markets Investable Market Index",
+        "shares": 2705
     }
 ]

@@ -78,5 +78,16 @@
         "product": "Beleggingsrekening",
         "baseFee": 0,
         "serviceFee": []
+    },
+    {
+        "name": "Lynx",
+        "product": "Zelf Beleggen",
+        "baseFee": 0,
+        "transactionFee": {
+            "percentage": 0.1,
+            "minimum": 6,
+            "maximum": 45
+        },
+        "costOverview": "https://www.lynx.nl/tarieven-beleggen/alle-tarieven/"
     }
 ]
