@@ -2,7 +2,8 @@ export class Index {
     constructor(
         public name: string,
         public markets: string,
-        public sizes: string[]
+        public sizes: string[],
+        public weighting: string
     ) {
     }
 
@@ -18,6 +19,8 @@ export class Index {
             sizes = ['all'];
         }
 
-        return markets + ' ' + sizes.join(' & ') + ' cap';
+        const weighting = (this.weighting === 'equal' ? ' equal weighted' : '');
+
+        return markets + ' ' + sizes.join(' & ') + ' cap' + weighting;
     }
 }

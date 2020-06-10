@@ -6,9 +6,9 @@ export class IndexRepository {
         const index = indices.find((index: Index) => index.name === name);
 
         if (index === undefined) {
-            return new Index(name, '', []);
+            return new Index(name, '', [], '');
         }
 
-        return new Index(index.name, index.markets, index.sizes);
+        return new Index(index.name, index.markets, index.sizes, index.weighting);
     }
 }

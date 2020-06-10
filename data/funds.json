@@ -115,6 +115,17 @@
         "shares": 1425
     },
     {
+        "name": "VanEck Vectors Global Equal Weight UCITS ETF",
+        "symbol": "TGET",
+        "isin": "NL0009690221",
+        "totalExpenseRatio": 0.002,
+        "dividendLeakage": 0,
+        "kiid": "https://www.vanecketfs.nl/ugc/file/kiid_vaneck_tget_ucits_etf.pdf",
+        "factsheet": "https://www.vanecketfs.nl/services/factsheetdownload/factsheet_TGET",
+        "index": "Solactive Global Equity Index",
+        "shares": 250
+    },
+    {
         "name": "iShares Core MSCI World UCITS ETF",
         "symbol": "IWDA",
         "isin": "IE00B4L5Y983",

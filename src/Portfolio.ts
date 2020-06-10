@@ -26,12 +26,17 @@ export class Portfolio {
     public describe(): string {
         let markets: string[] = [];
         let sizes: string[] = [];
+        let weighting: string = '';
 
         for (let asset of this.assets) {
             let index = asset.fund.index;
 
             markets = markets.concat(index.markets);
             sizes = sizes.concat(index.sizes);
+
+            if (index.weighting !== undefined) {
+                weighting = index.weighting;
+            }
         }
 
         if (markets.includes('developed') && markets.includes('emerging')) {
@@ -48,6 +53,10 @@ export class Portfolio {
             return self.indexOf(value) === index;
         }
 
-        return markets.filter(onlyUnique).join(' ') + ' ' + sizes.filter(onlyUnique).join(' & ') + ' cap';
+        if (weighting !== '') {
+            weighting = ' ' + weighting + ' weighted';
+        }
+
+        return markets.filter(onlyUnique).join(' ') + ' ' + sizes.filter(onlyUnique).join(' & ') + ' cap' + weighting;
     }
 }

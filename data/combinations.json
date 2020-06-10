@@ -89,6 +89,15 @@
         "automatedInvesting": false
     },
     {
+        "broker": "DEGIRO",
+        "portfolio": [
+            {
+                "allocation": 100,
+                "fund": "TGET"
+            }
+        ]
+    },
+    {
         "broker": "Binck",
         "portfolio": [
             {
