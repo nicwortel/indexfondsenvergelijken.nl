@@ -1,0 +1,45 @@
+[
+    {
+        "name": "MSCI World Index",
+        "markets": "developed",
+        "sizes": ["large", "mid"],
+        "factsheet": "https://www.msci.com/documents/10199/149ed7bc-316e-4b4c-8ea4-43fcb5bd6523"
+    },
+    {
+        "name": "MSCI World Custom ESG Index",
+        "markets": "developed",
+        "sizes": ["large", "mid"]
+    },
+    {
+        "name": "MSCI Emerging Markets Index",
+        "markets": "emerging",
+        "sizes": ["large", "mid"]
+    },
+    {
+        "name": "MSCI Emerging Markets Custom ESG Index",
+        "markets": "emerging",
+        "sizes": ["large", "mid"]
+    },
+    {
+        "name": "MSCI Emerging Markets Investable Market Index",
+        "markets": "emerging",
+        "sizes": ["large", "mid", "small"],
+        "factsheet": "https://www.msci.com/documents/10199/97e25eb7-9bd0-4204-bea9-077095acf1d3"
+    },
+    {
+        "name": "FTSE All-World Index",
+        "markets": "all-world",
+        "sizes": ["large", "mid"]
+    },
+    {
+        "name": "FTSE Developed Index",
+        "markets": "developed",
+        "sizes": ["large", "mid"]
+    },
+    {
+        "name": "Solactive Global Equity Index",
+        "markets": "developed",
+        "sizes": ["large"],
+        "weighting": "equal weighted"
+    }
+]

@@ -6,13 +6,14 @@ import {BrokerRepository} from "./BrokerRepository";
 import {Combination} from "./Combination";
 import {Fund} from "./Fund";
 import {FundRepository} from "./FundRepository";
+import {IndexRepository} from "./IndexRepository";
 import {NumberFormatter} from "./NumberFormatter";
 import {Portfolio} from "./Portfolio";
 import {Simulation} from "./Simulation";
 import {WealthTax} from "./WealthTax";
 
 const brokerRepository = new BrokerRepository();
-const fundRepository = new FundRepository();
+const fundRepository = new FundRepository(new IndexRepository());
 const numberFormatter = new NumberFormatter('nl-NL');
 
 const form: HTMLFormElement = <HTMLFormElement>document.getElementById('form');
@@ -140,7 +141,8 @@ function runSimulation(): void {
             let popoverContent = [];
 
             if (asset.fund.index) {
-                popoverContent.push('Index: ' + asset.fund.index);
+                popoverContent.push('Index: ' + asset.fund.index.name);
+                popoverContent.push('Type: ' + asset.fund.index.describe());
             }
             popoverContent.push('ISIN: ' + asset.fund.isin);
             popoverContent.push('Aantal aandelen: ' + asset.fund.shares);
@@ -167,6 +169,8 @@ function runSimulation(): void {
         });
 
         row.insertCell().innerHTML = funds.join(', ') + ' <span class="info" title="Totaal lopende kosten portefeuille: ' + numberFormatter.formatPercentage(combination.portfolio.getTotalCosts(), 3) + '"></span>';
+
+        row.insertCell().innerText = combination.portfolio.describe();
 
         const shares = combination.portfolio.assets.reduce((sum: number, current) => sum + current.fund.shares, 0);
         row.insertCell().innerText = shares.toString();

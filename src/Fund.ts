@@ -1,3 +1,5 @@
+import {Index} from "./Index/Index";
+
 export class Fund {
     constructor(
         public name: string,
@@ -6,7 +8,7 @@ export class Fund {
         public totalExpenseRatio: number,
         public dividendLeakage: number,
         public entryFee: number,
-        public index: string,
+        public index: Index,
         public kiid: string,
         public factsheet: string,
         public shares: number

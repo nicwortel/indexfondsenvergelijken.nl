@@ -1,9 +1,13 @@
 import funds from "../data/funds.json";
 import {Fund} from "./Fund";
+import {IndexRepository} from "./IndexRepository";
 
 export class FundRepository {
+    constructor(private indexRepository: IndexRepository) {
+    }
+
     public getAll(): Array<Fund> {
-        return funds.map(function (data: any): Fund {
+        return funds.map((data: any) => {
             return new Fund(
                 data.name,
                 data.symbol,
@@ -11,7 +15,7 @@ export class FundRepository {
                 data.totalExpenseRatio,
                 data.dividendLeakage,
                 data.entryFee ?? 0,
-                data.index,
+                this.indexRepository.getByName(data.index),
                 data.kiid,
                 data.factsheet,
                 data.shares ?? 0

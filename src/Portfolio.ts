@@ -1,5 +1,5 @@
-import {Fund} from "./Fund";
 import {Money} from "bigint-money/dist";
+import {Fund} from "./Fund";
 
 export class Portfolio {
     constructor(public assets: { allocation: number, fund: Fund }[]) {
@@ -24,6 +24,30 @@ export class Portfolio {
     }
 
     public describe(): string {
-        return this.assets.map(({allocation, fund}) => allocation + '% ' + fund.symbol).join(', ');
+        let markets: string[] = [];
+        let sizes: string[] = [];
+
+        for (let asset of this.assets) {
+            let index = asset.fund.index;
+
+            markets = markets.concat(index.markets);
+            sizes = sizes.concat(index.sizes);
+        }
+
+        if (markets.includes('developed') && markets.includes('emerging')) {
+            markets = ['all-world'];
+        }
+
+        markets = markets.map((markets: string) => markets.replace('developed', 'developed markets').replace('emerging', 'emerging markets'));
+
+        if (sizes.includes('large') && sizes.includes('mid') && sizes.includes('small')) {
+            sizes = ['all'];
+        }
+
+        function onlyUnique(value: string, index: number, self: string[]) {
+            return self.indexOf(value) === index;
+        }
+
+        return markets.filter(onlyUnique).join(' ') + ' ' + sizes.filter(onlyUnique).join(' & ') + ' cap';
     }
 }
