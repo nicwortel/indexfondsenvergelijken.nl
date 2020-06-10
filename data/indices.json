@@ -41,5 +41,10 @@
         "markets": "developed",
         "sizes": ["large"],
         "weighting": "equal weighted"
+    },
+    {
+        "name": "Meesman combinatie MSCI World, EM & World Small Cap Custom ESG",
+        "markets": "all-world",
+        "sizes": ["large", "mid", "small"]
     }
 ]
