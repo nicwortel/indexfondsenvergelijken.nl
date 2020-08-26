@@ -8,8 +8,14 @@
         <link rel="stylesheet" href="bootstrap.min.css" />
         <link rel="stylesheet" href="main.css" />
     </head>
-    <body>
-        <div class="container-fluid py-3">
+    <body class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">indexfondsenvergelijken.nl</a>
+            </div>
+        </nav>
+
+        <div class="container py-3">
             <noscript>
                 <div class="alert alert-warning" role="alert">
                     Het lijkt erop dat JavaScript is uitgeschakeld in je browser.
@@ -17,129 +23,111 @@
                 </div>
             </noscript>
 
-            <p>Let op: deze berekening is gebaseerd op het Nederlandse belastingstelsel en toont alleen banken, brokers
-                en fondsen die in Nederland beschikbaar zijn.</p>
+            <div class="row">
+                <div class="col-lg-3">
+                    <h2>Instellingen</h2>
 
-            <h2>Instellingen</h2>
-
-            <form id="form">
-                <div class="form-row">
-                    <div class="form-group col-sm-6 col-lg-3">
-                        <label for="monthly">Maandelijkse inleg</label> <span class="help"
-                        title="Deze berekening gaat ervan uit dat je elke maand aan het begin van de maand dit bedrag volledig inlegt. Doordat je bij ETF's alleen hele ETF's kunt aankopen kun je in de praktijk niet altijd het hele bedrag beleggen, maar daar houdt deze simulatie geen rekening mee."></span>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">€</span>
-                            </div>
-                            <input type="number" class="form-control" id="monthly" value="500" min="0">
-                        </div>
-                    </div>
-
-                    <div class="form-group col-sm-6 col-lg-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="differentInitialInvestment"> <label
-                            class="pl-1" for="differentInitialInvestment">Leg de eerste maand een ander bedrag
-                            in:</label>
-                        </div>
-
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">€</span>
-                            </div>
-                            <input type="number" class="form-control" id="initial" value="500" min="1" disabled>
-                        </div>
-                    </div>
-
-                    <div class="form-group col-sm-6 col-lg-3">
-                        <label for="return">Verwacht rendement per jaar</label>
-                        <div class="input-group">
-                            <input type="number" class="form-control" id="return" value="7.5" step="0.5">
-
-                            <div class="input-group-append">
-                                <span class="input-group-text">%</span>
+                    <form id="form">
+                        <div class="form-group">
+                            <label for="monthly">Maandelijkse inleg</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">€</span>
+                                </div>
+                                <input type="number" class="form-control" id="monthly" value="500" min="0">
                             </div>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="differentInitialInvestment"> <label
+                                class="pl-1" for="differentInitialInvestment">Afwijkende inleg eerste maand</label>
+                            </div>
 
-                    <div class="form-group col-sm-6 col-lg-3">
-                        <label for="years">Aantal jaren</label> <input type="number" class="form-control" id="years"
-                        min="1"
-                        max="100" value="20">
-                    </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">€</span>
+                                </div>
+                                <input type="number" class="form-control" id="initial" value="500" min="1"
+                                    disabled>
+                            </div>
+                        </div>
 
-                    <div class="form-group col-sm-6 col-lg-3">
-                        <div class="form-check ">
-                            <input type="checkbox" class="form-check-input" id="subtractServiceFeesFromInvestment">
-                            <label
+                        <div class="form-row">
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <label for="years">Looptijd</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control"
+                                            id="years"
+                                            min="1"
+                                            max="100" value="20">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">jaar</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl">
+                                <div class="form-group">
+                                    <label for="return">Rendement</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="return" value="7.5" step="0.5">
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-check ">
+                                <input type="checkbox" class="form-check-input"
+                                    id="subtractServiceFeesFromInvestment"> <label
                                 class="form-check-label pl-1" for="subtractServiceFeesFromInvestment">Trek servicekosten
                                 van beleggingen af</label> <span class="help"
-                            title="Servicekosten worden door je bank of broker meestal apart in rekening gebracht. Dit geeft echter een vertekend beeld, want je had meer rendement kunnen behalen als je dit geld had kunnen beleggen. Door deze optie in te schakelen worden de servicekosten direct van je beleggingen afgetrokken, waardoor ze een groter effect hebben op je uiteindelijke rendement."></span>
+                                title="Servicekosten worden door je bank of broker meestal apart in rekening gebracht. Dit geeft echter een vertekend beeld, want je had meer rendement kunnen behalen als je dit geld had kunnen beleggen. Door deze optie in te schakelen worden de servicekosten direct van je beleggingen afgetrokken, waardoor ze een groter effect hebben op je uiteindelijke rendement."></span>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
-            </form>
 
-            <h2>Verwachte resultaat</h2>
+                <div class="col">
+                    <p>Totaal ingelegd na <span class="years"></span> jaar: <span id="totalInvestment"></span>.</p>
 
-            <p>Totaal ingelegd na <span class="years"></span> jaar: <span id="totalInvestment"></span>. Hieronder staan
-                de verwachte resultaten en kosten voor populaire combinaties van brokers en portefeuilles, gesorteerd op
-                rendement. Houd bij het maken van een keuze naast de kosten ook rekening met ander factoren zoals
-                spreiding en de mogelijkheid om automatisch elke maand in te leggen.
-            </p>
+                    <div id="results">
+                    </div>
 
-            <div class="table-responsive">
-                <table class="table" id="results">
-                    <thead>
-                        <tr>
-                            <th>Bank / broker</th>
-                            <th>Portefeuille</th>
-                            <th>Type</th>
-                            <th>Aandelen</th>
-                            <th>Automatisch inleggen <span class="help"
-                                title="Bij sommige banken en brokers kun je een automatische maandelijkse inleg instellen zodat je niet elke maand handmatig hoeft in te leggen. Meestal kan dat alleen bij beleggingsfondsen en niet bij ETF's."></span>
-                            </th>
-                            <th class="text-right">Waarde beleggingen <span class="help"
-                                title="De verwachte waarde van je beleggingen aan het einde van de looptijd. Dit is inclusief transactiekosten, fondskosten en dividendlekkage maar zonder servicekosten van de bank/broker."></span>
-                            </th>
-                            <th class="text-right">Kosten <span class="help"
-                                title="De totale kosten van het fonds en de bank/broker (fondskosten, dividendlekkage en service- en transactiekosten)."></span>
-                            </th>
-                            <th class="text-right">Resultaat <span class="help"
-                                title="De groei van je beleggingen na aftrek van kosten."></span>
-                            </th>
-                            <th class="text-right">Rendement</span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+                    <p>Opmerking: de combinatie VTI + VXUS wordt hier niet getoond. Hoewel deze combinatie zeer lage
+                        lopende kosten heeft, zijn deze ETF's officieel niet in Nederland verkrijgbaar vanwege het
+                        ontbreken van Nederlandstalige documentatie. Hoewel ze via omwegen (aankoop via opties) wel
+                        verkrijgbaar zijn, heb ik besloten ze niet in deze vergelijking op te nemen.</p>
+
+                    <h2>Disclaimer</h2>
+
+                    <p>Bovenstaande resultaten zijn een indicatie op basis van de door de banken/brokers en fondsen
+                        gepubliceerde kosten. Het rendement van 7,5% is een schatting op basis van het jaarrendement van
+                        de <a
+                            href="https://www.msci.com/acwi" target="_blank">MSCI ACWI index</a> sinds 31 december 1987.
+                        Los van het feit dat toekomstig rendement niet te voorspellen is, kan het rendement van fondsen
+                        onderling verschillen door het volgen van een andere index of door het toepassen van
+                        verschillende uitsluitingscriteria. <a href="https://www.reddit.com/user/gerbenvl/"
+                            target="_blank">u/gerbenvl</a> schreef een zeer uitgebreid artikel over de <a
+                            target="_blank"
+                            href="https://www.reddit.com/r/DutchFIRE/comments/flc3dn/intro_index_fondsen_kosten_2020/"><i>tracking
+                            difference</i> van verschillende fondsen ten opzichte van hun index</a>. Die informatie is
+                        echter niet meegenomen in deze berekening. Het dividendlek van 0,3% voor niet-Nederlandse
+                        fondsen is een schatting. Fondsen en banken/brokers kunnen hun kosten in de toekomst wijzigen.
+                        Vermogensbelasting is gebaseerd op gegevens van de Belastingdienst voor 2020.</p>
+
+                    <p>Door <a href="https://www.youtube.com/watch?v=PZRI1IfStY0" target="_blank">onnauwkeurigheden bij
+                        het rekenen met percentages</a> kunnen er kleine afwijkingen ontstaan.</p>
+
+                    <p>Berekeningen worden lokaal in je browser gedaan door middel van JavaScript. De ingevulde gegevens
+                        worden niet naar een server verstuurd.</p>
+                </div>
             </div>
-
-            <p>Opmerking: de combinatie VTI + VXUS wordt hier niet getoond. Hoewel deze combinatie zeer lage lopende
-                kosten heeft, zijn deze ETF's officieel niet in Nederland verkrijgbaar vanwege het ontbreken van
-                Nederlandstalige documentatie. Hoewel ze via omwegen (aankoop via opties) wel verkrijgbaar zijn, heb ik
-                besloten ze niet in deze vergelijking op te nemen.</p>
-
-            <h2>Disclaimer</h2>
-
-            <p>Bovenstaande resultaten zijn een indicatie op basis van de door de banken/brokers en fondsen
-                gepubliceerde kosten. Het rendement van 7,5% is een schatting op basis van het jaarrendement van de <a
-                    href="https://www.msci.com/acwi" target="_blank">MSCI ACWI index</a> sinds 31 december 1987. Los van
-                het feit dat toekomstig rendement niet te voorspellen is, kan het rendement van fondsen onderling
-                verschillen door het volgen van een andere index of door het toepassen van verschillende
-                uitsluitingscriteria. <a href="https://www.reddit.com/user/gerbenvl/" target="_blank">u/gerbenvl</a>
-                schreef een zeer uitgebreid artikel over de <a target="_blank"
-                    href="https://www.reddit.com/r/DutchFIRE/comments/flc3dn/intro_index_fondsen_kosten_2020/"><i>tracking
-                    difference</i> van verschillende fondsen ten opzichte van hun index</a>. Die informatie is echter
-                niet meegenomen in deze berekening. Het dividendlek van 0,3% voor niet-Nederlandse fondsen is een
-                schatting. Fondsen en banken/brokers kunnen hun kosten in de toekomst wijzigen. Vermogensbelasting is
-                gebaseerd op gegevens van de Belastingdienst voor 2020.</p>
-
-            <p>Door <a href="https://www.youtube.com/watch?v=PZRI1IfStY0" target="_blank">onnauwkeurigheden bij het
-                rekenen met percentages</a> kunnen er kleine afwijkingen ontstaan.</p>
-
-            <p>Berekeningen worden lokaal in je browser gedaan door middel van JavaScript. De ingevulde gegevens worden
-                niet naar een server verstuurd.</p>
         </div>
     </body>
 </html>

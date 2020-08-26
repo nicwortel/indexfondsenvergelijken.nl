@@ -23,6 +23,16 @@ export class Portfolio {
         return costs.reduce((sum: number, current: number) => sum + current);
     }
 
+    public getFundNames(): string[] {
+        return this.assets.map(function (asset): string {
+            return asset.fund.symbol;
+        })
+    }
+
+    public getNumberOfShares(): number {
+        return this.assets.reduce((sum: number, current) => sum + current.fund.shares, 0);
+    }
+
     public describe(): string {
         let markets: string[] = [];
         let sizes: string[] = [];

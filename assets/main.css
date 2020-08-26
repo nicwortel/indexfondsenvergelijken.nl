@@ -1,3 +1,7 @@
+.container {
+  max-width: 1320px;
+}
+
 .help, .info {
   display: inline-block;
   width: 1rem;

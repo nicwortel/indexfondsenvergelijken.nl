@@ -1,0 +1,138 @@
+<div class="card mb-2">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-3">
+                <h2 class="card-title h5">{{ broker.name }}</h2>
+            </div>
+            <div class="col-lg">
+                <div class="card-title h5">{{ portfolio.fundNames.join(' + ') }}</div>
+            </div>
+            <div class="col-lg-2 text-lg-right">
+                <div class="small">Geschatte kosten</div>
+                <div class="h5">{{ simulation.totalCosts|money }}</div>
+            </div>
+            <div class="col-lg-3 text-lg-right">
+                <div class="small">Verwacht resultaat</div>
+                <div class="h4">{{ simulation.netProfit|money }}</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <div>Automatisch inleggen</div>
+                <div class="font-weight-bold">{% if combination.automatedInvesting %}ja{% else %}nee{% endif %}</div>
+            </div>
+            <div class="col-sm-6 col-md-2">
+                <div>Aandelen</div>
+                <div class="font-weight-bold">{{ portfolio.numberOfShares }}</div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs mt-2 px-3" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" href="#portfolio-{{ index }}">Portefeuille</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#pricing-{{ index }}">Tarieven</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#details-{{ index }}">Details</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade" id="portfolio-{{ index }}" role="tabpanel">
+            <div class="card-body">
+                <table class="table">
+                    <tr>
+                        <th>Fonds</th>
+                        <th>ISIN</th>
+                        <th>Weging</th>
+                        <th>Documenten</th>
+                    </tr>
+                    {% for asset in portfolio.assets %}
+                        <tr>
+                            <td>{{ asset.fund.name }}</td>
+                            <td>{{ asset.fund.isin }}</td>
+                            <td class="text-right">{{ asset.allocation }} %</td>
+                            <td>
+                                {% if asset.fund.factsheet %}
+                                    <a href="{{ asset.fund.factsheet }}" target="_blank">Factsheet</a>
+                                {% endif %}
+
+                                {% if asset.fund.kiid %}
+                                    <a href="{{ asset.fund.kiid }}" target="_blank">EBI</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="pricing-{{ index }}" role="tabpanel">
+            <div class="card-body">
+
+                <table class="table">
+                    <tr>
+                        <th colspan="2">{{ broker.name }} {{ broker.product }}
+                            {% if broker.costOverview %}(<a href="{{ broker.costOverview }}"
+                                    target="_blank">bron</a>){% endif %}
+                        </th>
+                    </tr>
+                    {% if broker.baseFee.isGreaterThan(0) %}
+                        <tr>
+                            <td>Basisfee</td>
+                            <td>{{ combination.broker.baseFee|money }} / jaar</td>
+                        </tr>
+                    {% endif %}
+                    {% if broker.minimumServiceFee %}
+                        <tr>
+                            <td>Minimum servicekosten</td>
+                            <td>{{ broker.minimumServiceFee|money }}</td>
+                        </tr>
+                    {% endif %}
+                    {% for tier in broker.serviceFee.tiers %}
+                        <tr>
+                            <td>
+                                Servicekosten {% if tier.upperLimit %}t/m {{ tier.upperLimit|money }}{% elseif broker.serviceFee.tiers.length > 1 %}daarboven{% endif %}</td>
+                            <td>{{ tier.fee|percentage }} / jaar</td>
+                        </tr>
+                    {% endfor %}
+                    {% if broker.maximumServiceFee %}
+                        <tr>
+                            <td>Maximum servicekosten</td>
+                            <td>{{ broker.maximumServiceFee|money }}</td>
+                        </tr>
+                    {% endif %}
+                    <tr>
+                        <td class="w-25">Transactiekosten</td>
+                        <td>{{ combination.broker.transactionFee.describe }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="details-{{ index }}" role="tabpanel">
+            <div class="card-body">
+
+                <table class="table mb-0">
+                    <tr>
+                        <th colspan="2">Totale kosten</th>
+                    </tr>
+                    <tr>
+                        <td class="w-25">Fondskosten</td>
+                        <td>{{ simulation.totalFundCosts|money }}</td>
+                    </tr>
+                    <tr>
+                        <td>Transactiekosten</td>
+                        <td>{{ simulation.totalTransactionFees|money }}</td>
+                    </tr>
+                    <tr>
+                        <td>Servicekosten</td>
+                        <td>{{ simulation.totalServiceFees|money }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
