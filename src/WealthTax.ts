@@ -21,6 +21,8 @@ export class WealthTax {
 
         const fictionalReturns = this.tiers.calculateFee(taxableCapital);
 
-        return fictionalReturns.multiply(this.tax.toString());
+        const taxAmount = fictionalReturns.multiply(this.tax.toString());
+
+        return new Money(taxAmount.toFixed(2).replace(/\.?[0-9]+$/, ''), taxAmount.currency);
     }
 }
