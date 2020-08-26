@@ -37,12 +37,6 @@
         "sizes": ["large", "mid"]
     },
     {
-        "name": "Solactive Global Equity Index",
-        "markets": "developed",
-        "sizes": ["large"],
-        "weighting": "equal"
-    },
-    {
         "name": "Meesman combinatie MSCI World, EM & World Small Cap Custom ESG",
         "markets": "all-world",
         "sizes": ["large", "mid", "small"]
