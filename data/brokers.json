@@ -1,6 +1,7 @@
 [
     {
         "name": "ING",
+        "logo": "ing.png",
         "product": "Zelf op de beurs",
         "baseFee": 20,
         "serviceFee": [
@@ -14,6 +15,7 @@
     },
     {
         "name": "ABN Amro",
+        "logo": "abn.png",
         "product": "Zelf Beleggen Basis",
         "baseFee": 0,
         "serviceFee": [
@@ -27,6 +29,7 @@
     },
     {
         "name": "Rabobank",
+        "logo": "rabobank.png",
         "product": "Zelf Beleggen",
         "baseFee": 0,
         "minimumServiceFee": 5,
@@ -45,6 +48,7 @@
     },
     {
         "name": "Meesman",
+        "logo": "meesman.png",
         "product": "",
         "baseFee": 0,
         "transactionFee": 0.25,
@@ -52,12 +56,14 @@
     },
     {
         "name": "DEGIRO",
+        "logo": "degiro.png",
         "product": "Basic - Kernselectie",
         "baseFee": 0,
         "costOverview": "https://www.degiro.nl/data/pdf/Tarievenoverzicht.pdf"
     },
     {
         "name": "Binck",
+        "logo": "binck.png",
         "product": "Fundcoach",
         "baseFee": 0,
         "serviceFee": [
@@ -68,6 +74,7 @@
     },
     {
         "name": "FitVermogen",
+        "logo": "fitvermogen.png",
         "product": "",
         "baseFee": 0,
         "serviceFee": [],
@@ -75,12 +82,14 @@
     },
     {
         "name": "Brand New Day",
+        "logo": "brandnewday.png",
         "product": "Beleggingsrekening",
         "baseFee": 0,
         "serviceFee": []
     },
     {
         "name": "Lynx",
+        "logo": "lynx.png",
         "product": "Zelf Beleggen",
         "baseFee": 0,
         "transactionFee": {

@@ -16,6 +16,27 @@ module.exports = {
             {
                 test: /\.twig$/,
                 use: 'twig-loader'
+            },
+            {
+                test: /\.(png|jpe?g|webp|tiff?)/i,
+                use: [
+                    {
+                        loader: "webpack-image-resize-loader",
+                        options: {
+                            width: 100,
+                            height: 50,
+                            fit: "contain",
+                            background: "#fff",
+                            format: "png",
+                            quality: 80,
+                            fileLoaderOptions: {
+                                name: '[name].[ext]',
+                                outputPath: 'images'
+                            }
+                        },
+                    },
+                ],
+
             }
         ]
     },

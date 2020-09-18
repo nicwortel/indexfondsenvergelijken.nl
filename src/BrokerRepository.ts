@@ -17,6 +17,10 @@ export class BrokerRepository {
 
             const transactionFee = feeFactory.create(data.transactionFee);
 
+            if (data.logo) {
+                require('../assets/images/' + data.logo);
+            }
+
             return new Broker(
                 data.name,
                 data.product,
@@ -26,7 +30,8 @@ export class BrokerRepository {
                 transactionFee,
                 data.costOverview,
                 data.minimumServiceFee ? new Money(data.minimumServiceFee, 'EUR') : null,
-                data.maximumServiceFee ? new Money(data.maximumServiceFee, 'EUR') : null
+                data.maximumServiceFee ? new Money(data.maximumServiceFee, 'EUR') : null,
+                data.logo ? data.logo : null
             );
         })
     }
