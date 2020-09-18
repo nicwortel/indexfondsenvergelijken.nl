@@ -2,7 +2,8 @@
     <div class="card-body">
         <div class="row">
             <div class="col-lg-3">
-                <h2 class="card-title h5">{% if broker.logo %}<img src="images/{{ broker.logo }}" alt="{{ broker.name }}">{% else %}{{ broker.name }}{% endif %}</h2>
+                <h2 class="card-title h5">{% if broker.logo %}<img src="images/{{ broker.logo }}"
+                        alt="{{ broker.name }}">{% else %}{{ broker.name }}{% endif %}</h2>
             </div>
             <div class="col-lg">
                 <div class="card-title h5">{{ portfolio.fundNames.join(' + ') }}</div>
@@ -48,36 +49,38 @@
     <div class="tab-content">
         <div class="tab-pane fade" id="portfolio-{{ index }}" role="tabpanel">
             <div class="card-body">
-                <table class="table">
-                    <tr>
-                        <th>Fonds</th>
-                        <th>ISIN</th>
-                        <th>Weging</th>
-                        <th>Instapkosten</th>
-                        <th>Kosten</th>
-                        <th>Dividendlek</th>
-                        <th>Documenten</th>
-                    </tr>
-                    {% for asset in portfolio.assets %}
+                <div class="table-responsive">
+                    <table class="table">
                         <tr>
-                            <td>{{ asset.fund.name }}</td>
-                            <td>{{ asset.fund.isin }}</td>
-                            <td class="text-right">{{ asset.allocation }} %</td>
-                            <td class="text-right">{{ asset.fund.entryFee|percentage }}</td>
-                            <td class="text-right">{{ asset.fund.totalExpenseRatio|percentage }}</td>
-                            <td class="text-right">{{ asset.fund.dividendLeakage|percentage }}</td>
-                            <td>
-                                {% if asset.fund.factsheet %}
-                                    <a href="{{ asset.fund.factsheet }}" target="_blank">Factsheet</a>
-                                {% endif %}
-
-                                {% if asset.fund.kiid %}
-                                    <a href="{{ asset.fund.kiid }}" target="_blank">EBI</a>
-                                {% endif %}
-                            </td>
+                            <th>Fonds</th>
+                            <th>ISIN</th>
+                            <th>Weging</th>
+                            <th>Instapkosten</th>
+                            <th>Kosten</th>
+                            <th>Dividendlek</th>
+                            <th>Documenten</th>
                         </tr>
-                    {% endfor %}
-                </table>
+                        {% for asset in portfolio.assets %}
+                            <tr>
+                                <td>{{ asset.fund.name }}</td>
+                                <td>{{ asset.fund.isin }}</td>
+                                <td class="text-right">{{ asset.allocation }} %</td>
+                                <td class="text-right">{{ asset.fund.entryFee|percentage }}</td>
+                                <td class="text-right">{{ asset.fund.totalExpenseRatio|percentage }}</td>
+                                <td class="text-right">{{ asset.fund.dividendLeakage|percentage }}</td>
+                                <td>
+                                    {% if asset.fund.factsheet %}
+                                        <a href="{{ asset.fund.factsheet }}" target="_blank">Factsheet</a>
+                                    {% endif %}
+
+                                    {% if asset.fund.kiid %}
+                                        <a href="{{ asset.fund.kiid }}" target="_blank">EBI</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
             </div>
         </div>
         <div class="tab-pane fade" id="pricing-{{ index }}" role="tabpanel">
