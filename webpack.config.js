@@ -56,6 +56,7 @@ module.exports = {
         new FaviconsWebpackPlugin('./node_modules/bootstrap-icons/icons/graph-up.svg'),
         new CopyPlugin({
             patterns: [
+                {from: 'assets/robots.txt', to: ''},
                 {from: 'assets/main.css', to: ''},
                 {from: 'node_modules/bootstrap/dist/css/bootstrap.min.css', to: ''},
                 {from: 'node_modules/bootstrap-icons/icons/question-circle.svg', to: 'icons/'},
