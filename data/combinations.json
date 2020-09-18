@@ -65,6 +65,19 @@
         ]
     },
     {
+        "broker": "Lynx",
+        "portfolio": [
+            {
+                "allocation": 88,
+                "fund": "AVIAW"
+            },
+            {
+                "allocation": 12,
+                "fund": "AVIAO"
+            }
+        ]
+    },
+    {
         "broker": "DEGIRO",
         "portfolio": [
             {
@@ -122,6 +135,20 @@
             {
                 "allocation": 12,
                 "fund": "EMIM"
+            }
+        ],
+        "automatedInvesting": true
+    },
+    {
+        "broker": "Binck",
+        "portfolio": [
+            {
+                "allocation": 88,
+                "fund": "AVIAW"
+            },
+            {
+                "allocation": 12,
+                "fund": "AVIAO"
             }
         ],
         "automatedInvesting": true

@@ -87,6 +87,7 @@
         "entryFee": 0.0015,
         "dividendLeakage": 0,
         "kiid": "https://www.actiam.com/49b032/siteassets/6_fondsen/actiam-retail/ebi/ebi-actiam-duurzaam-index-aandelenfonds-opkomende-landen.pdf",
+        "factsheet": "https://www.actiam.com/4a52de/siteassets/6_fondsen/actiam-retail/factsheet-nl/fs_adia_opkomende_landen.pdf",
         "index": "MSCI Emerging Markets Index",
         "shares": 938
     },
