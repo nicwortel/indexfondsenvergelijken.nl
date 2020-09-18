@@ -45,7 +45,7 @@ function createExternalLink(url: string, label: string): string {
     return element.outerHTML;
 }
 
-function runSimulation(): void {
+function runSimulation(combinations: Combination[]): void {
     const monthlyInvestment = new Money(getInputValue('monthly'), 'EUR');
     let initialInvestment = monthlyInvestment;
 
@@ -63,6 +63,11 @@ function runSimulation(): void {
     }
 
     const subtractServiceFeesFromInvestmentElement: HTMLInputElement = <HTMLInputElement>document.getElementById('subtractServiceFeesFromInvestment');
+    const automatedInvestmentElement: HTMLInputElement = <HTMLInputElement>document.getElementById('automatedInvestment');
+
+    if (automatedInvestmentElement.checked) {
+        combinations = combinations.filter((combination: Combination) => combination.automatedInvesting === true);
+    }
 
     let results = combinations.map(function (combination) {
         const simulation = new Simulation(
@@ -99,12 +104,12 @@ function runSimulation(): void {
 }
 
 form.onchange = function () {
-    runSimulation();
+    runSimulation(combinations);
 }
 
 window.onload = function () {
     $('#differentInitialInvestment').on('change', function () {
         $('#initial').prop('disabled', !$(this).prop('checked'));
     });
-    runSimulation();
+    runSimulation(combinations);
 };
