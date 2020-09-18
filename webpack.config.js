@@ -23,12 +23,12 @@ module.exports = {
                     {
                         loader: "webpack-image-resize-loader",
                         options: {
-                            width: 100,
+                            width: 120,
                             height: 50,
                             fit: "contain",
                             background: "#fff",
                             format: "png",
-                            quality: 80,
+                            quality: 100,
                             fileLoaderOptions: {
                                 name: '[name].[ext]',
                                 outputPath: 'images'
