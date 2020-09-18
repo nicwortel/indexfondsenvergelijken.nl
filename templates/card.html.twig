@@ -53,6 +53,7 @@
                         <th>Fonds</th>
                         <th>ISIN</th>
                         <th>Weging</th>
+                        <th>Instapkosten</th>
                         <th>Kosten</th>
                         <th>Dividendlek</th>
                         <th>Documenten</th>
@@ -62,6 +63,7 @@
                             <td>{{ asset.fund.name }}</td>
                             <td>{{ asset.fund.isin }}</td>
                             <td class="text-right">{{ asset.allocation }} %</td>
+                            <td class="text-right">{{ asset.fund.entryFee|percentage }}</td>
                             <td class="text-right">{{ asset.fund.totalExpenseRatio|percentage }}</td>
                             <td class="text-right">{{ asset.fund.dividendLeakage|percentage }}</td>
                             <td>
