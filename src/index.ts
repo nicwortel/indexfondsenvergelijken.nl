@@ -13,6 +13,9 @@ import {Simulation} from "./Simulation";
 import {View} from "./View";
 import {WealthTax} from "./WealthTax";
 
+// Assume that if JavaScript doesn't load it's because of outdated browser (Safari 13)
+$('#outdated-browser').hide();
+
 const brokerRepository = new BrokerRepository();
 const fundRepository = new FundRepository(new IndexRepository());
 const numberFormatter = new NumberFormatter('nl-NL');

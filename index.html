@@ -20,11 +20,22 @@
 
         <div class="container py-3">
             <noscript>
-                <div class="alert alert-warning" role="alert">
+                <style>#outdated-browser {
+                    display: none;
+                }</style>
+                <div class="alert alert-danger" role="alert">
                     Het lijkt erop dat JavaScript is uitgeschakeld in je browser. Deze website werkt alleen als
                     JavaScript is ingeschakeld.
                 </div>
             </noscript>
+
+            <div class="alert alert-danger" role="alert" id="outdated-browser">
+                Deze website maakt gebruik van een JavaScript-feature die (nog) niet door jouw browser wordt
+                ondersteund. Gebruik je Safari op macOS, upgrade dan naar Safari 14 (Systeemvoorkeuren >
+                Software-update) of maak gebruik van een andere browser zoals Firefox of Chrome. Gebruik je iOS, upgrade
+                dan naar iOS 14 (ook Firefox en Chrome werken niet op eerdere iOS versies). Gebruik je Internet
+                Explorer, maak dan gebruik van een andere browser (Edge, Firefox of Chrome). Sorry voor het ongemak.
+            </div>
 
             <div class="row">
                 <div class="col-lg-3">
