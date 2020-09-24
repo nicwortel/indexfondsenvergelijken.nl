@@ -4,21 +4,8 @@ export class NumberFormatter {
     constructor(private locale: string) {
     }
 
-    public format(number: number): string {
-        const formatter = new Intl.NumberFormat('nl-NL');
-
-        return formatter.format(number);
-    }
-
     public formatMoney(amount: Money): string {
         return this.formatMoneyFromNumber(parseFloat(amount.toFixed(2)), amount.currency);
-
-        const formatter = new Intl.NumberFormat('nl-NL', {
-            style: 'currency',
-            currency: amount.currency
-        });
-
-        return formatter.format(parseFloat(amount.toFixed(2)))
     }
 
     public formatMoneyFromNumber(amount: number, currency: string, maximumDigits = 2): string {
