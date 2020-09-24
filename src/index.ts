@@ -67,9 +67,14 @@ function runSimulation(combinations: Combination[]): void {
 
     const subtractServiceFeesFromInvestmentElement: HTMLInputElement = <HTMLInputElement>document.getElementById('subtractServiceFeesFromInvestment');
     const automatedInvestmentElement: HTMLInputElement = <HTMLInputElement>document.getElementById('automatedInvestment');
+    const smallCapsCheckbox: HTMLInputElement = <HTMLInputElement>document.getElementById('smallCaps');
 
     if (automatedInvestmentElement.checked) {
         combinations = combinations.filter((combination: Combination) => combination.automatedInvesting === true);
+    }
+
+    if (smallCapsCheckbox.checked) {
+        combinations = combinations.filter((combination: Combination) => combination.portfolio.containsSmallCaps());
     }
 
     let results = combinations.map(function (combination) {

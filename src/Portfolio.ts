@@ -33,6 +33,16 @@ export class Portfolio {
         return this.assets.reduce((sum: number, current) => sum + current.fund.shares, 0);
     }
 
+    public containsSmallCaps(): boolean {
+        for (let asset of this.assets) {
+            if (asset.fund.containsSmallCaps()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public describe(): string {
         let markets: string[] = [];
         let sizes: string[] = [];

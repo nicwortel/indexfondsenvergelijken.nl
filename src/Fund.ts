@@ -18,4 +18,8 @@ export class Fund {
     public getTotalCosts(): number {
         return this.totalExpenseRatio + this.dividendLeakage;
     }
+
+    public containsSmallCaps(): boolean {
+        return this.index.sizes.includes('small');
+    }
 }
