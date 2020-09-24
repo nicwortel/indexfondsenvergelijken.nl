@@ -23,8 +23,8 @@ module.exports = {
                     {
                         loader: "webpack-image-resize-loader",
                         options: {
-                            width: 120,
-                            height: 50,
+                            width: 100,
+                            height: 40,
                             fit: "contain",
                             background: "#fff",
                             format: "png",
