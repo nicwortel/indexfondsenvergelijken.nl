@@ -27,6 +27,11 @@
         "factsheet": "https://www.msci.com/documents/10199/97e25eb7-9bd0-4204-bea9-077095acf1d3"
     },
     {
+        "name": "MSCI World Small Cap Custom ESG Low Carbon Index",
+        "markets": "developed",
+        "sizes": ["small"]
+    },
+    {
         "name": "FTSE All-World Index",
         "markets": "all-world",
         "sizes": ["large", "mid"]

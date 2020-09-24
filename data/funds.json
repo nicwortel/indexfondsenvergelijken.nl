@@ -36,6 +36,18 @@
         "shares": 1201
     },
     {
+        "name": "Northern Trust World Small Cap ESG Low Carbon Index FGR Feeder Fund",
+        "symbol": "NT SC",
+        "isin": "NL0013552078",
+        "logo": "northern-trust.png",
+        "totalExpenseRatio": 0.0023,
+        "dividendLeakage": 0,
+        "kiid": "https://www.northerntrust.com/documents/funds/intl/ntfgr/kiids-nl/ntfgr-world-small-cap-esg-low-carbon-index-fgr-fund-class-a-kiid-nl.pdf",
+        "factsheet": "https://cdn.northerntrust.com/pws/nt/documents/funds/intl/factsheets/northern-trust-world-small-cap-esg-low-carbon-fgr-feeder-fund-nlfsc-sha-eur-re-nl-noperf.pdf",
+        "index": "MSCI World Small Cap Custom ESG Low Carbon Index",
+        "shares": 3266
+    },
+    {
         "name": "Meesman Indexfonds Aandelen Wereldwijd Totaal",
         "symbol": "Meesman Wereldwijd Totaal",
         "isin": "NL0013689110",
