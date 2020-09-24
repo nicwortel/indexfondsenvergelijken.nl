@@ -16,11 +16,11 @@
             </div>
             <div class="col-6 col-lg-2 text-lg-right">
                 <div class="small">Geschatte kosten</div>
-                <div class="h5 mb-2">{{ simulation.totalCosts|money }}</div>
+                <div class="h5 mb-2">{{ simulation.totalCosts|money|tagDecimals }}</div>
             </div>
             <div class="col-6 col-md-3 text-lg-right">
                 <div class="small">Verwachte waarde</div>
-                <div class="h5 mb-2">{{ simulation.value|money }}</div>
+                <div class="h5 mb-2">{{ simulation.value|money|tagDecimals }}</div>
             </div>
         </div>
 
@@ -39,7 +39,7 @@
             </div>
             <div class="col-6 col-md-3 col-lg-6 text-lg-right">
                 <div class="small">Verwacht resultaat</div>
-                <div class="h4 mb-2">{{ simulation.netProfit|money }}</div>
+                <div class="h4 mb-2">{{ simulation.netProfit|money|tagDecimals }}</div>
             </div>
         </div>
     </div>

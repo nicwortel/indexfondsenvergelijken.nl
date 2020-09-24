@@ -33,3 +33,11 @@ input:disabled {
 label[for] {
   cursor: pointer;
 }
+
+.decimals {
+  font-size: .8em;
+  line-height: 1;
+  vertical-align: super;
+  top: .2em;
+  position: relative;
+}

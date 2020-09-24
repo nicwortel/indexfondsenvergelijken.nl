@@ -22,6 +22,14 @@ export class View {
 
             return formatter.format(fraction);
         }.bind(this));
+
+        Twig.extendFilter('tagDecimals', function (amount: string): string {
+            let parts = amount.split(',');
+
+            parts[1] = '<span class="decimals">' + parts[1] + '</span>';
+
+            return parts.join(',');
+        }.bind(this));
     }
 
     public update(results: { combination: Combination; simulation: Simulation }[]): void {
