@@ -5,6 +5,7 @@ export class Fund {
         public name: string,
         public symbol: string,
         public isin: string,
+        public logo: string,
         public totalExpenseRatio: number,
         public dividendLeakage: number,
         public entryFee: number,

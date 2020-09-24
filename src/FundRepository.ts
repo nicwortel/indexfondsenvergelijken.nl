@@ -8,10 +8,13 @@ export class FundRepository {
 
     public getAll(): Array<Fund> {
         return funds.map((data: any) => {
+            require('../assets/images/' + data.logo);
+
             return new Fund(
                 data.name,
                 data.symbol,
                 data.isin,
+                data.logo,
                 data.totalExpenseRatio,
                 data.dividendLeakage,
                 data.entryFee ?? 0,

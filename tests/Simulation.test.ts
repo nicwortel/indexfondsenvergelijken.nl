@@ -24,18 +24,7 @@ function createSimulation(initialInvestment: number, monthlyInvestment: number, 
         ),
         new Portfolio([{
             allocation: 100,
-            fund: new Fund(
-                'Fund',
-                'FND',
-                'ISIN',
-                fundExpenseRatio,
-                0,
-                0,
-                new Index('Foo', '', [], ''),
-                '',
-                '',
-                3
-            )
+            fund: new Fund('Fund', 'FND', 'ISIN', '', fundExpenseRatio, 0, 0, new Index('Foo', '', [], ''), '', '', 3)
         }]),
         new Money(initialInvestment, 'EUR'),
         new Money(monthlyInvestment, 'EUR'),

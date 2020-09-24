@@ -5,6 +5,12 @@
                 <h2 class="card-title h5">{% if broker.logo %}<img src="images/{{ broker.logo }}"
                         alt="{{ broker.name }}">{% else %}{{ broker.name }}{% endif %}</h2>
             </div>
+            <div class="col-lg-2">
+                {% set firstFund = portfolio.assets|first.fund %}
+                {% if firstFund.logo != broker.logo %}
+                    <img src="images/{{ firstFund.logo }}" alt="">
+                {% endif %}
+            </div>
             <div class="col-lg">
                 <div class="card-title h5">{{ portfolio.fundNames.join(' + ') }}</div>
             </div>
