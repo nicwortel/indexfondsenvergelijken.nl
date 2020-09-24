@@ -21,7 +21,7 @@ export class CappedFee implements Fee {
     }
 
     public describe(): string {
-        const numberFormatter = new NumberFormatter('nl');
+        const numberFormatter = new NumberFormatter();
 
         return this.fee.describe() + ' (min. ' + numberFormatter.formatMoney(this.minimum) + ', max. ' + numberFormatter.formatMoney(this.maximum) + ')';
     }

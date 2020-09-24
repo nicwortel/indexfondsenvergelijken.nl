@@ -18,7 +18,7 @@ $('#outdated-browser').hide();
 
 const brokerRepository = new BrokerRepository();
 const fundRepository = new FundRepository(new IndexRepository());
-const numberFormatter = new NumberFormatter('nl-NL');
+const numberFormatter = new NumberFormatter();
 
 const form: HTMLFormElement = <HTMLFormElement>document.getElementById('form');
 
@@ -95,7 +95,7 @@ function runSimulation(combinations: Combination[]): void {
 
     results = results.sort((a, b) => b.simulation.getNetResult() - a.simulation.getNetResult());
 
-    const view = new View(<HTMLDivElement>document.getElementById('results'), new NumberFormatter('nl-NL'));
+    const view = new View(<HTMLDivElement>document.getElementById('results'), new NumberFormatter());
     view.update(results);
 
     $('.nav-tabs a.nav-link').on('click', function (e) {
