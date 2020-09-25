@@ -7,6 +7,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
     kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 
 spec:
@@ -17,6 +18,58 @@ spec:
       secretName: indexfondsenvergelijken.nl
   rules:
     - host: www.indexfondsenvergelijken.nl
+      http:
+        paths:
+          - backend:
+              serviceName: index-fund-comparison
+              servicePort: 80
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+
+metadata:
+  name: indexfondsenvergelijker.nl
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+    nginx.ingress.kubernetes.io/permanent-redirect: https://www.indexfondsenvergelijken.nl
+
+spec:
+  tls:
+    - hosts:
+        - indexfondsenvergelijker.nl
+        - www.indexfondsenvergelijker.nl
+      secretName: indexfondsenvergelijker.nl
+  rules:
+    - host: www.indexfondsenvergelijker.nl
+      http:
+        paths:
+            - backend:
+                serviceName: index-fund-comparison
+                servicePort: 80
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+
+metadata:
+  name: indexfondsen-vergelijken.nl
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+    nginx.ingress.kubernetes.io/permanent-redirect: https://www.indexfondsenvergelijken.nl
+
+spec:
+  tls:
+    - hosts:
+        - indexfondsen-vergelijken.nl
+        - indexfondsen-vergelijken.nl
+      secretName: indexfondsen-vergelijken.nl
+  rules:
+    - host: www.indexfondsen-vergelijken.nl
       http:
         paths:
           - backend:
