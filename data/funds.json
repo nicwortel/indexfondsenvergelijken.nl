@@ -187,5 +187,17 @@
         "factsheet": "https://www.ishares.com/nl/particuliere-belegger/nl/literature/fact-sheet/eimi-ishares-core-msci-em-imi-ucits-etf-fund-fact-sheet-nl-nl.pdf",
         "index": "MSCI Emerging Markets Investable Market Index",
         "shares": 2658
+    },
+    {
+        "name": "iShares MSCI World Small Cap UCITS ETF",
+        "symbol": "IUSN",
+        "isin": "IE00BF4RFH31",
+        "logo": "ishares.png",
+        "totalExpenseRatio": 0.0035,
+        "dividendLeakage": 0.003,
+        "kiid": "https://www.ishares.com/nl/particuliere-belegger/nl/literature/kiid/kiid-ishares-msci-world-small-cap-ucits-etf-usd-acc-nl-ie00bf4rfh31-nl.pdf",
+        "factsheet": "https://www.ishares.com/nl/particuliere-belegger/nl/literature/fact-sheet/wsml-ishares-msci-world-small-cap-ucits-etf-fund-fact-sheet-nl-nl.pdf",
+        "index": "MSCI World Small Cap Index",
+        "shares": 3296
     }
 ]

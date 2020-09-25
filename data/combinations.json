@@ -86,6 +86,23 @@
         "broker": "Lynx",
         "portfolio": [
             {
+                "allocation": 77,
+                "fund": "AVIAW"
+            },
+            {
+                "allocation": 12,
+                "fund": "EMIM"
+            },
+            {
+                "allocation": 11,
+                "fund": "IUSN"
+            }
+        ]
+    },
+    {
+        "broker": "Lynx",
+        "portfolio": [
+            {
                 "allocation": 88,
                 "fund": "AVIAW"
             },
@@ -153,6 +170,24 @@
             {
                 "allocation": 12,
                 "fund": "EMIM"
+            }
+        ],
+        "automatedInvesting": true
+    },
+    {
+        "broker": "Binck",
+        "portfolio": [
+            {
+                "allocation": 77,
+                "fund": "AVIAW"
+            },
+            {
+                "allocation": 12,
+                "fund": "EMIM"
+            },
+            {
+                "allocation": 11,
+                "fund": "IUSN"
             }
         ],
         "automatedInvesting": true
