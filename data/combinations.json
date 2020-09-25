@@ -184,5 +184,23 @@
             }
         ],
         "automatedInvesting": true
+    },
+    {
+        "broker": "Brand New Day",
+        "portfolio": [
+            {
+                "allocation": 75,
+                "fund": "BND Wereld Hedged"
+            },
+            {
+                "allocation": 12,
+                "fund": "BND EM"
+            },
+            {
+                "allocation": 13,
+                "fund": "BND SC"
+            }
+        ],
+        "automatedInvesting": true
     }
 ]

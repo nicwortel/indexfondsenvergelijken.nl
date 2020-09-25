@@ -140,6 +140,19 @@
         "shares": 1393
     },
     {
+        "name": "BND Small Cap Wereld Indexfonds",
+        "symbol": "BND SC",
+        "isin": "NL0014120297",
+        "logo": "brandnewday.png",
+        "entryFee": 0.005,
+        "totalExpenseRatio": 0.0068,
+        "dividendLeakage": 0,
+        "kiid": "https://www.brandnewday.nl/content/app/pdf/documentencentrum/EBI_en_FB/EBI-BND-SC.pdf",
+        "factsheet": "https://www.brandnewday.nl/content/app/pdf/documentencentrum/Factsheets/BND-Small-Cap-Wereld-Indexfonds.pdf",
+        "index": "MSCI World Small Cap Custom ESG Low Carbon Index",
+        "shares": 3266
+    },
+    {
         "name": "iShares Core MSCI World UCITS ETF",
         "symbol": "IWDA",
         "isin": "IE00B4L5Y983",
