@@ -114,8 +114,8 @@
         "shares":  587
     },
     {
-        "name": "BND Wereld Indexfonds - Hedged",
-        "symbol": "BND Wereld Hedged",
+        "name": "BND Wereld Indexfonds Hedged",
+        "symbol": "BND WIF Hedged",
         "isin": "NL0014120321",
         "logo": "brandnewday.png",
         "entryFee": 0.005,
@@ -132,7 +132,7 @@
         "isin": "NL0014120289",
         "logo": "brandnewday.png",
         "entryFee": 0.005,
-        "totalExpenseRatio": 0.0068,
+        "totalExpenseRatio": 0.007,
         "dividendLeakage": 0,
         "kiid": "https://www.brandnewday.nl/content/app/pdf/documentencentrum/EBI_en_FB/EBI-BND-EM.pdf",
         "factsheet": "https://www.brandnewday.nl/content/app/pdf/documentencentrum/Factsheets/BND-Emerging-Markets-Indexfonds.pdf",
