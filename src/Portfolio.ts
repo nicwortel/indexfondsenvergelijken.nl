@@ -43,6 +43,10 @@ export class Portfolio {
         return false;
     }
 
+    public allocate(amount: Money): Money[] {
+        return this.assets.map((asset: { allocation: number; fund: Fund }): Money => amount.multiply(asset.allocation).divide(100));
+    }
+
     public describe(): string {
         let markets: string[] = [];
         let sizes: string[] = [];

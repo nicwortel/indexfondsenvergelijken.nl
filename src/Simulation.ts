@@ -89,7 +89,9 @@ export class Simulation {
     private invest(amount: Money): void {
         this.totalInvestment = this.totalInvestment.add(amount);
 
-        const transactionCosts = this.broker.getTransactionCosts(amount);
+        const transactions = this.portfolio.allocate(amount);
+        const transactionCosts = transactions.reduce((total: Money, transaction: Money): Money => total.add(this.broker.getTransactionCosts(transaction)), new Money(0, 'EUR'));
+
         const investment = amount.subtract(transactionCosts);
 
         const entryFee = this.portfolio.getEntryCosts(investment);
