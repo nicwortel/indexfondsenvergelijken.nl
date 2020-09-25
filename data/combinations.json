@@ -14,6 +14,24 @@
         "automatedInvesting": true
     },
     {
+        "broker": "ING",
+        "portfolio": [
+            {
+                "allocation": 75,
+                "fund": "NT World"
+            },
+            {
+                "allocation": 12,
+                "fund": "NT EM"
+            },
+            {
+                "allocation": 13,
+                "fund": "NT SC"
+            }
+        ],
+        "automatedInvesting": true
+    },
+    {
         "broker": "ABN Amro",
         "portfolio": [
             {
