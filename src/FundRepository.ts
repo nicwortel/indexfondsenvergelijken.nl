@@ -1,6 +1,7 @@
 import funds from "../data/funds.json";
 import {Fund} from "./Fund";
 import {IndexRepository} from "./IndexRepository";
+import {Percentage} from "./Percentage";
 
 export class FundRepository {
     constructor(private indexRepository: IndexRepository) {
@@ -15,9 +16,9 @@ export class FundRepository {
                 data.symbol,
                 data.isin,
                 data.logo,
-                data.totalExpenseRatio,
-                data.dividendLeakage,
-                data.entryFee ?? 0,
+                Percentage.createFromFraction(data.totalExpenseRatio),
+                Percentage.createFromFraction(data.dividendLeakage),
+                Percentage.createFromFraction(data.entryFee ?? 0),
                 this.indexRepository.getByName(data.index),
                 data.kiid,
                 data.factsheet,

@@ -1,6 +1,7 @@
 import {Money} from "bigint-money";
 import {Fund} from "../src/Fund";
 import {Index} from "../src/Index/Index";
+import {Percentage} from "../src/Percentage";
 import {Portfolio} from "../src/Portfolio";
 
 const dummyFund = new Fund(
@@ -8,9 +9,9 @@ const dummyFund = new Fund(
     'DUM',
     'NL123',
     'foo',
-    0.001,
-    0,
-    0,
+    new Percentage(0.1),
+    new Percentage(0),
+    new Percentage(0),
     new Index('Dummy Index', 'all', [], ''),
     '',
     '',
@@ -20,10 +21,10 @@ const dummyFund = new Fund(
 test('Fails if the total allocation of assets is not 100%', () => {
     expect(() => new Portfolio([
         {
-            allocation: 50, fund: dummyFund
+            allocation: new Percentage(50), fund: dummyFund
         },
         {
-            allocation: 49, fund: dummyFund
+            allocation: new Percentage(49), fund: dummyFund
         }
     ])).toThrow(Error);
 });
@@ -31,11 +32,11 @@ test('Fails if the total allocation of assets is not 100%', () => {
 test('Allocates an investment sum to the funds', () => {
     const portfolio = new Portfolio([
         {
-            allocation: 88,
+            allocation: new Percentage(88),
             fund: dummyFund
         },
         {
-            allocation: 12,
+            allocation: new Percentage(12),
             fund: dummyFund
         }
     ]);

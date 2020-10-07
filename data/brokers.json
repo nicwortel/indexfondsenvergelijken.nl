@@ -5,9 +5,9 @@
         "product": "Zelf op de beurs",
         "baseFee": 20,
         "serviceFee": [
-            {"upperLimit": 100000, "fee": 0.0024},
-            {"upperLimit": 500000, "fee": 0.0012},
-            {"upperLimit": null, "fee": 0.0006}
+            {"upperLimit": 100000, "percentage": 0.24},
+            {"upperLimit": 500000, "percentage": 0.12},
+            {"upperLimit": null, "percentage": 0.06}
         ],
         "serviceFeeCalculation": "averageEndOfMonth",
         "transactionFee": 0,
@@ -19,9 +19,9 @@
         "product": "Zelf Beleggen Basis",
         "baseFee": 0,
         "serviceFee": [
-            {"upperLimit": 100000, "fee": 0.002},
-            {"upperLimit": 400000, "fee": 0.0012},
-            {"upperLimit": null, "fee": 0.0006}
+            {"upperLimit": 100000, "percentage": 0.2},
+            {"upperLimit": 400000, "percentage": 0.12},
+            {"upperLimit": null, "percentage": 0.06}
         ],
         "serviceFeeCalculation": "endOfQuarter",
         "transactionFee": 0,
@@ -35,8 +35,8 @@
         "minimumServiceFee": 5,
         "maximumServiceFee": 100,
         "serviceFee": [
-            {"upperLimit": 100000, "fee": 0.0024},
-            {"upperLimit": null, "fee": 0.0012}
+            {"upperLimit": 100000, "percentage": 0.24},
+            {"upperLimit": null, "percentage": 0.12}
         ],
         "serviceFeeCalculation": "averageOfQuarter",
         "transactionFee": {
@@ -67,7 +67,7 @@
         "product": "Fundcoach",
         "baseFee": 0,
         "serviceFee": [
-            {"upperLimit": 300000, "fee": 0.0018 }
+            {"upperLimit": 300000, "percentage": 0.18 }
         ],
         "serviceFeeCalculation": "averageEndOfMonth",
         "costOverview": "https://www.binck.nl/fondsbeleggen#tarieven"

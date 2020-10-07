@@ -8,6 +8,7 @@ import {Combination} from "./Combination";
 import {FundRepository} from "./FundRepository";
 import {IndexRepository} from "./IndexRepository";
 import {NumberFormatter} from "./NumberFormatter";
+import {Percentage} from "./Percentage";
 import {Portfolio} from "./Portfolio";
 import {Simulation} from "./Simulation";
 import {View} from "./View";
@@ -31,7 +32,7 @@ function getInputValue(elementId: string): number {
 const combinations: Combination[] = combinationData.map(function (combination: { broker: string, portfolio: { allocation: number, fund: string }[], automatedInvesting: boolean }): Combination {
     const broker = brokerRepository.getBroker(combination.broker);
     const funds = combination.portfolio.map(function (portfolio) {
-        return {allocation: portfolio.allocation, fund: fundRepository.getFund(portfolio.fund)};
+        return {allocation: new Percentage(portfolio.allocation), fund: fundRepository.getFund(portfolio.fund)};
     })
 
     const portfolio = new Portfolio(funds);
@@ -57,7 +58,7 @@ function runSimulation(combinations: Combination[]): void {
         initialInvestment = new Money(getInputValue('initial'), 'EUR');
     }
     const years = getInputValue('years');
-    const expectedYearlyReturn = getInputValue('return') / 100;
+    const expectedYearlyReturn = new Percentage(getInputValue('return'));
 
     const totalInvestment = initialInvestment.add(monthlyInvestment.multiply(12 * years - 1));
     document.getElementById('totalInvestment').innerText = numberFormatter.formatMoney(totalInvestment);

@@ -1,11 +1,13 @@
 import {Money} from "bigint-money";
 import {Broker} from "../src/Broker";
+import {Percentage} from "../src/Percentage";
 import {PercentageFee} from "../src/Pricing/PercentageFee";
+import {Tier} from "../src/Tier";
 import {TieredFee} from "../src/TieredFee";
 
 test('Calculates the cost of a transaction', () => {
     const baseFee = new Money(0, 'EUR');
-    const serviceFee = new TieredFee([{upperLimit: 0, fee: 0}]);
+    const serviceFee = new TieredFee([new Tier(0, new Percentage(0))]);
 
     const broker = new Broker(
         'TestBroker',

@@ -1,5 +1,6 @@
 import {Money} from "bigint-money/dist";
 import {Broker} from "./Broker";
+import {Percentage} from "./Percentage";
 import {Portfolio} from "./Portfolio";
 import {WealthTax} from "./WealthTax";
 
@@ -19,7 +20,7 @@ export class Simulation {
         private portfolio: Portfolio,
         private initialInvestment: Money,
         private monthlyInvestment: Money,
-        private expectedYearlyReturn: number,
+        private expectedYearlyReturn: Percentage,
         private subtractServiceFeesFromInvestments: boolean
     ) {
     }
@@ -78,10 +79,11 @@ export class Simulation {
     private runMonth(): void {
         this.invest(this.monthsPassed === 0 ? this.initialInvestment : this.monthlyInvestment);
 
-        const growthRatio = 1 + this.getMonthlyRate(this.expectedYearlyReturn - this.portfolio.getTotalCosts());
+        const netReturn = this.expectedYearlyReturn.subtract(this.portfolio.getTotalCosts());
+        const growthPercentage = this.getMonthlyRate(netReturn).add(new Percentage(100));
 
-        this.value = this.value.multiply(growthRatio.toString());
-        this.totalFundCosts = this.totalFundCosts.add(this.value.multiply(this.getMonthlyRate(this.portfolio.getTotalCosts()).toString()))
+        this.value = growthPercentage.applyTo(this.value);
+        this.totalFundCosts = this.totalFundCosts.add(this.getMonthlyRate(this.portfolio.getTotalCosts()).applyTo(this.value));
 
         this.monthsPassed++;
     }
@@ -115,7 +117,7 @@ export class Simulation {
         this.totalServiceFees = this.totalServiceFees.add(serviceFee);
     }
 
-    private getMonthlyRate(yearlyRate: number): number {
-        return (1 + yearlyRate) ** (1 / 12) - 1;
+    private getMonthlyRate(yearly: Percentage): Percentage {
+        return Percentage.createFromFraction((1 + yearly.getFraction()) ** (1/12) - 1);
     }
 }

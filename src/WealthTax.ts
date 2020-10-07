@@ -1,3 +1,4 @@
+import {Percentage} from "./Percentage";
 import {TieredFee} from "./TieredFee";
 import {Money} from "bigint-money/dist";
 
@@ -8,9 +9,9 @@ export class WealthTax {
 
     // https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/vermogen_en_aanmerkelijk_belang/vermogen/belasting_betalen_over_uw_vermogen/grondslag_sparen_en_beleggen/berekening-2020/
     private tiers = new TieredFee([
-        {upperLimit: 72798, fee: 0.01789},
-        {upperLimit: 1005573, fee: 0.04185},
-        {upperLimit: null, fee: 0.0528}
+        {upperLimit: 72798, percentage: new Percentage(1.789)},
+        {upperLimit: 1005573, percentage: new Percentage(4.185)},
+        {upperLimit: null, percentage: new Percentage(5.28)}
     ])
 
     private tax = 0.3;

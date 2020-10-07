@@ -1,4 +1,5 @@
 import {Index} from "./Index/Index";
+import {Percentage} from "./Percentage";
 
 export class Fund {
     constructor(
@@ -6,9 +7,9 @@ export class Fund {
         public symbol: string,
         public isin: string,
         public logo: string,
-        public totalExpenseRatio: number,
-        public dividendLeakage: number,
-        public entryFee: number,
+        public totalExpenseRatio: Percentage,
+        public dividendLeakage: Percentage,
+        public entryFee: Percentage,
         public index: Index,
         public kiid: string,
         public factsheet: string,
@@ -16,8 +17,8 @@ export class Fund {
     ) {
     }
 
-    public getTotalCosts(): number {
-        return this.totalExpenseRatio + this.dividendLeakage;
+    public getTotalCosts(): Percentage {
+        return this.totalExpenseRatio.add(this.dividendLeakage);
     }
 
     public containsSmallCaps(): boolean {

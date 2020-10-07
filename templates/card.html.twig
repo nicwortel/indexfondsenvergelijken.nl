@@ -74,7 +74,7 @@
                             <tr>
                                 <td>{{ asset.fund.name }}</td>
                                 <td>{{ asset.fund.isin }}</td>
-                                <td class="text-right">{{ asset.allocation }} %</td>
+                                <td class="text-right">{{ asset.allocation|percentage }}</td>
                                 <td class="text-right">{{ asset.fund.entryFee|percentage }}</td>
                                 <td class="text-right">{{ asset.fund.totalExpenseRatio|percentage }}</td>
                                 <td class="text-right">{{ asset.fund.dividendLeakage|percentage }}</td>
@@ -119,7 +119,7 @@
                         <tr>
                             <td>
                                 Servicekosten {% if tier.upperLimit %}t/m {{ tier.upperLimit|money }}{% elseif broker.serviceFee.tiers.length > 1 %}daarboven{% endif %}</td>
-                            <td>{{ tier.fee|percentage }} / jaar</td>
+                            <td>{{ tier.percentage|percentage }} / jaar</td>
                         </tr>
                     {% endfor %}
                     {% if broker.maximumServiceFee %}

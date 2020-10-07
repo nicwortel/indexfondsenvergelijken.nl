@@ -1,17 +1,19 @@
 import {Broker} from "./Broker";
 import brokers from "../data/brokers.json";
+import {Percentage} from "./Percentage";
 import {FeeFactory} from "./Pricing/FeeFactory";
+import {Tier} from "./Tier";
 import {TieredFee} from "./TieredFee";
 import {Money} from "bigint-money/dist";
 
 export class BrokerRepository {
     public getAll(): Array<Broker> {
         return brokers.map(function (data: any): Broker {
-            if (!data.serviceFee) {
-                data.serviceFee = [];
-            }
+            let tiers = data.serviceFee ?? [];
 
-            const serviceFee: TieredFee = new TieredFee(data.serviceFee);
+            tiers = tiers.map((tier: {upperLimit: number, percentage: number}) => new Tier(tier.upperLimit, new Percentage(tier.percentage)));
+
+            const serviceFee: TieredFee = new TieredFee(tiers);
 
             const feeFactory = new FeeFactory();
 

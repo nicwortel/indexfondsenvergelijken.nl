@@ -2,6 +2,7 @@ import * as Twig from "twig";
 import template from '../templates/card.html.twig';
 import {Combination} from "./Combination";
 import {NumberFormatter} from "./NumberFormatter";
+import {Percentage} from "./Percentage";
 import {Simulation} from "./Simulation";
 
 export class View {
@@ -14,13 +15,13 @@ export class View {
             return this.numberFormatter.formatMoney(amount);
         }.bind(this));
 
-        Twig.extendFilter('percentage', function (fraction: number): string {
+        Twig.extendFilter('percentage', function (percentage: Percentage): string {
             const formatter = new Intl.NumberFormat('nl-NL', {
                 style: 'percent',
                 maximumFractionDigits: 2
             });
 
-            return formatter.format(fraction);
+            return formatter.format(percentage.getFraction());
         }.bind(this));
 
         Twig.extendFilter('tagDecimals', function (amount: string): string {

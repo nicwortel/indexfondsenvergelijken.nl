@@ -1,10 +1,11 @@
 import {Money} from "bigint-money/dist";
+import {Tier} from "./Tier";
 
 export class TieredFee {
-    constructor(public tiers: { upperLimit: number, fee: number }[]) {
+    constructor(public tiers: Tier[]) {
     }
 
-    public calculateFee(input: Money) {
+    public calculateFee(input: Money): Money {
         const inputNumber = parseFloat(input.toFixed(2));
 
         let totalAmount = new Money(0, 'EUR');
@@ -24,7 +25,7 @@ export class TieredFee {
                 break;
             }
 
-            let tierFee = tierAmount * tier.fee;
+            let tierFee = tierAmount * tier.percentage.getFraction();
 
             totalAmount = totalAmount.add(tierFee.toFixed(2));
             previousTierLimit = tier.upperLimit;
