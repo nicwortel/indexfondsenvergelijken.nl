@@ -1,22 +1,11 @@
 import {Money} from "bigint-money";
-import {Fund} from "../src/Fund";
-import {Index} from "../src/Index/Index";
 import {Percentage} from "../src/Percentage";
 import {Portfolio} from "../src/Portfolio";
+import {Transaction} from "../src/Transaction";
+import {FundFactory} from "./FundFactory";
 
-const dummyFund = new Fund(
-    'Dummy Fund',
-    'DUM',
-    'NL123',
-    'foo',
-    new Percentage(0.1),
-    new Percentage(0),
-    new Percentage(0),
-    new Index('Dummy Index', 'all', [], ''),
-    '',
-    '',
-    1
-);
+const fundFactory = new FundFactory();
+const dummyFund = fundFactory.createMutualFund();
 
 test('Fails if the total allocation of assets is not 100%', () => {
     expect(() => new Portfolio([
@@ -41,5 +30,8 @@ test('Allocates an investment sum to the funds', () => {
         }
     ]);
 
-    expect(portfolio.allocate(new Money(200, 'EUR'))).toEqual([new Money(176, 'EUR'), new Money(24, 'EUR')]);
+    expect(portfolio.allocate(new Money(200, 'EUR'))).toEqual([
+        new Transaction(dummyFund, new Money(176, 'EUR')),
+        new Transaction(dummyFund, new Money(24, 'EUR'))
+    ]);
 });

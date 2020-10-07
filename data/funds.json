@@ -1,6 +1,7 @@
 [
     {
         "name": "Vanguard FTSE All-World UCITS ETF",
+        "type": "ETF",
         "symbol": "VWRL",
         "isin": "IE00B3RBWM25",
         "logo": "vanguard.png",
@@ -13,6 +14,7 @@
     },
     {
         "name": "Northern Trust World Custom ESG Equity Index UCITS FGR Feeder Fund",
+        "type": "mutualFund",
         "symbol": "NT World",
         "isin": "NL0011225305",
         "logo": "northern-trust.png",
@@ -25,6 +27,7 @@
     },
     {
         "name": "Northern Trust Emerging Markets Custom ESG Equity Index UCITS FGR Fund",
+        "type": "mutualFund",
         "symbol": "NT EM",
         "isin": "NL0011515424",
         "logo": "northern-trust.png",
@@ -37,6 +40,7 @@
     },
     {
         "name": "Northern Trust World Small Cap ESG Low Carbon Index FGR Feeder Fund",
+        "type": "mutualFund",
         "symbol": "NT SC",
         "isin": "NL0013552078",
         "logo": "northern-trust.png",
@@ -49,6 +53,7 @@
     },
     {
         "name": "Meesman Indexfonds Aandelen Wereldwijd Totaal",
+        "type": "mutualFund",
         "symbol": "Meesman Wereldwijd Totaal",
         "isin": "NL0013689110",
         "logo": "meesman.png",
@@ -61,6 +66,7 @@
     },
     {
         "name": "NN Enhanced Index Sustainable Equity Fund",
+        "type": "mutualFund",
         "symbol": "NN Enhanced",
         "isin": "NL0012125736",
         "logo": "nnip.png",
@@ -75,6 +81,7 @@
     },
     {
         "name": "NN Enhanced Index Sustainable Emerging Markets Equity Fund",
+        "type": "mutualFund",
         "symbol": "NN Enhanced EM",
         "isin": "NL0006311771",
         "logo": "nnip.png",
@@ -89,6 +96,7 @@
     },
     {
         "name": "ACTIAM Duurzaam Index Aandelenfonds Wereld",
+        "type": "mutualFund",
         "symbol": "AVIAW",
         "isin": "NL0011309349",
         "logo": "actiam.png",
@@ -102,6 +110,7 @@
     },
     {
         "name": "ACTIAM Duurzaam Index Aandelenfonds Opkomende Landen",
+        "type": "mutualFund",
         "symbol": "AVIAO",
         "isin": "NL0014332587",
         "logo": "actiam.png",
@@ -115,6 +124,7 @@
     },
     {
         "name": "BND Wereld Indexfonds Hedged",
+        "type": "mutualFund",
         "symbol": "BND WIF Hedged",
         "isin": "NL0014120321",
         "logo": "brandnewday.png",
@@ -128,6 +138,7 @@
     },
     {
         "name": "BND Emerging Markets Indexfonds",
+        "type": "mutualFund",
         "symbol": "BND EM",
         "isin": "NL0014120289",
         "logo": "brandnewday.png",
@@ -141,6 +152,7 @@
     },
     {
         "name": "BND Small Cap Wereld Indexfonds",
+        "type": "mutualFund",
         "symbol": "BND SC",
         "isin": "NL0014120297",
         "logo": "brandnewday.png",
@@ -154,6 +166,7 @@
     },
     {
         "name": "iShares Core MSCI World UCITS ETF",
+        "type": "ETF",
         "symbol": "IWDA",
         "isin": "IE00B4L5Y983",
         "logo": "ishares.png",
@@ -166,6 +179,7 @@
     },
     {
         "name": "iShares MSCI EM UCITS ETF",
+        "type": "ETF",
         "symbol": "IEMM",
         "isin": "IE00B0M63177",
         "logo": "ishares.png",
@@ -178,6 +192,7 @@
     },
     {
         "name": "iShares Core MSCI EM IMI UCITS ETF",
+        "type": "ETF",
         "symbol": "EMIM",
         "isin": "IE00BKM4GZ66",
         "logo": "ishares.png",
@@ -190,6 +205,7 @@
     },
     {
         "name": "iShares MSCI World Small Cap UCITS ETF",
+        "type": "ETF",
         "symbol": "IUSN",
         "isin": "IE00BF4RFH31",
         "logo": "ishares.png",

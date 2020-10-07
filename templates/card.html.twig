@@ -77,7 +77,7 @@
                                 <td class="text-right">{{ asset.allocation|percentage }}</td>
                                 <td class="text-right">{{ asset.fund.entryFee|percentage }}</td>
                                 <td class="text-right">{{ asset.fund.totalExpenseRatio|percentage }}</td>
-                                <td class="text-right">{{ asset.fund.dividendLeakage|percentage }}</td>
+                                <td class="text-right">{{ asset.fund.dividendLeak|percentage }}</td>
                                 <td>
                                     {% if asset.fund.factsheet %}
                                         <a href="{{ asset.fund.factsheet }}" target="_blank">Factsheet</a>
@@ -95,7 +95,6 @@
         </div>
         <div class="tab-pane fade" id="pricing-{{ index }}" role="tabpanel">
             <div class="card-body">
-
                 <table class="table">
                     <tr>
                         <th colspan="2">{{ broker.name }} {{ broker.product }}
@@ -109,28 +108,29 @@
                             <td>{{ combination.broker.baseFee|money }} / jaar</td>
                         </tr>
                     {% endif %}
-                    {% if broker.minimumServiceFee %}
+                    {% if broker.serviceFee.tiers|length > 0 %}
                         <tr>
-                            <td>Minimum servicekosten</td>
-                            <td>{{ broker.minimumServiceFee|money }}</td>
-                        </tr>
-                    {% endif %}
-                    {% for tier in broker.serviceFee.tiers %}
-                        <tr>
+                            <td>Servicekosten</td>
                             <td>
-                                Servicekosten {% if tier.upperLimit %}t/m {{ tier.upperLimit|money }}{% elseif broker.serviceFee.tiers.length > 1 %}daarboven{% endif %}</td>
-                            <td>{{ tier.percentage|percentage }} / jaar</td>
-                        </tr>
-                    {% endfor %}
-                    {% if broker.maximumServiceFee %}
-                        <tr>
-                            <td>Maximum servicekosten</td>
-                            <td>{{ broker.maximumServiceFee|money }}</td>
+                                {% if broker.minimumServiceFee %}
+                                    Minimum: {{ broker.minimumServiceFee|money }}<br>
+                                {% endif %}
+                                {% for tier in broker.serviceFee.tiers %}
+                                    {% if tier.upperLimit %}t/m {{ tier.upperLimit|money }}{% elseif broker.serviceFee.tiers.length > 1 %}daarboven{% endif %}:
+                                    {{ tier.percentage|percentage }} / jaar<br>
+                                {% endfor %}
+                                {% if broker.maximumServiceFee %}
+                                    Minimum: {{ broker.maximumServiceFee|money }}<br>
+                                {% endif %}
+                            </td>
                         </tr>
                     {% endif %}
                     <tr>
                         <td class="w-25">Transactiekosten</td>
-                        <td>{{ combination.broker.transactionFee.describe }}</td>
+                        <td>
+                            Indexfondsen: {{ combination.broker.mutualFundTransactionFee.describe }}<br />
+                            ETF's: {{ combination.broker.etfTransactionFee.describe }}
+                        </td>
                     </tr>
                 </table>
             </div>

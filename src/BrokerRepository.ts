@@ -17,7 +17,8 @@ export class BrokerRepository {
 
             const feeFactory = new FeeFactory();
 
-            const transactionFee = feeFactory.create(data.transactionFee);
+            const mutualFundTransactionFee = feeFactory.create(data.mutualFundTransactionFee);
+            const etfTransactionFee = feeFactory.create(data.etfTransactionFee);
 
             if (data.logo) {
                 require('../assets/images/' + data.logo);
@@ -29,7 +30,8 @@ export class BrokerRepository {
                 new Money(data.baseFee.toString(), 'EUR'),
                 serviceFee,
                 data.serviceFeeCalculation,
-                transactionFee,
+                mutualFundTransactionFee,
+                etfTransactionFee,
                 data.costOverview,
                 data.minimumServiceFee ? new Money(data.minimumServiceFee, 'EUR') : null,
                 data.maximumServiceFee ? new Money(data.maximumServiceFee, 'EUR') : null,

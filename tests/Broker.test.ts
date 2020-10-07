@@ -4,6 +4,10 @@ import {Percentage} from "../src/Percentage";
 import {PercentageFee} from "../src/Pricing/PercentageFee";
 import {Tier} from "../src/Tier";
 import {TieredFee} from "../src/TieredFee";
+import {Transaction} from "../src/Transaction";
+import {FundFactory} from "./FundFactory";
+
+const fundFactory = new FundFactory();
 
 test('Calculates the cost of a transaction', () => {
     const baseFee = new Money(0, 'EUR');
@@ -16,10 +20,11 @@ test('Calculates the cost of a transaction', () => {
         serviceFee,
         'averageEndOfMonth',
         new PercentageFee(1),
+        new PercentageFee(1),
         ''
     );
 
-    const transactionCosts = broker.getTransactionCosts(new Money(100, 'EUR'));
+    const transactionCosts = broker.getTransactionCosts(new Transaction(fundFactory.createMutualFund(), new Money(100, 'EUR')));
 
     expect(transactionCosts).toEqual(new Money(1, 'EUR'));
 });

@@ -10,7 +10,8 @@
             {"upperLimit": null, "percentage": 0.06}
         ],
         "serviceFeeCalculation": "averageEndOfMonth",
-        "transactionFee": 0,
+        "mutualFundTransactionFee": 0,
+        "etfTransactionFee": 0,
         "costOverview": "https://www.ing.nl/particulier/beleggen/beginnen-met-beleggen/tarieven/tarieven-zelf-op-de-beurs.html"
     },
     {
@@ -24,7 +25,11 @@
             {"upperLimit": null, "percentage": 0.06}
         ],
         "serviceFeeCalculation": "endOfQuarter",
-        "transactionFee": 0,
+        "mutualFundTransactionFee": 0,
+        "etfTransactionFee": {
+            "base": 5,
+            "percentage": 0.05
+        },
         "costOverview": "https://www.abnamro.nl/nl/prive/beleggen/beleggingsvormen/zelf-beleggen-basis/index.html"
     },
     {
@@ -39,9 +44,14 @@
             {"upperLimit": null, "percentage": 0.12}
         ],
         "serviceFeeCalculation": "averageOfQuarter",
-        "transactionFee": {
+        "mutualFundTransactionFee": {
             "percentage": 0.1,
             "minimum": 0.05,
+            "maximum": 150
+        },
+        "etfTransactionFee": {
+            "base": 5,
+            "percentage": 0.05,
             "maximum": 150
         },
         "costOverview": "https://www.rabobank.nl/images/tarieven-beleggen-bij-de-rabobank_29409753.pdf"
@@ -51,7 +61,7 @@
         "logo": "meesman.png",
         "product": "",
         "baseFee": 0,
-        "transactionFee": 0.25,
+        "mutualFundTransactionFee": 0.25,
         "costOverview": "https://www.meesman.nl/zo-werkt-het/kosten"
     },
     {
@@ -59,6 +69,8 @@
         "logo": "degiro.png",
         "product": "Basic - Kernselectie",
         "baseFee": 0,
+        "mutualFundTransactionFee": 0,
+        "etfTransactionFee": 0,
         "costOverview": "https://www.degiro.nl/data/pdf/Tarievenoverzicht.pdf"
     },
     {
@@ -70,6 +82,8 @@
             {"upperLimit": 300000, "percentage": 0.18 }
         ],
         "serviceFeeCalculation": "averageEndOfMonth",
+        "mutualFundTransactionFee": 0,
+        "etfTransactionFee": 0,
         "costOverview": "https://www.binck.nl/fondsbeleggen#tarieven"
     },
     {
@@ -78,6 +92,7 @@
         "product": "",
         "baseFee": 0,
         "serviceFee": [],
+        "mutualFundTransactionFee": 0,
         "costOverview": "https://www.fitvermogen.nl/vragen"
     },
     {
@@ -85,15 +100,21 @@
         "logo": "brandnewday.png",
         "product": "Beleggingsrekening",
         "baseFee": 0,
-        "serviceFee": []
+        "serviceFee": [],
+        "mutualFundTransactionFee": 0
     },
     {
         "name": "Lynx",
         "logo": "lynx.png",
         "product": "Zelf Beleggen",
         "baseFee": 0,
-        "transactionFee": {
+        "mutualFundTransactionFee": {
             "percentage": 0.1,
+            "minimum": 6,
+            "maximum": 45
+        },
+        "etfTransactionFee": {
+            "percentage": 0.06,
             "minimum": 6,
             "maximum": 45
         },

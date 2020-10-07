@@ -2,6 +2,7 @@ import {Money} from "bigint-money/dist";
 import {Broker} from "./Broker";
 import {Percentage} from "./Percentage";
 import {Portfolio} from "./Portfolio";
+import {Transaction} from "./Transaction";
 import {WealthTax} from "./WealthTax";
 
 export class Simulation {
@@ -92,14 +93,15 @@ export class Simulation {
         this.totalInvestment = this.totalInvestment.add(amount);
 
         const transactions = this.portfolio.allocate(amount);
-        const transactionCosts = transactions.reduce((total: Money, transaction: Money): Money => total.add(this.broker.getTransactionCosts(transaction)), new Money(0, 'EUR'));
+        const transactionCosts = transactions.map((transaction: Transaction) => this.broker.getTransactionCosts(transaction));
+        const totalTransactionCost = transactionCosts.reduce((total: Money, current: Money): Money => total.add(current), new Money(0, 'EUR'));
 
-        const investment = amount.subtract(transactionCosts);
+        const investment = amount.subtract(totalTransactionCost);
 
         const entryFee = this.portfolio.getEntryCosts(investment);
 
         this.value = this.value.add(investment.subtract(entryFee));
-        this.totalTransactionFees = this.totalTransactionFees.add(transactionCosts);
+        this.totalTransactionFees = this.totalTransactionFees.add(totalTransactionCost);
         this.totalFundCosts = this.totalFundCosts.add(entryFee);
     }
 

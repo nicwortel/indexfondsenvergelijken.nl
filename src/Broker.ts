@@ -1,6 +1,10 @@
+import {Etf} from "./Fund/Etf";
+import {Fund} from "./Fund/Fund";
+import {MutualFund} from "./Fund/MutualFund";
 import {Fee} from "./Pricing/Fee";
 import {TieredFee} from "./TieredFee";
 import {Money} from "bigint-money/dist";
+import {Transaction} from "./Transaction";
 
 export class Broker {
     constructor(
@@ -9,7 +13,8 @@ export class Broker {
         public baseFee: Money,
         public serviceFee: TieredFee,
         public serviceFeeCalculation: string,
-        public transactionFee: Fee,
+        public mutualFundTransactionFee: Fee,
+        public etfTransactionFee: Fee,
         public costOverview: string,
         public minimumServiceFee?: Money,
         public maximumServiceFee?: Money,
@@ -17,8 +22,10 @@ export class Broker {
     ) {
     }
 
-    public getTransactionCosts(investment: Money): Money {
-        return this.transactionFee.calculateFor(investment);
+    public getTransactionCosts(transaction: Transaction): Money {
+        const transactionFee = this.getTransactionFeeFor(transaction.fund);
+
+        return transactionFee.calculateFor(transaction.amount);
     }
 
     public getQuarterlyCosts(averageInvestedCapital: Money): Money {
@@ -34,5 +41,15 @@ export class Broker {
         }
 
         return baseFee.add(serviceFee);
+    }
+
+    private getTransactionFeeFor(fund: Fund): Fee {
+        if (fund instanceof MutualFund) {
+            return this.mutualFundTransactionFee;
+        }
+
+        if (fund instanceof Etf) {
+            return this.etfTransactionFee;
+        }
     }
 }
