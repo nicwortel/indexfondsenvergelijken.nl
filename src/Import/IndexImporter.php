@@ -124,6 +124,13 @@ final class IndexImporter implements DataImporter
 
     private function getMeesmanIndex(array $indices): Index
     {
+        // The same percentages as the Northern Trust funds
+        $exclusionPercentages = [
+            'MSCI World Custom ESG Index' => 5.8,
+            'MSCI Emerging Markets Custom ESG Index' => 7.5,
+            'MSCI World Small Cap Custom ESG Low Carbon Index' => 17.7
+        ];
+
         $underlyingIndices = [
             $indices['MSCI World Custom ESG Index'],
             $indices['MSCI Emerging Markets Custom ESG Index'],
@@ -132,16 +139,25 @@ final class IndexImporter implements DataImporter
 
         $marketCap = array_reduce(
             $underlyingIndices,
-            function (float $previous, Index $current): float {
-                return $previous + $current->marketCapitalization;
+            function (float $previous, Index $current) use ($exclusionPercentages): float {
+                $exclusionPercentage = $exclusionPercentages[$current->name];
+
+                $includedPercentage = 100 - $exclusionPercentage;
+
+                return $previous + $current->marketCapitalization * ($includedPercentage / 100);
             },
             0
         );
+        $marketCap = round($marketCap, 2);
 
         $marketCapPercentage = array_reduce(
             $underlyingIndices,
-            function (float $previous, Index $current): float {
-                return $previous + $current->percentageOfTotalMarketCapitalization;
+            function (float $previous, Index $current) use ($exclusionPercentages): float {
+                $exclusionPercentage = $exclusionPercentages[$current->name];
+
+                $includedPercentage = 100 - $exclusionPercentage;
+
+                return $previous + $current->percentageOfTotalMarketCapitalization * ($includedPercentage / 100);
             },
             0
         );
