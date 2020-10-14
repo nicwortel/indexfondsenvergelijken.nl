@@ -35,3 +35,19 @@ test('Allocates an investment sum to the funds', () => {
         new Transaction(dummyFund, new Money(24, 'EUR'))
     ]);
 });
+
+test('Returns the sum of market capitalization percentages of the underlying indices', () => {
+    const portfolio = new Portfolio([
+        {
+            allocation: new Percentage(88),
+            fund: fundFactory.createMutualFund(0.1, 0.2, 5, 80)
+        },
+        {
+            allocation: new Percentage(12),
+            fund: fundFactory.createMutualFund(0.1, 0.2, 10, 15)
+        }
+    ]);
+
+    // (80% * 95%) + (15% * 90%)
+    expect(portfolio.getMarketCapPercentage().getPercentage()).toBe(89.5);
+});

@@ -14,6 +14,7 @@ export class MutualFund implements Fund {
         private index: Index,
         private kiid: string,
         private factsheet: string,
+        private esgExclusions: Percentage,
         private shares: number
     )
     {
@@ -61,6 +62,16 @@ export class MutualFund implements Fund {
 
     getFactsheet(): string {
         return this.factsheet;
+    }
+
+    getMarketCapitalization(): Percentage {
+        const percentage = new Percentage(100).subtract(this.esgExclusions);
+
+        return this.index.percentageOfTotalMarketCapitalization.multiply(percentage);
+    }
+
+    getEsgExclusions(): Percentage {
+        return this.esgExclusions;
     }
 
     containsSmallCaps(): boolean {

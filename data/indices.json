@@ -1,49 +1,124 @@
 [
     {
+        "name": "MSCI ACWI IMI Index",
+        "markets": "all-world",
+        "sizes": [
+            "large",
+            "mid",
+            "small"
+        ],
+        "marketCapitalization": 57912625.68,
+        "percentageOfTotalMarketCapitalization": 100,
+        "factsheet": "https://www.msci.com/documents/10199/4211cc4b-453d-4b0a-a6a7-51d36472a703"
+    },
+    {
         "name": "MSCI World Index",
         "markets": "developed",
-        "sizes": ["large", "mid"],
+        "sizes": [
+            "large",
+            "mid"
+        ],
+        "marketCapitalization": 44996280.71,
+        "percentageOfTotalMarketCapitalization": 77.6968410284657,
         "factsheet": "https://www.msci.com/documents/10199/149ed7bc-316e-4b4c-8ea4-43fcb5bd6523"
     },
     {
-        "name": "MSCI World Custom ESG Index",
+        "name": "MSCI World Small Cap Index",
         "markets": "developed",
-        "sizes": ["large", "mid"]
+        "sizes": [
+            "small"
+        ],
+        "marketCapitalization": 5847968.37,
+        "percentageOfTotalMarketCapitalization": 10.097916130263773,
+        "factsheet": "https://www.msci.com/documents/10199/a67b0d43-0289-4bce-8499-0c102eaa8399"
     },
     {
         "name": "MSCI Emerging Markets Index",
         "markets": "emerging",
-        "sizes": ["large", "mid"]
+        "sizes": [
+            "large",
+            "mid"
+        ],
+        "marketCapitalization": 6370599.96,
+        "percentageOfTotalMarketCapitalization": 11.000364575422926,
+        "factsheet": "https://www.msci.com/documents/10199/c0db0a48-01f2-4ba9-ad01-226fd5678111"
     },
     {
-        "name": "MSCI Emerging Markets Custom ESG Index",
+        "name": "MSCI Emerging Markets IMI",
         "markets": "emerging",
-        "sizes": ["large", "mid"]
-    },
-    {
-        "name": "MSCI Emerging Markets Investable Market Index",
-        "markets": "emerging",
-        "sizes": ["large", "mid", "small"],
+        "sizes": [
+            "large",
+            "mid",
+            "small"
+        ],
+        "marketCapitalization": 7068376.6,
+        "percentageOfTotalMarketCapitalization": 12.205242841270532,
         "factsheet": "https://www.msci.com/documents/10199/97e25eb7-9bd0-4204-bea9-077095acf1d3"
-    },
-    {
-        "name": "MSCI World Small Cap Custom ESG Low Carbon Index",
-        "markets": "developed",
-        "sizes": ["small"]
     },
     {
         "name": "FTSE All-World Index",
         "markets": "all-world",
-        "sizes": ["large", "mid"]
+        "sizes": [
+            "large",
+            "mid"
+        ],
+        "marketCapitalization": 51612791,
+        "percentageOfTotalMarketCapitalization": 89.12182860640762,
+        "factsheet": "https://research.ftserussell.com/Analytics/FactSheets/temp/bd37ca9d-63e5-4a33-b499-7d9176bff3b5.pdf"
     },
     {
         "name": "FTSE Developed Index",
         "markets": "developed",
-        "sizes": ["large", "mid"]
+        "sizes": [
+            "large",
+            "mid"
+        ],
+        "marketCapitalization": 45820506,
+        "percentageOfTotalMarketCapitalization": 79.1200631330104,
+        "factsheet": "https://research.ftserussell.com/Analytics/FactSheets/Home/DownloadSingleIssue?issueName=AWD&IsManual=False"
     },
     {
-        "name": "Meesman combinatie MSCI World, EM & World Small Cap Custom ESG",
+        "name": "MSCI World Custom ESG Index",
+        "markets": "developed",
+        "sizes": [
+            "large",
+            "mid"
+        ],
+        "marketCapitalization": 44996280.71,
+        "percentageOfTotalMarketCapitalization": 77.6968410284657,
+        "factsheet": ""
+    },
+    {
+        "name": "MSCI Emerging Markets Custom ESG Index",
+        "markets": "emerging",
+        "sizes": [
+            "large",
+            "mid"
+        ],
+        "marketCapitalization": 6370599.96,
+        "percentageOfTotalMarketCapitalization": 11.000364575422926,
+        "factsheet": ""
+    },
+    {
+        "name": "MSCI World Small Cap Custom ESG Low Carbon Index",
+        "markets": "developed",
+        "sizes": [
+            "small"
+        ],
+        "marketCapitalization": 5847968.37,
+        "percentageOfTotalMarketCapitalization": 10.097916130263773,
+        "factsheet": ""
+    },
+    {
+        "name": "Meesman Aandelen Wereldwijd Totaal",
         "markets": "all-world",
-        "sizes": ["large", "mid", "small"]
+        "sizes": [
+            "large",
+            "mid",
+            "small"
+        ],
+        "marketCapitalization": 57214849.04,
+        "percentageOfTotalMarketCapitalization": 98.79512173415239,
+        "factsheet": ""
     }
 ]

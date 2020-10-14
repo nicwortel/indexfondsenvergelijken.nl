@@ -24,6 +24,10 @@ export interface Fund {
 
     getFactsheet(): string;
 
+    getEsgExclusions(): Percentage;
+
+    getMarketCapitalization(): Percentage;
+
     containsSmallCaps(): boolean;
 
     getNumberOfShares(): number;

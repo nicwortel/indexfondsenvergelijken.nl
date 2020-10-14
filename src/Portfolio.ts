@@ -25,6 +25,13 @@ export class Portfolio {
         return costs.reduce((sum: Percentage, current: Percentage) => sum.add(current));
     }
 
+    public getMarketCapPercentage(): Percentage {
+        return this.assets.reduce((
+            previous: Percentage,
+            current: { allocation: Percentage; fund: Fund }
+        ) => previous.add(current.fund.getMarketCapitalization()), new Percentage(0));
+    }
+
     public getFundNames(): string[] {
         return this.assets.map(function (asset): string {
             return asset.fund.getIdentifier();

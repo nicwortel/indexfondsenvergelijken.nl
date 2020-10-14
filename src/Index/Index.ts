@@ -1,8 +1,12 @@
+import {Percentage} from "../Percentage";
+
 export class Index {
     constructor(
         public name: string,
+        public factsheet: string,
         public markets: string,
         public sizes: string[],
+        public percentageOfTotalMarketCapitalization: Percentage,
         public weighting: string
     ) {
     }

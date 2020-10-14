@@ -61,6 +61,14 @@ export class Etf implements Fund {
         return this.factsheet;
     }
 
+    getMarketCapitalization(): Percentage {
+        return this.index.percentageOfTotalMarketCapitalization;
+    }
+
+    getEsgExclusions(): Percentage {
+        return new Percentage(0);
+    }
+
     containsSmallCaps(): boolean {
         return this.index.sizes.includes('small');
     }

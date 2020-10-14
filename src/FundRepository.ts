@@ -25,6 +25,7 @@ export class FundRepository {
                     this.indexRepository.getByName(data.index),
                     data.kiid,
                     data.factsheet,
+                    new Percentage(data.esgExclusions ?? 0),
                     data.shares ?? 0
                 );
             }

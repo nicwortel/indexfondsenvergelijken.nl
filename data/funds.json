@@ -23,6 +23,7 @@
         "kiid": "https://www.northerntrust.com/documents/funds/intl/ntfgr/kiids-nl/ntfgr-world-custom-esg-equity-index-ucits-fund-class-a-kiid-nl.pdf",
         "factsheet": "https://cdn.northerntrust.com/pws/nt/documents/funds/intl/factsheets/northern-trust-world-custom-esg-equity-index-ucits-fgr-feeder-fund-nlfw-sha-eur-re-nl.pdf",
         "index": "MSCI World Custom ESG Index",
+        "esgExclusions": 5.8,
         "shares": 1534
     },
     {
@@ -36,6 +37,7 @@
         "kiid": "https://www.northerntrust.com/documents/funds/intl/ntfgr/kiids-nl/ntfgr-emerging-markets-custom-esg-equity-index-ucits-fund-class-a-kiid-nl.pdf",
         "factsheet": "https://cdn.northerntrust.com/pws/nt/documents/funds/intl/factsheets/northern-trust-emerging-markets-custom-esg-equity-index-ucits-fgr-fund-nleme-sha-eur-re-nl.pdf",
         "index": "MSCI Emerging Markets Custom ESG Index",
+        "esgExclusions": 7.5,
         "shares": 1201
     },
     {
@@ -49,6 +51,7 @@
         "kiid": "https://www.northerntrust.com/documents/funds/intl/ntfgr/kiids-nl/ntfgr-world-small-cap-esg-low-carbon-index-fgr-fund-class-a-kiid-nl.pdf",
         "factsheet": "https://cdn.northerntrust.com/pws/nt/documents/funds/intl/factsheets/northern-trust-world-small-cap-esg-low-carbon-fgr-feeder-fund-nlfsc-sha-eur-re-nl-noperf.pdf",
         "index": "MSCI World Small Cap Custom ESG Low Carbon Index",
+        "esgExclusions": 17.7,
         "shares": 3266
     },
     {
@@ -59,9 +62,10 @@
         "logo": "meesman.png",
         "totalExpenseRatio": 0.005,
         "dividendLeakage": 0,
-        "index": "Meesman combinatie MSCI World, EM & World Small Cap Custom ESG",
         "kiid": "https://www.meesman.nl/media/1vhin3ml/ebi-miawt-2020.pdf",
         "factsheet": "https://www.meesman.nl/media/zpvkkdiw/factsheet-meesman-indexfonds-aandelen-wereldwijd-totaal-30-06-2020.pdf",
+        "index": "Meesman Aandelen Wereldwijd Totaal",
+        "esgExclusions": 7.07,
         "shares": 6054
     },
     {
@@ -76,6 +80,7 @@
         "kiid": "https://api.nnip.com/DocumentsApi/files/KIID_NL0012125736_NL_NL",
         "factsheet": "https://api.nnip.com/DocumentsApi/files/FACTSHEET_NL0012125736_NL_NL",
         "index": "MSCI World Index",
+        "esgExclusions": 35,
         "shares": 898,
         "_source": "https://www.morningstar.nl/nl/funds/snapshot/snapshot.aspx?id=F00000YGLU&tab=3"
     },
@@ -91,6 +96,7 @@
         "kiid": "https://api.nnip.com/DocumentsApi/files/KIID_NL0006311771_NL_NL",
         "factsheet": "https://api.nnip.com/DocumentsApi/files/FACTSHEET_NL0006311771_NL_NL",
         "index": "MSCI Emerging Markets Index",
+        "esgExclusions": 35,
         "shares": 542,
         "_source": "https://www.morningstar.nl/nl/funds/snapshot/snapshot.aspx?id=F0GBR04B1D&tab=3"
     },
@@ -106,6 +112,7 @@
         "kiid": "https://www.actiam.com/4a5659/siteassets/6_fondsen/actiam-retail/ebi/ebi_actiam_duurzaam_index_aandelenfonds_wereld.pdf",
         "factsheet": "https://www.actiam.com/4a52de/siteassets/6_fondsen/actiam-retail/factsheet-nl/fs_adia_wereld.pdf",
         "index": "MSCI World Index",
+        "esgExclusions": 19.3,
         "shares": 1302
     },
     {
@@ -120,6 +127,7 @@
         "kiid": "https://www.actiam.com/49b032/siteassets/6_fondsen/actiam-retail/ebi/ebi-actiam-duurzaam-index-aandelenfonds-opkomende-landen.pdf",
         "factsheet": "https://www.actiam.com/4a52de/siteassets/6_fondsen/actiam-retail/factsheet-nl/fs_adia_opkomende_landen.pdf",
         "index": "MSCI Emerging Markets Index",
+        "esgExclusions": 25.7,
         "shares":  587
     },
     {
@@ -162,6 +170,7 @@
         "kiid": "https://www.brandnewday.nl/content/app/pdf/documentencentrum/EBI_en_FB/EBI-BND-SC.pdf",
         "factsheet": "https://www.brandnewday.nl/content/app/pdf/documentencentrum/Factsheets/BND-Small-Cap-Wereld-Indexfonds.pdf",
         "index": "MSCI World Small Cap Custom ESG Low Carbon Index",
+        "esgExclusions": 17.7,
         "shares": 3266
     },
     {
@@ -200,7 +209,7 @@
         "dividendLeakage": 0.003,
         "kiid": "https://www.ishares.com/nl/particuliere-belegger/nl/literature/kiid/kiid-ishares-core-msci-em-imi-ucits-etf-usd-acc-nl-ie00bkm4gz66-nl.pdf",
         "factsheet": "https://www.ishares.com/nl/particuliere-belegger/nl/literature/fact-sheet/eimi-ishares-core-msci-em-imi-ucits-etf-fund-fact-sheet-nl-nl.pdf",
-        "index": "MSCI Emerging Markets Investable Market Index",
+        "index": "MSCI Emerging Markets IMI",
         "shares": 2658
     },
     {
