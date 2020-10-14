@@ -7,7 +7,7 @@ dist/%: src/* src/*/* node_modules index.html
 
 .PHONY: dist
 dist: WEBPACK_FLAGS = --mode=production
-dist: dist/index.html
+dist: dist/index-prod.html
 
 .PHONY: watch
 watch: WEBPACK_FLAGS += --watch
