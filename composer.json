@@ -1,0 +1,24 @@
+{
+    "name": "nicwortel/index-fund-comparison",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": "^7.4",
+        "ext-intl": "*",
+        "ext-json": "*",
+        "smalot/pdfparser": "^0.17.0",
+        "symfony/console": "^5.1",
+        "symfony/filesystem": "^5.1",
+        "symfony/http-client": "^5.1",
+        "symfony/http-kernel": "^5.1",
+        "symfony/process": "^5.1"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "NicWortel\\IndexFundComparison\\": "src/"
+        }
+    }
+}
