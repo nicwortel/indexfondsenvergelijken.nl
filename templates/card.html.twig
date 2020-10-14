@@ -60,38 +60,54 @@
     <div class="tab-content">
         <div class="tab-pane fade" id="portfolio-{{ index }}" role="tabpanel">
             <div class="card-body">
-                <div class="table-responsive">
+                {% for asset in portfolio.assets %}
                     <table class="table">
                         <tr>
-                            <th>Fonds</th>
-                            <th>ISIN</th>
-                            <th>Weging</th>
-                            <th>Instapkosten</th>
-                            <th>Kosten</th>
-                            <th>Dividendlek</th>
-                            <th>Documenten</th>
+                            <th colspan="2">{{ asset.fund.name }} ({{ asset.allocation|percentage }})</th>
                         </tr>
-                        {% for asset in portfolio.assets %}
-                            <tr>
-                                <td>{{ asset.fund.name }}</td>
-                                <td>{{ asset.fund.isin }}</td>
-                                <td class="text-right">{{ asset.allocation|percentage }}</td>
-                                <td class="text-right">{{ asset.fund.entryFee|percentage }}</td>
-                                <td class="text-right">{{ asset.fund.totalExpenseRatio|percentage }}</td>
-                                <td class="text-right">{{ asset.fund.dividendLeak|percentage }}</td>
-                                <td>
-                                    {% if asset.fund.factsheet %}
-                                        <a href="{{ asset.fund.factsheet }}" target="_blank">Factsheet</a>
-                                    {% endif %}
+                        <tr>
+                            <th class="w-25"><abbr title="International Securities Identification Number">ISIN</abbr></th>
+                            <td>{{ asset.fund.isin }}</td>
+                        </tr>
+                        <tr>
+                            <th>Index</th>
+                            <td>{% if asset.fund.trackedIndex.factsheet %}<a href="{{ asset.fund.trackedIndex.factsheet }}"
+                                    target="_blank">{{ asset.fund.trackedIndex.name }}</a>{% else %}{{ asset.fund.trackedIndex.name }}{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <th><abbr title="Environmental, Social & Governance">ESG</abbr>-uitsluitingen</th>
+                            <td>{% if asset.fund.esgExclusions.percentage > 0 %}{{ asset.fund.esgExclusions|percentage }} van marktkapitalisatie{% else %}geen{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <th>Aandelen</th>
+                            <td>{{ asset.fund.numberOfShares }}</td>
+                        </tr>
+                        <tr>
+                            <th>Instapkosten</th>
+                            <td>{{ asset.fund.entryFee|percentage }}</td>
+                        </tr>
+                        <tr>
+                            <th>Lopende kosten</th>
+                            <td>{{ asset.fund.totalExpenseRatio|percentage }}</td>
+                        </tr>
+                        <tr>
+                            <th>Dividendlek</th>
+                            <td>{{ asset.fund.dividendLeak|percentage }}</td>
+                        </tr>
+                        <tr>
+                            <th>Documenten</th>
+                            <td>
+                                {% if asset.fund.factsheet %}
+                                    <a href="{{ asset.fund.factsheet }}" target="_blank">Factsheet</a>
+                                {% endif %}
 
-                                    {% if asset.fund.kiid %}
-                                        <a href="{{ asset.fund.kiid }}" target="_blank">EBI</a>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                        {% endfor %}
+                                {% if asset.fund.kiid %}
+                                    <a href="{{ asset.fund.kiid }}" target="_blank">EBI</a>
+                                {% endif %}
+                            </td>
+                        </tr>
                     </table>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <div class="tab-pane fade" id="pricing-{{ index }}" role="tabpanel">
