@@ -53,6 +53,12 @@ module.exports = {
             template: 'index.html',
             minify: false
         }),
+        new HtmlWebpackPlugin({
+            template: 'veelgestelde-vragen.html',
+            filename: 'veelgestelde-vragen.html',
+            inject: false,
+            minify: false
+        }),
         new FaviconsWebpackPlugin('./node_modules/bootstrap-icons/icons/graph-up.svg'),
         new CopyPlugin({
             patterns: [

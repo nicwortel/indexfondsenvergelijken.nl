@@ -1,8 +1,8 @@
 WEBPACK_FLAGS = --mode=development
 
-all: dist/index.html
+all: dist/index.html dist/veelgestelde-vragen.html
 
-dist/%: src/* src/*/* data/* node_modules/ index.html
+dist/%: src/* src/*/* data/* node_modules/ index.html veelgestelde-vragen.html
 	node_modules/.bin/webpack $(WEBPACK_FLAGS)
 
 .PHONY: dist
