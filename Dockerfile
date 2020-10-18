@@ -17,7 +17,7 @@ COPY src/ src/
 COPY templates/ templates/
 COPY *.html ./
 COPY webpack.config.js *.ts tsconfig.json ./
-RUN node_modules/.bin/webpack --mode=production
+RUN NODE_ICU_DATA=node_modules/full-icu node_modules/.bin/webpack --mode=production
 
 FROM nginx:latest
 ENV TZ=Europe/Amsterdam
