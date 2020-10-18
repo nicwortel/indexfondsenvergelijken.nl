@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     build: .
-    image: docker.pkg.github.com/nicwortel/indexfondsenvergelijken.nl/web:latest
+    image: ghcr.io/nicwortel/indexfondsenvergelijken.nl:latest
     networks:
       - web
     volumes:
