@@ -1,0 +1,9 @@
+.github/
+bin/
+coverage/
+dist/
+kubernetes/
+node_modules/
+tests/
+var/
+vendor/

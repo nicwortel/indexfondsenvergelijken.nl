@@ -1,10 +1,10 @@
-name: test
+name: Build
 
 on: push
 
 jobs:
   build:
-    name: Test
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
@@ -13,3 +13,5 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm test
+      - name: Build the Docker image
+        run: docker-compose build
