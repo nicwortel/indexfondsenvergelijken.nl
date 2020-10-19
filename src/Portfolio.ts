@@ -65,43 +65,45 @@ export class Portfolio {
     }
 
     public describe(): string {
-        let markets: string[] = [];
-        let sizes: string[] = [];
-        let weighting: string = '';
+        let developed: string[] = [];
+        let emerging: string[] = [];
 
         for (let asset of this.assets) {
             let index = asset.fund.getTrackedIndex();
 
-            markets = markets.concat(index.markets);
-            sizes = sizes.concat(index.sizes);
-
-            if (index.weighting !== undefined) {
-                weighting = index.weighting;
+            if (index.markets == 'developed') {
+                developed = developed.concat(index.sizes);
+            } else if (index.markets == 'emerging') {
+                emerging = emerging.concat(index.sizes);
+            } else if (index.markets == 'all-world') {
+                developed = developed.concat(index.sizes);
+                emerging = emerging.concat(index.sizes);
             }
         }
 
-        if (markets.includes('developed') && markets.includes('emerging')) {
-            markets = ['all-world'];
+        if (this.arraysEqual(developed, ['large', 'mid', 'small'])) {
+            developed = ['all'];
+        }
+        if (this.arraysEqual(emerging, ['large', 'mid', 'small'])) {
+            emerging = ['all'];
         }
 
-        markets = markets.map((markets: string) => markets.replace('developed', 'developed markets').replace('emerging', 'emerging markets'));
-
-        if (sizes.includes('large') && sizes.includes('mid') && sizes.includes('small')) {
-            sizes = ['all'];
+        if (this.arraysEqual(developed, emerging)) {
+            return 'all-world ' + developed.join(' & ') + ' cap';
         }
 
-        function onlyUnique(value: string, index: number, self: string[]) {
-            return self.indexOf(value) === index;
-        }
-
-        if (weighting !== '') {
-            weighting = ' ' + weighting + ' weighted';
-        }
-
-        return markets.filter(onlyUnique).join(' ') + ' ' + sizes.filter(onlyUnique).join(' & ') + ' cap' + weighting;
+        return 'developed markets ' + developed.join(' & ') + ' cap + emerging markets ' + emerging.join(' & ') + ' cap';
     }
 
     private getFunds(): Fund[] {
         return this.assets.map((asset: { allocation: Percentage; fund: Fund }) => asset.fund);
+    }
+
+    private arraysEqual(array1: any[], array2: any[]): boolean {
+        if (array1.length !== array2.length) {
+            return false;
+        }
+
+        return array1.every((value, index: number) => value === array2[index]);
     }
 }
