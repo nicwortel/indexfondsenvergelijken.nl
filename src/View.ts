@@ -15,10 +15,10 @@ export class View {
             return this.numberFormatter.formatMoney(amount);
         }.bind(this));
 
-        Twig.extendFilter('percentage', function (percentage: Percentage): string {
+        Twig.extendFilter('percentage', function (percentage: Percentage, args: any[]): string {
             const formatter = new Intl.NumberFormat('nl-NL', {
                 style: 'percent',
-                maximumFractionDigits: 2
+                maximumFractionDigits: args[0] ?? 2
             });
 
             return formatter.format(percentage.getFraction());
