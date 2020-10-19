@@ -28,7 +28,10 @@
             </div>
             <div class="col-6 col-sm-4 col-lg-2">
                 <div class="small">Small caps</div>
-                <div class="font-weight-bold mb-2">{% if portfolio.containsSmallCaps %}ja{% else %}nee{% endif %}</div>
+                <div class="mb-2"><span
+                            class="font-weight-bold">{% if portfolio.containsSmallCaps %}ja{% else %}nee{% endif %}</span>
+                    {% if portfolio.containsSmallCaps and portfolio.containsOnlyEmergingMarketsSmallCaps %} (opkomende landen){% endif %}
+                </div>
             </div>
             <div class="col-sm-4 col-lg-3">
                 <div class="small">Automatisch inleggen</div>
