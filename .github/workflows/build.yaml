@@ -51,3 +51,26 @@ jobs:
           tags: ghcr.io/nicwortel/indexfondsenvergelijken.nl:${{ github.sha }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - name: Set the Kubernetes context
+        uses: azure/k8s-set-context@v1
+        with:
+          method: service-account
+          k8s-url: https://5f2145d7-6d55-4949-a828-8762e7a94296.k8s.ondigitalocean.com
+          k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
+      - name: Deploy to the Kubernetes cluster
+        uses: azure/k8s-deploy@v1
+        with:
+          manifests: |
+            kubernetes/deployment.yaml
+          images: |
+            ghcr.io/nicwortel/indexfondsenvergelijken.nl:${{ github.sha }}
+          imagepullsecrets: |
+            docker-container-registry
