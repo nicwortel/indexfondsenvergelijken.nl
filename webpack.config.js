@@ -64,6 +64,7 @@ module.exports = {
             patterns: [
                 {from: 'assets/robots.txt', to: ''},
                 {from: 'assets/main.css', to: ''},
+                {from: 'assets/matomo.js', to: ''},
                 {from: 'node_modules/bootstrap/dist/css/bootstrap.min.css', to: ''},
                 {from: 'node_modules/bootstrap-icons/icons/question-circle.svg', to: 'icons/'},
                 {from: 'node_modules/bootstrap-icons/icons/info-circle.svg', to: 'icons/'},
