@@ -2,7 +2,7 @@ WEBPACK_FLAGS = --mode=development
 
 all: dist/index.html dist/veelgestelde-vragen.html
 
-dist/%: src/* src/*/* data/* node_modules/ index.html veelgestelde-vragen.html
+dist/%: src/* src/*/* data/* templates/ node_modules/ index.html veelgestelde-vragen.html
 	node_modules/.bin/webpack $(WEBPACK_FLAGS)
 
 .PHONY: dist
