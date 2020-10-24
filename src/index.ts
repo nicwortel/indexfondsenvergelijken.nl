@@ -113,7 +113,9 @@ function runSimulation(combinations: Combination[]): void {
 }
 
 form.onchange = function () {
-    runSimulation(combinations);
+    if (form.checkValidity()) {
+        runSimulation(combinations);
+    }
 }
 
 window.onload = function () {
