@@ -22,4 +22,4 @@ spec:
         - name: index-fund-comparison
           image: ghcr.io/nicwortel/indexfondsenvergelijken.nl:latest
       imagePullSecrets:
-        - name: docker-container-registry
+        - name: github-container-registry
