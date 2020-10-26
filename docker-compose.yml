@@ -8,6 +8,7 @@ services:
       - web
     volumes:
       - ./dist/:/usr/share/nginx/html:ro
+      - ./etc/nginx.conf:/etc/nginx/conf.d/custom.conf:ro
     labels:
       traefik.enable: 'true'
       traefik.http.routers.indexfondsenvergelijken.rule: 'Host(`indexfondsenvergelijken.localhost`)'

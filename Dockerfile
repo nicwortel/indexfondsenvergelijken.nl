@@ -20,5 +20,6 @@ COPY webpack.config.js *.ts tsconfig.json ./
 RUN NODE_ICU_DATA=node_modules/full-icu node_modules/.bin/webpack --mode=production
 
 FROM nginx:latest
+COPY etc/nginx.conf /etc/nginx/conf.d/custom.conf
 ENV TZ=Europe/Amsterdam
 COPY --from=builder /tmp/build/dist/ /usr/share/nginx/html
