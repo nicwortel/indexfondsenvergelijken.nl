@@ -3,6 +3,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: './src/index.ts',
@@ -16,6 +17,14 @@ module.exports = {
             {
                 test: /\.twig$/,
                 use: 'twig-loader'
+            },
+            {
+                test: /\.scss$/i,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader',
+                ],
             },
             {
                 test: /\.(png|jpe?g|webp|tiff?)/i,
@@ -36,8 +45,18 @@ module.exports = {
                         },
                     },
                 ],
-
-            }
+            },
+            {
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: 'svg-url-loader',
+                        options: {
+                            limit: 10000,
+                        },
+                    },
+                ],
+            },
         ]
     },
     resolve: {
@@ -58,14 +77,15 @@ module.exports = {
             filename: 'veelgestelde-vragen.html',
             minify: false
         }),
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css',
+            chunkFilename: '[id].css',
+        }),
         new FaviconsWebpackPlugin('./node_modules/bootstrap-icons/icons/graph-up.svg'),
         new CopyPlugin({
             patterns: [
                 {from: 'assets/robots.txt', to: ''},
-                {from: 'assets/main.css', to: ''},
                 {from: 'node_modules/bootstrap/dist/css/bootstrap.min.css', to: ''},
-                {from: 'node_modules/bootstrap-icons/icons/question-circle.svg', to: 'icons/'},
-                {from: 'node_modules/bootstrap-icons/icons/info-circle.svg', to: 'icons/'},
             ],
         }),
     ],
