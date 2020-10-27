@@ -26,9 +26,9 @@
     "sass-loader": "^10.0.4",
     "svg-url-loader": "^6.0.0",
     "ts-jest": "^26.4.3",
-    "ts-loader": "^7.0.5",
+    "ts-loader": "^8.0.7",
     "twig-loader": "^0.5.5",
-    "typescript": "^3.9.7",
+    "typescript": "^4.0.5",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-image-resize-loader": "^3.0.0"
