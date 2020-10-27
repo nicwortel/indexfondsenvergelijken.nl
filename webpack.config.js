@@ -56,7 +56,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'veelgestelde-vragen.html',
             filename: 'veelgestelde-vragen.html',
-            inject: false,
             minify: false
         }),
         new FaviconsWebpackPlugin('./node_modules/bootstrap-icons/icons/graph-up.svg'),
@@ -64,7 +63,6 @@ module.exports = {
             patterns: [
                 {from: 'assets/robots.txt', to: ''},
                 {from: 'assets/main.css', to: ''},
-                {from: 'assets/matomo.js', to: ''},
                 {from: 'node_modules/bootstrap/dist/css/bootstrap.min.css', to: ''},
                 {from: 'node_modules/bootstrap-icons/icons/question-circle.svg', to: 'icons/'},
                 {from: 'node_modules/bootstrap-icons/icons/info-circle.svg', to: 'icons/'},
