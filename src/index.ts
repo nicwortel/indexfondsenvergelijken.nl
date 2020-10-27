@@ -1,6 +1,6 @@
 import {Money} from "bigint-money/dist";
 import 'bootstrap/js/src/tab';
-import $ from 'jquery';
+import jQuery from 'jquery';
 import combinationData from "../data/combinations.json";
 import {BrokerRepository} from "./BrokerRepository";
 import {Combination} from "./Combination";
@@ -15,7 +15,7 @@ import {WealthTax} from "./WealthTax";
 import '../assets/stylesheets/main.scss';
 
 // Assume that if JavaScript doesn't load it's because of outdated browser (Safari 13)
-$('#outdated-browser').hide();
+document.getElementById('outdated-browser').hidden = true;
 
 const brokerRepository = new BrokerRepository();
 const fundRepository = new FundRepository(new IndexRepository());
@@ -99,16 +99,19 @@ function runSimulation(combinations: Combination[]): void {
     const view = new View(<HTMLDivElement>document.getElementById('results'), new NumberFormatter());
     view.update(results);
 
-    $('.nav-tabs a.nav-link').on('click', function (e) {
-        e.preventDefault();
+    document.querySelectorAll('.nav-tabs a.nav-link').forEach((element) => {
+        element.addEventListener('click', (event: Event) => {
+            event.preventDefault();
 
-        if ($(this).hasClass('active')) {
-            $(this).removeClass('active');
-            $($(this).attr('href')).removeClass('active');
-            return;
-        }
+            if (element.classList.contains('active')) {
+                element.classList.remove('active');
+                const tab = document.querySelector(element.attributes.getNamedItem('href').value);
+                tab.classList.remove('active');
+                return;
+            }
 
-        $(this).tab('show');
+            jQuery(element).tab('show');
+        });
     });
 }
 
@@ -120,9 +123,10 @@ if (form) {
     }
 
     window.onload = function () {
-        $('#differentInitialInvestment').on('change', function () {
-            $('#initial').prop('disabled', !$(this).prop('checked'));
+        document.getElementById('differentInitialInvestment').addEventListener('change', function () {
+            return document.getElementById('initial').toggleAttribute('disabled');
         });
+
         runSimulation(combinations);
     };
 }
