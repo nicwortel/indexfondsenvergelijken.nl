@@ -1,0 +1,13 @@
+@use "sass:map";
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+$container-max-widths: map.merge($container-max-widths, (xl: 1320px));
+
+$form-validation-states: (
+  "invalid": (
+    "color": $form-feedback-invalid-color,
+    "icon": $form-feedback-icon-invalid
+  )
+);

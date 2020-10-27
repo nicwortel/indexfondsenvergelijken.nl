@@ -1,5 +1,4 @@
 import {Money} from "bigint-money/dist";
-import 'bootstrap/js/src/popover';
 import 'bootstrap/js/src/tab';
 import $ from 'jquery';
 import combinationData from "../data/combinations.json";
@@ -13,7 +12,7 @@ import {Portfolio} from "./Portfolio";
 import {Simulation} from "./Simulation";
 import {View} from "./View";
 import {WealthTax} from "./WealthTax";
-import './../assets/main.scss';
+import '../assets/stylesheets/main.scss';
 
 // Assume that if JavaScript doesn't load it's because of outdated browser (Safari 13)
 $('#outdated-browser').hide();

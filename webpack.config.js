@@ -85,7 +85,6 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {from: 'assets/robots.txt', to: ''},
-                {from: 'node_modules/bootstrap/dist/css/bootstrap.min.css', to: ''},
             ],
         }),
     ],
