@@ -1,6 +1,7 @@
 import {Money} from "bigint-money/dist";
 import 'bootstrap/js/src/tab';
 import jQuery from 'jquery';
+import '../assets/stylesheets/main.scss';
 import combinationData from "../data/combinations.json";
 import {BrokerRepository} from "./BrokerRepository";
 import {Combination} from "./Combination";
@@ -12,7 +13,6 @@ import {Portfolio} from "./Portfolio";
 import {Simulation} from "./Simulation";
 import {View} from "./View";
 import {WealthTax} from "./WealthTax";
-import '../assets/stylesheets/main.scss';
 
 // Assume that if JavaScript doesn't load it's because of outdated browser (Safari 13)
 document.getElementById('outdated-browser').hidden = true;
