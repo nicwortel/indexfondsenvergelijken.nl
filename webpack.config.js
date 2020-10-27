@@ -81,7 +81,14 @@ module.exports = {
             filename: '[name].[contenthash].css',
             chunkFilename: '[id].css',
         }),
-        new FaviconsWebpackPlugin('./node_modules/bootstrap-icons/icons/graph-up.svg'),
+        new FaviconsWebpackPlugin({
+            logo: './node_modules/bootstrap-icons/icons/graph-up.svg',
+            favicons: {
+                appName: 'Indexfondsenvergelijken.nl',
+                lang: 'nl-NL',
+                background: "#fff"
+            }
+        }),
         new CopyPlugin({
             patterns: [
                 {from: 'assets/robots.txt', to: ''},
