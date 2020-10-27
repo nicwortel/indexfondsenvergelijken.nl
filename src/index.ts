@@ -40,15 +40,6 @@ const combinations: Combination[] = combinationData.map(function (combination: {
     return {broker, portfolio, automatedInvesting: combination.automatedInvesting};
 });
 
-function createExternalLink(url: string, label: string): string {
-    const element = document.createElement('a');
-    element.innerHTML = label;
-    element.setAttribute('href', url);
-    element.setAttribute('target', '_blank');
-
-    return element.outerHTML;
-}
-
 function runSimulation(combinations: Combination[]): void {
     const monthlyInvestment = new Money(getInputValue('monthly'), 'EUR');
     let initialInvestment = monthlyInvestment;
