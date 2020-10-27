@@ -14,8 +14,8 @@ watch: WEBPACK_FLAGS += --watch
 watch:
 	node_modules/.bin/webpack $(WEBPACK_FLAGS)
 
-node_modules: package-lock.json
-	npm install
+node_modules: yarn.lock
+	yarn install
 
 clean:
 	rm -rf dist/*

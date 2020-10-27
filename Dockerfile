@@ -9,8 +9,8 @@ RUN ./configure
 RUN make && make install && ldconfig
 
 WORKDIR /tmp/build/
-COPY package*.json ./
-RUN npm install
+COPY package.json yarn.lock ./
+RUN yarn install
 COPY assets/ assets/
 COPY data/ data/
 COPY src/ src/
