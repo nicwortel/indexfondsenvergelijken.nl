@@ -78,6 +78,24 @@
         "automatedInvesting": true
     },
     {
+        "broker": "Rabobank",
+        "portfolio": [
+            {
+                "allocation": 80,
+                "fund": "NT World"
+            },
+            {
+                "allocation": 11,
+                "fund": "NT EM"
+            },
+            {
+                "allocation": 9,
+                "fund": "NT SC"
+            }
+        ],
+        "automatedInvesting": true
+    },
+    {
         "broker": "Meesman",
         "portfolio": [
             {
