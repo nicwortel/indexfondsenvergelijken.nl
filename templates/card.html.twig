@@ -46,6 +46,14 @@
                 <div class="h5 mb-2">{{ simulation.value|money|tagDecimals }}</div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col text-right">
+                {% if broker.website %}
+                    <a class="btn btn-outline-primary" href="{{ broker.website }}" target="_blank">Bezoek de website</a>
+                {% endif %}
+            </div>
+        </div>
     </div>
 
     <ul class="nav nav-tabs mt-2 px-3" role="tablist">

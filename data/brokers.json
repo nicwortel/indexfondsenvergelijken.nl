@@ -12,7 +12,8 @@
         "serviceFeeCalculation": "averageEndOfMonth",
         "mutualFundTransactionFee": 0,
         "etfTransactionFee": 0,
-        "costOverview": "https://www.ing.nl/particulier/beleggen/beginnen-met-beleggen/tarieven/tarieven-zelf-op-de-beurs.html"
+        "costOverview": "https://www.ing.nl/particulier/beleggen/beginnen-met-beleggen/tarieven/tarieven-zelf-op-de-beurs.html",
+        "website": "https://www.ing.nl/particulier/beleggen/beginnen-met-beleggen/zelf-op-de-beurs/index.html"
     },
     {
         "name": "ABN Amro",
@@ -30,7 +31,8 @@
             "base": 5,
             "percentage": 0.05
         },
-        "costOverview": "https://www.abnamro.nl/nl/prive/beleggen/beleggingsvormen/zelf-beleggen-basis/index.html"
+        "costOverview": "https://www.abnamro.nl/nl/prive/beleggen/beleggingsvormen/zelf-beleggen-basis/index.html",
+        "website": "https://www.abnamro.nl/nl/prive/beleggen/beleggingsvormen/zelf-beleggen-basis/index.html"
     },
     {
         "name": "Rabobank",
@@ -54,7 +56,8 @@
             "percentage": 0.05,
             "maximum": 150
         },
-        "costOverview": "https://www.rabobank.nl/images/tarieven-beleggen-bij-de-rabobank_29409753.pdf"
+        "costOverview": "https://www.rabobank.nl/images/tarieven-beleggen-bij-de-rabobank_29409753.pdf",
+        "website": "https://www.rabobank.nl/particulieren/beleggen/rabo-zelf-beleggen/"
     },
     {
         "name": "Meesman",
@@ -62,7 +65,8 @@
         "product": "",
         "baseFee": 0,
         "mutualFundTransactionFee": 0.25,
-        "costOverview": "https://www.meesman.nl/zo-werkt-het/kosten"
+        "costOverview": "https://www.meesman.nl/zo-werkt-het/kosten",
+        "website": "https://www.meesman.nl/"
     },
     {
         "name": "DEGIRO",
@@ -71,7 +75,8 @@
         "baseFee": 0,
         "mutualFundTransactionFee": 0,
         "etfTransactionFee": 0,
-        "costOverview": "https://www.degiro.nl/data/pdf/Tarievenoverzicht.pdf"
+        "costOverview": "https://www.degiro.nl/data/pdf/Tarievenoverzicht.pdf",
+        "website": "https://www.degiro.nl/"
     },
     {
         "name": "Binck",
@@ -84,7 +89,8 @@
         "serviceFeeCalculation": "averageEndOfMonth",
         "mutualFundTransactionFee": 0,
         "etfTransactionFee": 0,
-        "costOverview": "https://www.binck.nl/fondsbeleggen#tarieven"
+        "costOverview": "https://www.binck.nl/fondsbeleggen#tarieven",
+        "website": "https://www.binck.nl/fondsbeleggen"
     },
     {
         "name": "FitVermogen",
@@ -93,7 +99,8 @@
         "baseFee": 0,
         "serviceFee": [],
         "mutualFundTransactionFee": 0,
-        "costOverview": "https://www.fitvermogen.nl/vragen"
+        "costOverview": "https://www.fitvermogen.nl/vragen",
+        "website": "https://www.fitvermogen.nl/"
     },
     {
         "name": "Brand New Day",
@@ -101,7 +108,8 @@
         "product": "Beleggingsrekening",
         "baseFee": 0,
         "serviceFee": [],
-        "mutualFundTransactionFee": 0
+        "mutualFundTransactionFee": 0,
+        "website": "https://brandnewday.nl"
     },
     {
         "name": "Lynx",
@@ -118,6 +126,7 @@
             "minimum": 6,
             "maximum": 45
         },
-        "costOverview": "https://www.lynx.nl/tarieven-beleggen/alle-tarieven/"
+        "costOverview": "https://www.lynx.nl/tarieven-beleggen/alle-tarieven/",
+        "website": "https://www.lynx.nl/"
     }
 ]

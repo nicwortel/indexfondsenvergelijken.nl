@@ -18,7 +18,8 @@ export class Broker {
         public costOverview: string,
         public minimumServiceFee?: Money,
         public maximumServiceFee?: Money,
-        public logo?: string
+        public logo?: string,
+        public website?: string
     ) {
     }
 
