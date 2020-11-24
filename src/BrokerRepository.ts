@@ -36,7 +36,8 @@ export class BrokerRepository {
                 data.minimumServiceFee ? new Money(data.minimumServiceFee, 'EUR') : null,
                 data.maximumServiceFee ? new Money(data.maximumServiceFee, 'EUR') : null,
                 data.logo ? data.logo : null,
-                data.website
+                data.website,
+                data.affiliateLink
             );
         })
     }

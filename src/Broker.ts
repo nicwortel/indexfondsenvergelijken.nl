@@ -19,7 +19,8 @@ export class Broker {
         public minimumServiceFee?: Money,
         public maximumServiceFee?: Money,
         public logo?: string,
-        public website?: string
+        public website?: string,
+        public affiliateLink?: string
     ) {
     }
 
