@@ -19,7 +19,7 @@ final class IndexImporter implements DataImporter
         'MSCI World Small Cap Index' => 'https://www.msci.com/documents/10199/a67b0d43-0289-4bce-8499-0c102eaa8399',
         'MSCI Emerging Markets Index' => 'https://www.msci.com/documents/10199/c0db0a48-01f2-4ba9-ad01-226fd5678111',
         'MSCI Emerging Markets IMI Index' => 'https://www.msci.com/documents/10199/97e25eb7-9bd0-4204-bea9-077095acf1d3',
-        'FTSE All-World Index' => 'https://research.ftserussell.com/Analytics/FactSheets/temp/bd37ca9d-63e5-4a33-b499-7d9176bff3b5.pdf',
+        'FTSE All-World Index' => 'https://research.ftserussell.com/Analytics/Factsheets/Home/DownloadSingleIssue?issueName=AWORLDS&IsManual=false',
         'FTSE Developed Index' => 'https://research.ftserussell.com/Analytics/FactSheets/Home/DownloadSingleIssue?issueName=AWD&IsManual=False',
     ];
 

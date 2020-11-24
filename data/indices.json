@@ -7,7 +7,7 @@
             "mid",
             "small"
         ],
-        "marketCapitalization": 57912625.68,
+        "marketCapitalization": 56624574.68,
         "percentageOfTotalMarketCapitalization": 100,
         "factsheet": "https://www.msci.com/documents/10199/4211cc4b-453d-4b0a-a6a7-51d36472a703"
     },
@@ -18,8 +18,8 @@
             "large",
             "mid"
         ],
-        "marketCapitalization": 44996280.71,
-        "percentageOfTotalMarketCapitalization": 77.6968410284657,
+        "marketCapitalization": 43611529.32,
+        "percentageOfTotalMarketCapitalization": 77.01873182528954,
         "factsheet": "https://www.msci.com/documents/10199/149ed7bc-316e-4b4c-8ea4-43fcb5bd6523"
     },
     {
@@ -28,8 +28,8 @@
         "sizes": [
             "small"
         ],
-        "marketCapitalization": 5847968.37,
-        "percentageOfTotalMarketCapitalization": 10.097916130263773,
+        "marketCapitalization": 5810537.04,
+        "percentageOfTotalMarketCapitalization": 10.261511142179584,
         "factsheet": "https://www.msci.com/documents/10199/a67b0d43-0289-4bce-8499-0c102eaa8399"
     },
     {
@@ -39,8 +39,8 @@
             "large",
             "mid"
         ],
-        "marketCapitalization": 6370599.96,
-        "percentageOfTotalMarketCapitalization": 11.000364575422926,
+        "marketCapitalization": 6510702.89,
+        "percentageOfTotalMarketCapitalization": 11.498016412120801,
         "factsheet": "https://www.msci.com/documents/10199/c0db0a48-01f2-4ba9-ad01-226fd5678111"
     },
     {
@@ -51,8 +51,8 @@
             "mid",
             "small"
         ],
-        "marketCapitalization": 7068376.6,
-        "percentageOfTotalMarketCapitalization": 12.205242841270532,
+        "marketCapitalization": 7202508.32,
+        "percentageOfTotalMarketCapitalization": 12.719757032530882,
         "factsheet": "https://www.msci.com/documents/10199/97e25eb7-9bd0-4204-bea9-077095acf1d3"
     },
     {
@@ -62,9 +62,9 @@
             "large",
             "mid"
         ],
-        "marketCapitalization": 51612791,
-        "percentageOfTotalMarketCapitalization": 89.12182860640762,
-        "factsheet": "https://research.ftserussell.com/Analytics/FactSheets/temp/bd37ca9d-63e5-4a33-b499-7d9176bff3b5.pdf"
+        "marketCapitalization": 50319032,
+        "percentageOfTotalMarketCapitalization": 88.86430014594504,
+        "factsheet": "https://research.ftserussell.com/Analytics/Factsheets/Home/DownloadSingleIssue?issueName=AWORLDS&IsManual=false"
     },
     {
         "name": "FTSE Developed Index",
@@ -73,8 +73,8 @@
             "large",
             "mid"
         ],
-        "marketCapitalization": 45820506,
-        "percentageOfTotalMarketCapitalization": 79.1200631330104,
+        "marketCapitalization": 44389886,
+        "percentageOfTotalMarketCapitalization": 78.39332348341446,
         "factsheet": "https://research.ftserussell.com/Analytics/FactSheets/Home/DownloadSingleIssue?issueName=AWD&IsManual=False"
     },
     {
@@ -84,8 +84,8 @@
             "large",
             "mid"
         ],
-        "marketCapitalization": 44996280.71,
-        "percentageOfTotalMarketCapitalization": 77.6968410284657,
+        "marketCapitalization": 43611529.32,
+        "percentageOfTotalMarketCapitalization": 77.01873182528954,
         "factsheet": ""
     },
     {
@@ -95,8 +95,8 @@
             "large",
             "mid"
         ],
-        "marketCapitalization": 6370599.96,
-        "percentageOfTotalMarketCapitalization": 11.000364575422926,
+        "marketCapitalization": 6510702.89,
+        "percentageOfTotalMarketCapitalization": 11.498016412120801,
         "factsheet": ""
     },
     {
@@ -105,8 +105,8 @@
         "sizes": [
             "small"
         ],
-        "marketCapitalization": 5847968.37,
-        "percentageOfTotalMarketCapitalization": 10.097916130263773,
+        "marketCapitalization": 5810537.04,
+        "percentageOfTotalMarketCapitalization": 10.261511142179584,
         "factsheet": ""
     },
     {
@@ -117,8 +117,8 @@
             "mid",
             "small"
         ],
-        "marketCapitalization": 53092179.36,
-        "percentageOfTotalMarketCapitalization": 91.67634645628797,
+        "marketCapitalization": 51886532.78,
+        "percentageOfTotalMarketCapitalization": 91.6325342306483,
         "factsheet": ""
     }
 ]
