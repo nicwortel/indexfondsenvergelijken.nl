@@ -8,6 +8,7 @@ use NicWortel\IndexFundComparison\Import\ImportCommand;
 use NicWortel\IndexFundComparison\Import\IndexImporter;
 use NicWortel\IndexFundComparison\Import\MsciFactsheetParser;
 use NicWortel\IndexFundComparison\Import\Pdftotext;
+use NicWortel\IndexFundComparison\Import\RebalanceCommand;
 use Smalot\PdfParser\Parser;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Filesystem\Filesystem;
@@ -28,5 +29,6 @@ $factsheetParsers = [
 ];
 $indexImporter = new IndexImporter($httpClient, $factsheetParsers, $filesystem);
 $application->add(new ImportCommand($indexImporter));
+$application->add(new RebalanceCommand($filesystem));
 
 $application->run();
