@@ -50,6 +50,7 @@ function runSimulation(combinations: Combination[]): void {
     }
     const years = getInputValue('years');
     const expectedYearlyReturn = new Percentage(getInputValue('return'));
+    const expectedDividendYield = new Percentage(getInputValue('dividendYield'));
 
     const totalInvestment = initialInvestment.add(monthlyInvestment.multiply(12 * years - 1));
     document.getElementById('totalInvestment').innerText = numberFormatter.formatMoney(totalInvestment);
@@ -79,7 +80,7 @@ function runSimulation(combinations: Combination[]): void {
             initialInvestment,
             monthlyInvestment,
             expectedYearlyReturn,
-            new Percentage(2.5),
+            expectedDividendYield,
             subtractServiceFeesFromInvestmentElement.checked
         );
 

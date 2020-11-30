@@ -44,15 +44,35 @@
                     <h2>Instellingen</h2>
 
                     <form id="form" class="was-validated">
-                        <div class="form-group">
-                            <label for="monthly">Maandelijkse inleg</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">€</span>
+                        <div class="form-row">
+                            <div class="col col-lg-12 col-xl">
+                                <div class="form-group">
+                                    <label for="monthly">Maandelijkse inleg</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">€</span>
+                                        </div>
+                                        <input type="number" class="form-control rounded-right" id="monthly" value="500"
+                                            min="1">
+                                        <div class="invalid-feedback">De maandelijkse inleg moet minimaal € 1 bedragen.
+                                        </div>
+                                    </div>
                                 </div>
-                                <input type="number" class="form-control rounded-right" id="monthly" value="500"
-                                    min="1">
-                                <div class="invalid-feedback">De maandelijkse inleg moet minimaal € 1 bedragen.</div>
+                            </div>
+
+                            <div class="col col-lg-12 col-xl">
+                                <div class="form-group">
+                                    <label for="years">Looptijd</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control"
+                                            id="years"
+                                            min="1"
+                                            max="100" value="20">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">jaar</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -71,24 +91,12 @@
                             </div>
                         </div>
 
+                        <p>Totaal ingelegd na <span class="years"></span> jaar: <span id="totalInvestment"></span>.</p>
+
                         <div class="form-row">
                             <div class="col col-lg-12 col-xl">
                                 <div class="form-group">
-                                    <label for="years">Looptijd</label>
-                                    <div class="input-group">
-                                        <input type="number" class="form-control"
-                                            id="years"
-                                            min="1"
-                                            max="100" value="20">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">jaar</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col col-lg-12 col-xl">
-                                <div class="form-group">
-                                    <label for="return">Rendement</label>
+                                    <label for="return">Groei</label>
                                     <div class="input-group">
                                         <input type="number" class="form-control" id="return" value="5" step="0.5">
 
@@ -98,9 +106,19 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col col-lg-12 col-xl">
+                                <div class="form-group">
+                                    <label for="dividendYield">Dividend</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="dividendYield" value="2.5"
+                                            step="0.5" min="0">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-                        <p>Totaal ingelegd na <span class="years"></span> jaar: <span id="totalInvestment"></span>.</p>
 
                         <div class="form-group">
                             <div class="form-check ">
