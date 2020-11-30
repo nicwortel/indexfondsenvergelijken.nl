@@ -23,6 +23,7 @@ jobs:
 
   build:
     name: Build
+    needs: test
     runs-on: ubuntu-latest
     outputs:
       tag: ${{ steps.prep.outputs.tag }}
