@@ -166,29 +166,30 @@
         <div class="tab-pane fade" id="details-{{ index }}" role="tabpanel">
             <div class="card-body">
 
-                <table class="table mb-0">
+                <table class="table mb-0 w-50">
                     <tr>
-                        <th colspan="2">Totale kosten</th>
-                    </tr>
-                    <tr>
-                        <td class="w-25">Instapkosten</td>
-                        <td>{{ portfolio.totalEntryCosts|money }}</td>
+                        <td class="w-50">Instapkosten</td>
+                        <td class="text-right">{{ portfolio.totalEntryCosts|money }}</td>
                     </tr>
                     <tr>
                         <td>Lopende fondskosten</td>
-                        <td>{{ portfolio.totalRunningCosts|money }}</td>
+                        <td class="text-right">{{ portfolio.totalRunningCosts|money }}</td>
                     </tr>
                     <tr>
                         <td>Dividendlekkage</td>
-                        <td>{{ portfolio.totalDividendLeakage|money }}</td>
+                        <td class="text-right">{{ portfolio.totalDividendLeakage|money }}</td>
                     </tr>
                     <tr>
                         <td>Transactiekosten</td>
-                        <td>{{ simulation.totalTransactionFees|money }}</td>
+                        <td class="text-right">{{ simulation.totalTransactionFees|money }}</td>
                     </tr>
                     <tr>
                         <td>Servicekosten</td>
-                        <td>{{ simulation.totalServiceFees|money }}</td>
+                        <td class="text-right">{{ simulation.totalServiceFees|money }}</td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-bold">Totale kosten</td>
+                        <td class="font-weight-bold text-right">{{ simulation.totalCosts|money }}</td>
                     </tr>
                 </table>
             </div>
