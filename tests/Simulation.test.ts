@@ -42,10 +42,10 @@ test.each([
     [createSimulation(1000, 0, 0, 0, 0, 0), 1, '1000', '0'],
     [createSimulation(1000, 100, 0, 0, 0, 0), 1, '2100', '0'],
     [createSimulation(1000, 100, 0, 0, 0, 0), 2, '3300', '0'],
-    [createSimulation(1000, 0, 0, 5, 2, 0), 1, '1070', '0'],
-    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 1, '2205.72', '4.10'],
-    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 2, '3600.89', '11.47'],
-    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 10, '18813.16', '218.38'],
+    [createSimulation(1000, 0, 0, 5, 2, 0), 1, '1071.16', '0'],
+    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 1, '2240.86', '4.15'],
+    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 2, '3702.44', '11.70'],
+    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 10, '21274.6', '237.53'],
 ])(
     'Runs simulation',
     (simulation: Simulation, runYears: number, expectedValue: string, expectedServiceFees: string) => {
