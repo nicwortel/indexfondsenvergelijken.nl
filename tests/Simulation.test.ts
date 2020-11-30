@@ -50,7 +50,7 @@ test.each([
     (simulation: Simulation, runYears: number, expectedValue: string, expectedServiceFees: string) => {
         simulation.run(runYears);
 
-        expect(simulation.value.toFixed(2)).toEqual(new Money(expectedValue, 'EUR').toFixed(2));
+        expect(simulation.getPortfolioValue().toFixed(2)).toEqual(new Money(expectedValue, 'EUR').toFixed(2));
         expect(simulation.totalServiceFees.toFixed(2)).toEqual(new Money(expectedServiceFees, 'EUR').toFixed(2));
     }
 );

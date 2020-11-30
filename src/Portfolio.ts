@@ -4,6 +4,10 @@ import {Percentage} from "./Percentage";
 import {Transaction} from "./Transaction";
 
 export class Portfolio {
+    private value: Money = new Money(0, 'EUR');
+    private totalEntryCosts: Money = new Money(0, 'EUR');
+    private totalRunningCosts: Money = new Money(0, 'EUR');
+
     constructor(public assets: { allocation: Percentage, fund: Fund }[]) {
         const totalAllocation = assets.reduce((
             sum: Percentage,
@@ -15,11 +19,37 @@ export class Portfolio {
         }
     }
 
-    public getEntryCosts(amount: Money): Money {
-        const costs = this.assets.map((asset: { allocation: Percentage; fund: Fund }) => asset.allocation.multiply(asset.fund.getEntryFee()));
-        const cost = costs.reduce((sum: Percentage, current: Percentage) => sum.add(current));
+    public reset(): void {
+        this.value = this.totalEntryCosts = this.totalRunningCosts = new Money(0, 'EUR');
+    }
 
-        return cost.applyTo(amount);
+    public invest(amount: Money): void {
+        const entryCosts = this.getEntryCosts(amount);
+
+        this.value = this.value.add(amount.subtract(entryCosts));
+        this.totalEntryCosts = this.totalEntryCosts.add(entryCosts);
+    }
+
+    public grow(growthPercentage: Percentage, fundCostsPercentage: Percentage): void {
+        this.totalRunningCosts = this.totalRunningCosts.add(fundCostsPercentage.applyTo(this.value));
+
+        this.value = this.value.add(growthPercentage.applyTo(this.value));
+    }
+
+    public sell(amount: Money): void {
+        this.value = this.value.subtract(amount);
+    }
+
+    public getValue(): Money {
+        return this.value;
+    }
+
+    public getTotalEntryCosts(): Money {
+        return this.totalEntryCosts;
+    }
+
+    public getTotalRunningCosts(): Money {
+        return this.totalRunningCosts;
     }
 
     public getTotalCosts(): Percentage {
@@ -93,6 +123,13 @@ export class Portfolio {
         }
 
         return 'developed markets ' + developed.join(' & ') + ' cap + emerging markets ' + emerging.join(' & ') + ' cap';
+    }
+
+    private getEntryCosts(amount: Money): Money {
+        const costs = this.assets.map((asset: { allocation: Percentage; fund: Fund }) => asset.allocation.multiply(asset.fund.getEntryFee()));
+        const cost = costs.reduce((sum: Percentage, current: Percentage) => sum.add(current));
+
+        return cost.applyTo(amount);
     }
 
     private getFunds(): Fund[] {

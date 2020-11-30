@@ -69,7 +69,9 @@ function runSimulation(combinations: Combination[]): void {
         combinations = combinations.filter((combination: Combination) => combination.portfolio.containsSmallCaps());
     }
 
-    let results = combinations.map(function (combination) {
+    let results = combinations.map(function (combination: Combination) {
+        combination.portfolio.reset();
+
         const simulation = new Simulation(
             new WealthTax(),
             combination.broker,

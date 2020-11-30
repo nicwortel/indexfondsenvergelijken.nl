@@ -43,7 +43,7 @@
             </div>
             <div class="col-6 col-sm-4 col-lg text-lg-right">
                 <div class="small">Verwachte waarde</div>
-                <div class="h5 mb-2">{{ simulation.value|money|tagDecimals }}</div>
+                <div class="h5 mb-2">{{ portfolio.value|money|tagDecimals }}</div>
             </div>
         </div>
 
@@ -171,8 +171,12 @@
                         <th colspan="2">Totale kosten</th>
                     </tr>
                     <tr>
-                        <td class="w-25">Fondskosten</td>
-                        <td>{{ simulation.totalFundCosts|money }}</td>
+                        <td class="w-25">Instapkosten</td>
+                        <td>{{ portfolio.totalEntryCosts|money }}</td>
+                    </tr>
+                    <tr>
+                        <td>Lopende fondskosten</td>
+                        <td>{{ portfolio.totalRunningCosts|money }}</td>
                     </tr>
                     <tr>
                         <td>Transactiekosten</td>

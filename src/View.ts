@@ -45,8 +45,7 @@ export class View {
                 broker: result.combination.broker,
                 portfolio: result.combination.portfolio,
                 combination: result.combination,
-                simulation: result.simulation,
-                result: this.numberFormatter.formatMoney(result.simulation.value)
+                simulation: result.simulation
             });
 
             resultsElement.appendChild(element);
