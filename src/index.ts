@@ -79,6 +79,7 @@ function runSimulation(combinations: Combination[]): void {
             initialInvestment,
             monthlyInvestment,
             expectedYearlyReturn,
+            new Percentage(2.5),
             subtractServiceFeesFromInvestmentElement.checked
         );
 

@@ -61,6 +61,27 @@ test('Grows in value over time', () => {
     expect(portfolio.getTotalRunningCosts()).toStrictEqual(new Money(10, 'EUR'));
 });
 
+test('Returns dividend', () => {
+    const fund = fundFactory.createMutualFund(0.1, 0);
+    const portfolio = createPortfolio(fund);
+
+    portfolio.invest(new Money(1000, 'EUR'));
+    const dividend = portfolio.collectDividends(new Percentage(0.625));
+
+    expect(dividend).toStrictEqual(new Money('6.25', 'EUR'));
+});
+
+test('Returns dividend after subtracting the dividend leakage', () => {
+    const fund = fundFactory.createMutualFund(0.1, 1);
+    const portfolio = createPortfolio(fund);
+
+    portfolio.invest(new Money(1000, 'EUR'));
+    const dividend = portfolio.collectDividends(new Percentage(1));
+
+    expect(dividend).toStrictEqual(new Money('9.9', 'EUR'));
+    expect(portfolio.getTotalDividendLeakage()).toStrictEqual(new Money('0.1', 'EUR'));
+});
+
 test('Can be reset', () => {
     const portfolio = createPortfolio(dummyFund);
 

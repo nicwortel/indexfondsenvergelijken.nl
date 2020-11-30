@@ -20,6 +20,7 @@ export class Simulation {
         private initialInvestment: Money,
         private monthlyInvestment: Money,
         private expectedYearlyReturn: Percentage,
+        private expectedDividendYield: Percentage,
         private subtractServiceFeesFromInvestments: boolean
     ) {
     }
@@ -35,7 +36,9 @@ export class Simulation {
     }
 
     public getTotalCosts(): Money {
-        return this.portfolio.getTotalRunningCosts().add(this.portfolio.getTotalEntryCosts()).add(this.totalTransactionFees).add(this.totalServiceFees);
+        return this.portfolio.getTotalCosts()
+            .add(this.totalTransactionFees)
+            .add(this.totalServiceFees);
     }
 
     public getNetProfit(): Money {
@@ -69,6 +72,8 @@ export class Simulation {
             combinedEndOfMonthValue = combinedEndOfMonthValue.add(this.portfolio.getValue());
         }
 
+        this.collectAndReinvestDividends();
+
         if (this.broker.serviceFeeCalculation === 'averageEndOfMonth') {
             this.addQuarterlyBrokerServiceFees(combinedEndOfMonthValue.divide(3));
         } else if (this.broker.serviceFeeCalculation === 'averageOfQuarter') {
@@ -82,9 +87,9 @@ export class Simulation {
     private runMonth(): void {
         this.invest(this.monthsPassed === 0 ? this.initialInvestment : this.monthlyInvestment);
 
-        const netReturn = this.expectedYearlyReturn.subtract(this.portfolio.getTotalCosts());
+        const netReturn = this.expectedYearlyReturn.subtract(this.portfolio.getTotalExpenseRatio());
         const monthlyNetReturn = this.getMonthlyRate(netReturn);
-        const monthlyCosts = this.getMonthlyRate(this.portfolio.getTotalCosts());
+        const monthlyCosts = this.getMonthlyRate(this.portfolio.getTotalExpenseRatio());
 
         this.portfolio.grow(monthlyNetReturn, monthlyCosts);
 
@@ -102,6 +107,14 @@ export class Simulation {
 
         this.portfolio.invest(investment);
         this.totalTransactionFees = this.totalTransactionFees.add(totalTransactionCost);
+    }
+
+    private collectAndReinvestDividends(): void {
+        const quarterlyDividendYield = this.expectedDividendYield.multiply(new Percentage(25));
+
+        const dividend = this.portfolio.collectDividends(quarterlyDividendYield);
+
+        this.portfolio.invest(dividend);
     }
 
     private registerWealthTax(): void {

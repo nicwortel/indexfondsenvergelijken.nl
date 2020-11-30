@@ -12,7 +12,7 @@ import {FundFactory} from "./FundFactory";
 const fundFactory = new FundFactory();
 
 function createSimulation(initialInvestment: number, monthlyInvestment: number, fundExpenseRatio: number,
-                          expectedYearlyReturn: number, serviceFee: number
+                          expectedYearlyReturn: number, expectedDividendYield: number, serviceFee: number
 ): Simulation {
     return new Simulation(
         new WealthTax(),
@@ -33,18 +33,19 @@ function createSimulation(initialInvestment: number, monthlyInvestment: number, 
         new Money(initialInvestment, 'EUR'),
         new Money(monthlyInvestment, 'EUR'),
         new Percentage(expectedYearlyReturn),
+        new Percentage(expectedDividendYield),
         false
     );
 }
 
 test.each([
-    [createSimulation(1000, 0, 0, 0, 0), 1, '1000', '0'],
-    [createSimulation(1000, 100, 0, 0, 0), 1, '2100', '0'],
-    [createSimulation(1000, 100, 0, 0, 0), 2, '3300', '0'],
-    [createSimulation(1000, 0, 0, 7, 0), 1, '1070', '0'],
-    [createSimulation(1000, 100, 0.15, 7, 0.24), 1, '2205.72', '4.10'],
-    [createSimulation(1000, 100, 0.15, 7, 0.24), 2, '3600.89', '11.47'],
-    [createSimulation(1000, 100, 0.15, 7, 0.24), 10, '18813.16', '218.38'],
+    [createSimulation(1000, 0, 0, 0, 0, 0), 1, '1000', '0'],
+    [createSimulation(1000, 100, 0, 0, 0, 0), 1, '2100', '0'],
+    [createSimulation(1000, 100, 0, 0, 0, 0), 2, '3300', '0'],
+    [createSimulation(1000, 0, 0, 5, 2, 0), 1, '1070', '0'],
+    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 1, '2205.72', '4.10'],
+    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 2, '3600.89', '11.47'],
+    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 10, '18813.16', '218.38'],
 ])(
     'Runs simulation',
     (simulation: Simulation, runYears: number, expectedValue: string, expectedServiceFees: string) => {
