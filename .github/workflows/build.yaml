@@ -61,7 +61,7 @@ jobs:
 
   deploy:
     name: Deploy
-    needs: build
+    needs: [test, build]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
