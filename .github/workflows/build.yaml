@@ -71,6 +71,13 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
+      - name: Create GitHub deployment
+        uses: chrnorm/deployment-action@releases/v1
+        id: deployment
+        with:
+          token: "${{ github.token }}"
+          target_url: https://www.indexfondsenvergelijken.nl/
+          environment: production
       - name: Set the Kubernetes context
         uses: azure/k8s-set-context@v1
         with:
@@ -86,3 +93,19 @@ jobs:
             ${{ needs.build.outputs.tag }}
           imagepullsecrets: |
             docker-container-registry
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: "${{ github.token }}"
+          target_url: https://www.indexfondsenvergelijken.nl/
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: "${{ github.token }}"
+          target_url: https://www.indexfondsenvergelijken.nl/
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
