@@ -98,7 +98,7 @@ jobs:
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: "${{ github.token }}"
-          target_url: https://www.indexfondsenvergelijken.nl/
+          environment_url: https://www.indexfondsenvergelijken.nl/
           state: "success"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
       - name: Update deployment status (failure)
@@ -106,6 +106,6 @@ jobs:
         uses: chrnorm/deployment-status@releases/v1
         with:
           token: "${{ github.token }}"
-          target_url: https://www.indexfondsenvergelijken.nl/
+          environment_url: https://www.indexfondsenvergelijken.nl/
           state: "failure"
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
