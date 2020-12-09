@@ -32,6 +32,15 @@
         "automatedInvesting": true
     },
     {
+        "broker": "ING",
+        "portfolio": [
+            {
+                "allocation": 100,
+                "fund": "VWRL"
+            }
+        ]
+    },
+    {
         "broker": "ABN Amro",
         "portfolio": [
             {
@@ -62,6 +71,15 @@
             }
         ],
         "automatedInvesting": true
+    },
+    {
+        "broker": "ABN Amro",
+        "portfolio": [
+            {
+                "allocation": 100,
+                "fund": "VWRL"
+            }
+        ]
     },
     {
         "broker": "Rabobank",
