@@ -27,6 +27,7 @@ jobs:
 
   build:
     name: Build
+    if: github.event_name == 'push'
     needs: test
     runs-on: ubuntu-latest
     outputs:
@@ -66,6 +67,7 @@ jobs:
 
   deploy:
     name: Deploy
+    if: github.event_name == 'push'
     needs: [test, build]
     runs-on: ubuntu-latest
     steps:
