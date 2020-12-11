@@ -1,6 +1,6 @@
 # Indexfondsenvergelijken.nl
 
-![Build status](https://github.com/nicwortel/indexfondsenvergelijken.nl/workflows/Build/badge.svg)
+[![Build status](https://img.shields.io/github/workflow/status/nicwortel/indexfondsenvergelijken.nl/Build)](https://github.com/nicwortel/indexfondsenvergelijken.nl/actions)
 
 A website that compares the costs and characteristics of index funds, ETF's, banks and brokers in the Netherlands.
 Available at https://www.indexfondsenvergelijken.nl/
