@@ -4,7 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "NODE_ICU_DATA=node_modules/full-icu jest"
+    "test": "NODE_ICU_DATA=node_modules/full-icu jest",
+    "serve": "serve dist"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
     "mini-css-extract-plugin": "^1.2.0",
     "sass": "^1.27.0",
     "sass-loader": "^10.0.4",
+    "serve": "^11.3.2",
     "svg-url-loader": "^6.0.0",
     "ts-jest": "^26.4.3",
     "ts-loader": "^8.0.7",
