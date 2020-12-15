@@ -26,6 +26,7 @@ Optional, but recommended:
 
 Clone this repository and run `make` inside the project directory to install dependencies and build the website.
 Run `docker-compose up -d` to build and run the Docker container.
+Open a browser and go to http://localhost:8000 to view the website.
 
 If you cannot run `make` on your system, manually run `yarn install` and
 `node_modules/.bin/webpack --mode=development`.

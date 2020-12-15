@@ -4,16 +4,8 @@ services:
   web:
     build: .
     image: ghcr.io/nicwortel/indexfondsenvergelijken.nl:latest
-    networks:
-      - web
     volumes:
       - ./dist/:/usr/share/nginx/html:ro
       - ./etc/nginx.conf:/etc/nginx/conf.d/default.conf:ro
-    labels:
-      traefik.enable: 'true'
-      traefik.http.routers.indexfondsenvergelijken.rule: 'Host(`indexfondsenvergelijken.localhost`)'
-      traefik.docker.network: web
-
-networks:
-  web:
-    external: true
+    ports:
+      - 8000:80
