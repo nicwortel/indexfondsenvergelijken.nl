@@ -3,11 +3,11 @@
         "broker": "ING",
         "portfolio": [
             {
-                "allocation": 87,
+                "allocation": 88,
                 "fund": "NT World"
             },
             {
-                "allocation": 13,
+                "allocation": 12,
                 "fund": "NT EM"
             }
         ],
@@ -44,11 +44,11 @@
         "broker": "ABN Amro",
         "portfolio": [
             {
-                "allocation": 87,
+                "allocation": 88,
                 "fund": "NT World"
             },
             {
-                "allocation": 13,
+                "allocation": 12,
                 "fund": "NT EM"
             }
         ],
@@ -85,11 +85,11 @@
         "broker": "Rabobank",
         "portfolio": [
             {
-                "allocation": 87,
+                "allocation": 88,
                 "fund": "NT World"
             },
             {
-                "allocation": 13,
+                "allocation": 12,
                 "fund": "NT EM"
             }
         ],
@@ -251,11 +251,11 @@
         "broker": "Brand New Day",
         "portfolio": [
             {
-                "allocation": 87,
+                "allocation": 88,
                 "fund": "BND WIF Hedged"
             },
             {
-                "allocation": 13,
+                "allocation": 12,
                 "fund": "BND EM"
             }
         ],
