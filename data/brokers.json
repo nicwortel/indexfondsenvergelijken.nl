@@ -40,8 +40,8 @@
         "logo": "rabobank.png",
         "product": "Zelf Beleggen",
         "baseFee": 0,
-        "minimumServiceFee": 5,
-        "maximumServiceFee": 100,
+        "minimumServiceFee": 20,
+        "maximumServiceFee": 400,
         "serviceFee": [
             {"upperLimit": 100000, "percentage": 0.24},
             {"upperLimit": null, "percentage": 0.12}
