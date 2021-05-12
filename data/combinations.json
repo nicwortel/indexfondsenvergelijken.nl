@@ -3,11 +3,11 @@
         "broker": "ING",
         "portfolio": [
             {
-                "allocation": 88,
+                "allocation": 87,
                 "fund": "NT World"
             },
             {
-                "allocation": 12,
+                "allocation": 13,
                 "fund": "NT EM"
             }
         ],
@@ -21,11 +21,11 @@
                 "fund": "NT World"
             },
             {
-                "allocation": 12,
+                "allocation": 11,
                 "fund": "NT EM"
             },
             {
-                "allocation": 9,
+                "allocation": 10,
                 "fund": "NT SC"
             }
         ],
@@ -44,11 +44,11 @@
         "broker": "ABN Amro",
         "portfolio": [
             {
-                "allocation": 88,
+                "allocation": 87,
                 "fund": "NT World"
             },
             {
-                "allocation": 12,
+                "allocation": 13,
                 "fund": "NT EM"
             }
         ],
@@ -62,11 +62,11 @@
                 "fund": "NT World"
             },
             {
-                "allocation": 12,
+                "allocation": 11,
                 "fund": "NT EM"
             },
             {
-                "allocation": 9,
+                "allocation": 10,
                 "fund": "NT SC"
             }
         ],
@@ -85,11 +85,11 @@
         "broker": "Rabobank",
         "portfolio": [
             {
-                "allocation": 88,
+                "allocation": 87,
                 "fund": "NT World"
             },
             {
-                "allocation": 12,
+                "allocation": 13,
                 "fund": "NT EM"
             }
         ],
@@ -103,11 +103,11 @@
                 "fund": "NT World"
             },
             {
-                "allocation": 12,
+                "allocation": 11,
                 "fund": "NT EM"
             },
             {
-                "allocation": 9,
+                "allocation": 10,
                 "fund": "NT SC"
             }
         ],
@@ -140,7 +140,7 @@
         "broker": "Lynx",
         "portfolio": [
             {
-                "allocation": 73,
+                "allocation": 72,
                 "fund": "AVIAW"
             },
             {
@@ -148,7 +148,7 @@
                 "fund": "EMIM"
             },
             {
-                "allocation": 12,
+                "allocation": 13,
                 "fund": "IUSN"
             }
         ]
@@ -219,7 +219,7 @@
         "broker": "Binck",
         "portfolio": [
             {
-                "allocation": 73,
+                "allocation": 72,
                 "fund": "AVIAW"
             },
             {
@@ -227,7 +227,7 @@
                 "fund": "EMIM"
             },
             {
-                "allocation": 12,
+                "allocation": 13,
                 "fund": "IUSN"
             }
         ],
@@ -251,11 +251,11 @@
         "broker": "Brand New Day",
         "portfolio": [
             {
-                "allocation": 88,
+                "allocation": 87,
                 "fund": "BND WIF Hedged"
             },
             {
-                "allocation": 12,
+                "allocation": 13,
                 "fund": "BND EM"
             }
         ],
