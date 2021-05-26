@@ -33,8 +33,7 @@ function createSimulation(initialInvestment: number, monthlyInvestment: number, 
         new Money(initialInvestment, 'EUR'),
         new Money(monthlyInvestment, 'EUR'),
         new Percentage(expectedYearlyReturn),
-        new Percentage(expectedDividendYield),
-        false
+        new Percentage(expectedDividendYield)
     );
 }
 
@@ -43,9 +42,9 @@ test.each([
     [createSimulation(1000, 100, 0, 0, 0, 0), 1, '2100', '0'],
     [createSimulation(1000, 100, 0, 0, 0, 0), 2, '3300', '0'],
     [createSimulation(1000, 0, 0, 5, 2, 0), 1, '1071.16', '0'],
-    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 1, '2240.86', '4.15'],
-    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 2, '3702.44', '11.70'],
-    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 10, '21274.6', '237.53'],
+    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 1, '2236.60', '4.14'],
+    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 2, '3690.04', '11.68'],
+    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 10, '20958.23', '235.24'],
 ])(
     'Runs simulation',
     (simulation: Simulation, runYears: number, expectedValue: string, expectedServiceFees: string) => {

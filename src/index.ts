@@ -58,7 +58,6 @@ function runSimulation(combinations: Combination[]): void {
         element.innerHTML = years.toString();
     }
 
-    const subtractServiceFeesFromInvestmentElement: HTMLInputElement = <HTMLInputElement>document.getElementById('subtractServiceFeesFromInvestment');
     const automatedInvestmentElement: HTMLInputElement = <HTMLInputElement>document.getElementById('automatedInvestment');
     const smallCapsCheckbox: HTMLInputElement = <HTMLInputElement>document.getElementById('smallCaps');
 
@@ -80,8 +79,7 @@ function runSimulation(combinations: Combination[]): void {
             initialInvestment,
             monthlyInvestment,
             expectedYearlyReturn,
-            expectedDividendYield,
-            subtractServiceFeesFromInvestmentElement.checked
+            expectedDividendYield
         );
 
         simulation.run(years);
