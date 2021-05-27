@@ -21,6 +21,7 @@ test('Calculates the cost of a transaction', () => {
         'averageEndOfMonth',
         new PercentageFee(1),
         new PercentageFee(1),
+        new PercentageFee(0),
         ''
     );
 

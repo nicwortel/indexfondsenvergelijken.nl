@@ -9,6 +9,7 @@ export class Simulation {
     public totalInvestment: Money = new Money(0, 'EUR');
     public totalTransactionFees: Money = new Money(0, 'EUR');
     public totalServiceFees: Money = new Money(0, 'EUR');
+    public totalDividendDistributionFees = new Money(0, 'EUR');
     public totalWealthTax: Money = new Money(0, 'EUR');
 
     private monthsPassed = 0;
@@ -37,7 +38,8 @@ export class Simulation {
     public getTotalCosts(): Money {
         return this.portfolio.getTotalCosts()
             .add(this.totalTransactionFees)
-            .add(this.totalServiceFees);
+            .add(this.totalServiceFees)
+            .add(this.totalDividendDistributionFees);
     }
 
     public getNetProfit(): Money {
@@ -106,8 +108,13 @@ export class Simulation {
         const quarterlyDividendYield = this.expectedDividendYield.multiply(new Percentage(25));
 
         const dividend = this.portfolio.collectDividends(quarterlyDividendYield);
+        const dividendFees = this.broker.calculateDividendFees(dividend);
 
-        this.portfolio.invest(dividend);
+        this.totalDividendDistributionFees = this.totalDividendDistributionFees.add(dividendFees);
+
+        const investableDividend = dividend.subtract(dividendFees);
+
+        this.portfolio.invest(investableDividend);
     }
 
     private registerWealthTax(): void {

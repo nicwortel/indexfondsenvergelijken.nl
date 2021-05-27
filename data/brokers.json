@@ -57,6 +57,11 @@
             "percentage": 0.05,
             "maximum": 150
         },
+        "dividendDistributionFee": {
+            "base": "0.25",
+            "percentage": 0.5,
+            "maximum": 100
+        },
         "costOverview": "https://www.rabobank.nl/images/tarieven-beleggen-bij-de-rabobank_29409753.pdf",
         "website": "https://www.rabobank.nl/particulieren/beleggen/rabo-zelf-beleggen/"
     },

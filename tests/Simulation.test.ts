@@ -24,6 +24,7 @@ function createSimulation(initialInvestment: number, monthlyInvestment: number, 
             'endOfQuarter',
             new PercentageFee(0),
             new PercentageFee(0),
+            new PercentageFee(0),
             ''
         ),
         new Portfolio([{

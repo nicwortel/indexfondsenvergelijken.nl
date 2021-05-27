@@ -162,6 +162,12 @@
                             ETF's: {{ combination.broker.etfTransactionFee.describe }}
                         </td>
                     </tr>
+                    <tr>
+                        <td class="w-25">Kosten dividenduitkering</td>
+                        <td>
+                            {{ combination.broker.dividendDistributionFee.describe }}
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -188,6 +194,10 @@
                     <tr>
                         <td>Servicekosten</td>
                         <td class="text-right">{{ simulation.totalServiceFees|money }}</td>
+                    </tr>
+                    <tr>
+                        <td>Kosten dividenduitkering</td>
+                        <td class="text-right">{{ simulation.totalDividendDistributionFees|money }}</td>
                     </tr>
                     <tr>
                         <td class="font-weight-bold">Totale kosten</td>

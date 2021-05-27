@@ -19,7 +19,7 @@ export class FeeFactory {
         let fee: Fee = new PercentageFee(data.percentage);
 
         if (data.base) {
-            fee = new BaseFee(new Money(data.base, this.currency), fee);
+            fee = new BaseFee(new Money(data.base.toString(), this.currency), fee);
         }
 
         if (data.minimum || data.maximum) {

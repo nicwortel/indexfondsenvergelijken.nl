@@ -15,6 +15,7 @@ export class Broker {
         public serviceFeeCalculation: string,
         public mutualFundTransactionFee: Fee,
         public etfTransactionFee: Fee,
+        public dividendDistributionFee: Fee,
         public costOverview: string,
         public minimumServiceFee?: Money,
         public maximumServiceFee?: Money,
@@ -43,6 +44,10 @@ export class Broker {
         }
 
         return baseFee.add(serviceFee);
+    }
+
+    public calculateDividendFees(dividend: Money): Money {
+        return this.dividendDistributionFee.calculateFor(dividend);
     }
 
     private getTransactionFeeFor(fund: Fund): Fee {
