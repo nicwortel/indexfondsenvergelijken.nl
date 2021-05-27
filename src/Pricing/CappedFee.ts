@@ -23,6 +23,10 @@ export class CappedFee implements Fee {
     public describe(): string {
         const numberFormatter = new NumberFormatter();
 
+        if (this.minimum.isEqual(0)) {
+            return this.fee.describe() + ' (max. ' + numberFormatter.formatMoney(this.maximum) + ')';
+        }
+
         return this.fee.describe() + ' (min. ' + numberFormatter.formatMoney(this.minimum) + ', max. ' + numberFormatter.formatMoney(this.maximum) + ')';
     }
 }
