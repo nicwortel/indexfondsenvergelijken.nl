@@ -30,6 +30,13 @@ module.exports = {
                 test: /\.(png|jpe?g|webp|tiff?)/i,
                 use: [
                     {
+                        loader: "file-loader",
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'images'
+                        }
+                    },
+                    {
                         loader: "webpack-image-resize-loader",
                         options: {
                             width: 100,
@@ -37,11 +44,7 @@ module.exports = {
                             fit: "contain",
                             background: "#fff",
                             format: "png",
-                            quality: 100,
-                            fileLoaderOptions: {
-                                name: '[name].[ext]',
-                                outputPath: 'images'
-                            }
+                            quality: 100
                         },
                     },
                 ],
@@ -61,6 +64,9 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
+        fallback: {
+            "path": require.resolve("path-browserify")
+        }
     },
     output: {
         filename: '[name].[contenthash].js',
