@@ -18,8 +18,7 @@ test('Returns the total fund costs', () => {
         index,
         '',
         '',
-        new Percentage(0),
-        1
+        new Percentage(0)
     );
 
     expect(fund.getTotalRecurringCosts().getPercentage()).toBeCloseTo(0.3);

@@ -25,8 +25,7 @@ export class FundRepository {
                     this.indexRepository.getByName(data.index),
                     data.kiid,
                     data.factsheet,
-                    new Percentage(data.esgExclusions ?? 0),
-                    data.shares ?? 0
+                    new Percentage(data.esgExclusions ?? 0)
                 );
             }
 
@@ -39,8 +38,7 @@ export class FundRepository {
                 new Percentage(data.dividendLeakage),
                 this.indexRepository.getByName(data.index),
                 data.kiid,
-                data.factsheet,
-                data.shares ?? 0
+                data.factsheet
             );
         })
     }

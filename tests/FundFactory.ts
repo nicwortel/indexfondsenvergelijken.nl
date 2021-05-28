@@ -23,8 +23,7 @@ export class FundFactory {
             index,
             '',
             '',
-            new Percentage(esgExclusionsPercentage),
-            1
+            new Percentage(esgExclusionsPercentage)
         );
     }
 

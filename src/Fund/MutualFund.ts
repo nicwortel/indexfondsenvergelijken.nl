@@ -14,8 +14,7 @@ export class MutualFund implements Fund {
         private index: Index,
         private kiid: string,
         private factsheet: string,
-        private esgExclusions: Percentage,
-        private shares: number
+        private esgExclusions: Percentage
     )
     {
     }
@@ -76,9 +75,5 @@ export class MutualFund implements Fund {
 
     containsSmallCaps(): boolean {
         return this.index.sizes.includes('small');
-    }
-
-    getNumberOfShares(): number {
-        return this.shares;
     }
 }

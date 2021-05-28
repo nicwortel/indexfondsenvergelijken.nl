@@ -12,8 +12,7 @@ export class Etf implements Fund {
         private dividendLeak: Percentage,
         private index: Index,
         private kiid: string,
-        private factsheet: string,
-        private shares: number
+        private factsheet: string
     ) {
     }
 
@@ -71,9 +70,5 @@ export class Etf implements Fund {
 
     containsSmallCaps(): boolean {
         return this.index.sizes.includes('small');
-    }
-
-    getNumberOfShares(): number {
-        return this.shares;
     }
 }

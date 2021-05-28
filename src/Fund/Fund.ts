@@ -29,6 +29,4 @@ export interface Fund {
     getMarketCapitalization(): Percentage;
 
     containsSmallCaps(): boolean;
-
-    getNumberOfShares(): number;
 }
