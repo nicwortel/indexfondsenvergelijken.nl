@@ -53,7 +53,7 @@
                                             <span class="input-group-text">€</span>
                                         </div>
                                         <input type="number" class="form-control rounded-right" id="monthly" value="500"
-                                            min="1">
+                                            min="1" inputmode="numeric" pattern="[0-9]*">
                                         <div class="invalid-feedback">De maandelijkse inleg moet minimaal € 1 bedragen.
                                         </div>
                                     </div>
@@ -67,7 +67,10 @@
                                         <input type="number" class="form-control"
                                             id="years"
                                             min="1"
-                                            max="100" value="20">
+                                            max="100"
+                                            value="20"
+                                            inputmode="numeric"
+                                            pattern="[0-9]*">
                                         <div class="input-group-append">
                                             <span class="input-group-text">jaar</span>
                                         </div>
@@ -86,7 +89,7 @@
                                     <span class="input-group-text">€</span>
                                 </div>
                                 <input type="number" class="form-control rounded-right" id="initial" value="500" min="1"
-                                    disabled>
+                                    inputmode="numeric" pattern="[0-9]*" disabled>
                                 <div class="invalid-feedback">De eerste inleg moet minimaal € 1 bedragen.</div>
                             </div>
                         </div>
@@ -98,8 +101,7 @@
                                 <div class="form-group">
                                     <label for="return">Groei</label>
                                     <div class="input-group">
-                                        <input type="number" class="form-control" id="return" value="5" step="0.5">
-
+                                        <input type="number" class="form-control" id="return" value="5" step="0.5" inputmode="decimal" pattern="[0-9]*">
                                         <div class="input-group-append">
                                             <span class="input-group-text">%</span>
                                         </div>
@@ -111,7 +113,7 @@
                                     <label for="dividendYield">Dividend</label>
                                     <div class="input-group">
                                         <input type="number" class="form-control" id="dividendYield" value="2.5"
-                                            step="0.5" min="0">
+                                            step="0.5" min="0" inputmode="decimal">
                                         <div class="input-group-append">
                                             <span class="input-group-text">%</span>
                                         </div>
