@@ -22,7 +22,7 @@
         "kiid": "https://www.northerntrust.com/documents/funds/intl/ntfgr/kiids-nl/ntfgr-world-custom-esg-equity-index-ucits-fund-class-a-kiid-nl.pdf",
         "factsheet": "https://cdn.northerntrust.com/pws/nt/documents/funds/intl/factsheets/northern-trust-world-custom-esg-equity-index-ucits-fgr-feeder-fund-nlfw-sha-eur-re-nl.pdf",
         "index": "MSCI World Custom ESG Index",
-        "esgExclusions": 5.8
+        "esgExclusions": 5
     },
     {
         "name": "Northern Trust Emerging Markets Custom ESG Equity Index UCITS FGR Fund",
@@ -35,7 +35,7 @@
         "kiid": "https://www.northerntrust.com/documents/funds/intl/ntfgr/kiids-nl/ntfgr-emerging-markets-custom-esg-equity-index-ucits-fund-class-a-kiid-nl.pdf",
         "factsheet": "https://cdn.northerntrust.com/pws/nt/documents/funds/intl/factsheets/northern-trust-emerging-markets-custom-esg-equity-index-ucits-fgr-fund-nleme-sha-eur-re-nl.pdf",
         "index": "MSCI Emerging Markets Custom ESG Index",
-        "esgExclusions": 7.5
+        "esgExclusions": 6
     },
     {
         "name": "Northern Trust World Small Cap ESG Low Carbon Index FGR Feeder Fund",
@@ -104,7 +104,8 @@
         "kiid": "https://www.actiam.com/4a5659/siteassets/6_fondsen/actiam-retail/ebi/ebi_actiam_duurzaam_index_aandelenfonds_wereld.pdf",
         "factsheet": "https://www.actiam.com/4a52de/siteassets/6_fondsen/actiam-retail/factsheet-nl/fs_adia_wereld.pdf",
         "index": "MSCI World Index",
-        "esgExclusions": 19.3
+        "esgExclusions": 19.1,
+        "_source": "https://www.actiam.com/497fbc/siteassets/6_fondsen/actiam-retail/jaarverslagen/jaarverslag-2020-actiam-beleggingsfondsen-nv.pdf#page=52"
     },
     {
         "name": "ACTIAM Duurzaam Index Aandelenfonds Opkomende Landen",
@@ -118,7 +119,8 @@
         "kiid": "https://www.actiam.com/49b032/siteassets/6_fondsen/actiam-retail/ebi/ebi-actiam-duurzaam-index-aandelenfonds-opkomende-landen.pdf",
         "factsheet": "https://www.actiam.com/4a52de/siteassets/6_fondsen/actiam-retail/factsheet-nl/fs_adia_opkomende_landen.pdf",
         "index": "MSCI Emerging Markets Index",
-        "esgExclusions": 25.7
+        "esgExclusions": 25.3,
+        "_source": "https://www.actiam.com/497fbc/siteassets/6_fondsen/actiam-retail/jaarverslagen/jaarverslag-2020-actiam-beleggingsfondsen-nv.pdf#page=52"
     },
     {
         "name": "BND Wereld Indexfonds Hedged",
