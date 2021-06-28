@@ -3,8 +3,8 @@ import {Money} from "bigint-money/dist";
 export class NumberFormatter {
     readonly locale = 'nl-NL';
 
-    public formatMoney(amount: Money): string {
-        return this.formatMoneyFromNumber(parseFloat(amount.toFixed(2)), amount.currency);
+    public formatMoney(amount: Money, maximumDigits: number = 2): string {
+        return this.formatMoneyFromNumber(parseFloat(amount.toFixed(2)), amount.currency, maximumDigits);
     }
 
     public formatMoneyFromNumber(amount: number, currency: string, maximumDigits = 2): string {

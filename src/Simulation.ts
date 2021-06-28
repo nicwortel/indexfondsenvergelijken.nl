@@ -59,7 +59,7 @@ export class Simulation {
     }
 
     private runQuarter(): void {
-        const investedCapitalAtStart = this.portfolio.getValue();
+        const startValue = this.portfolio.getValue();
 
         let combinedEndOfMonthValue = new Money(0, 'EUR');
         for (let i = 0; i < 3; i++) {
@@ -69,14 +69,13 @@ export class Simulation {
 
         this.collectAndReinvestDividends();
 
-        if (this.broker.serviceFeeCalculation === 'averageEndOfMonth') {
-            this.addQuarterlyBrokerServiceFees(combinedEndOfMonthValue.divide(3));
-        } else if (this.broker.serviceFeeCalculation === 'averageOfQuarter') {
-            const averageInvestedCapital = investedCapitalAtStart.add(this.portfolio.getValue()).divide(2);
-            this.addQuarterlyBrokerServiceFees(averageInvestedCapital);
-        } else if (this.broker.serviceFeeCalculation === 'endOfQuarter') {
-            this.addQuarterlyBrokerServiceFees(this.portfolio.getValue());
-        }
+        const serviceFee = this.broker.getQuarterlyServiceFee(
+            this.portfolio.getValue(),
+            combinedEndOfMonthValue.divide(3),
+            startValue.add(this.portfolio.getValue()).divide(2)
+        );
+
+        this.registerServiceFee(serviceFee);
     }
 
     private runMonth(): void {
@@ -87,6 +86,8 @@ export class Simulation {
         const monthlyCosts = this.getMonthlyRate(this.portfolio.getTotalExpenseRatio());
 
         this.portfolio.grow(monthlyNetReturn, monthlyCosts);
+
+        this.registerServiceFee(this.broker.getMonthlyServiceFee(this.portfolio.getValue()));
 
         this.monthsPassed++;
     }
@@ -121,11 +122,8 @@ export class Simulation {
         this.totalWealthTax = this.totalWealthTax.add(this.wealthTax.getTaxAmount(this.portfolio.getValue()));
     }
 
-    private addQuarterlyBrokerServiceFees(averageInvestedCapital: Money): void {
-        const serviceFee = this.broker.getQuarterlyCosts(averageInvestedCapital);
-
+    private registerServiceFee(serviceFee: Money): void {
         this.portfolio.sell(serviceFee);
-
         this.totalServiceFees = this.totalServiceFees.add(serviceFee);
     }
 

@@ -16,4 +16,9 @@ export class BaseFee implements Fee {
         return numberFormatter.formatMoney(this.baseFee) + ' + ' + this.additionalFee.describe();
     }
 
+    public getExtendedDescription(): string[] {
+        const numberFormatter = new NumberFormatter();
+
+        return ['Basisfee: ' + numberFormatter.formatMoney(this.baseFee)].concat(this.additionalFee.getExtendedDescription());
+    }
 }

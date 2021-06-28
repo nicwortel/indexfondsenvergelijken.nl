@@ -29,4 +29,19 @@ export class CappedFee implements Fee {
 
         return this.fee.describe() + ' (min. ' + numberFormatter.formatMoney(this.minimum) + ', max. ' + numberFormatter.formatMoney(this.maximum) + ')';
     }
+
+    public getExtendedDescription(): string[] {
+        const numberFormatter = new NumberFormatter();
+
+        if (this.minimum.isEqual(0)) {
+            return this.fee.getExtendedDescription().concat([
+                'Maximum: ' + numberFormatter.formatMoney(this.maximum),
+            ])
+        }
+
+        return this.fee.getExtendedDescription().concat([
+            'Minimum: ' + numberFormatter.formatMoney(this.minimum),
+            'Maximum: ' + numberFormatter.formatMoney(this.maximum),
+        ])
+    }
 }

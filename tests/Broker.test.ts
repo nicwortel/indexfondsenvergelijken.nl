@@ -1,9 +1,7 @@
 import {Money} from "bigint-money";
 import {Broker} from "../src/Broker";
-import {Percentage} from "../src/Percentage";
 import {PercentageFee} from "../src/Pricing/PercentageFee";
-import {Tier} from "../src/Tier";
-import {TieredFee} from "../src/TieredFee";
+import {Tier, TieredFee} from "../src/Pricing/TieredFee";
 import {Transaction} from "../src/Transaction";
 import {FundFactory} from "./FundFactory";
 
@@ -11,13 +9,13 @@ const fundFactory = new FundFactory();
 
 test('Calculates the cost of a transaction', () => {
     const baseFee = new Money(0, 'EUR');
-    const serviceFee = new TieredFee([new Tier(0, new Percentage(0))]);
+    const serviceFee = new TieredFee([new Tier(null, new PercentageFee(0))]);
 
     const broker = new Broker(
         'TestBroker',
         'Product',
-        baseFee,
         serviceFee,
+        'quarterly',
         'averageEndOfMonth',
         new PercentageFee(1),
         new PercentageFee(1),

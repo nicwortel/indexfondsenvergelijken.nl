@@ -3,12 +3,14 @@
         "name": "ING",
         "logo": "ing.png",
         "product": "Zelf op de beurs",
-        "baseFee": 20,
-        "serviceFee": [
-            {"upperLimit": 100000, "percentage": 0.24},
-            {"upperLimit": 500000, "percentage": 0.12},
-            {"upperLimit": null, "percentage": 0.06}
-        ],
+        "serviceFee": {
+            "base": 5,
+            "tiers": [
+                {"upperLimit": 100000, "percentage": 0.06},
+                {"upperLimit": 500000, "percentage": 0.03},
+                {"upperLimit": null, "percentage": 0.015}
+            ]
+        },
         "serviceFeeCalculation": "averageEndOfMonth",
         "mutualFundTransactionFee": 0,
         "etfTransactionFee": 0,
@@ -19,12 +21,13 @@
         "name": "ABN Amro",
         "logo": "abn.png",
         "product": "Zelf Beleggen Basis",
-        "baseFee": 0,
-        "serviceFee": [
-            {"upperLimit": 100000, "percentage": 0.2},
-            {"upperLimit": 400000, "percentage": 0.12},
-            {"upperLimit": null, "percentage": 0.06}
-        ],
+        "serviceFee": {
+            "tiers": [
+                {"upperLimit": 100000, "percentage": 0.05},
+                {"upperLimit": 400000, "percentage": 0.03},
+                {"upperLimit": null, "percentage": 0.015}
+            ]
+        },
         "serviceFeeCalculation": "endOfQuarter",
         "mutualFundTransactionFee": 0,
         "etfTransactionFee": {
@@ -39,13 +42,14 @@
         "name": "Rabobank",
         "logo": "rabobank.png",
         "product": "Zelf Beleggen",
-        "baseFee": 0,
-        "minimumServiceFee": 5,
-        "maximumServiceFee": 100,
-        "serviceFee": [
-            {"upperLimit": 100000, "percentage": 0.24},
-            {"upperLimit": null, "percentage": 0.12}
-        ],
+        "serviceFee": {
+            "tiers": [
+                {"upperLimit": 100000, "percentage": 0.06},
+                {"upperLimit": null, "percentage": 0.03}
+            ],
+            "minimum": 5,
+            "maximum": 100
+        },
         "serviceFeeCalculation": "averageOfQuarter",
         "mutualFundTransactionFee": {
             "percentage": 0.1,
@@ -69,7 +73,6 @@
         "name": "Meesman",
         "logo": "meesman.png",
         "product": "",
-        "baseFee": 0,
         "mutualFundTransactionFee": 0.25,
         "costOverview": "https://www.meesman.nl/zo-werkt-het/kosten",
         "website": "https://www.meesman.nl/"
@@ -78,7 +81,6 @@
         "name": "DEGIRO",
         "logo": "degiro.png",
         "product": "Basic - Kernselectie",
-        "baseFee": 0,
         "mutualFundTransactionFee": 0,
         "etfTransactionFee": 0,
         "costOverview": "https://www.degiro.nl/data/pdf/Tarievenoverzicht.pdf",
@@ -89,10 +91,12 @@
         "name": "Binck",
         "logo": "binck.png",
         "product": "Fundcoach",
-        "baseFee": 0,
-        "serviceFee": [
-            {"upperLimit": 300000, "percentage": 0.18 }
-        ],
+        "serviceFee": {
+            "tiers": [
+                {"upperLimit": 300000, "percentage": 0.015 }
+            ]
+        },
+        "serviceFeeFrequency": "monthly",
         "serviceFeeCalculation": "averageEndOfMonth",
         "mutualFundTransactionFee": 0,
         "etfTransactionFee": 0,
@@ -103,8 +107,6 @@
         "name": "FitVermogen",
         "logo": "fitvermogen.png",
         "product": "",
-        "baseFee": 0,
-        "serviceFee": [],
         "mutualFundTransactionFee": 0,
         "costOverview": "https://www.fitvermogen.nl/vragen",
         "website": "https://www.fitvermogen.nl/"
@@ -113,8 +115,6 @@
         "name": "Brand New Day",
         "logo": "brandnewday.png",
         "product": "Beleggingsrekening",
-        "baseFee": 0,
-        "serviceFee": [],
         "mutualFundTransactionFee": 0,
         "website": "https://brandnewday.nl",
         "affiliateLink": "https://dt51.net/c/?si=9849&li=1440647&wi=354885&ws=&dl=particulier%2Fbeleggingsrekening%2F"
@@ -123,7 +123,6 @@
         "name": "Lynx",
         "logo": "lynx.png",
         "product": "Zelf Beleggen",
-        "baseFee": 0,
         "mutualFundTransactionFee": {
             "percentage": 0.1,
             "minimum": 6,

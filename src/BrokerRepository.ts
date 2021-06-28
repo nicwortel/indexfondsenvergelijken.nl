@@ -1,22 +1,13 @@
 import {Broker} from "./Broker";
 import brokers from "../data/brokers.json";
-import {Percentage} from "./Percentage";
 import {FeeFactory} from "./Pricing/FeeFactory";
-import {Tier} from "./Tier";
-import {TieredFee} from "./TieredFee";
-import {Money} from "bigint-money/dist";
 
 export class BrokerRepository {
     public getAll(): Array<Broker> {
         return brokers.map(function (data: any): Broker {
-            let tiers = data.serviceFee ?? [];
-
-            tiers = tiers.map((tier: {upperLimit: number, percentage: number}) => new Tier(tier.upperLimit, new Percentage(tier.percentage)));
-
-            const serviceFee: TieredFee = new TieredFee(tiers);
-
             const feeFactory = new FeeFactory();
 
+            const serviceFee = feeFactory.create(data.serviceFee);
             const mutualFundTransactionFee = feeFactory.create(data.mutualFundTransactionFee);
             const etfTransactionFee = feeFactory.create(data.etfTransactionFee);
             const dividendDistributionFee = feeFactory.create(data.dividendDistributionFee);
@@ -28,15 +19,13 @@ export class BrokerRepository {
             return new Broker(
                 data.name,
                 data.product,
-                new Money(data.baseFee.toString(), 'EUR'),
                 serviceFee,
+                data.serviceFeeFrequency ?? 'quarterly',
                 data.serviceFeeCalculation,
                 mutualFundTransactionFee,
                 etfTransactionFee,
                 dividendDistributionFee,
                 data.costOverview,
-                data.minimumServiceFee ? new Money(data.minimumServiceFee, 'EUR') : null,
-                data.maximumServiceFee ? new Money(data.maximumServiceFee, 'EUR') : null,
                 data.logo ? data.logo : null,
                 data.website,
                 data.affiliateLink

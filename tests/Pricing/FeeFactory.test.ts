@@ -2,12 +2,13 @@ import {Money} from "bigint-money";
 import {BaseFee} from "../../src/Pricing/BaseFee";
 import {CappedFee} from "../../src/Pricing/CappedFee";
 import {FeeFactory} from "../../src/Pricing/FeeFactory";
+import {NullFee} from "../../src/Pricing/NullFee";
 import {PercentageFee} from "../../src/Pricing/PercentageFee";
 
 const factory = new FeeFactory();
 
-test('Returns 0 if not defined', () => {
-    expect(factory.create(undefined)).toEqual(new PercentageFee(0));
+test('Returns NullFee if not defined', () => {
+    expect(factory.create(undefined)).toEqual(new NullFee());
 });
 
 test('Returns percentage fee if data is number', () => {

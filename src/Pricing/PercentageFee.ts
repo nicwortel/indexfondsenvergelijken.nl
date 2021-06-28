@@ -13,6 +13,10 @@ export class PercentageFee implements Fee {
     public describe(): string {
         const numberFormatter = new NumberFormatter();
 
-        return numberFormatter.formatPercentage(this.percentage / 100);
+        return numberFormatter.formatPercentage(this.percentage / 100, 3);
+    }
+
+    public getExtendedDescription(): string[] {
+        return [this.describe()];
     }
 }

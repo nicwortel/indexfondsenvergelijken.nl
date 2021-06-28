@@ -3,9 +3,8 @@ import {Broker} from "../src/Broker";
 import {Percentage} from "../src/Percentage";
 import {Portfolio} from "../src/Portfolio";
 import {PercentageFee} from "../src/Pricing/PercentageFee";
+import {Tier, TieredFee} from "../src/Pricing/TieredFee";
 import {Simulation} from "../src/Simulation";
-import {Tier} from "../src/Tier";
-import {TieredFee} from "../src/TieredFee";
 import {WealthTax} from "../src/WealthTax";
 import {FundFactory} from "./FundFactory";
 
@@ -19,8 +18,8 @@ function createSimulation(initialInvestment: number, monthlyInvestment: number, 
         new Broker(
             'Broker',
             'Product',
-            new Money(0, 'EUR'),
-            new TieredFee([new Tier(null, new Percentage(serviceFee))]),
+            new TieredFee([new Tier(null, new PercentageFee(serviceFee))]),
+            'quarterly',
             'endOfQuarter',
             new PercentageFee(0),
             new PercentageFee(0),
@@ -43,9 +42,9 @@ test.each([
     [createSimulation(1000, 100, 0, 0, 0, 0), 1, '2100', '0'],
     [createSimulation(1000, 100, 0, 0, 0, 0), 2, '3300', '0'],
     [createSimulation(1000, 0, 0, 5, 2, 0), 1, '1071.16', '0'],
-    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 1, '2236.60', '4.14'],
-    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 2, '3690.04', '11.68'],
-    [createSimulation(1000, 100, 0.15, 7, 2, 0.24), 10, '20958.23', '235.24'],
+    [createSimulation(1000, 100, 0.15, 7, 2, 0.06), 1, '2236.61', '4.14'],
+    [createSimulation(1000, 100, 0.15, 7, 2, 0.06), 2, '3690.05', '11.67'],
+    [createSimulation(1000, 100, 0.15, 7, 2, 0.06), 10, '20958.22', '235.25'],
 ])(
     'Runs simulation',
     (simulation: Simulation, runYears: number, expectedValue: string, expectedServiceFees: string) => {
