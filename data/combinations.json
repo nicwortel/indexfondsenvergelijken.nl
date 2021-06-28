@@ -167,6 +167,16 @@
         "broker": "DEGIRO",
         "portfolio": [
             {
+                "allocation": 100,
+                "fund": "VWCE"
+            }
+        ],
+        "automatedInvesting": false
+    },
+    {
+        "broker": "DEGIRO",
+        "portfolio": [
+            {
                 "allocation": 87,
                 "fund": "IWDA"
             },

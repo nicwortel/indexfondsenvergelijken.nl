@@ -12,6 +12,18 @@
         "index": "FTSE All-World Index"
     },
     {
+        "name": "Vanguard FTSE All-World UCITS ETF (Accumulating)",
+        "type": "ETF",
+        "symbol": "VWCE",
+        "isin": "IE00BK5BQT80",
+        "logo": "vanguard.png",
+        "totalExpenseRatio": 0.22,
+        "dividendLeakage": 11.42,
+        "kiid": "https://global.vanguard.com/portal/site/loadPDF?country=nl&docId=21714",
+        "factsheet": "https://global.vanguard.com/portal/site/loadPDF?country=nl&docId=31658",
+        "index": "FTSE All-World Index"
+    },
+    {
         "name": "Northern Trust World Custom ESG Equity Index UCITS FGR Feeder Fund",
         "type": "mutualFund",
         "symbol": "NT World",
