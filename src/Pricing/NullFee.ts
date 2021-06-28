@@ -7,10 +7,10 @@ export class NullFee implements Fee {
     }
 
     public describe(): string {
-        return '';
+        return 'geen';
     }
 
-    getExtendedDescription(): string[] {
+    public getExtendedDescription(): string[] {
         return [];
     }
 }

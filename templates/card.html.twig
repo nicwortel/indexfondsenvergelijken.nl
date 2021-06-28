@@ -143,7 +143,7 @@
                         </td>
                         <td class="w-25">per transactie</td>
                     </tr>
-                    {% if combination.broker.dividendDistributionFee.describe is not empty %}
+                    {% if combination.broker.dividendDistributionFee.describe != 'geen' %}
                     <tr>
                         <td class="w-25">Kosten dividenduitkering</td>
                         <td>
