@@ -3,19 +3,16 @@ import {Broker} from "./Broker";
 import {Percentage} from "./Percentage";
 import {Portfolio} from "./Portfolio";
 import {Transaction} from "./Transaction";
-import {WealthTax} from "./WealthTax";
 
 export class Simulation {
     public totalInvestment: Money = new Money(0, 'EUR');
     public totalTransactionFees: Money = new Money(0, 'EUR');
     public totalServiceFees: Money = new Money(0, 'EUR');
     public totalDividendDistributionFees = new Money(0, 'EUR');
-    public totalWealthTax: Money = new Money(0, 'EUR');
 
     private monthsPassed = 0;
 
     constructor(
-        private wealthTax: WealthTax,
         private broker: Broker,
         private portfolio: Portfolio,
         private initialInvestment: Money,
@@ -51,8 +48,6 @@ export class Simulation {
     }
 
     private runYear(): void {
-        this.registerWealthTax();
-
         for (let i = 0; i < 4; i++) {
             this.runQuarter();
         }
@@ -116,10 +111,6 @@ export class Simulation {
         const investableDividend = dividend.subtract(dividendFees);
 
         this.portfolio.invest(investableDividend);
-    }
-
-    private registerWealthTax(): void {
-        this.totalWealthTax = this.totalWealthTax.add(this.wealthTax.getTaxAmount(this.portfolio.getValue()));
     }
 
     private registerServiceFee(serviceFee: Money): void {

@@ -5,7 +5,6 @@ import {Portfolio} from "../src/Portfolio";
 import {PercentageFee} from "../src/Pricing/PercentageFee";
 import {Tier, TieredFee} from "../src/Pricing/TieredFee";
 import {Simulation} from "../src/Simulation";
-import {WealthTax} from "../src/WealthTax";
 import {FundFactory} from "./FundFactory";
 
 const fundFactory = new FundFactory();
@@ -14,7 +13,6 @@ function createSimulation(initialInvestment: number, monthlyInvestment: number, 
                           expectedYearlyReturn: number, expectedDividendYield: number, serviceFee: number
 ): Simulation {
     return new Simulation(
-        new WealthTax(),
         new Broker(
             'Broker',
             'Product',

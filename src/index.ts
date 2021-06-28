@@ -12,7 +12,6 @@ import {Percentage} from "./Percentage";
 import {Portfolio} from "./Portfolio";
 import {Simulation} from "./Simulation";
 import {View} from "./View";
-import {WealthTax} from "./WealthTax";
 
 // Assume that if JavaScript doesn't load it's because of outdated browser (Safari 13)
 document.getElementById('outdated-browser').hidden = true;
@@ -73,7 +72,6 @@ function runSimulation(combinations: Combination[]): void {
         combination.portfolio.reset();
 
         const simulation = new Simulation(
-            new WealthTax(),
             combination.broker,
             combination.portfolio,
             initialInvestment,
