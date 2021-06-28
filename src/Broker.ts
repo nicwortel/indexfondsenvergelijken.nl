@@ -1,8 +1,9 @@
+import {Money} from "bigint-money/dist";
 import {Etf} from "./Fund/Etf";
 import {Fund} from "./Fund/Fund";
 import {MutualFund} from "./Fund/MutualFund";
+import {DeductibleFee} from "./Pricing/DeductibleFee";
 import {Fee} from "./Pricing/Fee";
-import {Money} from "bigint-money/dist";
 import {Transaction} from "./Transaction";
 
 export class Broker {
@@ -10,8 +11,8 @@ export class Broker {
         public name: string,
         public product: string,
         public serviceFee: Fee,
-        public serviceFeeFrequency: 'monthly'|'quarterly' = 'quarterly',
-        public serviceFeeCalculation: 'averageEndOfMonth'|'averageOfQuarter'|'endOfQuarter',
+        public serviceFeeFrequency: 'monthly' | 'quarterly' = 'quarterly',
+        public serviceFeeCalculation: 'averageEndOfMonth' | 'averageOfQuarter' | 'endOfQuarter',
         public mutualFundTransactionFee: Fee,
         public etfTransactionFee: Fee,
         public dividendDistributionFee: Fee,
@@ -19,7 +20,8 @@ export class Broker {
         public logo?: string,
         public website?: string,
         public affiliateLink?: string
-    ) {
+    )
+    {
     }
 
     public getTransactionCosts(transaction: Transaction): Money {
@@ -30,6 +32,12 @@ export class Broker {
 
     public calculateDividendFees(dividend: Money): Money {
         return this.dividendDistributionFee.calculateFor(dividend);
+    }
+
+    public registerTransactionCosts(transactionCosts: Money): void {
+        if (this.serviceFee instanceof DeductibleFee) {
+            this.serviceFee.updateLastTransactionCosts(transactionCosts);
+        }
     }
 
     public getMonthlyServiceFee(portfolioValue: Money): Money {

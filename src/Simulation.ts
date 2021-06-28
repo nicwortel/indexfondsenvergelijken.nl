@@ -74,7 +74,20 @@ export class Simulation {
     }
 
     private runMonth(): void {
-        this.invest(this.monthsPassed === 0 ? this.initialInvestment : this.monthlyInvestment);
+        const investment = this.isFirstMonth() ? this.initialInvestment : this.monthlyInvestment;
+
+        let transactionCosts = new Money(0, 'EUR');
+
+        if (investment.isGreaterThan(0)) {
+            this.totalInvestment = this.totalInvestment.add(investment);
+
+            transactionCosts = this.getTransactionCosts(investment);
+
+            this.portfolio.invest(investment.subtract(transactionCosts));
+            this.totalTransactionFees = this.totalTransactionFees.add(transactionCosts);
+        }
+
+        this.broker.registerTransactionCosts(transactionCosts);
 
         const netReturn = this.expectedYearlyReturn.subtract(this.portfolio.getTotalExpenseRatio());
         const monthlyNetReturn = this.getMonthlyRate(netReturn);
@@ -87,17 +100,11 @@ export class Simulation {
         this.monthsPassed++;
     }
 
-    private invest(amount: Money): void {
-        this.totalInvestment = this.totalInvestment.add(amount);
-
+    private getTransactionCosts(amount: Money): Money {
         const transactions = this.portfolio.allocate(amount);
         const transactionCosts = transactions.map((transaction: Transaction) => this.broker.getTransactionCosts(transaction));
-        const totalTransactionCost = transactionCosts.reduce((total: Money, current: Money): Money => total.add(current), new Money(0, 'EUR'));
 
-        const investment = amount.subtract(totalTransactionCost);
-
-        this.portfolio.invest(investment);
-        this.totalTransactionFees = this.totalTransactionFees.add(totalTransactionCost);
+        return transactionCosts.reduce((total: Money, current: Money): Money => total.add(current), new Money(0, 'EUR'));
     }
 
     private collectAndReinvestDividends(): void {
@@ -120,5 +127,9 @@ export class Simulation {
 
     private getMonthlyRate(yearly: Percentage): Percentage {
         return Percentage.createFromFraction((1 + yearly.getFraction()) ** (1/12) - 1);
+    }
+
+    private isFirstMonth(): boolean {
+        return this.monthsPassed === 0;
     }
 }

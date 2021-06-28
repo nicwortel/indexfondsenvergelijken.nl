@@ -123,6 +123,11 @@
         "name": "Lynx",
         "logo": "lynx.png",
         "product": "Zelf Beleggen",
+        "serviceFee": {
+            "flat": 5,
+            "transactionCostsDeductible": true
+        },
+        "serviceFeeFrequency": "monthly",
         "mutualFundTransactionFee": {
             "percentage": 0.1,
             "minimum": 6,

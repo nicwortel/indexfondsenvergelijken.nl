@@ -1,7 +1,9 @@
 import {Money} from "bigint-money/dist";
 import {BaseFee} from "./BaseFee";
 import {CappedFee} from "./CappedFee";
+import {DeductibleFee} from "./DeductibleFee";
 import {Fee} from "./Fee";
+import {FlatFee} from "./FlatFee";
 import {NullFee} from "./NullFee";
 import {PercentageFee} from "./PercentageFee";
 import {Tier, TieredFee} from "./TieredFee";
@@ -28,8 +30,14 @@ export class FeeFactory {
             });
 
             fee = new TieredFee(tiers);
+        } else if (data.flat) {
+            fee = new FlatFee(new Money(data.flat, this.currency));
         } else {
             fee = new PercentageFee(data.percentage);
+        }
+
+        if (data.transactionCostsDeductible) {
+            fee = new DeductibleFee(fee);
         }
 
         if (data.base) {
