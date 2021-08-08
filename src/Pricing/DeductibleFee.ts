@@ -23,7 +23,7 @@ export class DeductibleFee implements Fee {
     }
 
     public getExtendedDescription(): string[] {
-        return this.innerFee.getExtendedDescription().concat(['minus gemaakte transactiekosten']);
+        return this.innerFee.getExtendedDescription().concat(['Te verminderen met de gemaakte transactiekosten']);
     }
 
     public updateLastTransactionCosts(transactionCosts: Money): void {

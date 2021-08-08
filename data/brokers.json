@@ -124,7 +124,10 @@
         "logo": "lynx.png",
         "product": "Zelf Beleggen",
         "serviceFee": {
-            "flat": 5,
+            "volumes": [
+                {"max": 100000, "flat": 5},
+                {"max": null, "flat": 0}
+            ],
             "transactionCostsDeductible": true
         },
         "serviceFeeFrequency": "monthly",

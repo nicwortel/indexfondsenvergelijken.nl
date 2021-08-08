@@ -7,6 +7,7 @@ import {FlatFee} from "./FlatFee";
 import {NullFee} from "./NullFee";
 import {PercentageFee} from "./PercentageFee";
 import {Tier, TieredFee} from "./TieredFee";
+import {Volume, VolumeFee} from "./VolumeFee";
 
 export class FeeFactory {
     private readonly currency: string = 'EUR';
@@ -30,6 +31,14 @@ export class FeeFactory {
             });
 
             fee = new TieredFee(tiers);
+        } else if (data.volumes) {
+            const volumes = data.volumes.map((volume: { max: number, flat: number }) => {
+                const max = volume.max ? new Money(volume.max, this.currency) : null;
+
+                return new Volume(max, new FlatFee(new Money(volume.flat, this.currency)));
+            });
+
+            fee = new VolumeFee(volumes);
         } else if (data.flat) {
             fee = new FlatFee(new Money(data.flat, this.currency));
         } else {
