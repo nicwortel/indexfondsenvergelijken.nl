@@ -60,6 +60,9 @@ function runSimulation(combinations: Combination[]): void {
     const automatedInvestmentElement: HTMLInputElement = <HTMLInputElement>document.getElementById('automatedInvestment');
     const smallCapsCheckbox: HTMLInputElement = <HTMLInputElement>document.getElementById('smallCaps');
 
+    const minimumMarketCap = getInputValue('minimumMarketCap');
+    combinations = combinations.filter((combination: Combination) => combination.portfolio.getMarketCapPercentage().getPercentage() >= minimumMarketCap);
+
     if (automatedInvestmentElement.checked) {
         combinations = combinations.filter((combination: Combination) => combination.automatedInvesting === true);
     }
