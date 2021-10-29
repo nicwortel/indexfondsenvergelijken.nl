@@ -188,7 +188,7 @@
         "automatedInvesting": false
     },
     {
-        "broker": "Binck",
+        "broker": "Saxo Bank",
         "portfolio": [
             {
                 "allocation": 100,
@@ -212,7 +212,7 @@
         "automatedInvesting": true
     },
     {
-        "broker": "Binck",
+        "broker": "Saxo Bank",
         "portfolio": [
             {
                 "allocation": 83,
@@ -226,7 +226,7 @@
         "automatedInvesting": true
     },
     {
-        "broker": "Binck",
+        "broker": "Saxo Bank",
         "portfolio": [
             {
                 "allocation": 72,
@@ -244,7 +244,7 @@
         "automatedInvesting": true
     },
     {
-        "broker": "Binck",
+        "broker": "Saxo Bank",
         "portfolio": [
             {
                 "allocation": 88,

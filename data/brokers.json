@@ -88,20 +88,26 @@
         "affiliateLink": "https://www.degiro.nl/lp/beleggen?tap_a=55081-01554d&tap_s=936305-cd4a9b&utm_source=indexfondsen&utm_campaign=DEGIRO+Netherlands&utm_medium=a&utm_content=shares_lp"
     },
     {
-        "name": "Binck",
-        "logo": "binck.png",
-        "product": "Fundcoach",
+        "name": "Saxo Bank",
+        "logo": "saxo.png",
+        "product": "Zelf Beleggen Green",
         "serviceFee": {
-            "tiers": [
-                {"upperLimit": 300000, "percentage": 0.015 }
-            ]
+            "base": 3.5,
+            "percentage": 0.01,
+            "maximum": 48.5
         },
-        "serviceFeeFrequency": "monthly",
-        "serviceFeeCalculation": "averageEndOfMonth",
-        "mutualFundTransactionFee": 0,
-        "etfTransactionFee": 0,
-        "costOverview": "https://www.binck.nl/fondsbeleggen#tarieven",
-        "website": "https://www.binck.nl/fondsbeleggen"
+        "mutualFundTransactionFee": {
+            "percentage": 0.15,
+            "minimum": 8,
+            "maximum": 150
+        },
+        "etfTransactionFee": {
+            "percentage": 0.1,
+            "minimum": 6,
+            "maximum": 150
+        },
+        "costOverview": "https://www.home.saxo/-/media/documents/regional/nl/nl-migration-leadsite-pricing-regular-jul2021.pdf",
+        "website": "https://www.home.saxo/nl-nl"
     },
     {
         "name": "FitVermogen",
