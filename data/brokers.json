@@ -96,6 +96,7 @@
             "percentage": 0.01,
             "maximum": 48.5
         },
+        "serviceFeeFrequency": "monthly",
         "mutualFundTransactionFee": {
             "percentage": 0.15,
             "minimum": 8,
