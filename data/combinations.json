@@ -3,11 +3,11 @@
         "broker": "ING",
         "portfolio": [
             {
-                "allocation": 87,
+                "allocation": 88,
                 "fund": "NT World"
             },
             {
-                "allocation": 13,
+                "allocation": 12,
                 "fund": "NT EM"
             }
         ],
@@ -44,11 +44,11 @@
         "broker": "ABN Amro",
         "portfolio": [
             {
-                "allocation": 87,
+                "allocation": 88,
                 "fund": "NT World"
             },
             {
-                "allocation": 13,
+                "allocation": 12,
                 "fund": "NT EM"
             }
         ],
@@ -85,11 +85,11 @@
         "broker": "Rabobank",
         "portfolio": [
             {
-                "allocation": 87,
+                "allocation": 88,
                 "fund": "NT World"
             },
             {
-                "allocation": 13,
+                "allocation": 12,
                 "fund": "NT EM"
             }
         ],
@@ -127,11 +127,11 @@
         "broker": "Lynx",
         "portfolio": [
             {
-                "allocation": 83,
+                "allocation": 84,
                 "fund": "AVIAW"
             },
             {
-                "allocation": 17,
+                "allocation": 16,
                 "fund": "EMIM"
             }
         ]
@@ -140,11 +140,11 @@
         "broker": "Lynx",
         "portfolio": [
             {
-                "allocation": 72,
+                "allocation": 73,
                 "fund": "AVIAW"
             },
             {
-                "allocation": 15,
+                "allocation": 14,
                 "fund": "EMIM"
             },
             {
@@ -177,11 +177,11 @@
         "broker": "DEGIRO",
         "portfolio": [
             {
-                "allocation": 87,
+                "allocation": 88,
                 "fund": "IWDA"
             },
             {
-                "allocation": 13,
+                "allocation": 12,
                 "fund": "IEMM"
             }
         ],
@@ -201,11 +201,11 @@
         "broker": "FitVermogen",
         "portfolio": [
             {
-                "allocation": 87,
+                "allocation": 88,
                 "fund": "NN Enhanced"
             },
             {
-                "allocation": 13,
+                "allocation": 12,
                 "fund": "NN Enhanced EM"
             }
         ],
@@ -215,11 +215,11 @@
         "broker": "Saxo Bank",
         "portfolio": [
             {
-                "allocation": 83,
+                "allocation": 84,
                 "fund": "AVIAW"
             },
             {
-                "allocation": 17,
+                "allocation": 16,
                 "fund": "EMIM"
             }
         ],
@@ -229,11 +229,11 @@
         "broker": "Saxo Bank",
         "portfolio": [
             {
-                "allocation": 72,
+                "allocation": 73,
                 "fund": "AVIAW"
             },
             {
-                "allocation": 15,
+                "allocation": 14,
                 "fund": "EMIM"
             },
             {
@@ -247,11 +247,11 @@
         "broker": "Saxo Bank",
         "portfolio": [
             {
-                "allocation": 88,
+                "allocation": 89,
                 "fund": "AVIAW"
             },
             {
-                "allocation": 12,
+                "allocation": 11,
                 "fund": "AVIAO"
             }
         ],
@@ -261,11 +261,11 @@
         "broker": "Brand New Day",
         "portfolio": [
             {
-                "allocation": 87,
+                "allocation": 88,
                 "fund": "BND WIF Hedged"
             },
             {
-                "allocation": 13,
+                "allocation": 12,
                 "fund": "BND EM"
             }
         ],
