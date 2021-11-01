@@ -108,7 +108,8 @@
             "maximum": 150
         },
         "costOverview": "https://www.home.saxo/-/media/documents/regional/nl/nl-migration-leadsite-pricing-regular-jul2021.pdf",
-        "website": "https://www.home.saxo/nl-nl"
+        "website": "https://www.home.saxo/nl-nl",
+        "affiliateLink": "https://ds1.nl/c/?si=16240&amp;li=1711534&amp;wi=354885&amp;ws="
     },
     {
         "name": "FitVermogen",
