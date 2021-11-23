@@ -6,8 +6,9 @@
         "serviceFee": {
             "base": 5,
             "tiers": [
-                {"upperLimit": 100000, "percentage": 0.06},
-                {"upperLimit": 500000, "percentage": 0.03},
+                {"upperLimit": 100000, "percentage": 0.24},
+                {"upperLimit": 500000, "percentage": 0.12},
+                {"upperLimit": 2500000, "percentage": 0.06},
                 {"upperLimit": null, "percentage": 0.015}
             ]
         },
