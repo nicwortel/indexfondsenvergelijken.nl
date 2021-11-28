@@ -31,6 +31,25 @@ export class View {
 
             return parts.join(',');
         }.bind(this));
+
+        Twig.extendFilter('tagAbbreviations', function (name: string): string {
+            const abbreviations: {[key: string]: string} = {
+                'EM': 'Emerging Markets',
+                'ESG': 'Environmental, Social & Governance',
+                'ETF': 'Exchange-traded Fund',
+                'FGR': 'Fonds voor Gemene Rekening',
+                'FTSE': 'Financial Times Stock Exchange',
+                'MSCI': 'Morgan Stanley Capital International',
+                'IMI': 'Investable Market Index',
+                'UCITS': 'Undertakings for Collective Investment in Transferable Securities'
+            };
+
+            for (const abbreviation in abbreviations) {
+                name = name.replace(abbreviation, `<abbr title="${abbreviations[abbreviation]}">${abbreviation}</abbr>`);
+            }
+
+            return name;
+        }.bind(this));
     }
 
     public update(results: { combination: Combination; simulation: Simulation }[]): void {

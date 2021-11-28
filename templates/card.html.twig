@@ -76,7 +76,7 @@
                 {% for asset in portfolio.assets %}
                     <table class="table">
                         <tr>
-                            <th colspan="2">{{ asset.fund.name }} ({{ asset.allocation|percentage }})</th>
+                            <th colspan="2">{{ asset.fund.name|tagAbbreviations }} ({{ asset.allocation|percentage }})</th>
                         </tr>
                         <tr>
                             <th class="w-25"><abbr title="International Securities Identification Number">ISIN</abbr></th>
@@ -85,7 +85,7 @@
                         <tr>
                             <th>Index</th>
                             <td>{% if asset.fund.trackedIndex.factsheet %}<a href="{{ asset.fund.trackedIndex.factsheet }}"
-                                    target="_blank">{{ asset.fund.trackedIndex.name }}</a>{% else %}{{ asset.fund.trackedIndex.name }}{% endif %}</td>
+                                    target="_blank">{{ asset.fund.trackedIndex.name|tagAbbreviations }}</a>{% else %}{{ asset.fund.trackedIndex.name|tagAbbreviations }}{% endif %}</td>
                         </tr>
                         <tr>
                             <th><abbr title="Environmental, Social & Governance">ESG</abbr>-uitsluitingen</th>
