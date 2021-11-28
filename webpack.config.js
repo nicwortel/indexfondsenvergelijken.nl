@@ -83,6 +83,11 @@ module.exports = {
             filename: 'veelgestelde-vragen.html',
             minify: false
         }),
+        new HtmlWebpackPlugin({
+            template: 'wijzigingen.html',
+            filename: 'wijzigingen.html',
+            minify: false
+        }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css',
             chunkFilename: '[id].css',
