@@ -10,7 +10,6 @@ export class MutualFund implements Fund {
         private logo: string,
         private totalExpenseRatio: Percentage,
         private dividendLeak: Percentage,
-        private entryFee: Percentage,
         private index: Index,
         private kiid: string,
         private factsheet: string,
@@ -45,10 +44,6 @@ export class MutualFund implements Fund {
 
     getTotalRecurringCosts(): Percentage {
         return this.totalExpenseRatio.add(this.dividendLeak);
-    }
-
-    getEntryFee(): Percentage {
-        return this.entryFee;
     }
 
     getTrackedIndex(): Index {

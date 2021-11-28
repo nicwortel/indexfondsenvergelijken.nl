@@ -21,14 +21,11 @@ export class Portfolio {
     }
 
     public reset(): void {
-        this.value = this.totalEntryCosts = this.totalRunningCosts = this.totalDividendLeakage = new Money(0, 'EUR');
+        this.value = this.totalRunningCosts = this.totalDividendLeakage = new Money(0, 'EUR');
     }
 
     public invest(amount: Money): void {
-        const entryCosts = this.getEntryCosts(amount);
-
-        this.value = this.value.add(amount.subtract(entryCosts));
-        this.totalEntryCosts = this.totalEntryCosts.add(entryCosts);
+        this.value = this.value.add(amount);
     }
 
     public grow(growthPercentage: Percentage, fundCostsPercentage: Percentage): void {
@@ -54,10 +51,6 @@ export class Portfolio {
         return this.value;
     }
 
-    public getTotalEntryCosts(): Money {
-        return this.totalEntryCosts;
-    }
-
     public getTotalRunningCosts(): Money {
         return this.totalRunningCosts;
     }
@@ -67,8 +60,7 @@ export class Portfolio {
     }
 
     public getTotalCosts(): Money {
-        return this.totalEntryCosts
-            .add(this.totalRunningCosts)
+        return this.totalRunningCosts
             .add(this.totalDividendLeakage);
     }
 
@@ -143,13 +135,6 @@ export class Portfolio {
         }
 
         return 'developed markets ' + developed.join(' & ') + ' cap + emerging markets ' + emerging.join(' & ') + ' cap';
-    }
-
-    private getEntryCosts(amount: Money): Money {
-        const costs = this.assets.map((asset: { allocation: Percentage; fund: Fund }) => asset.allocation.multiply(asset.fund.getEntryFee()));
-        const cost = costs.reduce((sum: Percentage, current: Percentage) => sum.add(current));
-
-        return cost.applyTo(amount);
     }
 
     private getDividendLeakage(dividend: Money): Money {

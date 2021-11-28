@@ -16,8 +16,6 @@ export interface Fund {
 
     getTotalRecurringCosts(): Percentage;
 
-    getEntryFee(): Percentage;
-
     getTrackedIndex(): Index;
 
     getKiid(): string;

@@ -41,16 +41,6 @@ test('Grows in value when investments are made', () => {
     expect(portfolio.getValue()).toStrictEqual(new Money(3000, 'EUR'));
 });
 
-test('Subtracts entry fees from investment', () => {
-    const fund = fundFactory.createMutualFund(0, 0, 0.1);
-    const portfolio = createPortfolio(fund);
-
-    portfolio.invest(new Money(1000, 'EUR'));
-
-    expect(portfolio.getValue()).toStrictEqual(new Money(999, 'EUR'));
-    expect(portfolio.getTotalEntryCosts()).toStrictEqual(new Money(1, 'EUR'));
-});
-
 test('Grows in value over time', () => {
     const portfolio = createPortfolio(dummyFund);
 
@@ -104,11 +94,11 @@ test('Returns the sum of market capitalization percentages of the underlying ind
     const portfolio = new Portfolio([
         {
             allocation: new Percentage(88),
-            fund: fundFactory.createMutualFund(0.1, 0.2, 0, 5, 80)
+            fund: fundFactory.createMutualFund(0.1, 0.2, 5, 80)
         },
         {
             allocation: new Percentage(12),
-            fund: fundFactory.createMutualFund(0.1, 0.2, 0, 10, 15)
+            fund: fundFactory.createMutualFund(0.1, 0.2, 10, 15)
         }
     ]);
 

@@ -92,10 +92,6 @@
                             <td>{% if asset.fund.esgExclusions.percentage > 0 %}{{ asset.fund.esgExclusions|percentage }} van de marktkapitalisatie van de index{% else %}geen{% endif %}</td>
                         </tr>
                         <tr>
-                            <th>Instapkosten</th>
-                            <td>{{ asset.fund.entryFee|percentage }}</td>
-                        </tr>
-                        <tr>
                             <th>Lopende kosten</th>
                             <td>{{ asset.fund.totalExpenseRatio|percentage }}</td>
                         </tr>
@@ -160,11 +156,7 @@
 
                 <table class="table mb-0 w-50">
                     <tr>
-                        <td class="w-50">Instapkosten</td>
-                        <td class="text-right">{{ portfolio.totalEntryCosts|money }}</td>
-                    </tr>
-                    <tr>
-                        <td>Lopende fondskosten</td>
+                        <td class="w-50">Lopende fondskosten</td>
                         <td class="text-right">{{ portfolio.totalRunningCosts|money }}</td>
                     </tr>
                     <tr>

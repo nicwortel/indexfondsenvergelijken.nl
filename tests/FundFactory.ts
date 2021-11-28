@@ -6,7 +6,6 @@ export class FundFactory {
     public createMutualFund(
         totalExpenseRatio: number = 0.1,
         dividendLeak: number = 0.2,
-        entryFee: number = 0,
         esgExclusionsPercentage: number = 0,
         indexMarketCapPercentage: number = 80
     ): MutualFund {
@@ -19,7 +18,6 @@ export class FundFactory {
             '',
             new Percentage(totalExpenseRatio),
             new Percentage(dividendLeak),
-            new Percentage(entryFee),
             index,
             '',
             '',

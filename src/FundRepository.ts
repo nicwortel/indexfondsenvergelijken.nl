@@ -21,7 +21,6 @@ export class FundRepository {
                     data.logo,
                     new Percentage(data.totalExpenseRatio),
                     new Percentage(data.dividendLeakage),
-                    new Percentage(data.entryFee ?? 0),
                     this.indexRepository.getByName(data.index),
                     data.kiid,
                     data.factsheet,
