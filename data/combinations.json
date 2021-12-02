@@ -288,5 +288,29 @@
             }
         ],
         "automatedInvesting": true
+    },
+    {
+        "broker": "Interactive Brokers",
+        "portfolio": [
+            {
+                "allocation": 100,
+                "fund": "VWRL"
+            }
+        ],
+        "automatedInvesting": false
+    },
+    {
+        "broker": "Interactive Brokers",
+        "portfolio": [
+            {
+                "allocation": 88,
+                "fund": "IWDA"
+            },
+            {
+                "allocation": 12,
+                "fund": "IEMM"
+            }
+        ],
+        "automatedInvesting": false
     }
 ]

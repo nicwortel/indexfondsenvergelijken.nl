@@ -151,5 +151,17 @@
         },
         "costOverview": "https://www.lynx.nl/tarieven-beleggen/alle-tarieven/",
         "website": "https://www.lynx.nl/"
+    },
+    {
+        "name": "Interactive Brokers",
+        "logo": "interactive-brokers.png",
+        "product": "",
+        "etfTransactionFee": {
+            "percentage": 0.05,
+            "minimum": 1.25,
+            "maximum": 29
+        },
+        "costOverview": "https://www.interactivebrokers.ie/en/index.php?f=48059",
+        "website": "https://www.interactivebrokers.ie/en/home.php"
     }
 ]
