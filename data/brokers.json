@@ -23,9 +23,9 @@
         "product": "Zelf Beleggen Basis",
         "serviceFee": {
             "tiers": [
-                {"upperLimit": 100000, "percentage": 0.05},
-                {"upperLimit": 400000, "percentage": 0.03},
-                {"upperLimit": null, "percentage": 0.015}
+                {"upperLimit": 100000, "percentage": 0.20},
+                {"upperLimit": 400000, "percentage": 0.12},
+                {"upperLimit": null, "percentage": 0.06}
             ]
         },
         "serviceFeeCalculation": "endOfQuarter",
