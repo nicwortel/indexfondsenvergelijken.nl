@@ -40,6 +40,8 @@ const combinations: Combination[] = combinationData.map(function (combination: {
 });
 
 function runSimulation(combinations: Combination[]): void {
+    document.getElementById('totalPortfolios').innerText = combinations.length.toString();
+
     const monthlyInvestment = new Money(getInputValue('monthly'), 'EUR');
     let initialInvestment = monthlyInvestment;
 
@@ -89,6 +91,8 @@ function runSimulation(combinations: Combination[]): void {
     });
 
     results = results.sort((a, b) => b.simulation.getNetResult() - a.simulation.getNetResult());
+
+    document.getElementById('shownPortfolios').innerText = combinations.length.toString();
 
     const view = new View(<HTMLDivElement>document.getElementById('results'), new NumberFormatter());
     view.update(results);
