@@ -96,6 +96,10 @@
                             <td>{{ asset.fund.totalExpenseRatio|percentage }}</td>
                         </tr>
                         <tr>
+                            <th>Interne transactiekosten</th>
+                            <td>{{ asset.fund.internalTransactionCosts|percentage(3) }}</td>
+                        </tr>
+                        <tr>
                             <th>Dividendlek</th>
                             <td>{{ asset.fund.dividendLeak|percentage }}</td>
                         </tr>

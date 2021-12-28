@@ -17,6 +17,7 @@ export class FundFactory {
             'ISIN',
             '',
             new Percentage(totalExpenseRatio),
+            new Percentage(0),
             new Percentage(dividendLeak),
             index,
             '',

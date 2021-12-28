@@ -12,6 +12,8 @@ export interface Fund {
 
     getTotalExpenseRatio(): Percentage;
 
+    getInternalTransactionCosts(): Percentage;
+
     getDividendLeak(): Percentage;
 
     getTotalRecurringCosts(): Percentage;

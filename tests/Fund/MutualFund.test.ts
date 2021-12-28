@@ -13,6 +13,7 @@ test('Returns the total fund costs', () => {
         'ISIN',
         '',
         new Percentage(0.1),
+        new Percentage(0),
         new Percentage(0.2),
         index,
         '',

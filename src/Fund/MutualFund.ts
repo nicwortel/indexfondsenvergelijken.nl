@@ -9,6 +9,7 @@ export class MutualFund implements Fund {
         private isin: string,
         private logo: string,
         private totalExpenseRatio: Percentage,
+        private internalTransactionCosts: Percentage,
         private dividendLeak: Percentage,
         private index: Index,
         private kiid: string,
@@ -36,6 +37,10 @@ export class MutualFund implements Fund {
 
     getTotalExpenseRatio(): Percentage {
         return this.totalExpenseRatio;
+    }
+
+    getInternalTransactionCosts(): Percentage {
+        return this.internalTransactionCosts;
     }
 
     getDividendLeak(): Percentage {

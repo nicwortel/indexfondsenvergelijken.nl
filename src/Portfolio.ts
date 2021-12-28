@@ -64,6 +64,19 @@ export class Portfolio {
             .add(this.totalDividendLeakage);
     }
 
+    /**
+     * Excluding dividend leakage
+     */
+    public getYearlyCosts(): Percentage {
+        return this.assets.reduce(
+            (
+                sum: Percentage,
+                asset: { allocation: Percentage; fund: Fund }
+            ) => sum.add(asset.allocation.multiply(asset.fund.getTotalExpenseRatio().add(asset.fund.getInternalTransactionCosts()))),
+            new Percentage(0)
+        );
+    }
+
     public getTotalExpenseRatio(): Percentage {
         return this.assets.reduce((
             sum: Percentage,

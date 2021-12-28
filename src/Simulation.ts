@@ -89,9 +89,9 @@ export class Simulation {
 
         this.broker.registerTransactionCosts(transactionCosts);
 
-        const netReturn = this.expectedYearlyReturn.subtract(this.portfolio.getTotalExpenseRatio());
+        const netReturn = this.expectedYearlyReturn.subtract(this.portfolio.getYearlyCosts());
         const monthlyNetReturn = this.getMonthlyRate(netReturn);
-        const monthlyCosts = this.getMonthlyRate(this.portfolio.getTotalExpenseRatio());
+        const monthlyCosts = this.getMonthlyRate(this.portfolio.getYearlyCosts());
 
         this.portfolio.grow(monthlyNetReturn, monthlyCosts);
 
