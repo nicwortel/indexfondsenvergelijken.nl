@@ -123,33 +123,31 @@
             <div class="card-body">
                 <table class="table">
                     <tr>
-                        <th colspan="3">{{ broker.name }} {{ broker.product }}
+                        <th colspan="2">{{ broker.name }} {{ broker.product }}
                             {% if broker.costOverview %}(<a href="{{ broker.costOverview }}"
                                     target="_blank">bron</a>){% endif %}
                         </th>
                     </tr>
                     {% if broker.serviceFee.extendedDescription is not empty %}
                         <tr>
-                            <td>Servicekosten</td>
+                            <td>Servicekosten,
+                                per {{ broker.serviceFeeFrequency == 'monthly' ? 'maand' : 'kwartaal' }}</td>
                             <td>{{ broker.serviceFee.extendedDescription|join('<br/>') }}</td>
-                            <td>per {{ broker.serviceFeeFrequency == 'monthly' ? 'maand' : 'kwartaal' }}</td>
                         </tr>
                     {% endif %}
                     <tr>
-                        <td class="w-25">Transactiekosten</td>
+                        <td class="w-25">Transactiekosten, per transactie</td>
                         <td>
                             Indexfondsen: {{ combination.broker.mutualFundTransactionFee.describe }}<br />
                             ETF's: {{ combination.broker.etfTransactionFee.describe }}
                         </td>
-                        <td class="w-25">per transactie</td>
                     </tr>
                     {% if combination.broker.dividendDistributionFee.describe != 'geen' %}
                     <tr>
-                        <td class="w-25">Kosten dividenduitkering</td>
+                        <td class="w-25">Kosten dividenduitkering, per keer</td>
                         <td>
                             {{ combination.broker.dividendDistributionFee.describe }}
                         </td>
-                        <td>per keer</td>
                     </tr>
                     {% endif %}
                 </table>
