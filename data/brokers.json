@@ -123,7 +123,12 @@
         "name": "Brand New Day",
         "logo": "brandnewday.png",
         "product": "Beleggingsrekening",
+        "serviceFee": {
+            "percentage": 0.11
+        },
+        "serviceFeeCalculation": "averageOfQuarter",
         "mutualFundTransactionFee": 0,
+        "costOverview": "https://ndt5.net/c/?si=9849&li=1440647&wi=354885&ws=&dl=particulier%2Fbeleggingsrekening%2F%23kosten",
         "website": "https://brandnewday.nl",
         "affiliateLink": "https://dt51.net/c/?si=9849&li=1440647&wi=354885&ws=&dl=particulier%2Fbeleggingsrekening%2F"
     },
