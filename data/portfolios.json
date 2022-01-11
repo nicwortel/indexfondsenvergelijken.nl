@@ -89,7 +89,9 @@
             }
         ],
         "brokers": [
-            "Saxo Bank"
+            "Saxo Bank",
+            "Interactive Brokers",
+            "Lynx"
         ]
     },
     {
@@ -104,8 +106,9 @@
             }
         ],
         "brokers": [
-            "Lynx",
-            "Saxo Bank"
+            "Saxo Bank",
+            "Interactive Brokers",
+            "Lynx"
         ]
     },
     {
@@ -124,8 +127,9 @@
             }
         ],
         "brokers": [
-            "Lynx",
-            "Saxo Bank"
+            "Saxo Bank",
+            "Interactive Brokers",
+            "Lynx"
         ]
     },
     {
