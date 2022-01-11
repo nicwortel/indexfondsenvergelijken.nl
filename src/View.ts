@@ -1,9 +1,8 @@
 import * as Twig from "twig";
 import template from '../templates/card.html.twig';
-import {Combination} from "./Combination";
 import {NumberFormatter} from "./NumberFormatter";
 import {Percentage} from "./Percentage";
-import {Simulation} from "./Simulation";
+import {PortfolioSimulation} from "./PortfolioSimulation";
 
 export class View {
     constructor(private resultsElement: HTMLDivElement, private numberFormatter: NumberFormatter) {
@@ -33,7 +32,7 @@ export class View {
         }.bind(this));
 
         Twig.extendFilter('tagAbbreviations', function (name: string): string {
-            const abbreviations: {[key: string]: string} = {
+            const abbreviations: { [key: string]: string } = {
                 'EM': 'Emerging Markets',
                 'ESG': 'Environmental, Social & Governance',
                 'ETF': 'Exchange-traded Fund',
@@ -45,26 +44,27 @@ export class View {
             };
 
             for (const abbreviation in abbreviations) {
-                name = name.replace(abbreviation, `<abbr title="${abbreviations[abbreviation]}">${abbreviation}</abbr>`);
+                name = name.replace(
+                    abbreviation,
+                    `<abbr title="${abbreviations[abbreviation]}">${abbreviation}</abbr>`
+                );
             }
 
             return name;
         }.bind(this));
     }
 
-    public update(results: { combination: Combination; simulation: Simulation }[]): void {
+    public update(simulations: PortfolioSimulation[]): void {
         this.resultsElement.innerHTML = '';
 
         const resultsElement = this.resultsElement;
 
-        results.forEach(function (result: { combination: Combination; simulation: Simulation }, index: number): void {
+        simulations.forEach((simulation: PortfolioSimulation, index: number): void => {
             const element = document.createElement('div');
             element.innerHTML = template({
                 index: index,
-                broker: result.combination.broker,
-                portfolio: result.combination.portfolio,
-                combination: result.combination,
-                simulation: result.simulation
+                portfolio: simulation.portfolio,
+                simulations: simulation.simulations
             });
 
             resultsElement.appendChild(element);

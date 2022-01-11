@@ -72,7 +72,7 @@
     {
         "name": "Meesman",
         "logo": "meesman.png",
-        "product": "",
+        "product": "Indexbeleggen",
         "mutualFundTransactionFee": 0.25,
         "costOverview": "https://www.meesman.nl/zo-werkt-het/kosten",
         "website": "https://www.meesman.nl/"
@@ -114,7 +114,7 @@
     {
         "name": "FitVermogen",
         "logo": "fitvermogen.png",
-        "product": "",
+        "product": "FitVermogen",
         "mutualFundTransactionFee": 0,
         "costOverview": "https://www.fitvermogen.nl/vragen",
         "website": "https://www.fitvermogen.nl/"
@@ -160,10 +160,10 @@
     {
         "name": "Interactive Brokers",
         "logo": "interactive-brokers.png",
-        "product": "",
+        "product": "Fixed Pricing",
         "etfTransactionFee": {
             "percentage": 0.05,
-            "minimum": 1.25,
+            "minimum": 3,
             "maximum": 29
         },
         "costOverview": "https://www.interactivebrokers.ie/en/index.php?f=48059",

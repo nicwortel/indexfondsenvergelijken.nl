@@ -1,15 +1,15 @@
 import {Money} from "bigint-money";
 import {Fund} from "../src/Fund/Fund";
 import {Percentage} from "../src/Percentage";
-import {Portfolio} from "../src/Portfolio";
+import {SimulatedPortfolio} from "../src/SimulatedPortfolio";
 import {Transaction} from "../src/Transaction";
 import {FundFactory} from "./FundFactory";
 
 const fundFactory = new FundFactory();
 const dummyFund = fundFactory.createMutualFund();
 
-function createPortfolio(fund: Fund): Portfolio {
-    return new Portfolio([
+function createPortfolio(fund: Fund): SimulatedPortfolio {
+    return new SimulatedPortfolio([
         {
             allocation: new Percentage(88),
             fund: fund
@@ -22,7 +22,7 @@ function createPortfolio(fund: Fund): Portfolio {
 }
 
 test('Fails if the total allocation of assets is not 100%', () => {
-    expect(() => new Portfolio([
+    expect(() => new SimulatedPortfolio([
         {
             allocation: new Percentage(50), fund: dummyFund
         },
@@ -91,7 +91,7 @@ test('Allocates an investment sum to the funds', () => {
 });
 
 test('Returns the sum of market capitalization percentages of the underlying indices', () => {
-    const portfolio = new Portfolio([
+    const portfolio = new SimulatedPortfolio([
         {
             allocation: new Percentage(88),
             fund: fundFactory.createMutualFund(0.1, 0.2, 5, 80)

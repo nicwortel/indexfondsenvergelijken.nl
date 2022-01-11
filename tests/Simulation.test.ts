@@ -1,7 +1,7 @@
 import {Money} from "bigint-money/dist";
 import {Broker} from "../src/Broker";
 import {Percentage} from "../src/Percentage";
-import {Portfolio} from "../src/Portfolio";
+import {SimulatedPortfolio} from "../src/SimulatedPortfolio";
 import {PercentageFee} from "../src/Pricing/PercentageFee";
 import {Tier, TieredFee} from "../src/Pricing/TieredFee";
 import {Simulation} from "../src/Simulation";
@@ -24,7 +24,7 @@ function createSimulation(initialInvestment: number, monthlyInvestment: number, 
             new PercentageFee(0),
             ''
         ),
-        new Portfolio([{
+        new SimulatedPortfolio([{
             allocation: new Percentage(100),
             fund: fundFactory.createMutualFund(fundExpenseRatio, 0)
         }]),

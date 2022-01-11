@@ -1,7 +1,7 @@
 import {Money} from "bigint-money/dist";
 import {Broker} from "./Broker";
 import {Percentage} from "./Percentage";
-import {Portfolio} from "./Portfolio";
+import {SimulatedPortfolio} from "./SimulatedPortfolio";
 import {Transaction} from "./Transaction";
 
 export class Simulation {
@@ -14,12 +14,16 @@ export class Simulation {
 
     constructor(
         private broker: Broker,
-        private portfolio: Portfolio,
+        private portfolio: SimulatedPortfolio,
         private initialInvestment: Money,
         private monthlyInvestment: Money,
         private expectedYearlyReturn: Percentage,
         private expectedDividendYield: Percentage
     ) {
+    }
+
+    public getBroker(): Broker {
+        return this.broker;
     }
 
     public run(years: number): void {
@@ -30,6 +34,12 @@ export class Simulation {
 
     public getPortfolioValue(): Money {
         return this.portfolio.getValue();
+    }
+
+    public getBrokerCosts(): Money {
+        return this.totalTransactionFees
+            .add(this.totalServiceFees)
+            .add(this.totalDividendDistributionFees);
     }
 
     public getTotalCosts(): Money {
@@ -45,6 +55,10 @@ export class Simulation {
 
     public getNetResult(): number {
         return parseFloat(this.getNetProfit().toFixed(4)) / parseFloat(this.totalInvestment.toFixed(4));
+    }
+
+    public getExpectedDividendYield(): Percentage {
+        return this.expectedDividendYield;
     }
 
     private runYear(): void {

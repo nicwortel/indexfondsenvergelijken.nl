@@ -1,16 +1,14 @@
 import {Money} from "bigint-money/dist";
-import 'bootstrap/js/src/tab';
-import jQuery from 'jquery';
+import 'bootstrap/js/src/collapse';
 import '../assets/stylesheets/main.scss';
-import combinationData from "../data/combinations.json";
 import {BrokerRepository} from "./BrokerRepository";
-import {Combination} from "./Combination";
 import {FundRepository} from "./FundRepository";
 import {IndexRepository} from "./IndexRepository";
 import {NumberFormatter} from "./NumberFormatter";
 import {Percentage} from "./Percentage";
 import {Portfolio} from "./Portfolio";
-import {Simulation} from "./Simulation";
+import {PortfolioRepository} from "./PortfolioRepository";
+import {Simulator} from "./Simulator";
 import {View} from "./View";
 
 // Assume that if JavaScript doesn't load it's because of outdated browser (Safari 13)
@@ -18,6 +16,7 @@ document.getElementById('outdated-browser').hidden = true;
 
 const brokerRepository = new BrokerRepository();
 const fundRepository = new FundRepository(new IndexRepository());
+const portfolioRepository = new PortfolioRepository(fundRepository, brokerRepository);
 const numberFormatter = new NumberFormatter();
 
 const form: HTMLFormElement = <HTMLFormElement>document.getElementById('form');
@@ -28,24 +27,16 @@ function getInputValue(elementId: string): number {
     return parseFloat(field.value);
 }
 
-const combinations: Combination[] = combinationData.map(function (combination: { broker: string, portfolio: { allocation: number, fund: string }[], automatedInvesting: boolean }): Combination {
-    const broker = brokerRepository.getBroker(combination.broker);
-    const funds = combination.portfolio.map(function (portfolio) {
-        return {allocation: new Percentage(portfolio.allocation), fund: fundRepository.getFund(portfolio.fund)};
-    })
+const portfolios: Portfolio[] = portfolioRepository.getAll();
 
-    const portfolio = new Portfolio(funds);
-
-    return {broker, portfolio, automatedInvesting: combination.automatedInvesting};
-});
-
-function runSimulation(combinations: Combination[]): void {
-    document.getElementById('totalPortfolios').innerText = combinations.length.toString();
+function runSimulation(portfolios: Portfolio[]): void {
+    document.getElementById('totalPortfolios').innerText = portfolios.length.toString();
 
     const monthlyInvestment = new Money(getInputValue('monthly'), 'EUR');
     let initialInvestment = monthlyInvestment;
 
-    const differentInitialInvestmentElement: HTMLInputElement = <HTMLInputElement>document.getElementById('differentInitialInvestment');
+    const differentInitialInvestmentElement: HTMLInputElement = <HTMLInputElement>document.getElementById(
+        'differentInitialInvestment');
     if (differentInitialInvestmentElement.checked) {
         initialInvestment = new Money(getInputValue('initial'), 'EUR');
     }
@@ -63,60 +54,37 @@ function runSimulation(combinations: Combination[]): void {
     const smallCapsCheckbox: HTMLInputElement = <HTMLInputElement>document.getElementById('smallCaps');
 
     const minimumMarketCap = getInputValue('minimumMarketCap');
-    combinations = combinations.filter((combination: Combination) => combination.portfolio.getMarketCapPercentage().getPercentage() >= minimumMarketCap);
+    portfolios = portfolios.filter((portfolio: Portfolio) => portfolio.getMarketCapPercentage().getPercentage() >= minimumMarketCap);
 
-    if (automatedInvestmentElement.checked) {
-        combinations = combinations.filter((combination: Combination) => combination.automatedInvesting === true);
-    }
+    // if (automatedInvestmentElement.checked) {
+    //     combinations = combinations.filter((combination: Combination) => combination.automatedInvesting === true);
+    // }
 
-    if (smallCapsCheckbox.checked) {
-        combinations = combinations.filter((combination: Combination) => combination.portfolio.containsSmallCaps());
-    }
+    // if (smallCapsCheckbox.checked) {
+    //     combinations = combinations.filter((combination: Combination) => combination.portfolio.containsSmallCaps());
+    // }
 
-    let results = combinations.map(function (combination: Combination) {
-        combination.portfolio.reset();
+    const simulator = new Simulator();
 
-        const simulation = new Simulation(
-            combination.broker,
-            combination.portfolio,
-            initialInvestment,
-            monthlyInvestment,
-            expectedYearlyReturn,
-            expectedDividendYield
-        );
+    const simulations = simulator.runSimulations(
+        portfolios,
+        initialInvestment,
+        monthlyInvestment,
+        expectedYearlyReturn,
+        expectedDividendYield,
+        years
+    );
 
-        simulation.run(years);
-
-        return {combination, simulation};
-    });
-
-    results = results.sort((a, b) => b.simulation.getNetResult() - a.simulation.getNetResult());
-
-    document.getElementById('shownPortfolios').innerText = combinations.length.toString();
+    document.getElementById('shownPortfolios').innerText = portfolios.length.toString();
 
     const view = new View(<HTMLDivElement>document.getElementById('results'), new NumberFormatter());
-    view.update(results);
-
-    document.querySelectorAll('.nav-tabs a.nav-link').forEach((element) => {
-        element.addEventListener('click', (event: Event) => {
-            event.preventDefault();
-
-            if (element.classList.contains('active')) {
-                element.classList.remove('active');
-                const tab = document.querySelector(element.attributes.getNamedItem('href').value);
-                tab.classList.remove('active');
-                return;
-            }
-
-            jQuery(element).tab('show');
-        });
-    });
+    view.update(simulations);
 }
 
 if (form) {
     form.onchange = function () {
         if (form.checkValidity()) {
-            runSimulation(combinations);
+            runSimulation(portfolios);
         }
     }
 
@@ -125,12 +93,14 @@ if (form) {
             return document.getElementById('initial').toggleAttribute('disabled');
         });
 
-        runSimulation(combinations);
+        runSimulation(portfolios);
     };
 }
 
 declare global {
-    interface Window { _paq: any; }
+    interface Window {
+        _paq: any;
+    }
 }
 
 let _paq = window._paq = window._paq || [];

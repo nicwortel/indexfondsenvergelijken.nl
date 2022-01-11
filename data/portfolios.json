@@ -1,0 +1,197 @@
+[
+    {
+        "portfolio": [
+            {
+                "allocation": 89,
+                "fund": "NT World"
+            },
+            {
+                "allocation": 11,
+                "fund": "NT EM"
+            }
+        ],
+        "brokers": [
+            "ING",
+            "ABN Amro",
+            "Rabobank"
+        ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 80,
+                "fund": "NT World"
+            },
+            {
+                "allocation": 10,
+                "fund": "NT EM"
+            },
+            {
+                "allocation": 10,
+                "fund": "NT SC"
+            }
+        ],
+        "brokers": [
+            "ING",
+            "ABN Amro",
+            "Rabobank"
+        ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 100,
+                "fund": "VWRL"
+            }
+        ],
+        "brokers": [
+            "ING",
+            "ABN Amro",
+            "DEGIRO",
+            "Saxo Bank",
+            "Interactive Brokers",
+            "Lynx"
+        ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 100,
+                "fund": "VWCE"
+            }
+        ],
+        "brokers": [
+            "DEGIRO",
+            "Interactive Brokers",
+            "Lynx"
+        ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 100,
+                "fund": "Meesman Wereldwijd Totaal"
+            }
+        ],
+        "brokers": [
+            "Meesman"
+        ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 89,
+                "fund": "AVIAW"
+            },
+            {
+                "allocation": 11,
+                "fund": "AVIAO"
+            }
+        ],
+        "brokers": [
+            "Saxo Bank"
+        ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 85,
+                "fund": "AVIAW"
+            },
+            {
+                "allocation": 15,
+                "fund": "EMIM"
+            }
+        ],
+        "brokers": [
+            "Lynx",
+            "Saxo Bank"
+        ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 74,
+                "fund": "AVIAW"
+            },
+            {
+                "allocation": 13,
+                "fund": "EMIM"
+            },
+            {
+                "allocation": 13,
+                "fund": "IUSN"
+            }
+        ],
+        "brokers": [
+            "Lynx",
+            "Saxo Bank"
+        ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 89,
+                "fund": "IWDA"
+            },
+            {
+                "allocation": 11,
+                "fund": "IEMM"
+            }
+        ],
+        "brokers": [
+            "DEGIRO",
+            "Interactive Brokers",
+            "Lynx"
+        ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 89,
+                "fund": "BND WIF Hedged"
+            },
+            {
+                "allocation": 11,
+                "fund": "BND EM"
+            }
+        ],
+        "brokers": [
+            "Brand New Day"
+        ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 81,
+                "fund": "BND WIF Hedged"
+            },
+            {
+                "allocation": 10,
+                "fund": "BND EM"
+            },
+            {
+                "allocation": 9,
+                "fund": "BND SC"
+            }
+        ],
+        "brokers": [
+            "Brand New Day"
+        ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 89,
+                "fund": "NN Enhanced"
+            },
+            {
+                "allocation": 11,
+                "fund": "NN Enhanced EM"
+            }
+        ],
+        "brokers": [
+            "FitVermogen"
+        ]
+    }
+]
