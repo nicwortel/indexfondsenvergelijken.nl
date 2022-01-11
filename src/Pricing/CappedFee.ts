@@ -3,7 +3,7 @@ import {NumberFormatter} from "../NumberFormatter";
 import {Fee} from "./Fee";
 
 export class CappedFee implements Fee {
-    constructor(private minimum: Money, private maximum: Money, private fee: Fee) {
+    constructor(private minimum: Money, private maximum: Money|null, private fee: Fee) {
     }
 
     public calculateFor(amount: Money): Money {
@@ -13,7 +13,7 @@ export class CappedFee implements Fee {
             return this.minimum;
         }
 
-        if (this.maximum.isLesserThan(fee)) {
+        if (this.maximum && this.maximum.isLesserThan(fee)) {
             return this.maximum;
         }
 
@@ -22,6 +22,10 @@ export class CappedFee implements Fee {
 
     public describe(): string {
         const numberFormatter = new NumberFormatter();
+
+        if (!this.maximum) {
+            return this.fee.describe() + ' (min. ' + numberFormatter.formatMoney(this.minimum) + ')';
+        }
 
         if (this.minimum.isEqual(0)) {
             return this.fee.describe() + ' (max. ' + numberFormatter.formatMoney(this.maximum) + ')';
@@ -33,15 +37,16 @@ export class CappedFee implements Fee {
     public getExtendedDescription(): string[] {
         const numberFormatter = new NumberFormatter();
 
-        if (this.minimum.isEqual(0)) {
-            return this.fee.getExtendedDescription().concat([
-                'Maximum: ' + numberFormatter.formatMoney(this.maximum),
-            ])
+        let parts: string[] = [];
+
+        if (this.minimum.isGreaterThan(0)) {
+            parts.push('Minimum ' + numberFormatter.formatMoney(this.minimum));
         }
 
-        return this.fee.getExtendedDescription().concat([
-            'Minimum: ' + numberFormatter.formatMoney(this.minimum),
-            'Maximum: ' + numberFormatter.formatMoney(this.maximum),
-        ])
+        if (this.maximum) {
+            parts.push('Maximum: ' + numberFormatter.formatMoney(this.maximum));
+        }
+
+        return this.fee.getExtendedDescription().concat(parts);
     }
 }

@@ -163,7 +163,11 @@
         "product": "Fixed Pricing",
         "etfTransactionFee": {
             "percentage": 0.05,
-            "minimum": 3,
+            "minimum": 3
+        },
+        "mutualFundTransactionFee": {
+            "percentage": 0.1,
+            "minimum": 4,
             "maximum": 29
         },
         "costOverview": "https://www.interactivebrokers.ie/en/index.php?f=48059",

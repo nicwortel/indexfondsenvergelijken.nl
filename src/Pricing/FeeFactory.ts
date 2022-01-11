@@ -56,7 +56,9 @@ export class FeeFactory {
         if (data.minimum || data.maximum) {
             const minimum = data.minimum ?? 0;
 
-            fee = new CappedFee(new Money(minimum.toString(), 'EUR'), new Money(data.maximum.toString(), 'EUR'), fee);
+            const maximum = data.maximum ? new Money(data.maximum.toString(), 'EUR') : null;
+
+            fee = new CappedFee(new Money(minimum.toString(), 'EUR'), maximum, fee);
         }
 
         return fee;
