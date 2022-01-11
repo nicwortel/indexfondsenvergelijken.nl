@@ -63,7 +63,8 @@
         "brokers": [
             "DEGIRO",
             "Interactive Brokers",
-            "Lynx"
+            "Lynx",
+            "Saxo Bank"
         ]
     },
     {
@@ -146,7 +147,8 @@
         "brokers": [
             "DEGIRO",
             "Interactive Brokers",
-            "Lynx"
+            "Lynx",
+            "Saxo Bank"
         ]
     },
     {
@@ -195,7 +197,8 @@
             }
         ],
         "brokers": [
-            "FitVermogen"
+            "FitVermogen",
+            "Saxo Bank"
         ]
     }
 ]
