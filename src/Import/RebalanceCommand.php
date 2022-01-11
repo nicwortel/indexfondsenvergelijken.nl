@@ -24,9 +24,9 @@ final class RebalanceCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $data = $this->readJsonFile(__DIR__ . '/../../data/combinations.json');
+        $data = $this->readJsonFile(__DIR__ . '/../../data/portfolios.json');
 
-        $combinations = array_map(
+        $portfolios = array_map(
             function (array $data) {
                 $data['portfolio'] = $this->rebalance($data['portfolio']);
 
@@ -35,9 +35,9 @@ final class RebalanceCommand extends Command
             $data
         );
 
-        $json = json_encode($combinations, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        $json = json_encode($portfolios, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
-        $this->filesystem->dumpFile(__DIR__ . '/../../data/combinations.json', $json . PHP_EOL);
+        $this->filesystem->dumpFile(__DIR__ . '/../../data/portfolios.json', $json . PHP_EOL);
 
         return 0;
     }
