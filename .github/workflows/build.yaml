@@ -84,7 +84,7 @@ jobs:
         uses: azure/k8s-set-context@v1
         with:
           method: service-account
-          k8s-url: https://5f2145d7-6d55-4949-a828-8762e7a94296.k8s.ondigitalocean.com
+          k8s-url: ${{ secrets.KUBERNETES_CLUSTER_URL }}
           k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
       - name: Deploy to the Kubernetes cluster
         uses: azure/k8s-deploy@v1
