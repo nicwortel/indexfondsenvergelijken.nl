@@ -3,23 +3,24 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: index-fund-comparison
+  namespace: indexfondsenvergelijken
+  name: indexfondsenvergelijken
 
 spec:
   replicas: 1
 
   selector:
     matchLabels:
-      app: index-fund-comparison
+      app: indexfondsenvergelijken
 
   template:
     metadata:
       labels:
-        app: index-fund-comparison
+        app: indexfondsenvergelijken
 
     spec:
       containers:
-        - name: index-fund-comparison
+        - name: indexfondsenvergelijken
           image: ghcr.io/nicwortel/indexfondsenvergelijken.nl:latest
       imagePullSecrets:
         - name: github-container-registry

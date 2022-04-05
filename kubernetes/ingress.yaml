@@ -1,9 +1,10 @@
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 
 metadata:
-  name: index-fund-comparison
+  namespace: indexfondsenvergelijken
+  name: indexfondsenvergelijken
   annotations:
     kubernetes.io/ingress.class: "nginx"
     kubernetes.io/tls-acme: "true"
@@ -20,14 +21,19 @@ spec:
     - host: www.indexfondsenvergelijken.nl
       http:
         paths:
-          - backend:
-              serviceName: index-fund-comparison
-              servicePort: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: indexfondsenvergelijken
+                port:
+                  number: 80
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 
 metadata:
+  namespace: indexfondsenvergelijken
   name: indexfondsenvergelijker.nl
   annotations:
     kubernetes.io/ingress.class: "nginx"
@@ -46,14 +52,19 @@ spec:
     - host: www.indexfondsenvergelijker.nl
       http:
         paths:
-            - backend:
-                serviceName: index-fund-comparison
-                servicePort: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: indexfondsenvergelijken
+                port:
+                  number: 80
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 
 metadata:
+  namespace: indexfondsenvergelijken
   name: indexfondsen-vergelijken.nl
   annotations:
     kubernetes.io/ingress.class: "nginx"
@@ -72,6 +83,10 @@ spec:
     - host: www.indexfondsen-vergelijken.nl
       http:
         paths:
-          - backend:
-              serviceName: index-fund-comparison
-              servicePort: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: indexfondsenvergelijken
+                port:
+                  number: 80
