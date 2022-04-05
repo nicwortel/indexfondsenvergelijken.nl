@@ -94,8 +94,6 @@ jobs:
             kubernetes/deployment.yaml
           images: |
             ${{ needs.build.outputs.tag }}
-          imagepullsecrets: |
-            docker-container-registry
       - name: Update deployment status (success)
         if: success()
         uses: chrnorm/deployment-status@releases/v1
