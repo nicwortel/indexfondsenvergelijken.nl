@@ -17,6 +17,8 @@ spec:
     metadata:
       labels:
         app: indexfondsenvergelijken
+      annotations:
+        ad.datadoghq.com/indexfondsenvergelijken.logs: '[{"source":"nginx","service":"indexfondsenvergelijken"}]'
 
     spec:
       containers:
