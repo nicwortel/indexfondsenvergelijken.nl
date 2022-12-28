@@ -167,6 +167,7 @@
             "maximum": 29
         },
         "costOverview": "https://www.interactivebrokers.ie/en/index.php?f=48059",
-        "website": "https://www.interactivebrokers.ie/en/home.php"
+        "website": "https://www.interactivebrokers.ie/en/home.php",
+        "affiliateLink": "https://ibkr.com/referral/nic106"
     }
 ]
