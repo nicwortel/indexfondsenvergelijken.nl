@@ -31,13 +31,7 @@ final class FtseFactsheetParser implements IndexFactsheetParser
         $markets = $this->getMarkets($text);
         $sizes = $this->getSizes($text);
 
-        if ($name === 'FTSE Developed Index') {
-            return new Index($name, $markets, $sizes, $this->getDevelopedMarketCap($text), $url);
-        }
-
-        $marketCap = $this->getAllWorldMarketCap($text);
-
-        return new Index($name, $markets, $sizes, $marketCap, $url);
+        return new Index($name, $markets, $sizes, $this->getMarketCap($text), $url);
     }
 
     private function getName(string $text): string
@@ -75,16 +69,9 @@ final class FtseFactsheetParser implements IndexFactsheetParser
         return explode(', ', $matches[1]);
     }
 
-    private function getAllWorldMarketCap(string $text): float
+    private function getMarketCap(string $text): float
     {
-        preg_match('/FTSE All-World\s+FTSE Developed\s+\d+\s+\d+\s+\d+\s+([\d,]+)/im', $text, $matches);
-
-        return $this->numberParser->parse($matches[1]);
-    }
-
-    private function getDevelopedMarketCap(string $text): float
-    {
-        preg_match('/FTSE Developed\s+Number of constituents\s+FTSE All-World\s+\d+\s+\d+\s+([\d,]+)/im', $text, $matches);
+        preg_match('/Net MCap \(USDm\)\s+([\d,]+)/im', $text, $matches);
 
         return $this->numberParser->parse($matches[1]);
     }
