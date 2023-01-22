@@ -203,5 +203,34 @@
             "FitVermogen",
             "Saxo Bank"
         ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 61,
+                "fund": "SC0H"
+            },
+            {
+                "allocation": 16,
+                "fund": "VWCG"
+            },
+            {
+                "allocation": 5,
+                "fund": "VGEK"
+            },
+            {
+                "allocation": 7,
+                "fund": "VJPA"
+            },
+            {
+                "allocation": 11,
+                "fund": "VFEA"
+            }
+        ],
+        "brokers": [
+            "Interactive Brokers",
+            "Interactive Brokers Tiered",
+            "Lynx"
+        ]
     }
 ]
