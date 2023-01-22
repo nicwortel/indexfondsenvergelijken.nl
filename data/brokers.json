@@ -84,6 +84,23 @@
         "affiliateLink": "https://www.degiro.nl/lp/beleggen?tap_a=55081-01554d&tap_s=936305-cd4a9b&utm_source=indexfondsen&utm_campaign=DEGIRO+Netherlands&utm_medium=a&utm_content=shares_lp"
     },
     {
+        "name": "Trade Republic",
+        "logo": "trade-republic.png",
+        "product": "Trade Republic",
+        "serviceFeeCalculation": "averageEndOfMonth",
+        "mutualFundTransactionFee": {
+            "base": 1,
+            "percentage": 0
+        },
+        "etfTransactionFee": {
+            "base": 1,
+            "percentage": 0
+        },
+        "costOverview": "https://traderepublic.com/nl-nl/prijzen",
+        "website": "https://traderepublic.com/nl-nl",
+        "affiliateLink": "https://ref.trade.re/tnk0gk0f"
+    },
+    {
         "name": "Saxo Bank",
         "logo": "saxo.png",
         "product": "Zelf Beleggen Green",
