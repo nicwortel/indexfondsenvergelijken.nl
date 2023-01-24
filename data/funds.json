@@ -26,6 +26,58 @@
         "index": "FTSE All-World Index"
     },
     {
+        "name": "Vanguard FTSE Developed Europe UCITS ETF (Accumulating)",
+        "type": "ETF",
+        "symbol": "VWCG",
+        "isin": "IE00BK5BQX27",
+        "logo": "vanguard.png",
+        "totalExpenseRatio": 0.10,
+        "internalTransactionCosts": 0.015,
+        "dividendLeakage": 11.42,
+        "kiid": "https://fund-docs.vanguard.com/ie00bk5bqx27_priipskid_nl.pdf",
+        "factsheet": "https://fund-docs.vanguard.com/FTSE_Developed_Europe_UCITS_ETF_EUR_Accumulating_9681_NETH_INT_DU.pdf",
+        "index": "FTSE Developed Europe Index"
+    },
+    {
+        "name": "Vanguard FTSE Developed Asia Pacific ex Japan UCITS ETF (Accumulating)",
+        "type": "ETF",
+        "symbol": "VGEK",
+        "isin": "IE00BK5BQZ41",
+        "logo": "vanguard.png",
+        "totalExpenseRatio": 0.15,
+        "internalTransactionCosts": 0.025,
+        "dividendLeakage": 11.42,
+        "kiid": "https://api.fundinfo.com/document/de49966cbd01a8a4dc57785b64a20bd7_77576/KID_NL_nl_IE00BK5BQZ41_YES_2022-02-15.pdf",
+        "factsheet": "https://api.fundinfo.com/document/934bc48e35d3434b1fa0bdec8b5e8495_408736/MR_NL_en_IE00BK5BQZ41_RES_2022-12-31.pdf",
+        "index": "FTSE Developed Asia Pacific ex Japan Index"
+    },
+    {
+        "name": "Vanguard FTSE Japan UCITS USD ETF (Accumulating)",
+        "type": "ETF",
+        "symbol": "VJPA",
+        "isin": "IE00BFMXYX26",
+        "logo": "vanguard.png",
+        "totalExpenseRatio": 0.15,
+        "internalTransactionCosts": 0.004,
+        "dividendLeakage": 11.42,
+        "kiid": "https://api.fundinfo.com/document/a2fe7651ccbdec746a9b14525a73bb37_75405/KID_NL_nl_IE00BFMXYX26_YES_2022-02-15.pdf",
+        "factsheet": "https://api.fundinfo.com/document/c4112a3d8dcc48a6fd1c0048312b3d88_408361/MR_NL_en_IE00BFMXYX26_RES_2022-12-31.pdf",
+        "index": "FTSE Japan Index"
+    },
+    {
+        "name": "Vanguard Emerging Markets UCITS ETF (Accumulating)",
+        "type": "ETF",
+        "symbol": "VFEA",
+        "isin": "IE00BK5BR733",
+        "logo": "vanguard.png",
+        "totalExpenseRatio": 0.22,
+        "internalTransactionCosts": 0.004,
+        "dividendLeakage": 11.42,
+        "kiid": "https://api.fundinfo.com/document/77ac73dbf24190d62c1fe100fb444016_75981/KID_NL_nl_IE00BK5BR733_YES_2022-02-15.pdf",
+        "factsheet": "https://api.fundinfo.com/document/2c2c8113c4598788992a3ad11cbe1811_409000/MR_NL_en_IE00BK5BR733_RES_2022-12-31.pdf",
+        "index": "FTSE Japan Index"
+    },
+    {
         "name": "Northern Trust World Custom ESG Equity Index UCITS FGR Feeder Fund",
         "type": "mutualFund",
         "symbol": "NT World",
@@ -231,5 +283,18 @@
         "kiid": "https://www.ishares.com/nl/particuliere-belegger/nl/literature/kiid/kiid-ishares-msci-world-small-cap-ucits-etf-usd-acc-nl-ie00bf4rfh31-nl.pdf",
         "factsheet": "https://www.ishares.com/nl/particuliere-belegger/nl/literature/fact-sheet/wsml-ishares-msci-world-small-cap-ucits-etf-fund-fact-sheet-nl-nl.pdf",
         "index": "MSCI World Small Cap Index"
+    },
+    {
+        "name": "Invesco MSCI USA UCITS ETF Acc",
+        "type": "ETF",
+        "symbol": "SC0H",
+        "isin": "IE00B60SX170",
+        "logo": "invesco.png",
+        "totalExpenseRatio": 0.09,
+        "internalTransactionCosts": 0.0,
+        "dividendLeakage": 0.0,
+        "kiid": "https://etf.invesco.com/sites/default/files/documents/IE00B60SX170_NL_NL.pdf",
+        "factsheet": "https://etf.invesco.com/sites/default/files/documents/IVZ_SMSUSA_FACTSHEET_EN.pdf",
+        "index": "MSCI USA Index"
     }
 ]

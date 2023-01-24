@@ -56,6 +56,61 @@
         "factsheet": "https://www.msci.com/documents/10199/97e25eb7-9bd0-4204-bea9-077095acf1d3"
     },
     {
+        "name": "MSCI USA Index",
+        "markets": "developed",
+        "sizes": [
+            "large",
+            "mid"
+        ],
+        "marketCapitalization": 33938431.45,
+        "percentageOfTotalMarketCapitalization": 51.01213192230726,
+        "factsheet": "https://www.msci.com/documents/10199/67a768a1-71d0-4bd0-8d7e-f7b53e8d0d9f"
+    },
+    {
+        "name": "FTSE Developed Europe Index",
+        "markets": "developed",
+        "sizes": [
+            "large",
+            "mid"
+        ],
+        "marketCapitalization": 8935958,
+        "percentageOfTotalMarketCapitalization": 13.431447738525257,
+        "factsheet": "https://research.ftserussell.com/Analytics/Factsheets/Home/DownloadSingleIssue?issueName=AWDEURS&IsManual=false"
+    },
+    {
+        "name": "FTSE Developed Asia Pacific ex Japan Index",
+        "markets": "developed",
+        "sizes": [
+            "large",
+            "mid"
+        ],
+        "marketCapitalization": 2769526,
+        "percentageOfTotalMarketCapitalization": 4.162815417159179,
+        "factsheet": "https://research.ftserussell.com/Analytics/Factsheets/Home/DownloadSingleIssue?issueName=AWDPACXJ&IsManual=false"
+    },
+    {
+        "name": "FTSE Japan Index",
+        "markets": "developed",
+        "sizes": [
+            "large",
+            "mid"
+        ],
+        "marketCapitalization": 3618257,
+        "percentageOfTotalMarketCapitalization": 4.162815417159179,
+        "factsheet": "https://research.ftserussell.com/Analytics/Factsheets/Home/DownloadSingleIssue?issueName=AWDPACXJ&IsManual=false"
+    },
+    {
+        "name": "FTSE Emerging Index",
+        "markets": "emerging",
+        "sizes": [
+            "large",
+            "mid"
+        ],
+        "marketCapitalization": 5996028,
+        "percentageOfTotalMarketCapitalization": 9.012501706110763,
+        "factsheet": "https://research.ftserussell.com/Analytics/FactSheets/Home/DownloadSingleIssue?issueName=AWALLE&isManual=False"
+    },
+    {
         "name": "FTSE All-World Index",
         "markets": "all-world",
         "sizes": [

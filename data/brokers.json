@@ -185,5 +185,23 @@
         "costOverview": "https://www.interactivebrokers.ie/en/index.php?f=48059",
         "website": "https://www.interactivebrokers.ie/en/home.php",
         "affiliateLink": "https://ibkr.com/referral/nic106"
+    },
+    {
+        "name": "Interactive Brokers Tiered",
+        "logo": "interactive-brokers.png",
+        "product": "Tiered Pricing",
+        "etfTransactionFee": {
+            "percentage": 0.0558,
+            "minimum": 1.89,
+            "maximum": 77.04
+        },
+        "mutualFundTransactionFee": {
+            "percentage": 0.1,
+            "minimum": 3.65,
+            "maximum": 74.10
+        },
+        "costOverview": "https://www.interactivebrokers.ie/en/index.php?f=48059",
+        "website": "https://www.interactivebrokers.ie/en/home.php",
+        "affiliateLink": "https://ibkr.com/referral/nic106"
     }
 ]

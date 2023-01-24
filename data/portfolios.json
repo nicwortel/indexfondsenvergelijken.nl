@@ -50,6 +50,7 @@
             "DEGIRO",
             "Saxo Bank",
             "Interactive Brokers",
+            "Interactive Brokers Tiered",
             "Lynx",
             "Trade Republic"
         ]
@@ -64,6 +65,7 @@
         "brokers": [
             "DEGIRO",
             "Interactive Brokers",
+            "Interactive Brokers Tiered",
             "Lynx",
             "Saxo Bank",
             "Trade Republic"
@@ -109,6 +111,7 @@
         "brokers": [
             "Saxo Bank",
             "Interactive Brokers",
+            "Interactive Brokers Tiered",
             "Lynx"
         ]
     },
@@ -130,6 +133,7 @@
         "brokers": [
             "Saxo Bank",
             "Interactive Brokers",
+            "Interactive Brokers Tiered",
             "Lynx"
         ]
     },
@@ -147,6 +151,7 @@
         "brokers": [
             "DEGIRO",
             "Interactive Brokers",
+            "Interactive Brokers Tiered",
             "Lynx",
             "Saxo Bank",
             "Trade Republic"
@@ -200,6 +205,36 @@
         "brokers": [
             "FitVermogen",
             "Saxo Bank"
+        ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 61,
+                "fund": "SC0H"
+            },
+            {
+                "allocation": 16,
+                "fund": "VWCG"
+            },
+            {
+                "allocation": 5,
+                "fund": "VGEK"
+            },
+            {
+                "allocation": 7,
+                "fund": "VJPA"
+            },
+            {
+                "allocation": 11,
+                "fund": "VFEA"
+            }
+        ],
+        "brokers": [
+            "Interactive Brokers",
+            "Interactive Brokers Tiered",
+            "Lynx",
+            "Trade Republic"
         ]
     }
 ]
