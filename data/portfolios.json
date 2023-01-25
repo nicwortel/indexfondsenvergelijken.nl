@@ -52,7 +52,8 @@
             "Interactive Brokers",
             "Interactive Brokers Tiered",
             "Lynx",
-            "Trade Republic"
+            "Trade Republic",
+            "Trade Republic Automatic"
         ]
     },
     {
@@ -68,7 +69,8 @@
             "Interactive Brokers Tiered",
             "Lynx",
             "Saxo Bank",
-            "Trade Republic"
+            "Trade Republic",
+            "Trade Republic Automatic"
         ]
     },
     {
@@ -154,7 +156,8 @@
             "Interactive Brokers Tiered",
             "Lynx",
             "Saxo Bank",
-            "Trade Republic"
+            "Trade Republic",
+            "Trade Republic Automatic"
         ]
     },
     {
@@ -234,7 +237,8 @@
             "Interactive Brokers",
             "Interactive Brokers Tiered",
             "Lynx",
-            "Trade Republic"
+            "Trade Republic",
+            "Trade Republic Automatic"
         ]
     }
 ]
