@@ -211,7 +211,7 @@
                 "fund": "SC0H"
             },
             {
-                "allocation": 16,
+                "allocation": 17,
                 "fund": "VWCG"
             },
             {
@@ -219,7 +219,7 @@
                 "fund": "VGEK"
             },
             {
-                "allocation": 7,
+                "allocation": 6,
                 "fund": "VJPA"
             },
             {
@@ -230,7 +230,42 @@
         "brokers": [
             "Interactive Brokers",
             "Interactive Brokers Tiered",
-            "Lynx"
+            "Lynx",
+            "Saxo Bank"
+        ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 54,
+                "fund": "SC0H"
+            },
+            {
+                "allocation": 15,
+                "fund": "VWCG"
+            },
+            {
+                "allocation": 4,
+                "fund": "VGEK"
+            },
+            {
+                "allocation": 6,
+                "fund": "VJPA"
+            },
+            {
+                "allocation": 10,
+                "fund": "VFEA"
+            },
+            {
+                "allocation": 11,
+                "fund": "IUSN"
+            }
+        ],
+        "brokers": [
+            "Interactive Brokers",
+            "Interactive Brokers Tiered",
+            "Lynx",
+            "Saxo Bank"
         ]
     }
 ]
