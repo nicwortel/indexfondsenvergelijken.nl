@@ -33,7 +33,7 @@
         "logo": "vanguard.png",
         "totalExpenseRatio": 0.10,
         "internalTransactionCosts": 0.015,
-        "dividendLeakage": 11.42,
+        "dividendLeakage": 8,
         "kiid": "https://fund-docs.vanguard.com/ie00bk5bqx27_priipskid_nl.pdf",
         "factsheet": "https://fund-docs.vanguard.com/FTSE_Developed_Europe_UCITS_ETF_EUR_Accumulating_9681_NETH_INT_DU.pdf",
         "index": "FTSE Developed Europe Index"
@@ -46,7 +46,7 @@
         "logo": "vanguard.png",
         "totalExpenseRatio": 0.15,
         "internalTransactionCosts": 0.025,
-        "dividendLeakage": 11.42,
+        "dividendLeakage": 4,
         "kiid": "https://api.fundinfo.com/document/de49966cbd01a8a4dc57785b64a20bd7_77576/KID_NL_nl_IE00BK5BQZ41_YES_2022-02-15.pdf",
         "factsheet": "https://api.fundinfo.com/document/934bc48e35d3434b1fa0bdec8b5e8495_408736/MR_NL_en_IE00BK5BQZ41_RES_2022-12-31.pdf",
         "index": "FTSE Developed Asia Pacific ex Japan Index"
@@ -59,7 +59,7 @@
         "logo": "vanguard.png",
         "totalExpenseRatio": 0.15,
         "internalTransactionCosts": 0.004,
-        "dividendLeakage": 11.42,
+        "dividendLeakage": 15,
         "kiid": "https://api.fundinfo.com/document/a2fe7651ccbdec746a9b14525a73bb37_75405/KID_NL_nl_IE00BFMXYX26_YES_2022-02-15.pdf",
         "factsheet": "https://api.fundinfo.com/document/c4112a3d8dcc48a6fd1c0048312b3d88_408361/MR_NL_en_IE00BFMXYX26_RES_2022-12-31.pdf",
         "index": "FTSE Japan Index"
@@ -72,7 +72,7 @@
         "logo": "vanguard.png",
         "totalExpenseRatio": 0.22,
         "internalTransactionCosts": 0.004,
-        "dividendLeakage": 11.42,
+        "dividendLeakage": 10,
         "kiid": "https://api.fundinfo.com/document/77ac73dbf24190d62c1fe100fb444016_75981/KID_NL_nl_IE00BK5BR733_YES_2022-02-15.pdf",
         "factsheet": "https://api.fundinfo.com/document/2c2c8113c4598788992a3ad11cbe1811_409000/MR_NL_en_IE00BK5BR733_RES_2022-12-31.pdf",
         "index": "FTSE Emerging Index"
