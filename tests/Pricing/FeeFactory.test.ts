@@ -4,6 +4,8 @@ import {CappedFee} from "../../src/Pricing/CappedFee";
 import {FeeFactory} from "../../src/Pricing/FeeFactory";
 import {NullFee} from "../../src/Pricing/NullFee";
 import {PercentageFee} from "../../src/Pricing/PercentageFee";
+import {Volume, VolumeFee} from "../../src/Pricing/VolumeFee";
+import {FlatFee} from "../../src/Pricing/FlatFee";
 
 const factory = new FeeFactory();
 
@@ -33,4 +35,14 @@ test('Returns capped fee if maximum is defined', () => {
         new Money(10, 'EUR'),
         new PercentageFee(2)
     ));
+});
+
+test('Returns a volume fee if volumes are defined', () => {
+    expect(factory.create({volumes: [{max: 10, flat: 5}]})).toEqual(new VolumeFee([
+        new Volume(new Money(10, 'EUR'), new FlatFee(new Money(5, 'EUR')))
+    ]));
+
+    expect(factory.create({volumes: [{max: 10, percentage: 5}]})).toEqual(new VolumeFee([
+        new Volume(new Money(10, 'EUR'), new PercentageFee(5))
+    ]));
 });

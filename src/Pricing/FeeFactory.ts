@@ -24,25 +24,31 @@ export class FeeFactory {
         let fee: Fee;
 
         if (data.tiers) {
-            const tiers = data.tiers.map((tier: { upperLimit: number, percentage: number }) => {
-                const upperLimit = tier.upperLimit ? new Money(tier.upperLimit, this.currency) : null;
+            const tiers = data.tiers.map((tier: { upperLimit: number, percentage?: number, flat?: number }) => {
+                const { upperLimit, ...innerFee } = tier;
 
-                return new Tier(upperLimit, new PercentageFee(tier.percentage));
+                const upperLimitAmount = tier.upperLimit ? new Money(tier.upperLimit, this.currency) : null;
+
+                return new Tier(upperLimitAmount, this.create(innerFee));
             });
 
             fee = new TieredFee(tiers);
         } else if (data.volumes) {
-            const volumes = data.volumes.map((volume: { max: number, flat: number }) => {
-                const max = volume.max ? new Money(volume.max, this.currency) : null;
+            const volumes = data.volumes.map((volume: { max: number, percentage?: number, flat?: number }) => {
+                const { max, ...innerFee } = volume;
 
-                return new Volume(max, new FlatFee(new Money(volume.flat, this.currency)));
+                const maxAmount = volume.max ? new Money(volume.max, this.currency) : null;
+
+                return new Volume(maxAmount, this.create(innerFee));
             });
 
             fee = new VolumeFee(volumes);
-        } else if (data.flat) {
+        } else if (typeof data.flat == 'number') {
             fee = new FlatFee(new Money(data.flat, this.currency));
-        } else {
+        } else if (typeof data.percentage == 'number') {
             fee = new PercentageFee(data.percentage);
+        } else {
+            console.log("Unknown fee type", data);
         }
 
         if (data.transactionCostsDeductible) {

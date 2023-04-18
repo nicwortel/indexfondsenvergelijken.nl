@@ -69,7 +69,12 @@
         "name": "Meesman",
         "logo": "meesman.png",
         "product": "Indexbeleggen",
-        "mutualFundTransactionFee": 0.25,
+        "mutualFundTransactionFee": {
+            "volumes": [
+                {"max": 500000, "percentage": 0.25},
+                {"max": null, "percentage": 0}
+            ]
+        },
         "costOverview": "https://www.meesman.nl/zo-werkt-het/kosten",
         "website": "https://www.meesman.nl/"
     },

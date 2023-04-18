@@ -12,14 +12,14 @@ export class VolumeFee implements Fee {
                 return volume.fee.calculateFor(amount);
             }
 
-            if (amount.isLesserThanOrEqual(volume.max)) {
+            if (amount.isLesserThan(volume.max)) {
                 return volume.fee.calculateFor(amount);
             }
         }
     }
 
     public describe(): string {
-        return '';
+        return this.getExtendedDescription().join(', ');
     }
 
     public getExtendedDescription(): string[] {
@@ -30,7 +30,7 @@ export class VolumeFee implements Fee {
                 return 'daarboven: ' + volume.fee.describe();
             }
 
-            return 't/m ' + numberFormatter.formatMoney(volume.max, 0) + ': ' + volume.fee.describe();
+            return 'tot ' + numberFormatter.formatMoney(volume.max, 0) + ': ' + volume.fee.describe();
         })
     }
 }
