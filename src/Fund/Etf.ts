@@ -45,10 +45,6 @@ export class Etf implements Fund {
         return this.dividendLeak;
     }
 
-    getTotalRecurringCosts(): Percentage {
-        return this.totalExpenseRatio.add(this.dividendLeak);
-    }
-
     getTrackedIndex(): Index {
         return this.index;
     }

@@ -72,7 +72,7 @@ export class SimulatedPortfolio {
             (
                 sum: Percentage,
                 asset: { allocation: Percentage; fund: Fund }
-            ) => sum.add(asset.allocation.multiply(asset.fund.getTotalExpenseRatio().add(asset.fund.getInternalTransactionCosts()))),
+            ) => sum.add(asset.allocation.multiply(asset.fund.getTotalExpenseRatio(this.value).add(asset.fund.getInternalTransactionCosts()))),
             new Percentage(0)
         );
     }
@@ -81,7 +81,7 @@ export class SimulatedPortfolio {
         return this.assets.reduce((
             sum: Percentage,
             asset: { allocation: Percentage; fund: Fund }
-        ) => sum.add(asset.allocation.multiply(asset.fund.getTotalExpenseRatio())), new Percentage(0));
+        ) => sum.add(asset.allocation.multiply(asset.fund.getTotalExpenseRatio(this.value))), new Percentage(0));
     }
 
     public getMarketCapPercentage(): Percentage {

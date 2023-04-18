@@ -15,8 +15,7 @@ export class MutualFund implements Fund {
         private kiid: string,
         private factsheet: string,
         private esgExclusions: Percentage
-    )
-    {
+    ) {
     }
 
     getName(): string {
@@ -45,10 +44,6 @@ export class MutualFund implements Fund {
 
     getDividendLeak(): Percentage {
         return this.dividendLeak;
-    }
-
-    getTotalRecurringCosts(): Percentage {
-        return this.totalExpenseRatio.add(this.dividendLeak);
     }
 
     getTrackedIndex(): Index {

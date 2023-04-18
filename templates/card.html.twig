@@ -56,7 +56,7 @@
                             </tr>
                             <tr>
                                 <th>Lopende kosten</th>
-                                <td>{{ asset.fund.totalExpenseRatio|percentage }}</td>
+                                <td>{{ asset.fund.totalExpenseRatio|percentage }} {% if asset.fund.terComment %}({{ asset.fund.terComment }}){% endif %}</td>
                             </tr>
                             <tr>
                                 <th>Interne transactiekosten</th>

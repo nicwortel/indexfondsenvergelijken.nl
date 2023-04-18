@@ -1,5 +1,6 @@
 import {Index} from "../Index/Index";
 import {Percentage} from "../Percentage";
+import {Money} from "bigint-money/dist";
 
 export interface Fund {
     getName(): string;
@@ -10,13 +11,11 @@ export interface Fund {
 
     getLogo(): string;
 
-    getTotalExpenseRatio(): Percentage;
+    getTotalExpenseRatio(totalInvested?: Money): Percentage;
 
     getInternalTransactionCosts(): Percentage;
 
     getDividendLeak(): Percentage;
-
-    getTotalRecurringCosts(): Percentage;
 
     getTrackedIndex(): Index;
 
