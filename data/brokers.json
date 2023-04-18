@@ -82,8 +82,7 @@
             "flat": 1
         },
         "costOverview": "https://www.degiro.nl/data/pdf/Tarievenoverzicht.pdf",
-        "website": "https://www.degiro.nl/",
-        "affiliateLink": "https://www.degiro.nl/lp/beleggen?tap_a=55081-01554d&tap_s=936305-cd4a9b&utm_source=indexfondsen&utm_campaign=DEGIRO+Netherlands&utm_medium=a&utm_content=shares_lp"
+        "website": "https://www.degiro.nl/"
     },
     {
         "name": "Saxo Bank",
