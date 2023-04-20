@@ -50,7 +50,8 @@
             "DEGIRO",
             "Saxo Bank",
             "Interactive Brokers",
-            "Lynx"
+            "Lynx",
+            "Easybroker"
         ]
     },
     {
@@ -64,7 +65,8 @@
             "DEGIRO",
             "Interactive Brokers",
             "Lynx",
-            "Saxo Bank"
+            "Saxo Bank",
+            "Easybroker"
         ]
     },
     {
@@ -107,7 +109,8 @@
         "brokers": [
             "Saxo Bank",
             "Interactive Brokers",
-            "Lynx"
+            "Lynx",
+            "Easybroker"
         ]
     },
     {
@@ -128,7 +131,8 @@
         "brokers": [
             "Saxo Bank",
             "Interactive Brokers",
-            "Lynx"
+            "Lynx",
+            "Easybroker"
         ]
     },
     {
@@ -146,7 +150,8 @@
             "DEGIRO",
             "Interactive Brokers",
             "Lynx",
-            "Saxo Bank"
+            "Saxo Bank",
+            "Easybroker"
         ]
     },
     {

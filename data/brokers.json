@@ -168,5 +168,22 @@
         "costOverview": "https://www.interactivebrokers.ie/en/index.php?f=48059",
         "website": "https://www.interactivebrokers.ie/en/home.php",
         "affiliateLink": "https://ibkr.com/referral/nic106"
+    },
+    {
+        "name": "Easybroker",
+        "logo": "easybroker.png",
+        "product": "Zelf Beleggen",
+        "mutualFundTransactionFee": {
+            "percentage": 0.12,
+            "minimum": null,
+            "maximum": 45
+        },
+        "etfTransactionFee": {
+            "percentage": 0.08,
+            "minimum": 3,
+            "maximum": null
+        },
+        "costOverview": "https://www.easybroker.nl/tarieven_vergelijker/",
+        "website": "https://www.easybroker.nl/"
     }
 ]
