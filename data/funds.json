@@ -59,7 +59,7 @@
         "symbol": "NT SC",
         "isin": "NL0013552078",
         "logo": "northern-trust.png",
-        "totalExpenseRatio": 0.23,
+        "totalExpenseRatio": 0.22,
         "internalTransactionCosts": 0.100,
         "dividendLeakage": 0,
         "kiid": "https://www.northerntrust.com/documents/funds/intl/ntfgr/kiids-nl/ntfgr-world-small-cap-esg-low-carbon-index-fgr-fund-class-a-kiid-nl.pdf",
@@ -78,7 +78,8 @@
         "dividendLeakage": 0,
         "kiid": "https://www.meesman.nl/media/1vhin3ml/ebi-miawta-2022.pdf",
         "factsheet": "https://www.meesman.nl/media/zpvkkdiw/factsheet-meesman-indexfonds-aandelen-wereldwijd-totaal-a-31-03-2022.pdf",
-        "index": "Meesman Aandelen Wereldwijd Totaal"
+        "index": "Meesman Aandelen Wereldwijd Totaal",
+        "esgExclusions": 6.3
     },
     {
         "name": "NN Enhanced Index Sustainable Equity Fund",
