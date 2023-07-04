@@ -6,9 +6,10 @@
         "serviceFee": {
             "base": 5,
             "tiers": [
-                {"upperLimit": 100000, "percentage": 0.06},
-                {"upperLimit": 500000, "percentage": 0.03},
-                {"upperLimit": null, "percentage": 0.015}
+                {"upperLimit": 100000, "percentage": 0.24},
+                {"upperLimit": 500000, "percentage": 0.12},
+                {"upperLimit": 2500000, "percentage": 0.06},
+                {"upperLimit": null, "percentage": 0.06}
             ]
         },
         "serviceFeeCalculation": "averageEndOfMonth",
@@ -23,9 +24,9 @@
         "product": "Zelf Beleggen Basis",
         "serviceFee": {
             "tiers": [
-                {"upperLimit": 100000, "percentage": 0.05},
-                {"upperLimit": 400000, "percentage": 0.03},
-                {"upperLimit": null, "percentage": 0.015}
+                {"upperLimit": 100000, "percentage": 0.20},
+                {"upperLimit": 400000, "percentage": 0.12},
+                {"upperLimit": null, "percentage": 0.06}
             ]
         },
         "serviceFeeCalculation": "endOfQuarter",
@@ -62,7 +63,7 @@
             "percentage": 0.5,
             "maximum": 100
         },
-        "costOverview": "https://www.rabobank.nl/images/tarieven-beleggen-bij-de-rabobank_29409753.pdf",
+        "costOverview": "https://media.rabobank.com/m/14436ec47eac2bbb/original/Tarieven-beleggen-bij-Rabobank.pdf",
         "website": "https://www.rabobank.nl/particulieren/beleggen/rabo-zelf-beleggen/"
     },
     {
