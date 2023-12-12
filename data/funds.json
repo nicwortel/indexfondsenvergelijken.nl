@@ -37,7 +37,7 @@
         "kiid": "https://www.northerntrust.com/documents/funds/intl/ntfgr/kiids-nl/ntfgr-world-custom-esg-equity-index-ucits-fund-class-a-kiid-nl.pdf",
         "factsheet": "https://cdn.northerntrust.com/pws/nt/documents/funds/intl/factsheets/northern-trust-world-custom-esg-equity-index-ucits-fgr-feeder-fund-nlfw-sha-eur-re-nl.pdf",
         "index": "MSCI World Custom ESG Index",
-        "esgExclusions": 5
+        "esgExclusions": 4.3
     },
     {
         "name": "Northern Trust Emerging Markets Custom ESG Equity Index UCITS FGR Fund",
@@ -51,7 +51,7 @@
         "kiid": "https://www.northerntrust.com/documents/funds/intl/ntfgr/kiids-nl/ntfgr-emerging-markets-custom-esg-equity-index-ucits-fund-class-a-kiid-nl.pdf",
         "factsheet": "https://cdn.northerntrust.com/pws/nt/documents/funds/intl/factsheets/northern-trust-emerging-markets-custom-esg-equity-index-ucits-fgr-fund-nleme-sha-eur-re-nl.pdf",
         "index": "MSCI Emerging Markets Custom ESG Index",
-        "esgExclusions": 6
+        "esgExclusions": 5.6
     },
     {
         "name": "Northern Trust World Small Cap ESG Low Carbon Index FGR Feeder Fund",

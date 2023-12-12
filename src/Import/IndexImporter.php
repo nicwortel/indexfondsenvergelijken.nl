@@ -38,6 +38,8 @@ final class IndexImporter implements DataImporter
 
     private Filesystem $filesystem;
 
+    private MeesmanIndexFactory $meesmanIndexFactory;
+
     public function __construct(
         HttpClientInterface $httpClient,
         array $parsers,
@@ -46,6 +48,7 @@ final class IndexImporter implements DataImporter
         $this->parsers = $parsers;
         $this->filesystem = $filesystem;
         $this->httpClient = $httpClient;
+        $this->meesmanIndexFactory = new MeesmanIndexFactory();
     }
 
     public function import(): void
@@ -67,7 +70,7 @@ final class IndexImporter implements DataImporter
 
         $customEsgIndices = $this->getCustomEsgIndices($indices);
 
-        $meesmanIndex = $this->getMeesmanIndex($customEsgIndices);
+        $meesmanIndex = $this->meesmanIndexFactory->getIndex($customEsgIndices, $allWorldIndex);
 
         $indices = array_values(array_merge($indices, $customEsgIndices, [$meesmanIndex]));
 
@@ -120,51 +123,5 @@ final class IndexImporter implements DataImporter
     private function getMarketCapPercentage(float $marketCap, float $allWorldMarketCap): float
     {
         return ($marketCap / $allWorldMarketCap) * 100;
-    }
-
-    private function getMeesmanIndex(array $indices): Index
-    {
-        // The same percentages as the Northern Trust funds
-        $exclusionPercentages = [
-            'MSCI World Custom ESG Index' => 5.8,
-            'MSCI Emerging Markets Custom ESG Index' => 7.5,
-            'MSCI World Small Cap Custom ESG Low Carbon Index' => 17.7
-        ];
-
-        $underlyingIndices = [
-            $indices['MSCI World Custom ESG Index'],
-            $indices['MSCI Emerging Markets Custom ESG Index'],
-            $indices['MSCI World Small Cap Custom ESG Low Carbon Index'],
-        ];
-
-        $marketCap = array_reduce(
-            $underlyingIndices,
-            function (float $previous, Index $current) use ($exclusionPercentages): float {
-                $exclusionPercentage = $exclusionPercentages[$current->name];
-
-                $includedPercentage = 100 - $exclusionPercentage;
-
-                return $previous + $current->marketCapitalization * ($includedPercentage / 100);
-            },
-            0
-        );
-        $marketCap = round($marketCap, 2);
-
-        $marketCapPercentage = array_reduce(
-            $underlyingIndices,
-            function (float $previous, Index $current) use ($exclusionPercentages): float {
-                $exclusionPercentage = $exclusionPercentages[$current->name];
-
-                $includedPercentage = 100 - $exclusionPercentage;
-
-                return $previous + $current->percentageOfTotalMarketCapitalization * ($includedPercentage / 100);
-            },
-            0
-        );
-
-        $index = new Index('Meesman Aandelen Wereldwijd Totaal', 'all-world', ['large', 'mid', 'small'], $marketCap, '');
-        $index->percentageOfTotalMarketCapitalization = $marketCapPercentage;
-
-        return $index;
     }
 }
