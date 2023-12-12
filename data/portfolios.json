@@ -81,11 +81,11 @@
     {
         "portfolio": [
             {
-                "allocation": 90,
+                "allocation": 89,
                 "fund": "AVIAW"
             },
             {
-                "allocation": 10,
+                "allocation": 11,
                 "fund": "AVIAO"
             }
         ],
@@ -96,11 +96,11 @@
     {
         "portfolio": [
             {
-                "allocation": 85,
+                "allocation": 84,
                 "fund": "AVIAW"
             },
             {
-                "allocation": 15,
+                "allocation": 16,
                 "fund": "EMIM"
             }
         ],
@@ -152,11 +152,11 @@
     {
         "portfolio": [
             {
-                "allocation": 89,
+                "allocation": 90,
                 "fund": "BND WIF Hedged"
             },
             {
-                "allocation": 11,
+                "allocation": 10,
                 "fund": "BND EM"
             }
         ],
