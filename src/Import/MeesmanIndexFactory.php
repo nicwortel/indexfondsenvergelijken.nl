@@ -66,7 +66,7 @@ final class MeesmanIndexFactory
         $marketCapPercentage = ($combinedMarketCapitalization / $allWorldIndex->marketCapitalization) * 100;
 
         $index = new Index(
-            'Meesman Aandelen Wereldwijd Totaal',
+            'Mix van 3 MSCI Custom ESG indexen',
             'all-world',
             ['large', 'mid', 'small'],
             $combinedMarketCapitalization,
