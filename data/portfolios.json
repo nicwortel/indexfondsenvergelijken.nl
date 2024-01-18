@@ -92,7 +92,10 @@
             }
         ],
         "brokers": [
-            "Saxo Bank"
+            "Saxo Bank",
+            "Interactive Brokers",
+            "Lynx",
+            "Easybroker"
         ]
     },
     {
