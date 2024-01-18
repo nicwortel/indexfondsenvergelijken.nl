@@ -2,11 +2,11 @@
     {
         "portfolio": [
             {
-                "allocation": 89,
+                "allocation": 90,
                 "fund": "NT World"
             },
             {
-                "allocation": 11,
+                "allocation": 10,
                 "fund": "NT EM"
             }
         ],
@@ -19,11 +19,11 @@
     {
         "portfolio": [
             {
-                "allocation": 81,
+                "allocation": 82,
                 "fund": "NT World"
             },
             {
-                "allocation": 10,
+                "allocation": 9,
                 "fund": "NT EM"
             },
             {
@@ -83,11 +83,11 @@
     {
         "portfolio": [
             {
-                "allocation": 89,
+                "allocation": 91,
                 "fund": "CARIW"
             },
             {
-                "allocation": 11,
+                "allocation": 9,
                 "fund": "CARIEM"
             }
         ],
@@ -98,11 +98,11 @@
     {
         "portfolio": [
             {
-                "allocation": 84,
+                "allocation": 86,
                 "fund": "CARIW"
             },
             {
-                "allocation": 16,
+                "allocation": 14,
                 "fund": "EMIM"
             }
         ],
@@ -116,7 +116,7 @@
     {
         "portfolio": [
             {
-                "allocation": 75,
+                "allocation": 76,
                 "fund": "CARIW"
             },
             {
@@ -124,7 +124,7 @@
                 "fund": "EMIM"
             },
             {
-                "allocation": 12,
+                "allocation": 11,
                 "fund": "IUSN"
             }
         ],
