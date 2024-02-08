@@ -2,11 +2,11 @@
     {
         "portfolio": [
             {
-                "allocation": 89,
+                "allocation": 90,
                 "fund": "NT World"
             },
             {
-                "allocation": 11,
+                "allocation": 10,
                 "fund": "NT EM"
             }
         ],
@@ -19,15 +19,15 @@
     {
         "portfolio": [
             {
-                "allocation": 81,
+                "allocation": 83,
                 "fund": "NT World"
             },
             {
-                "allocation": 10,
+                "allocation": 9,
                 "fund": "NT EM"
             },
             {
-                "allocation": 9,
+                "allocation": 8,
                 "fund": "NT SC"
             }
         ],
@@ -83,26 +83,29 @@
     {
         "portfolio": [
             {
-                "allocation": 89,
+                "allocation": 91,
                 "fund": "CARIW"
             },
             {
-                "allocation": 11,
+                "allocation": 9,
                 "fund": "CARIEM"
             }
         ],
         "brokers": [
-            "Saxo Bank"
+            "Saxo Bank",
+            "Interactive Brokers",
+            "Lynx",
+            "Easybroker"
         ]
     },
     {
         "portfolio": [
             {
-                "allocation": 84,
+                "allocation": 86,
                 "fund": "CARIW"
             },
             {
-                "allocation": 16,
+                "allocation": 14,
                 "fund": "EMIM"
             }
         ],
@@ -116,15 +119,15 @@
     {
         "portfolio": [
             {
-                "allocation": 75,
+                "allocation": 77,
                 "fund": "CARIW"
             },
             {
-                "allocation": 13,
+                "allocation": 12,
                 "fund": "EMIM"
             },
             {
-                "allocation": 12,
+                "allocation": 11,
                 "fund": "IUSN"
             }
         ],
@@ -138,11 +141,11 @@
     {
         "portfolio": [
             {
-                "allocation": 89,
+                "allocation": 90,
                 "fund": "IWDA"
             },
             {
-                "allocation": 11,
+                "allocation": 10,
                 "fund": "IEMM"
             }
         ],
@@ -172,11 +175,11 @@
     {
         "portfolio": [
             {
-                "allocation": 82,
+                "allocation": 83,
                 "fund": "BND WIF Hedged"
             },
             {
-                "allocation": 10,
+                "allocation": 9,
                 "fund": "BND EM"
             },
             {
@@ -191,11 +194,11 @@
     {
         "portfolio": [
             {
-                "allocation": 89,
+                "allocation": 90,
                 "fund": "GSESA"
             },
             {
-                "allocation": 11,
+                "allocation": 10,
                 "fund": "GSEME"
             }
         ],

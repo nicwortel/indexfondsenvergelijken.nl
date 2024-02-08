@@ -15,7 +15,7 @@ final class IndexImporter implements DataImporter
 
     private const FACTSHEETS = [
         'MSCI ACWI IMI Index' => 'https://www.msci.com/documents/10199/4211cc4b-453d-4b0a-a6a7-51d36472a703',
-        'MSCI World Index' => 'https://www.msci.com/documents/10199/149ed7bc-316e-4b4c-8ea4-43fcb5bd6523',
+        'MSCI World Index' => 'https://www.msci.com/documents/10199/4db922ce-68d2-446d-2f9e-4ed408a9db29',
         'MSCI World Small Cap Index' => 'https://www.msci.com/documents/10199/a67b0d43-0289-4bce-8499-0c102eaa8399',
         'MSCI Emerging Markets Index' => 'https://www.msci.com/documents/10199/c0db0a48-01f2-4ba9-ad01-226fd5678111',
         'MSCI Emerging Markets IMI Index' => 'https://www.msci.com/documents/10199/97e25eb7-9bd0-4204-bea9-077095acf1d3',

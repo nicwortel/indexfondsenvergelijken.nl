@@ -181,7 +181,7 @@
         "product": "Zelf Beleggen",
         "mutualFundTransactionFee": {
             "percentage": 0.12,
-            "minimum": null,
+            "minimum": 2.4,
             "maximum": 45
         },
         "etfTransactionFee": {

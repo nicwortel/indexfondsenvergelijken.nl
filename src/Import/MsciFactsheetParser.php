@@ -44,7 +44,7 @@ final class MsciFactsheetParser implements IndexFactsheetParser
         $text = $this->getText($document);
 
         if (preg_match(
-            '/representation across \d+ Developed ?Markets ?\(DM\) and \d+ Emerging ?Markets ?\(EM\) countries/i',
+            '/representation across \d+ Developed ?Markets ?\(DM\) and.\d+ Emerging ?Markets ?\(EM\) countries/i',
             $text
         )) {
             return 'all-world';
