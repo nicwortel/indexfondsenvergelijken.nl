@@ -2,10 +2,8 @@ version: '3'
 
 services:
   web:
-    build: .
-    image: ghcr.io/nicwortel/indexfondsenvergelijken.nl:latest
+    image: nginx:latest
     volumes:
       - ./dist/:/usr/share/nginx/html:ro
-      - ./etc/nginx.conf:/etc/nginx/conf.d/default.conf:ro
     ports:
       - 8000:80
