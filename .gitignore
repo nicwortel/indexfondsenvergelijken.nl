@@ -1,6 +1,6 @@
 /coverage/
 /dist/
-/docker-compose.override.yml
+/docker-compose.override.yaml
 /node_modules/
 /var/
 /vendor/
