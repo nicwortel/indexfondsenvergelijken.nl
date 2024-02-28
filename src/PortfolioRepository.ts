@@ -9,8 +9,8 @@ export class PortfolioRepository {
     }
 
     public getAll(): Portfolio[] {
-        return portfolios.map((data: any) => {
-            const assets = data.portfolio.map((asset: any) => {
+        return portfolios.map((data) => {
+            const assets = data.portfolio.map((asset) => {
                 return {allocation: new Percentage(asset.allocation), fund: this.fundRepository.getFund(asset.fund)};
             })
 

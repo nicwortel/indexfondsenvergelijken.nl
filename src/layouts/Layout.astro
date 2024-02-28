@@ -1,0 +1,67 @@
+---
+interface Props {
+  title: string;
+}
+
+import { ViewTransitions } from 'astro:transitions';
+import { pwaAssetsHead } from 'virtual:pwa-assets/head';
+import { pwaInfo } from 'virtual:pwa-info';
+import Navbar from '../components/Navbar.astro';
+
+const { title } = Astro.props;
+
+const isNotBase = Astro.url.pathname !== '/';
+---
+
+<!doctype html>
+<html lang='nl'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta
+      name='description'
+      content="Vergelijk de kosten en verwachte resultaten van beleggen in populaire indexfondsen en ETF's bij banken en brokers in Nederland."
+    />
+
+    {
+      pwaAssetsHead.themeColor && (
+        <meta name='theme-color' content={pwaAssetsHead.themeColor.content} />
+      )
+    }
+    {pwaAssetsHead.links.map((link) => <link {...link} />)}
+
+    <meta name='viewport' content='width=device-width' />
+    <link rel='canonical' href='https://www.indexfondsenvergelijken.nl/' />
+    <script
+      defer
+      is:inline
+      data-domain='indexfondsenvergelijken.nl'
+      src='https://plausible.io/js/plausible.outbound-links.js'></script>
+    <title>{title}</title>
+    <link rel='sitemap' href='/sitemap-index.xml' />
+    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+    <ViewTransitions />
+  </head>
+  <body class='bg-light'>
+    <Navbar />
+
+    <div class='container py-3'>
+      {
+        isNotBase && (
+          <p>
+            <a href='/'>Ga terug naar de vergelijker.</a>
+          </p>
+        )
+      }
+
+      <slot />
+    </div>
+    <script>
+      window.addEventListener('load', () => {
+        import('../pwa');
+      });
+    </script>
+  </body>
+</html>
+<style is:global>
+  @import '../styles/main.scss';
+</style>

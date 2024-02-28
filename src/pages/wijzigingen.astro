@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const wijzigingen: { title: string; date: Date; content: string }[] = [
+  {
+    title: 'Overname NN fondsen door Goldman Sachs',
+    date: new Date('2023-12-12'),
+    content: `De fondsen van NN zijn overgenomen door Goldman Sachs. Daarom zijn de
+      fondsnamen aangepast, en de links naar de documentatie. Ook zijn de kosten
+      aangepast waar dat van toepassing is.`,
+  },
+
+  {
+    title: 'Kosten Meesman',
+    date: new Date('2023-04-18'),
+    content: `Bij een belegd vermogen van € 1 miljoen of meer zet Meesman je aandelen in het Aandelen Wereld Totaalfonds om naar participactieklasse B, met 0,25% lopende kosten in plaats van 0,4%. Vanaf nu wordt deze uitzondering ook meegenomen in de simulatie.`,
+  },
+
+  {
+    title: 'Transactiekosten DEGIRO Kernselectie',
+    date: new Date('2023-04-18'),
+    content: `DEGIRO past haar tarieven aan per 15 mei 2023. Onder andere zal voor alle producten (dus ook voor Kernselectie ETF's) € 1 handlingskosten per transactie in rekening worden gebracht. De Kernselectie zal nog worden aangepast.`,
+  },
+
+  {
+    title: 'Beleggingsfondsen bij Interactive Brokers',
+    date: new Date('2021-01-11'),
+    content: `Interactive Brokers is nu ook als aanbieder van een aantal portefeuilles met een of meerdere beleggingsfondsen toegevoegd, zoals portefeuilles met AVIAW. In een aantal situaties zijn die portefeuilles bij Interactive Brokers nu de goedkoopste optie in de vergelijking.`,
+  },
+
+  {
+    title: 'Nieuwe layout',
+    date: new Date('2021-01-11'),
+    content: `Vandaag is een nieuwe layout live gegaan, waarmee de focus meer komt te liggen op de portefeuilles. In tegenstelling tot de oude layout zie je nu een lijst met portefeuilles, en per portefeuille de aanbieders waar je deze fondsen/ETF's kunt aankopen.`,
+  },
+
+  {
+    title: 'Kosten Brand New Day',
+    date: new Date('2021-01-10'),
+    content: `De kosten van een Beleggingsrekening bij Brand New Day zijn bijgewerkt. De servicekosten van een beleggingsrekening zijn nu 0,44% per jaar (0,11% per kwartaal) en de lopende kosten van alle fondsen zijn verlaagd met 0,44%.`,
+  },
+
+  {
+    title: 'Interne transactiekosten',
+    date: new Date('2021-12-28'),
+    content: `Vanaf nu worden ook de interne transactiekosten die door fondsen gemaakt worden meegenomen in de berekening. Deze kosten zijn gebaseerd op de kosten die <a href='https://www.reddit.com/user/gerbenvl'>gerbenvl</a> uit de jaarverslagen van fondsaanbieders heeft gehaald.`,
+  },
+
+  {
+    title: 'Kostenverlaging Meesman',
+    date: new Date('2021-12-01'),
+    content: `Op 1 januari 2022 verlaagt Meesman de fondskosten voor Aandelen Wereldwijd Totaal naar 0,4%. Deze kosten zijn aangepast in de vergelijking. Voor beleggers die meer dan 1 miljoen euro beleggen in het fonds worden de kosten nog lager (0,25%), maar dat wordt op dit moment nog niet ondersteund in de vergelijking.`,
+  },
+
+  {
+    title: 'Instapkosten niet langer meegenomen in de vergelijking',
+    date: new Date('2021-11-28'),
+    content: `De instapkosten van fondsen en ETF's zijn slecht met elkaar te vergelijken. Fondsen hanteren vaak zogenaamde "swing pricing", waarbij de instapkosten afhankelijk zijn van of er op die dag meer aan- of verkopers zijn. Sommige fondsaanbieders vermelden een maximumtarief in hun documentatie, en andere weer niet. Bij ETF's heb je juist weer te maken met spreadkosten. Al met al zijn deze kosten zo moeilijk met elkaar te vergelijken, dat ze vanaf nu buiten beschouwing worden gelaten op deze website.`,
+  },
+
+  {
+    title: 'Overname BinckBank door Saxo Bank',
+    date: new Date('2021-10-29'),
+    content: `BinckBank gaat op in Saxo Bank, en het is niet meer mogelijk om een rekening te openen bij Binck. Daarom zijn portefeuilles met Binck in deze vergelijking vervangen door portefeuilles bij Saxo Bank.`,
+  },
+
+  {
+    title: 'Nieuw filter: marktkapitalisatie',
+    date: new Date('2021-10-27'),
+    content:
+      'Er is een nieuw filter toegevoegd: minimum marktkapitalisatie. De standaardwaarde voor dit filter is ingesteld op 70%, waardoor portefeuilles met een lagere marktkapitalisatie (bijvoorbeeld door ESG-uitsluitingen) niet meer standaard zichtbaar zijn.',
+  },
+].sort((a, b) => b.date.getTime() - a.date.getTime()); // Sort descending
+---
+
+<Layout title='Wijzigingen - Indexfondsenvergelijken.nl'>
+  <h1 class='h2'>Wijzigingen</h1>
+
+  {
+    wijzigingen.map(({ title, date, content }) => (
+      <article>
+        <h2 class='h4 mb-0'>{title}</h2>
+
+        <p class='text-muted'>
+          {date.toLocaleDateString('nl-NL', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })}
+        </p>
+
+        <p set:html={content} />
+      </article>
+    ))
+  }
+</Layout>

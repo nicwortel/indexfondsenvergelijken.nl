@@ -1,4 +1,4 @@
-import {Money} from "bigint-money/dist";
+import {Money} from "bigint-money";
 import {Broker} from "../src/Broker";
 import {Percentage} from "../src/Percentage";
 import {SimulatedPortfolio} from "../src/SimulatedPortfolio";

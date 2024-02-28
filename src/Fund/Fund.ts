@@ -1,6 +1,6 @@
 import {Index} from "../Index/Index";
 import {Percentage} from "../Percentage";
-import {Money} from "bigint-money/dist";
+import {Money} from "bigint-money";
 
 export interface Fund {
     getName(): string;
