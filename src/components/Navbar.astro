@@ -1,0 +1,44 @@
+---
+const navItems = [
+  { href: '/veelgestelde-vragen', text: 'Veelgestelde vragen' },
+  { href: '/wijzigingen', text: 'Wijzigingen' },
+];
+---
+
+<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+  <div class='container'>
+    <a class='navbar-brand' href='/'>indexfondsenvergelijken.nl</a>
+
+    <button
+      class='navbar-toggler'
+      type='button'
+      data-bs-toggle='collapse'
+      data-bs-target='#navbar'
+      aria-controls='navbar'
+      aria-expanded='false'
+      aria-label='Toggle navigation'
+    >
+      <span class='navbar-toggler-icon'></span>
+    </button>
+
+    <div class='collapse navbar-collapse' id='navbar'>
+      <ul class='navbar-nav ms-auto'>
+        {
+          navItems.map(({ href, text }) => (
+            <li class='nav-item'>
+              <a
+                class:list={[
+                  'nav-link',
+                  { active: href === Astro.url.pathname },
+                ]}
+                href={href}
+              >
+                {text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</nav>

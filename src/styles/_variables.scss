@@ -1,0 +1,11 @@
+@use "sass:map";
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+$form-validation-states: (
+  "invalid": (
+    "color": $form-feedback-invalid-color,
+    "icon": $form-feedback-icon-invalid
+  )
+);

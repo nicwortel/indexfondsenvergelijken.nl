@@ -8,7 +8,6 @@ import {FundFactory} from "./FundFactory";
 const fundFactory = new FundFactory();
 
 test('Calculates the cost of a transaction', () => {
-    const baseFee = new Money(0, 'EUR');
     const serviceFee = new TieredFee([new Tier(null, new PercentageFee(0))]);
 
     const broker = new Broker(

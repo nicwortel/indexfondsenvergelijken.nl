@@ -1,9 +1,0 @@
-version: '3'
-
-services:
-  web:
-    image: nginx:latest
-    volumes:
-      - ./dist/:/usr/share/nginx/html:ro
-    ports:
-      - 8000:80

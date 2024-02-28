@@ -1,9 +1,9 @@
-import {Money} from "bigint-money";
-import {Fund} from "../src/Fund/Fund";
-import {Percentage} from "../src/Percentage";
-import {SimulatedPortfolio} from "../src/SimulatedPortfolio";
-import {Transaction} from "../src/Transaction";
-import {FundFactory} from "./FundFactory";
+import { Money } from "bigint-money";
+import type { Fund } from "../src/Fund/Fund";
+import { Percentage } from "../src/Percentage";
+import { SimulatedPortfolio } from "../src/SimulatedPortfolio";
+import { Transaction } from "../src/Transaction";
+import { FundFactory } from "./FundFactory";
 
 const fundFactory = new FundFactory();
 const dummyFund = fundFactory.createMutualFund();

@@ -1,41 +1,45 @@
-import {Money} from "bigint-money";
-import {NumberFormatter} from "../NumberFormatter";
-import {Fee} from "./Fee";
+import { Money } from 'bigint-money';
+import { NumberFormatter } from '../NumberFormatter';
+import type { Fee } from './Fee';
 
 export class VolumeFee implements Fee {
-    constructor(private volumes: Volume[]) {
+  constructor(private volumes: Volume[]) {}
+
+  public calculateFor(amount: Money): Money {
+    for (let volume of this.volumes) {
+      if (volume.max === null) {
+        return volume.fee.calculateFor(amount);
+      }
+
+      if (amount.isLesserThan(volume.max)) {
+        return volume.fee.calculateFor(amount);
+      }
     }
+    throw new Error('No volume fee found for amount ' + amount.format());
+  }
 
-    public calculateFor(amount: Money): Money {
-        for (let volume of this.volumes) {
-            if (volume.max === null) {
-                return volume.fee.calculateFor(amount);
-            }
+  public describe(): string {
+    return this.getExtendedDescription().join(', ');
+  }
 
-            if (amount.isLesserThan(volume.max)) {
-                return volume.fee.calculateFor(amount);
-            }
-        }
-    }
+  public getExtendedDescription(): string[] {
+    const numberFormatter = new NumberFormatter();
 
-    public describe(): string {
-        return this.getExtendedDescription().join(', ');
-    }
+    return this.volumes.map((volume: Volume): string => {
+      if (volume.max === null) {
+        return 'daarboven: ' + volume.fee.describe();
+      }
 
-    public getExtendedDescription(): string[] {
-        const numberFormatter = new NumberFormatter();
-
-        return this.volumes.map((volume: Volume): string => {
-            if (volume.max === null) {
-                return 'daarboven: ' + volume.fee.describe();
-            }
-
-            return 'tot ' + numberFormatter.formatMoney(volume.max, 0) + ': ' + volume.fee.describe();
-        })
-    }
+      return (
+        'tot ' +
+        numberFormatter.formatMoney(volume.max, 0) +
+        ': ' +
+        volume.fee.describe()
+      );
+    });
+  }
 }
 
 export class Volume {
-    constructor(public max: Money, public fee: Fee) {
-    }
+  constructor(public max: Money | null, public fee: Fee) {}
 }

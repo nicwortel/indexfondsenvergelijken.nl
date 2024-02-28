@@ -1,0 +1,31 @@
+<noscript>
+  <style>
+    #outdated-browser {
+      display: none;
+    }
+  </style>
+  <div class='alert alert-danger' role='alert'>
+    Het lijkt erop dat JavaScript is uitgeschakeld in je browser. Deze website
+    werkt alleen als JavaScript is ingeschakeld.
+  </div>
+</noscript>
+
+<div class='alert alert-danger' role='alert' id='outdated-browser'>
+  Deze website maakt gebruik van een JavaScript-feature die (nog) niet door jouw
+  browser wordt ondersteund. Gebruik je Safari op macOS, upgrade dan naar Safari
+  14 (Systeemvoorkeuren > Software-update) of maak gebruik van een andere
+  browser zoals Firefox of Chrome. Gebruik je iOS, upgrade dan naar iOS 14 (ook
+  Firefox en Chrome werken niet op eerdere iOS versies). Gebruik je Internet
+  Explorer, maak dan gebruik van een andere browser (Edge, Firefox of Chrome).
+  Sorry voor het ongemak.
+</div>
+<script is:inline>
+  // Assume that if JavaScript doesn't load it's because of outdated browser (Safari 13)
+  document.getElementById('outdated-browser').hidden = true;
+  document.addEventListener('astro:after-swap', () => {
+    const el = document.getElementById('outdated-browser');
+    if (el) {
+      el.hidden = true;
+    }
+  });
+</script>

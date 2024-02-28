@@ -1,0 +1,4 @@
+User-agent:*
+Disallow:
+
+Sitemap: https://www.indexfondsenvergelijken.nl/sitemap-index.xml

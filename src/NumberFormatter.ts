@@ -1,4 +1,4 @@
-import {Money} from "bigint-money/dist";
+import {Money} from "bigint-money";
 
 export class NumberFormatter {
     readonly locale = 'nl-NL';
