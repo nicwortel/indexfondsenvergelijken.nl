@@ -1,0 +1,31 @@
+---
+import Disclaimer from '../components/Disclaimer.astro';
+import Form from '../components/Form.svelte';
+import NoScriptWarning from '../components/NoScriptWarning.astro';
+import Results from '../components/Results.svelte';
+import ShownPortfolios from '../components/ShownPortfolios.svelte';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title='Indexfondsenvergelijken.nl: Vergelijk indexfondsen en brokers'>
+  <NoScriptWarning />
+
+  <main>
+    <div class='row'>
+      <div class='col-lg-3'>
+        <h2>Instellingen</h2>
+
+        <Form client:load />
+
+        <Disclaimer />
+      </div>
+
+      <div class='col'>
+        <ShownPortfolios client:load />
+
+        <Results client:load />
+      </div>
+    </div>
+  </main>
+  <script src='bootstrap/js/src/collapse'></script>
+</Layout>

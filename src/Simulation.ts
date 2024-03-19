@@ -1,4 +1,4 @@
-import {Money} from "bigint-money/dist";
+import {Money} from "bigint-money";
 import {Broker} from "./Broker";
 import {Percentage} from "./Percentage";
 import {SimulatedPortfolio} from "./SimulatedPortfolio";
@@ -59,6 +59,10 @@ export class Simulation {
 
     public getExpectedDividendYield(): Percentage {
         return this.expectedDividendYield;
+    }
+
+    public getPortfolio(): SimulatedPortfolio {
+        return this.portfolio;
     }
 
     private runYear(): void {
