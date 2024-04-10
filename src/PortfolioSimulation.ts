@@ -6,6 +6,6 @@ export class PortfolioSimulation {
     }
 
     public getBestResult(): number {
-        return this.simulations[0].getNetResult();
+        return this.simulations[0]!.getNetResult();
     }
 }

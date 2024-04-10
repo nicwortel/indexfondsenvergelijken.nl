@@ -12,18 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Restore NPM cache
-        uses: actions/cache@v2
+        uses: actions/setup-node@v4
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          node-version: 20
+          cache: 'npm'
       - name: Install NPM packages
-        run: yarn install
+        run: npm ci
       - name: Run tests
-        run: yarn test
+        run: npm test
 
   deploy:
     name: Deploy
@@ -35,21 +33,19 @@ jobs:
       url: https://www.indexfondsenvergelijken.nl
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Restore NPM cache
-        uses: actions/cache@v2
+        uses: actions/setup-node@v4
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          node-version: 20
+          cache: 'npm'
 
       - name: Install NPM packages
-        run: yarn install
+        run: npm ci
 
       - name: Build the website
-        run: make dist
+        run: npm run build
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1

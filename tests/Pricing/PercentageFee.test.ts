@@ -1,4 +1,4 @@
-import {Money} from "bigint-money/dist";
+import {Money} from "bigint-money";
 import {PercentageFee} from "../../src/Pricing/PercentageFee";
 
 test('Calculates the fee for an amount of money', () => {

@@ -1,32 +1,33 @@
-import {Money} from "bigint-money/dist";
-import {Fee} from "./Fee";
+import { Money } from 'bigint-money';
+import type { Fee } from './Fee';
 
 export class DeductibleFee implements Fee {
-    private transactionCosts: Money = new Money(0, 'EUR');
+  private transactionCosts: Money = new Money(0, 'EUR');
 
-    constructor(private innerFee: Fee) {
+  constructor(private innerFee: Fee) {}
+
+  public calculateFor(amount: Money): Money {
+    const serviceFee = this.innerFee.calculateFor(amount);
+    const deductedFee = serviceFee.subtract(this.transactionCosts);
+
+    if (deductedFee.isLesserThan(0)) {
+      return new Money(0, 'EUR');
     }
 
-    public calculateFor(amount: Money): Money {
-        const serviceFee = this.innerFee.calculateFor(amount);
-        const deductedFee = serviceFee.subtract(this.transactionCosts);
+    return deductedFee;
+  }
 
-        if (deductedFee.isLesserThan(0)) {
-            return new Money(0, 'EUR');
-        }
+  public describe(): string {
+    return '';
+  }
 
-        return deductedFee;
-    }
+  public getExtendedDescription(): string[] {
+    return this.innerFee
+      .getExtendedDescription()
+      .concat(['Te verminderen met de gemaakte transactiekosten']);
+  }
 
-    public describe(): string {
-        return '';
-    }
-
-    public getExtendedDescription(): string[] {
-        return this.innerFee.getExtendedDescription().concat(['Te verminderen met de gemaakte transactiekosten']);
-    }
-
-    public updateLastTransactionCosts(transactionCosts: Money): void {
-        this.transactionCosts = transactionCosts;
-    }
+  public updateLastTransactionCosts(transactionCosts: Money): void {
+    this.transactionCosts = transactionCosts;
+  }
 }
