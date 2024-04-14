@@ -203,8 +203,7 @@
             }
         ],
         "brokers": [
-            "FitVermogen",
-            "Saxo Bank"
+            "FitVermogen"
         ]
     }
 ]
