@@ -109,6 +109,20 @@
         "website": "https://www.home.saxo/nl-nl"
     },
     {
+        "name": "Saxo Bank AutoInvest",
+        "logo": "saxo.png",
+        "product": "Zelf Beleggen AutoInvest",
+        "serviceFee": {
+            "percentage": 0.01,
+            "maximum": 40
+        },
+        "serviceFeeFrequency": "monthly",
+        "mutualFundTransactionFee": 0,
+        "etfTransactionFee": 0,
+        "costOverview": "https://www.home.saxo/-/media/documents/regional/nl/pricing-unified.pdf?revision=db393ec4-e48a-4be2-a5e4-7751670cd203",
+        "website": "https://www.home.saxo/nl-nl"
+    },
+    {
         "name": "FitVermogen",
         "logo": "fitvermogen.png",
         "product": "FitVermogen",

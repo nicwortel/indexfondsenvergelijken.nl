@@ -48,7 +48,7 @@
             "ING",
             "ABN Amro",
             "DEGIRO",
-            "Saxo Bank",
+            "Saxo Bank AutoInvest",
             "Interactive Brokers",
             "Lynx",
             "Easybroker"
@@ -65,7 +65,7 @@
             "DEGIRO",
             "Interactive Brokers",
             "Lynx",
-            "Saxo Bank",
+            "Saxo Bank AutoInvest",
             "Easybroker"
         ]
     },
@@ -92,7 +92,7 @@
             }
         ],
         "brokers": [
-            "Saxo Bank",
+            "Saxo Bank AutoInvest",
             "Interactive Brokers",
             "Lynx",
             "Easybroker"
