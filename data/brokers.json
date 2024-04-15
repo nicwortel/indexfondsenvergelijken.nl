@@ -92,24 +92,20 @@
     {
         "name": "Saxo Bank",
         "logo": "saxo.png",
-        "product": "Zelf Beleggen Green",
+        "product": "Zelf Beleggen",
         "serviceFee": {
-            "base": 3.5,
             "percentage": 0.01,
-            "maximum": 48.5
+            "maximum": 40
         },
         "serviceFeeFrequency": "monthly",
-        "mutualFundTransactionFee": {
-            "percentage": 0.15,
-            "minimum": 8,
-            "maximum": 150
-        },
+        "mutualFundTransactionFee": 0,
         "etfTransactionFee": {
-            "percentage": 0.1,
-            "minimum": 6,
-            "maximum": 150
+            "percentage": 0.08,
+            "minimum": 2,
+            "maximum": 150,
+            "_comment": "Based on the Bronze account, the fee is lower for accounts with higher equity."
         },
-        "costOverview": "https://www.home.saxo/-/media/documents/regional/nl/Pricing-Standard.pdf",
+        "costOverview": "https://www.home.saxo/-/media/documents/regional/nl/pricing-unified.pdf?revision=db393ec4-e48a-4be2-a5e4-7751670cd203",
         "website": "https://www.home.saxo/nl-nl"
     },
     {
