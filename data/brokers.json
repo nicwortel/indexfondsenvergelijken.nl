@@ -41,10 +41,11 @@
         "serviceFee": {
             "tiers": [
                 {"upperLimit": 100000, "percentage": 0.06},
-                {"upperLimit": null, "percentage": 0.03}
+                {"upperLimit": 500000, "percentage": 0.03},
+                {"upperLimit": 2000000, "percentage": 0.01},
+                {"upperLimit": null, "percentage": 0.0025}
             ],
-            "minimum": 5,
-            "maximum": 100
+            "minimum": 5
         },
         "serviceFeeCalculation": "averageOfQuarter",
         "mutualFundTransactionFee": {
@@ -56,11 +57,6 @@
             "base": 5,
             "percentage": 0.05,
             "maximum": 150
-        },
-        "dividendDistributionFee": {
-            "base": "0.25",
-            "percentage": 0.5,
-            "maximum": 100
         },
         "costOverview": "https://media.rabobank.com/m/14436ec47eac2bbb/original/Tarieven-beleggen-bij-de-Rabobank.pdf",
         "website": "https://www.rabobank.nl/particulieren/beleggen/rabo-zelf-beleggen/"
