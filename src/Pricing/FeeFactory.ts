@@ -44,7 +44,7 @@ export class FeeFactory {
 
             fee = new VolumeFee(volumes);
         } else if (typeof data.flat == 'number') {
-            fee = new FlatFee(new Money(data.flat, this.currency));
+            fee = new FlatFee(new Money(data.flat.toString(), this.currency));
         } else if (typeof data.percentage == 'number') {
             fee = new PercentageFee(data.percentage);
         } else {

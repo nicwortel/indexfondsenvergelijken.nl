@@ -6,6 +6,7 @@ import {PercentageFee} from "../src/Pricing/PercentageFee";
 import {Tier, TieredFee} from "../src/Pricing/TieredFee";
 import {Simulation} from "../src/Simulation";
 import {FundFactory} from "./FundFactory";
+import {NullFee} from "../src/Pricing/NullFee";
 
 const fundFactory = new FundFactory();
 
@@ -21,6 +22,9 @@ function createSimulation(initialInvestment: number, monthlyInvestment: number, 
             'endOfQuarter',
             new PercentageFee(0),
             new PercentageFee(0),
+            new NullFee(),
+            new NullFee(),
+            [],
             new PercentageFee(0),
             ''
         ),

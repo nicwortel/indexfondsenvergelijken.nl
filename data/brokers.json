@@ -77,9 +77,15 @@
     {
         "name": "DEGIRO",
         "logo": "degiro.png",
-        "product": "Basic - Kernselectie",
-        "mutualFundTransactionFee": 0,
+        "product": "Basic",
+        "mutualFundTransactionFee": {
+            "flat": 3.9
+        },
         "etfTransactionFee": {
+            "flat": 3
+        },
+        "selectionMutualFundTransactionFee": 0,
+        "selectionEtfTransactionFee": {
             "flat": 1
         },
         "costOverview": "https://www.degiro.nl/data/pdf/Tarievenoverzicht.pdf",
@@ -94,27 +100,19 @@
             "maximum": 40
         },
         "serviceFeeFrequency": "monthly",
-        "mutualFundTransactionFee": 0,
+        "mutualFundTransactionFee": {
+            "percentage": 0.15,
+            "minimum": 8,
+            "maximum": 150
+        },
         "etfTransactionFee": {
             "percentage": 0.08,
             "minimum": 2,
             "maximum": 150,
             "_comment": "Based on the Bronze account, the fee is lower for accounts with higher equity."
         },
-        "costOverview": "https://www.home.saxo/-/media/documents/regional/nl/pricing-unified.pdf?revision=db393ec4-e48a-4be2-a5e4-7751670cd203",
-        "website": "https://www.home.saxo/nl-nl"
-    },
-    {
-        "name": "Saxo Bank AutoInvest",
-        "logo": "saxo.png",
-        "product": "Zelf Beleggen AutoInvest",
-        "serviceFee": {
-            "percentage": 0.01,
-            "maximum": 40
-        },
-        "serviceFeeFrequency": "monthly",
-        "mutualFundTransactionFee": 0,
-        "etfTransactionFee": 0,
+        "selectionMutualFundTransactionFee": 0,
+        "selectionEtfTransactionFee": 0,
         "costOverview": "https://www.home.saxo/-/media/documents/regional/nl/pricing-unified.pdf?revision=db393ec4-e48a-4be2-a5e4-7751670cd203",
         "website": "https://www.home.saxo/nl-nl"
     },

@@ -150,6 +150,15 @@
                                                     ETF's: {{ broker.etfTransactionFee.describe }}
                                                 </td>
                                             </tr>
+                                            {% for fundSelection in broker.fundSelections %}
+                                                <tr>
+                                                    <td>Transactiekosten {{ fundSelection.name }}</td>
+                                                    <td>
+                                                        Indexfondsen: {{ broker.selectionMutualFundTransactionFee.describe }}<br />
+                                                        ETF's: {{ broker.selectionEtfTransactionFee.describe }}
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
                                             {% if broker.dividendDistributionFee.describe != 'geen' %}
                                                 <tr>
                                                     <td>Kosten dividenduitkering</td>

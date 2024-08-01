@@ -5,6 +5,7 @@ import {MutualFund} from "./Fund/MutualFund";
 import {DeductibleFee} from "./Pricing/DeductibleFee";
 import {Fee} from "./Pricing/Fee";
 import {Transaction} from "./Transaction";
+import {FundSelection} from "./FundSelection";
 
 export class Broker {
     constructor(
@@ -15,6 +16,9 @@ export class Broker {
         public serviceFeeCalculation: 'averageEndOfMonth' | 'averageOfQuarter' | 'endOfQuarter',
         public mutualFundTransactionFee: Fee,
         public etfTransactionFee: Fee,
+        public selectionMutualFundTransactionFee: Fee,
+        public selectionEtfTransactionFee: Fee,
+        public fundSelections: FundSelection[],
         public dividendDistributionFee: Fee,
         public costOverview: string,
         public logo?: string,
@@ -63,6 +67,16 @@ export class Broker {
     }
 
     private getTransactionFeeFor(fund: Fund): Fee {
+        if (this.fundSelections.some((selection) => selection.contains(fund))) {
+            if (fund instanceof MutualFund) {
+                return this.selectionMutualFundTransactionFee;
+            }
+
+            if (fund instanceof Etf) {
+                return this.selectionEtfTransactionFee;
+            }
+        }
+
         if (fund instanceof MutualFund) {
             return this.mutualFundTransactionFee;
         }

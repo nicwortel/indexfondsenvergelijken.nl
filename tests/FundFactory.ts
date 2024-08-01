@@ -7,14 +7,15 @@ export class FundFactory {
         totalExpenseRatio: number = 0.1,
         dividendLeak: number = 0.2,
         esgExclusionsPercentage: number = 0,
-        indexMarketCapPercentage: number = 80
+        indexMarketCapPercentage: number = 80,
+        isin: string = 'ISIN'
     ): MutualFund {
         const index = this.createIndex(indexMarketCapPercentage);
 
         return new MutualFund(
             'Name',
             'SYM',
-            'ISIN',
+            isin,
             '',
             new Percentage(totalExpenseRatio),
             new Percentage(0),
