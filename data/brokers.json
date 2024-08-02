@@ -92,6 +92,24 @@
         "website": "https://www.degiro.nl/"
     },
     {
+        "name": "DEGIRO Beleggingsfondsen",
+        "logo": "degiro.png",
+        "product": "Basic",
+        "mutualFundTransactionFee": {
+            "flat": 3.9
+        },
+        "etfTransactionFee": {
+            "flat": 3
+        },
+        "serviceFee": {
+            "_comment": "The 0.2% is per year, so divide 0.2% by 12 months",
+            "percentage": 0.016666667
+        },
+        "serviceFeeFrequency": "monthly",
+        "costOverview": "https://www.degiro.nl/data/pdf/Tarievenoverzicht.pdf",
+        "website": "https://www.degiro.nl/"
+    },
+    {
         "name": "Saxo Bank",
         "logo": "saxo.png",
         "product": "Zelf Beleggen",
