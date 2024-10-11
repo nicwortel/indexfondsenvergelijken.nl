@@ -8,8 +8,8 @@
         "totalExpenseRatio": 0.22,
         "internalTransactionCosts": 0.043,
         "dividendLeakage": 11.42,
-        "kiid": "https://global.vanguard.com/portal/site/loadPDF?country=nl&docId=616",
-        "factsheet": "https://global.vanguard.com/portal/site/loadPDF?country=nl&docId=31660",
+        "kiid": "https://fund-docs.vanguard.com/ie00b3rbwm25_priipskid_nl.pdf",
+        "factsheet": "https://fund-docs.vanguard.com/FTSE_All-World_UCITS_ETF_USD_Distributing_9505_NETH_INT_DU.pdf",
         "index": "FTSE All-World Index"
     },
     {
@@ -21,8 +21,8 @@
         "totalExpenseRatio": 0.22,
         "internalTransactionCosts": 0.043,
         "dividendLeakage": 11.42,
-        "kiid": "https://global.vanguard.com/portal/site/loadPDF?country=nl&docId=21714",
-        "factsheet": "https://global.vanguard.com/portal/site/loadPDF?country=nl&docId=31658",
+        "kiid": "https://fund-docs.vanguard.com/ie00bk5bqt80_priipskid_nl.pdf",
+        "factsheet": "https://fund-docs.vanguard.com/FTSE_All-World_UCITS_ETF_USD_Accumulating_9679_NETH_INT_DU.pdf",
         "index": "FTSE All-World Index"
     },
     {
