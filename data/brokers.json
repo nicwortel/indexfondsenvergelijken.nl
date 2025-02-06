@@ -11,7 +11,7 @@
                 {"upperLimit": 2500000, "percentage": 0.02},
                 {"upperLimit": 5000000, "percentage": 0.015},
                 {"upperLimit": 10000000, "percentage": 0.0125},
-                {"upperLimit": null, "percentage": 0.01},
+                {"upperLimit": null, "percentage": 0.01}
             ]
         },
         "serviceFeeCalculation": "averageEndOfMonth",
