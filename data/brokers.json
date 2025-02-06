@@ -186,17 +186,29 @@
     {
         "name": "Interactive Brokers",
         "logo": "interactive-brokers.png",
-        "product": "Fixed Pricing",
+        "product": "Tiered Pricing",
+        "_comment": "Assumes the lowest tier (monthly trade value lower < € 50 million)",
         "etfTransactionFee": {
-            "percentage": 0.05,
-            "minimum": 3
+            "_comment": "Assumes Xetra (IBIS) fees",
+            "_comment1": "€ 0.02 (clearing fee) + € 0.01 (regulatory fee)",
+            "base": 0.03,
+            "_comment2": "0.05% + 0.0072% (exchange fee) + 0.0008% (clearing fee)",
+            "percentage": 0.058,
+            "_comment3": "€ 1.25 + € 0.9 (exchange fee) + € 0.02 (clearing fee) + € 0.01 (regulatory fee)",
+            "minimum": 2.18,
+            "_comment4": "€ 29 + € 72 (Xetra standard order exchange fee) + € 4.02 (clearing fee) + € 0.01 (regulatory fee)",
+            "maximum": 105.03
         },
         "mutualFundTransactionFee": {
-            "percentage": 0.1,
-            "minimum": 4,
-            "maximum": 29
+            "_comment": "0.05% + 0.02% (exchange fee)",
+            "percentage": 0.07,
+            "_comment2": "€ 1.25 + € 2.30 (exchange fee) + € 0.10 (clearing fee)",
+            "minimum": 1.25,
+            "_comment3": "€ 29 + € 45 (exchange fee) + € 0.10 (clearing fee)",
+            "maximum": 74.1,
+            "_source": "https://www.interactivebrokers.com/en/pricing/commissions-mutual-funds-non-us.php?re=europe"
         },
-        "costOverview": "https://www.interactivebrokers.ie/en/index.php?f=48059",
+        "costOverview": "https://www.interactivebrokers.com/en/pricing/commissions-stocks-europe.php?re=europe",
         "website": "https://www.interactivebrokers.ie/en/home.php",
         "affiliateLink": "https://ibkr.com/referral/nic106"
     },
