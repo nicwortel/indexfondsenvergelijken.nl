@@ -13,7 +13,8 @@
         "brokers": [
             "ING",
             "ABN Amro",
-            "Rabobank"
+            "Rabobank",
+            "Saxo Bank"
         ]
     },
     {
@@ -34,7 +35,8 @@
         "brokers": [
             "ING",
             "ABN Amro",
-            "Rabobank"
+            "Rabobank",
+            "Saxo Bank"
         ]
     },
     {
