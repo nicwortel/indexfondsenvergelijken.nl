@@ -67,7 +67,7 @@ final class MsciFactsheetParser implements IndexFactsheetParser
 
         $text = str_replace(' and ', ', ', $text);
 
-        preg_match('/captures ((large|mid|small).*) cap representation/i', $text, $matches);
+        preg_match('/(?:captures|the) ((large|mid|small).*) cap (?:representation|segments)/i', $text, $matches);
 
         return explode(', ', $matches[1]);
     }

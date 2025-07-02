@@ -209,5 +209,28 @@
         "brokers": [
             "FitVermogen"
         ]
+    },
+    {
+        "portfolio": [
+            {
+                "allocation": 64,
+                "fund": "SC0H"
+            },
+            {
+                "allocation": 26,
+                "fund": "EXUS"
+            },
+            {
+                "allocation": 10,
+                "fund": "EMIM"
+            }
+        ],
+        "brokers": [
+            "Saxo Bank",
+            "Interactive Brokers",
+            "Lynx",
+            "Easybroker",
+            "DEGIRO"
+        ]
     }
 ]

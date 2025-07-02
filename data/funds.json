@@ -232,5 +232,31 @@
         "kiid": "https://www.ishares.com/nl/particuliere-belegger/nl/literature/kiid/kiid-ishares-msci-world-small-cap-ucits-etf-usd-acc-nl-ie00bf4rfh31-nl.pdf",
         "factsheet": "https://www.ishares.com/nl/particuliere-belegger/nl/literature/fact-sheet/wsml-ishares-msci-world-small-cap-ucits-etf-fund-fact-sheet-nl-nl.pdf",
         "index": "MSCI World Small Cap Index"
+    },
+    {
+        "name": "Invesco MSCI USA UCITS ETF",
+        "type": "ETF",
+        "symbol": "SC0H",
+        "isin": "IE00B60SX170",
+        "logo": "invesco.png",
+        "totalExpenseRatio": 0.12,
+        "internalTransactionCosts": 0,
+        "dividendLeakage": 0,
+        "kiid": "https://www.invesco.com/content/dam/invesco/nl/en/product-documents/etf/share-class/kid/IE00B60SX170_kid_en-nl.pdf",
+        "factsheet": "https://www.invesco.com/content/dam/invesco/emea/en/product-documents/etf/share-class/factsheet/IE00B60SX170_factsheet_en.pdf",
+        "index": "MSCI USA Index"
+    },
+    {
+        "name": "Xtrackers MSCI World ex USA UCITS ETF",
+        "type": "ETF",
+        "symbol": "EXUS",
+        "isin": "IE0006WW1TQ4",
+        "logo": "xtrackers.png",
+        "totalExpenseRatio": 0.15,
+        "internalTransactionCosts": 0.114,
+        "dividendLeakage": 0.09,
+        "kiid": "https://etf.dws.com/nl-nl/AssetDownload/Index/e8b97e18-c24f-4192-b587-441d280b5637/DWS-PRIIPSKID-IE0006WW1TQ4-NL-nl-2025-03-21.pdf",
+        "factsheet": "https://etf.dws.com/nl-nl/AssetDownload/Index/d34610f9-c4af-40ed-9c74-55b0f5ba2d56/Factsheet.pdf",
+        "index": "MSCI World ex USA Index"
     }
 ]
