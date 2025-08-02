@@ -14,6 +14,8 @@ final class IndexImporter implements DataImporter
     // private const ALL_WORLD_FACTSHEET = 'https://research.ftserussell.com/Analytics/Factsheets/Home/DownloadSingleIssue?issueName=GEISLMS&IsManual=false';
 
     private const FACTSHEETS = [
+        'MSCI USA' => 'https://www.msci.com/documents/10199/255599/msci-usa-index-gross.pdf',
+        'MSCI World ex USA' => 'https://www.msci.com/documents/10199/cd91b9d8-e765-4b04-9edf-c45c6c7d971d',
         'MSCI ACWI IMI Index' => 'https://www.msci.com/documents/10199/4211cc4b-453d-4b0a-a6a7-51d36472a703',
         'MSCI World Index' => 'https://www.msci.com/documents/10199/4db922ce-68d2-446d-2f9e-4ed408a9db29',
         'MSCI World Small Cap Index' => 'https://www.msci.com/documents/10199/a67b0d43-0289-4bce-8499-0c102eaa8399',
