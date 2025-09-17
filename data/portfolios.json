@@ -3,29 +3,44 @@
         "portfolio": [
             {
                 "allocation": 90,
-                "fund": "NT World"
+                "fund": "NT World A"
             },
             {
                 "allocation": 10,
-                "fund": "NT EM"
+                "fund": "NT EM A"
             }
         ],
         "brokers": [
             "ING",
             "ABN Amro",
-            "Rabobank",
             "Saxo Bank"
         ]
     },
     {
         "portfolio": [
             {
+                "allocation": 90,
+                "fund": "NT World I"
+            },
+            {
+                "allocation": 10,
+                "fund": "NT EM G"
+            }
+        ],
+        "brokers": [
+            "ABN Amro",
+            "Rabobank",
+        ]
+    },
+    {
+        "portfolio": [
+            {
                 "allocation": 83,
-                "fund": "NT World"
+                "fund": "NT World A"
             },
             {
                 "allocation": 9,
-                "fund": "NT EM"
+                "fund": "NT EM A"
             },
             {
                 "allocation": 8,
@@ -35,8 +50,27 @@
         "brokers": [
             "ING",
             "ABN Amro",
-            "Rabobank",
             "Saxo Bank"
+        ]
+    },
+     {
+        "portfolio": [
+            {
+                "allocation": 83,
+                "fund": "NT World I"
+            },
+            {
+                "allocation": 9,
+                "fund": "NT EM G"
+            },
+            {
+                "allocation": 8,
+                "fund": "NT SC"
+            }
+        ],
+        "brokers": [
+            "ABN Amro",
+            "Rabobank",
         ]
     },
     {
